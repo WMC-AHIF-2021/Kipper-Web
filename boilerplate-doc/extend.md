@@ -123,7 +123,7 @@ Docs.
 An article by @JangoSteve explains how to [track jQuery AJAX requests in Google
 Analytics](https://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/).
 
-Add this to `plugins.js`:
+Add this to `plugins.ts`:
 
 ```js
 /*
@@ -553,7 +553,9 @@ necessary to add media queries to detect which image to load. Here is an example
 for an iPhone:
 
 ```html
-<link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="img/startup.png">
+
+<link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)"
+      href="../src/img/startup.png">
 ```
 
 
