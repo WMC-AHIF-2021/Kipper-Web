@@ -165,15 +165,16 @@ using a polyfill CDN service, like [polyfill.io](https://polyfill.io/v3/), just 
 it before the other scripts in the bottom of the page:
 
 ```html
-    <script src="js/vendor/modernizr-3.10.0.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+
+<script src="../src/js/vendor/modernizr-3.10.0.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="../src/js/plugins.ts"></script>
+<script src="../src/js/test_main.ts"></script>
 </body>
 ```
 
 If you like to just include the polyfills yourself, you could include them in
-`js/plugins.js`. When you have a bunch of polyfills to load in, you could also
+`js/plugins.ts`. When you have a bunch of polyfills to load in, you could also
 create a `polyfills.js` file in the `js/vendor` directory or include the files
 individually and combine them using a build tool. Always ensure that the
 polyfills are all loaded before any other JavaScript.
