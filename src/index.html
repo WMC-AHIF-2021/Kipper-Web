@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/buttons.css" />
+	<link rel="stylesheet" href="css/nav-bar.css" />
 
     <meta name="theme-color" content="#fafafa" />
     <style>
@@ -33,19 +35,40 @@
         align-items: center;
         flex-shrink: inherit;
       }
+	  
+	  .left-corner {
+        display: inherit;
+        justify-content: left;
+        align-items: left;
+        flex-shrink: inherit;
+      }
 
       #main-frame-content {
         display: flex;
         flex-shrink: 1;
         flex-direction: column;
       }
-    </style>
+	</style>
   </head>
   <body>
     <script type="module" src="js/plugins.ts"></script>
 
     <div id="main-frame">
       <div id="main-frame-content">
+	  	<div id="nav" class="left-corner">
+		<ul>
+		<li><a href="index.html" class="button">Home</a></li>
+		<li><a href="#" class="button">Menu1</a></li>
+		<li><a href="#" class="button">Menu2</a></li>
+		<li><a href="#" class="button">Menu3</a></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+		</ul>
+		</div>
         <div id="title" class="centered">
           <h1>Kipper Web</h1>
         </div>
