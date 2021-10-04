@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added HTML5 Boilerplate base setup
 - Added info.html, about.html, style.css
-- Updated index.html and 404.html
+- Added start_local_Server.exe
 
 ### Changed
 
