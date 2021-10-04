@@ -2,7 +2,7 @@
   "short_name": "Kipper-Web",
   "name": "Kipper Web",
   "icons": [{
-    "src": "icon.png",
+    "src": "src/img/icon.png",
     "type": "image/png",
     "sizes": "192x192"
   }],
