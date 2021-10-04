@@ -20,66 +20,56 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
-	<link rel="stylesheet" href="css/buttons.css" />
-	<link rel="stylesheet" href="css/nav-bar.css" />
+    <link rel="stylesheet" href="css/buttons.css" />
+    <link rel="stylesheet" href="css/nav-bar.css" />
+    <link rel="stylesheet" href="css/text.css" />
 
-    <meta name="theme-color" content="#fafafa" />
-    <style>
-      html {
-        font-family: sans-serif;
-      }
-
-      .centered {
-        display: inherit;
-        justify-content: center;
-        align-items: center;
-        flex-shrink: inherit;
-      }
-	  
-	  .left-corner {
-        display: inherit;
-        justify-content: left;
-        align-items: left;
-        flex-shrink: inherit;
-      }
-
-      #main-frame-content {
-        display: flex;
-        flex-shrink: 1;
-        flex-direction: column;
-      }
-	</style>
+    <!-- Specifying the colour to be the primary scheme colour. See main.css for the --scheme-primary variable -->
+    <meta name="theme-color" content="#e01a4f" />
   </head>
   <body>
     <script type="module" src="js/plugins.ts"></script>
 
     <div id="main-frame">
       <div id="main-frame-content">
-	  	<div id="nav" class="left-corner">
-		<ul>
-    <li><img src="https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673-960x960.png" width="100" height="100" alt="logo" /></li>
-	<li><h1><font color="white"> Kipper Web </font></h1></li>
-		<li><a href="index.html" class="button">Home</a></li>
-		<li><a href="#" class="button">Menu1</a></li>
-		<li><a href="#" class="button">Menu2</a></li>
-		<li><a href="#" class="button">Menu3</a></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-		</ul>
-		</div>
-        <div id="title" class="centered">
-          
-        </div>
-        <div id="description" class="centered">
-          <h2>Work in Progress</h2>
-        </div>
+        <div id="top-element">
+          <div id="nav" class="navigation-bar">
+            <ul>
+              <li>
+                <a href="#">
+                  <h1>Kipper</h1>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Luna-Klatzer/Kipper/releases"
+                  class="button"
+                >
+                  <h4>Downloads</h4>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="button"><h4>Docs</h4></a>
+              </li>
+              <li>
+                <a href="#" class="button"><h4>Playground</h4></a>
+              </li>
+              <li>
+                <a href="#" class="button"><h4>Changelog</h4></a>
+              </li>
+            </ul>
+          </div>
+          <div id="header" class="centered white-text">
+            <h1>Get started with Kipper today!</h1>
+          </div>
+          <div id="description" class="centered white-text">
+            <h4>The Simple and Blazing-Fast Open-Source Language.</h4>
+          </div>
+          <div id="copyright" class="centered white-text">
+            <small>© Luna Klatzer & Maximilian Seebacher</small>
+          </div>
 
-        <div id="Copyright" class="centered">
-          <small>© Luna Klatzer & Maximilian Seebacher</small>
+          <div id="separator"></div>
         </div>
       </div>
     </div>
