@@ -1,3 +1,5 @@
+![](./src/img/Kipper-Logo-with-head.png)
+
 # Kipper-Web
 
 The interactive Website for the [Kipper programming language](https://github.com/Luna-Klatzer/Kipper.git)
@@ -29,8 +31,8 @@ The interactive Website for the [Kipper programming language](https://github.com
 
 ## Team-Members
 
-- Luna Klatzer (Team-Lead): Main Developer for the programming language and interactive editor (TyoeScript)
-- Maximilian Seebacher: Main Developer for the Website and design (CSS, HTML)
+- Luna Klatzer (Team-Lead): Main Developer for the programming language and interactive editor (Mainly JS/TS)
+- Maximilian Seebacher: Main Developer for the Website and design (Mainly CSS, HTML)
 
 ## Development
 
