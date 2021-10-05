@@ -1,9 +1,11 @@
+/*! Nav-bar Config */
+
 ul {
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 0 1rem; /* 1 rem on the left */
   padding: 0;
+  display: inherit;
   overflow: hidden;
-  background-color: #333;
 }
 
 li {
@@ -11,22 +13,23 @@ li {
 }
 
 li a {
-  display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 6px 6px;
   text-decoration: none;
 }
 
 li h1 {
-  display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
+/* Change the color to scheme-secondary on hover */
+li h1:hover {
+  color: var(--scheme-secondary);
+}
+
 li a:hover {
-  background-color: #111;
+  color: var(--scheme-secondary);
 }
