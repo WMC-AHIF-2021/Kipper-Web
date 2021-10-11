@@ -10,11 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added HTML5 Boilerplate base setup
-- Added info.html, about.html, style.css
-- Added start_local_Server.exe
+- Added info.html, about.html, style.css, playground.html
+- Added template-file for Nav-Bar
 
 ### Changed
+- Set the Links in the Navbar in all important files
 
 ### Removed
+- Removed start_local_Server.exe
 
 [unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/dev...HEAD
