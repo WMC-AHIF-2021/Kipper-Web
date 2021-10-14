@@ -16,7 +16,7 @@
 
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="apple-touch-icon" href="./img/icon.png" />
-    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+    <link rel="shortcut icon" type="image/ico" href="../favicon.ico" />
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
@@ -35,13 +35,12 @@
 
     <div id="main-frame">
       <div id="main-frame-content">
-        <div id="top-element">
-          <div id="nav" class="navigation-bar">
+        <!-- Top element -->
+        <div id="top-header">
+          <div id="nav-bar">
             <ul>
               <li class="centered">
-                <a href="index.html">
-                  <h1>Kipper</h1>
-                </a>
+                <a href="./index.html"><h1>Kipper</h1></a>
               </li>
               <li>
                 <a
@@ -52,16 +51,29 @@
                 </a>
               </li>
               <li class="centered">
-                <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/README.md" class="menu-button"><h4>Docs</h4></a>
+                <a
+                  href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/Install.md"
+                  class="menu-button"
+                  ><h4>Install Guide</h4></a
+                >
               </li>
               <li class="centered">
-                <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/Install.md" class="menu-button"><h4>Install Guide</h4></a>
+                <a href="./docs.html" class="menu-button"><h4>Docs</h4></a>
               </li>
               <li class="centered">
-                <a href="playground.html" class="menu-button"><h4>Playground</h4></a>
+                <a href="./playground.html" class="menu-button"
+                  ><h4>Playground</h4></a
+                >
               </li>
               <li class="centered">
-                <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button"><h4>Changelog</h4></a>
+                <a
+                  href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md"
+                  class="menu-button"
+                  ><h4>Changelog</h4></a
+                >
+              </li>
+              <li class="centered">
+                <a href="./about.html" class="menu-button"><h4>About</h4></a>
               </li>
             </ul>
           </div>
@@ -69,13 +81,29 @@
             <h1>Get started with Kipper today!</h1>
           </div>
           <div id="description" class="centered white-text">
-            <h4>The Kipper Playground is here to show how Kipper works and to give you the ability to play around a bit</h4>
+            <h4>
+              The Kipper Playground is here to show how Kipper works and to give
+              you the ability to play around a bit
+            </h4>
           </div>
-          <div id="copyright" class="centered white-text">
-            <small>© Luna Klatzer & Maximilian Seebacher</small>
-          </div>
+        </div>
 
-          <div id="separator"></div>
+        <!-- Yellow separator - version notice -->
+        <div id="separator"></div>
+
+        <!-- Central Content - all content in the white area -->
+        <div
+          id="central-content"
+          class="flex-parent-container black-text"
+        ></div>
+
+        <!-- Footer bar - contains some links and general copyright notice -->
+        <div id="footer-bar" class="flex-parent-container white-text">
+          <div id="copyright" class="centered">
+            <small class="centered">
+              © Luna Klatzer & Maximilian Seebacher
+            </small>
+          </div>
         </div>
       </div>
     </div>

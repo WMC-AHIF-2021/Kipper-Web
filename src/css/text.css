@@ -46,6 +46,11 @@ html {
   line-height: 22px;
 }
 
+.text-wall {
+  margin-top: 4rem;
+  margin-left: 4rem;
+}
+
 .white-text {
   color: white;
 }

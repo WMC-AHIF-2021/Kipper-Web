@@ -9,6 +9,7 @@
 :root {
   --scheme-primary: #e01a4f;
   --scheme-secondary: #ffe74c;
+  --scheme-gray: #787878;
 }
 
 html {
@@ -16,8 +17,10 @@ html {
   font-size: 1em;
 }
 
-#top-element {
-  background-color: var(--scheme-primary);
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .centered {
@@ -25,22 +28,32 @@ html {
   justify-content: center;
   align-items: center;
   flex-shrink: inherit;
+  flex-direction: inherit;
 }
 
-.navigation-bar {
+#nav-bar {
   display: inherit;
   justify-content: left;
   flex-shrink: inherit;
 }
 
-#top-element {
+.flex-parent-container {
   display: flex;
   flex-shrink: 1;
   flex-direction: column;
 }
 
-#copyright {
-  margin-bottom: 6rem;
+#main-frame {
+  flex-shrink: 1;
+  flex-direction: column;
+}
+
+#top-header {
+  background-color: var(--scheme-primary);
+  display: flex;
+  flex-shrink: 1;
+  flex-direction: column;
+  padding-bottom: 2rem;
 }
 
 #separator {
@@ -48,15 +61,29 @@ html {
   background-color: var(--scheme-secondary);
 }
 
+#central-content {
+  background-color: white;
+}
+
+#footer-bar {
+  /* min/max/clamp: https://stackoverflow.com/a/64391207/13076191 */
+  margin-top: 4rem; /* At least 2 rem */
+  background-color: var(--scheme-primary);
+}
+
+#copyright {
+  margin: 2rem;
+}
+
 /*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Vendor-prefixed and regular ::selection selectors cannot be combined:
+* https://stackoverflow.com/a/16982510/7133471
+*
+* Customize the background color to match your design.
+*/
 
 ::-moz-selection {
   background: #b3d4fc;
