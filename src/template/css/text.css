@@ -53,3 +53,12 @@ html {
 .black-text {
   color: black;
 }
+
+.centered-text {
+  text-align: center;
+}
+
+.important-text {
+  text-align: center;
+  color: red;
+}
