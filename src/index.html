@@ -16,7 +16,7 @@
 
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="apple-touch-icon" href="./img/icon.png" />
-    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+    <link rel="shortcut icon" type="image/ico" href="../favicon.ico" />
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
@@ -35,28 +35,35 @@
 
     <div id="main-frame">
       <div id="main-frame-content">
-        <div id="top-element">
-          <div id="nav" class="navigation-bar">
+        <!-- Top element -->
+        <div id="top-header" class="white-text">
+          <div id="nav-bar">
             <ul>
               <li class="centered">
-                <a href="index.html">
-                  <h1>Kipper</h1>
-                </a>
+                <a href="./index.html"><h1>Kipper</h1></a>
               </li>
               <li>
               <a href="download.html" class="menu-button"><h4>Downloads</h4></a>
               </li>
               <li class="centered">
-                <a href="docs.html" class="menu-button"><h4>Docs</h4></a>
+                <a
+                  href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/Install.md"
+                  class="menu-button"
+                  ><h4>Install Guide</h4></a
+                >
               </li>
               <li class="centered">
                 <a href="install.html" class="menu-button"><h4>Install Guide</h4></a>
               </li>
               <li class="centered">
-                <a href="playground.html" class="menu-button"><h4>Playground</h4></a>
+                <a
+                  href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md"
+                  class="menu-button"
+                  ><h4>Changelog</h4></a
+                >
               </li>
               <li class="centered">
-                <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button"><h4>Changelog</h4></a>
+                <a href="./about.html" class="menu-button"><h4>About</h4></a>
               </li>
             </ul>
           </div>
@@ -67,25 +74,35 @@
             <h4>The Simple and Blazing-Fast Open-Source Language.</h4>
           </div>
         </div>
-        <div id="placeholder" class="centered-text">
-          <p><h1>PLACEHOLDER</h1></p>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-             sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
-             ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-             magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-             sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-             labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-             no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-             Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero
-             eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum
-             dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
-             Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
-             eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-             et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
-             Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer</p>
+
+        <!-- Central Content - all content in the white area -->
+        <div id="central-content" class="flex-parent-container black-text">
+          <div id="placeholder">
+            <p><h1>PLACEHOLDER</h1></p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+               sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
+               ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+               magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+               sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+               labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+               no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+               Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero
+               eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum
+               dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+               Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+               eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
+               et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+               Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer</p>
+          </div>
         </div>
-        <div id="copyright" class="centered-text">
-          <small>© Luna Klatzer & Maximilian Seebacher</small>
+
+        <!-- Footer bar - contains some links and general copyright notice -->
+        <div id="footer-bar" class="flex-parent-container white-text">
+          <div id="copyright" class="centered">
+            <small class="centered">
+              © Luna Klatzer & Maximilian Seebacher
+            </small>
+          </div>
         </div>
       </div>
     </div>

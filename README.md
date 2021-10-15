@@ -12,7 +12,7 @@
 - 13th December: Rough Design finished (HTML done) - CSS might be not fully implemented.
 - 16th January: Finished CSS and HTMl - Static part release candidate.
 - End of Winter Semester: Finalised design and release of static part.
-- Summer Semster: Online Compiler (Playground) of Kipper
+- Summer Semester: Online Compiler (Playground) of Kipper
 
 ## Team-Members
 

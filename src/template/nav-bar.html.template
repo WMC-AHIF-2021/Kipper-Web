@@ -35,8 +35,9 @@
 
     <div id="main-frame">
       <div id="main-frame-content">
-        <div id="top-element">
-          <div id="nav" class="navigation-bar">
+        <!-- Top element -->
+        <div id="top-header">
+          <div id="nav-bar">
             <ul>
               <li class="centered">
                 <a href="index.html">
@@ -66,13 +67,24 @@
           <div id="description" class="centered white-text">
             <h4>Description Space</h4>
           </div>
-          <div id="copyright" class="centered white-text">
-            <small>© Luna Klatzer & Maximilian Seebacher</small>
-          </div>
-
-          <div id="separator"></div>
         </div>
       </div>
+
+      <!-- Yellow separator - version notice -->
+      <div id="separator"></div>
+
+      <!-- Central Content - all content in the white area -->
+      <div id="central-content" class="flex-parent-container black-text"></div>
+
+      <!-- Footer bar - contains some links and general copyright notice -->
+      <div id="footer-bar" class="flex-parent-container white-text">
+        <div id="copyright" class="centered">
+          <small class="centered">
+            © Luna Klatzer & Maximilian Seebacher
+          </small>
+        </div>
+      </div>
+
     </div>
   </body>
 </html>
