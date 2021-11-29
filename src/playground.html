@@ -75,26 +75,47 @@
         </ul>
       </div>
       <div id="header" class="centered white-text">
-        <h1>Get started with Kipper today!</h1>
+        <h1>Kipper Interactive Playground</h1>
       </div>
       <div id="page-description" class="centered white-text">
         <h4>The Playground for trying out Kipper and learning the basics in a pre-configured setup</h4>
       </div>
     </div>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
-    <div id="interactive-console" class="centered-text">
-      <ul id="playground-console-menu" class="free-list flex-row">
-        <li>Run</li>
-        <li>Export</li>
-        <li>Copy Link</li>
+    <div id="interactive-console">
+      <ul class="free-list flex-row">
+        <li id="left-console-interface">
+          <ul class="free-list flex-column">
+            <li id="playground-option-menu">
+              <ul class="free-list flex-row">
+                <li class="playground-button"><button>Run</button></li>
+                <li class="playground-button"><button>Export</button></li>
+                <li class="playground-button"><button>Copy Link</button></li>
+              </ul>
+            </li>
+            <li id="code-editor">
+              <label>
+                <textarea type="text" placeholder="Enter your Code here"></textarea>
+              </label>
+            </li>
+          </ul>
+        </li>
+        <li id="shell-sidebar">
+          <ul class="free-list flex-column">
+            <li id="shell-sidebar-menu">
+              <ul class="free-list flex-row">
+                <li id="shell-sidebar-menu-button-1" class="playground-button"><button>Console Output</button></li>
+                <li id="shell-sidebar-menu-button-2" class="playground-button"><button>Compiler Output</button></li>
+              </ul>
+            </li>
+            <li id="side-editor">
+              <pre>
+                <code class="language-bash">my-user@your-machine:~$</code>
+              </pre>
+            </li>
+          </ul>
+        </li>
       </ul>
-      <ul id="playground-output-console" class="free-list flex-row">
-        <li><h2>Console Output</h2></li>
-        <li><h2>Compiler Output</h2></li>
-      </ul>
-      <label>
-        <textarea>Sample Code</textarea>
-      </label>
     </div>
     <script src="./js/playground-interactive.ts"></script>
     <!-- Footer bar - contains some links and general copyright notice -->
