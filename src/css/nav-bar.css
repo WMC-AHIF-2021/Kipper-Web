@@ -25,11 +25,7 @@ li h1 {
   text-decoration: none;
 }
 
-/* Change the color to scheme-secondary on hover */
-li h1:hover {
-  color: var(--scheme-secondary);
-}
-
-li a:hover {
+/* The 'Kipper' name is highlighted */
+li h1:hover, li a:hover {
   color: var(--scheme-secondary);
 }
