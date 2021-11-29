@@ -1,10 +1,10 @@
 /*! top-nav-bar Config */
 
 :root {
-  --search-bar-margin: 10vw;
-  --search-bar-margin-expanded: 5vw;
-  --search-bar-size: 10vw;
-  --search-bar-size-expanded: 20vw;
+  --search-bar-margin: 15vw;
+  --search-bar-margin-expanded: 7.5vw;
+  --search-bar-size: 7.5vw;
+  --search-bar-size-expanded: 15vw;
 }
 
 #top-nav-bar {
@@ -79,11 +79,11 @@
 }
 
 @keyframes search-bar-opening {
-  0%   {
+  from   {
     width: var(--search-bar-size); /* 10vw */
     margin-left: var(--search-bar-margin); /* 20vw */
   }
-  100% {
+  to {
     width: var(--search-bar-size-expanded); /* 20vw */
     margin-left: var(--search-bar-margin-expanded); /* 10vw */
   }
