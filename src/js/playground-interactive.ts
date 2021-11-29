@@ -6,5 +6,3 @@ function simpleExample() {
   console.log("This is an example start");
   return;
 }
-
-export { simpleExample };

@@ -1,92 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Downloads</title>
-    <meta
-      name="description"
-      content="Homepage for the Kipper programming language"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8"/>
+  <title>Downloads</title>
+  <meta
+    name="description"
+    content="Homepage for the Kipper programming language"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <meta property="og:title" content="Kipper" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="./img/icon.png" />
+  <meta property="og:title" content="Kipper"/>
+  <meta property="og:type" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image" content="./img/icon.png"/>
 
-    <link rel="manifest" href="../site.webmanifest" />
-    <link rel="apple-touch-icon" href="./img/icon.png" />
-    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+  <link rel="manifest" href="../site.webmanifest"/>
+  <link rel="apple-touch-icon" href="./img/icon.png"/>
+  <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/buttons.css" />
-    <link rel="stylesheet" href="css/nav-bar.css" />
-    <link rel="stylesheet" href="css/text.css" />
+  <link rel="stylesheet" href="css/normalize.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/buttons.css"/>
+  <link rel="stylesheet" href="css/nav-bar.css"/>
+  <link rel="stylesheet" href="css/text.css"/>
+  <link rel="stylesheet" href="css/lists.css"/>
 
-    <!--
-    Specifying the preferred environment colour to be the primary scheme colour.
-    See main.css for the --scheme-primary variable
-    -->
-    <meta name="theme-color" content="#e01a4f" />
-  </head>
-  <body>
-    <script type="module" src="js/plugins.ts"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 
-    <div id="main-frame">
-      <div id="main-frame-content">
-        <div id="top-element">
-          <div id="nav" class="navigation-bar">
-            <ul>
-              <li class="centered">
-                <a href="index.html">
-                  <h1>Kipper</h1>
-                </a>
-              </li>
-              <li>
-              <a href="download.html" class="menu-button"><h4>Downloads</h4></a>
-              </li>
-              <li class="centered">
-                <a href="docs.html" class="menu-button"><h4>Docs</h4></a>
-              </li>
-              <li class="centered">
-                <a href="install.html" class="menu-button"><h4>Install Guide</h4></a>
-              </li>
-              <li class="centered">
-                <a href="playground.html" class="menu-button"><h4>Playground</h4></a>
-              </li>
-              <li class="centered">
-                <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button"><h4>Changelog</h4></a>
-              </li>
-            </ul>
-          </div>
-          <div id="header" class="centered white-text">
-            <h1>Here you can download the Kipper Language</h1>
-          </div>
-          <div id="description" class="centered white-text">
-            <h4><p>There are no releases yet.
-            So you only can clone an Experimental-Build from Github</p></h4>
-          </div>
-        </div>
-        <div class="centered-text">
-          <p><h2>Download Experimental Build of Kipper:</h2></p>
-          <p>To download an Experimental-Build of Kipper, clone it with the link below:</p>
-          <p><code>https://github.com/Luna-Klatzer/Kipper.git</code></p>
-            <br>
-            <p><a href="https://github.com/Luna-Klatzer/Kipper.git" class="button">Show on Github</a></p>
-            <br>
-            <p><strong>Guide to clone the GitRepo:</strong></p>
-            <p>1. Open a Console-Interface</p>
-            <p>2. Switch to the Folder you would like to clone the Repo in</p>
-            <p>3. Type <code>git clone https://github.com/Luna-Klatzer/Kipper.git</code> in the Console</p>
-            <br>
-            <p>If everything is working git should start downloading the Repo to your specified Folder</p>
+  <!--
+  Specifying the preferred environment colour to be the primary scheme colour.
+  See main.css for the --scheme-primary variable
+  -->
+  <meta name="theme-color" content="#e01a4f"/>
+</head>
+<body>
+<script type="module" src="js/plugins.ts"></script>
 
-        </div>
-        <div id="copyright" class="centered-text">
-          <small>© Luna Klatzer & Maximilian Seebacher</small>
-        </div>
+<div id="main-frame">
+  <div id="main-frame-content">
+    <div id="top-element">
+      <div id="top-nav-bar">
+        <ul>
+          <li>
+             <a href="index.html" class="free-list flex-row flex-parent-container centered kipper-logo-container">
+              <img id="kipper-logo" src="./img/base_head.png" alt="">
+              <h1>Kipper</h1>
+            </a>
+          </li>
+          <li>
+            <a href="download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+          </li>
+          <li>
+            <a href="docs.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
+          </li>
+          <li>
+            <a href="install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+          </li>
+          <li>
+            <a href="playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+          </li>
+          <li>
+            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button top-nav-menu-items"><h4>
+              Changelog</h4></a>
+          </li>
+          <li id="search-bar" class="free-list flex-row flex-parent-container red-text">
+            <label>
+              <input id="search-bar-input" type="text" placeholder="Search">
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div id="header" class="centered white-text">
+        <h1>Downloads for the Kipper Language</h1>
+      </div>
+      <div id="page-description" class="centered white-text">
+        <h4>
+          There are no releases yet. So you only can clone an Experimental-Build from Github
+        </h4>
       </div>
     </div>
-  </body>
+    <div id="download-content">
+      <section>
+        <h2>Download Development Build of Kipper</h2>
+        <p>
+          To download the source code of Kipper, clone it with the link below:
+        </p>
+        <p>
+          <code>https://github.com/Luna-Klatzer/Kipper.git</code>
+        </p>
+        <a href="https://github.com/Luna-Klatzer/Kipper.git" class="button">Show on Github</a>
+        <h3>Guide to clone the GitHub Repository</h3>
+        <ol class="flex-column">
+          <li>Open a Console-Interface, such as Bash on Linux or Command-Prompt on Windows</li>
+          <li>
+            Switch to the Folder you would like to clone the Repo in:
+            <pre><code class="language-bash">cd dest</code></pre>
+          </li>
+          <li>Type the following into the Console:
+            <pre><code class="language-bash">git clone https://github.com/Luna-Klatzer/Kipper.git</code></pre>
+          </li>
+        </ol>
+        <p>
+          If everything is working git should start downloading the Repo to your specified Folder
+        </p>
+      </section>
+    </div>
+    <!-- Footer bar - contains some links and general copyright notice -->
+    <div id="footer-bar" class="flex-parent-container">
+      <div id="footer-space-filler"></div>
+      <div id="copyright" class="centered-text white-text">
+        <small>
+          © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
+          <a class="yellow-a" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this license</a>.
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 </html>

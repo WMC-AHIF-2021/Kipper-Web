@@ -4,6 +4,26 @@ html {
   font-family: inter, serif;
 }
 
+section {
+  margin-left: var(--default-text-margin);
+}
+
+.red-text {
+  color: var(--scheme-primary);
+}
+
+.yellow-text {
+  color: var(--scheme-secondary);
+}
+
+.red-a:hover {
+  color: var(--scheme-primary);
+}
+
+.yellow-a:hover {
+  color: var(--scheme-secondary);
+}
+
 .h1 {
   font-style: normal;
   font-weight: bold;
@@ -19,7 +39,8 @@ html {
   font-weight: bold;
   font-size: 32px;
   line-height: 39px;
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .h3 {
@@ -36,14 +57,16 @@ html {
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .h5 {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
-  line-height: 22px;
+  display: flex;
+  align-items: center;
 }
 
 .white-text {
@@ -59,6 +82,26 @@ html {
 }
 
 .important-text {
-  text-align: center;
-  color: red;
+  border-radius: var(--default-border-radius);
+  margin-left: var(--default-text-margin);
+  margin-right: var(--default-text-margin);
+  border: 1px solid;
+  border-color: var(--scheme-primary);
+  color: var(--scheme-primary);
+}
+
+/* Code Block Formatting */
+code {
+  margin-right: var(--default-text-margin);
+  border-radius: var(--default-border-radius);
+}
+
+.highlighted-green-checkmark {
+  text-emphasis: none;
+  color: green;
+}
+
+.highlighted-red-checkmark {
+  text-emphasis: none;
+  color: var(--scheme-primary);
 }

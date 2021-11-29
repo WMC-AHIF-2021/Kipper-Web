@@ -1,0 +1,11 @@
+#playground-console-menu {
+  border-bottom: 1px solid var(--scheme-gray);
+}
+
+#playground-console-menu li {
+  padding: 0.5rem 1rem;
+}
+
+#playground-output-console li {
+  padding: 1rem;
+}

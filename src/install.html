@@ -1,109 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Install Guide</title>
-    <meta
-      name="description"
-      content="Homepage for the Kipper programming language"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8"/>
+  <title>Install Guide</title>
+  <meta
+    name="description"
+    content="Homepage for the Kipper programming language"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <meta property="og:title" content="Kipper" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="./img/icon.png" />
+  <meta property="og:title" content="Kipper"/>
+  <meta property="og:type" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image" content="./img/icon.png"/>
 
-    <link rel="manifest" href="../site.webmanifest" />
-    <link rel="apple-touch-icon" href="./img/icon.png" />
-    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+  <link rel="manifest" href="../site.webmanifest"/>
+  <link rel="apple-touch-icon" href="./img/icon.png"/>
+  <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/buttons.css" />
-    <link rel="stylesheet" href="css/nav-bar.css" />
-    <link rel="stylesheet" href="css/text.css" />
+  <link rel="stylesheet" href="css/normalize.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/buttons.css"/>
+  <link rel="stylesheet" href="css/nav-bar.css"/>
+  <link rel="stylesheet" href="css/text.css"/>
+  <link rel="stylesheet" href="css/lists.css"/>
 
-    <!--
-    Specifying the preferred environment colour to be the primary scheme colour.
-    See main.css for the --scheme-primary variable
-    -->
-    <meta name="theme-color" content="#e01a4f" />
-  </head>
-  <body>
-    <script type="module" src="js/plugins.ts"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 
-    <div id="main-frame">
-      <div id="main-frame-content">
-        <div id="top-element">
-          <div id="nav" class="navigation-bar">
-            <ul>
-              <li class="centered">
-                <a href="index.html">
-                  <h1>Kipper</h1>
-                </a>
-              </li>
-              <li>
-              <a href="download.html" class="menu-button"><h4>Downloads</h4></a>
-              </li>
-              <li class="centered">
-                <a href="docs.html" class="menu-button"><h4>Docs</h4></a>
-              </li>
-              <li class="centered">
-                <a href="install.html" class="menu-button"><h4>Install Guide</h4></a>
-              </li>
-              <li class="centered">
-                <a href="playground.html" class="menu-button"><h4>Playground</h4></a>
-              </li>
-              <li class="centered">
-                <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button"><h4>Changelog</h4></a>
-              </li>
-            </ul>
-          </div>
-          <div id="header" class="centered white-text">
-            <h1>Install Guide for Kipper</h1>
-          </div>
-          <div id="description" class="centered white-text">
-            <h4>If you don´t want to install it, use our Playground</h4>
-          </div>
+  <!--
+  Specifying the preferred environment colour to be the primary scheme colour.
+  See main.css for the --scheme-primary variable
+  -->
+  <meta name="theme-color" content="#e01a4f"/>
+</head>
+<body>
+<script type="module" src="js/plugins.ts"></script>
+
+<div id="main-frame">
+  <div id="main-frame-content">
+    <div id="top-element">
+      <div id="top-nav-bar">
+        <ul>
+          <li>
+             <a href="index.html" class="free-list flex-row flex-parent-container centered kipper-logo-container">
+              <img id="kipper-logo" src="./img/base_head.png" alt="">
+              <h1>Kipper</h1>
+            </a>
+          </li>
+          <li>
+            <a href="download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+          </li>
+          <li>
+            <a href="docs.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
+          </li>
+          <li>
+            <a href="install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+          </li>
+          <li>
+            <a href="playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+          </li>
+          <li>
+            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button top-nav-menu-items">
+              <h4>Changelog</h4>
+            </a>
+          </li>
+        </ul>
       </div>
-      <div id="Pre-Setup" class="centered-text">
-        <p><h2>Pre-Setup</h2></p>
-        <p>At first you need to install TypeScript and Node.js.</p>
-        <p>The Downloadlinks are below:</p>
-        <p><a href="https://www.typescriptlang.org/download" class="button">TypeScript</a></p>
-        <p><a href="https://nodejs.org/en/download/" class="button">Node.js</a></p>
+      <div id="header" class="centered white-text">
+        <h1>Install Guide for Kipper</h1>
       </div>
-      <br>
-      <div id="Install_dependencies" class="centered-text">
-        <p><h2>Install dependencies</h2></p>
-        <p>Whenever package.json is changed, you ned to run the following command:</p>
-        <p><code>npm install</code></p>
-      </div>
-      <br>
-      <hr>
-      <div id="attention" class="important-text">
-        <p><h2><strong>Important:</strong></h2></p>
-          <p>Make sure to run the following Command in the Root Folder of your Project,</p>
-          <p>otherwise they wont´t work</strong></h2></p>
-      </div>
-      <hr>
-      <br>
-      <div id="Run_Application" class="centered-text">
-        <p><h2>Run the Application</h2></p>
-        <p>To Run an Application use the following command in the Console:</p>
-        <p><code>npm start</code></p>
-      </div>
-      <br>
-      <div id="Build_Project" class="centered-text">
-        <p><h2>Build your Project</h2></p>
-        <p>To Build the Project use the following command:</p>
-        <p><code>npm run build</code></p>
-      </div>
-      <br>
-      <div id="copyright" class="centered-text">
-        <small>© Luna Klatzer & Maximilian Seebacher</small>
+      <div id="page-description" class="centered white-text">
+        <h4>Step by Step Guide on installing the Kipper programming language</h4>
       </div>
     </div>
-  </body>
+    <div id="install-content">
+      <div id="pre-setup">
+        <section>
+          <h2>Pre-Setup</h2>
+          <p>
+            At first you need to install TypeScript and Node.js.
+            The download links are below:
+          </p>
+          <div class="centered-buttons">
+            <a href="https://www.typescriptlang.org/download" class="button">TypeScript</a>
+            <a href="https://nodejs.org/en/download/" class="button">Node.js</a>
+          </div>
+        </section>
+      </div>
+      <div id="install-dependencies">
+        <section>
+          <h2>Install the npm module</h2>
+          <p>
+            The package is hosted on the npm package manager, meaning you can easily fetch it using (This will
+            install it as a global package and make it available in your terminal per default):
+          </p>
+          <pre>
+            <code class="language-bash">my-user@your-machine:~$ npm install -g kipper</code>
+          </pre>
+        </section>
+      </div>
+      <div id="attention" class="important-text">
+        <section>
+          <h2>Important</h2>
+          <p>
+            If possible avoid installing Kipper globally, as it can cause issues with locally installed versions, even
+            if it can be handy and easier. For a local TS installation add kipper to your 'package.json'
+          </p>
+        </section>
+      </div>
+      <div id="run-application">
+        <section>
+          <h2>Run the Compiler</h2>
+          <p>
+            To run the Kipper Compiler, use the following command in the Console:
+          </p>
+          <pre>
+            <code class="language-bash">my-user@your-machine:~$ kipper</code>
+          </pre>
+        </section>
+      </div>
+    </div>
+    <!-- Footer bar - contains some links and general copyright notice -->
+    <div id="footer-bar" class="flex-parent-container">
+      <div id="footer-space-filler"></div>
+      <div id="copyright" class="centered-text white-text">
+        <small>
+          © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
+          <a class="yellow-a" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this license</a>.
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 </html>
