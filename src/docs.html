@@ -40,6 +40,7 @@
 
 <div id="main-frame">
   <div id="main-frame-content">
+    <!-- The top element: menu and search bar -->
     <div id="top-element">
       <div id="top-nav-bar">
         <ul>
@@ -53,7 +54,7 @@
             <a href="download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="docs.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
+            <a href="docs.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Docs</h4></a>
           </li>
           <li>
             <a href="install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
@@ -79,9 +80,10 @@
         <h4>Documentation on the Kipper language</h4>
       </div>
     </div>
-    <div id="docs-content">
+    <!-- Main Content, where the text is located and the items unique to this site are defined -->
+    <div id="docs-content" class="text-content">
       <section>
-        <h2><strong>Our Goals:</strong></h2>
+        <h2>Our Goals:</h2>
         <ul class="bullet-list flex-column">
           <li>Provide simple, straight-forward and useful explanations on the programming language Kipper.</li>
           <li>Provide an interactive code-editor (Playground) to try out and use Kipper online.</li>
@@ -89,7 +91,7 @@
         </ul>
       </section>
       <section>
-        <h2><strong>Our Timeline for the Project:</strong></h2>
+        <h2>Our Timeline for the Project:</h2>
         <ul class="bullet-list flex-column">
           <li>
             <strong>Until 17th October:</strong>
@@ -101,7 +103,7 @@
           </li>
           <li>
             <strong>Until End of Winter Semester:</strong>
-            Finish design of Website and complete Static (HTML) Part of the Website.
+            Finish design of Website and complete Static (HTML) Part of the Website
             <em class="highlighted-red-checkmark">x</em>
           </li>
           <li>
@@ -119,10 +121,8 @@
         </div>
       </section>
     </div>
-
     <!-- Footer bar - contains some links and general copyright notice -->
     <div id="footer-bar" class="flex-parent-container">
-      <div id="footer-space-filler"></div>
       <div id="copyright" class="centered-text white-text">
         <small>
           © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under

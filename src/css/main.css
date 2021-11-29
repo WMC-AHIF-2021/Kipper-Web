@@ -46,6 +46,13 @@ html {
   display: flex;
 }
 
+#main-frame-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
 #top-element {
   background-color: var(--scheme-primary);
   display: flex;
@@ -58,15 +65,11 @@ html {
 }
 
 #footer-bar {
-  margin-top: var(--default-text-margin);
-  flex-direction: column;
-}
-
-#footer-space-filler {
-  flex-grow: 1;
+  margin-top: auto;
 }
 
 #copyright {
+  width: 100vw;
   padding: 2.5rem;
   flex-shrink: 1;
   background-color: var(--scheme-primary);

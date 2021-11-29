@@ -8,6 +8,10 @@ section {
   margin-left: var(--default-text-margin);
 }
 
+.text-content {
+  margin: 2rem 20rem;
+}
+
 .red-text {
   color: var(--scheme-primary);
 }
@@ -16,8 +20,16 @@ section {
   color: var(--scheme-secondary);
 }
 
+.red-a {
+  color: inherit;
+}
+
 .red-a:hover {
   color: var(--scheme-primary);
+}
+
+.yellow-a {
+  color: inherit;
 }
 
 .yellow-a:hover {

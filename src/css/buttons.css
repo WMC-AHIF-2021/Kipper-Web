@@ -2,6 +2,7 @@
 
 .button {
   background-color: var(--scheme-primary);
+  border-radius: var(--default-border-radius);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -11,8 +12,11 @@
   font-size: 16px;
 }
 
+.button:hover {
+  color: var(--scheme-secondary);
+}
+
 .menu-button {
-  background-color: var(--scheme-primary);
   border: none;
   color: white;
   padding: 15px 32px;
