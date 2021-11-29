@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v0.1]
+## Unreleased
+
+### Added
+
+### Changed
+
+### Removed
+
+## [v0.1] - 2021-11-29
 
 ### Added
 
@@ -16,13 +24,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The basic icons and logos that are used throughout the project.
 - HTML5 Boilerplate base setup.
 - General Default Formatting CSS for the Project.
-- download.html, docs.html, install.css and playground.html.
-- template-file for Nav-Bar.
+- `download.html`, `docs.html`, `install.css` and `playground.html`.
+- Template file for Nav-Bar.
 
 ### Changed
 - Set the Links in the Navbar in all important files.
 
 ### Removed
-- Removed unnecessary `start_local_Server.exe`.
+- Removed unnecessary `start_local_Server.exe`
 
-[unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/dev...HEAD
+[unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/base-dev...HEAD
+[v0.1]: https://github.com/WMC-AHIF-2021/Kipper-Web/tag/v0.1
