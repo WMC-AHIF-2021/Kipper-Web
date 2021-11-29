@@ -1,0 +1,21 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.item-left {
+    width: 350px;
+    height: 350px;
+    height: auto;
+    margin: 3px;
+    padding: 3px;
+    float: left;
+}
+.item-right {
+    width: 350px;
+    height: 350px;
+    height: auto;
+    margin: 3px;
+    padding: 3px;
+    float: right;
+}
