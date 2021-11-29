@@ -1,35 +1,97 @@
-/*! Nav-bar Config */
+/*! top-nav-bar Config */
 
-ul {
+:root {
+  --search-bar-margin: 20vw;
+  --search-bar-size: 10vw;
+  --search-bar-margin-expanded: 10vw;
+  --search-bar-size-expanded: 20vw;
+}
+
+#top-nav-bar {
+  display: flex;
+  justify-content: center;
+}
+
+#top-nav-bar .selected-nav-page {
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.25rem;
+  padding-bottom: 0;
+}
+
+#top-nav-bar .selected-nav-page h4 {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid white;
+}
+
+#top-nav-bar #kipper-logo {
+  height: 4rem;
+  margin-right: 0.5rem;
+}
+
+/* Highlighting all items and turning them yellow */
+#top-nav-bar .kipper-logo-container:hover, #top-nav-bar li .top-nav-menu-items:hover {
+  filter: brightness(0) saturate(100%) invert(81%) sepia(41%) saturate(654%) hue-rotate(358deg) brightness(106%) contrast(102%) !important;
+}
+
+#top-nav-bar ul {
   list-style-type: none;
-  margin: 0 0 0 1rem; /* 1 rem on the left */
+  margin: 0;
   padding: 0;
-  display: inherit;
+  display: flex;
   overflow: hidden;
 }
 
-li {
+#top-nav-bar li {
   float: left;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: inherit;
 }
 
-li a {
-  color: white;
-  text-align: center;
-  padding: 6px 6px;
-  text-decoration: none;
-}
-
-li h1 {
+#top-nav-bar li a {
   color: white;
   text-align: center;
   text-decoration: none;
 }
 
-/* Change the color to scheme-secondary on hover */
-li h1:hover {
-  color: var(--scheme-secondary);
+#top-nav-bar li h1 {
+  color: white;
+  text-align: center;
+  text-decoration: none;
 }
 
-li a:hover {
-  color: var(--scheme-secondary);
+#search-bar #search-bar-input {
+  width: var(--search-bar-size);
+  margin-left: var(--search-bar-margin);
+  background-color: white;
+  color: var(--scheme-primary);
+  border-radius: var(--default-border-radius);
+  border: none;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-right: 2rem;
+}
+
+#search-bar img {
+  height: 1rem;
+}
+
+#search-bar #search-bar-input:focus, #search-bar #search-bar-input:hover {
+  animation-name: search-bar-opening;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  outline: none;
+}
+
+@keyframes search-bar-opening {
+  from   {
+    width: var(--search-bar-size); /* 10vw */
+    margin-left: var(--search-bar-margin); /* 20vw */
+  }
+  to {
+    width: var(--search-bar-size-expanded); /* 20vw */
+    margin-left: var(--search-bar-margin-expanded); /* 10vw */
+  }
 }

@@ -1,0 +1,114 @@
+/*! Configuration for the Playground */
+
+#interactive-console {
+  width: 100vw;
+  flex-grow: 1;
+  display: flex;
+}
+
+#interactive-console ul {
+  display: flex;
+  flex-grow: 1;
+}
+
+#left-console-interface {
+  display: flex;
+  flex-grow: 1;
+}
+
+#left-console-interface #playground-option-menu {
+  border-bottom: 1px solid var(--scheme-gray);
+}
+
+.playground-button button {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.playground-button button:hover {
+  color: var(--scheme-primary);
+}
+
+/* The entire code entire window -> parent of the label and textarea */
+#code-editor {
+  display: flex;
+  flex-grow: 1;
+}
+
+/* The parent of the text-area/user input field */
+#code-editor label {
+  display: flex;
+  flex-grow: 1;
+}
+
+/* The actual user input field */
+#code-editor label textarea {
+  flex-grow: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 1.5rem;
+  font-family: consolas, serif;
+}
+
+#shell-sidebar {
+  display: flex;
+}
+
+#shell-sidebar ul {
+  flex-grow: 1;
+}
+
+#shell-sidebar #shell-sidebar-menu {
+  border-bottom: 1px solid var(--scheme-gray);
+  border-left: 1px solid var(--scheme-gray);
+  padding: 0;
+}
+
+#shell-sidebar #shell-sidebar-menu ul {
+  display: flex;
+  flex-grow: 1;
+}
+
+#shell-sidebar #shell-sidebar-menu li {
+  flex-grow: 1;
+}
+
+#shell-sidebar #shell-sidebar-menu li button:hover {
+  color: var(--scheme-primary);
+}
+
+#shell-sidebar-menu .playground-button {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#shell-sidebar-menu-button-1 {
+  border-right: 1px solid var(--scheme-gray);
+}
+
+#shell-sidebar #side-editor {
+  border-left: 1px solid var(--scheme-gray);
+  flex-grow: 1;
+}
+
+#shell-sidebar #side-editor {
+  display: flex;
+  flex-grow: 1;
+}
+
+#shell-sidebar #side-editor pre {
+  background-color: var(--scheme-console-gray);
+  display: flex;
+  flex-grow: 1;
+  margin: 0;
+}
+
+#shell-sidebar #side-editor pre>code {
+  border-radius: 0;
+  align-self: flex-end;
+  flex-grow: 1;
+  margin: 0;
+}

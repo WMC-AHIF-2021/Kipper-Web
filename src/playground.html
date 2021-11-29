@@ -1,80 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Kipper Playground!</title>
-    <meta
-      name="description"
-      content="Homepage for the Kipper programming language"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8"/>
+  <title>Kipper Playground!</title>
+  <meta
+    name="description"
+    content="Homepage for the Kipper programming language"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <meta property="og:title" content="Kipper" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="./img/icon.png" />
+  <meta property="og:title" content="Kipper"/>
+  <meta property="og:type" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image" content="./img/icon.png"/>
 
-    <link rel="manifest" href="../site.webmanifest" />
-    <link rel="apple-touch-icon" href="./img/icon.png" />
-    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+  <link rel="manifest" href="../site.webmanifest"/>
+  <link rel="apple-touch-icon" href="./img/icon.png"/>
+  <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/buttons.css" />
-    <link rel="stylesheet" href="css/nav-bar.css" />
-    <link rel="stylesheet" href="css/text.css" />
+  <link rel="stylesheet" href="css/normalize.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/buttons.css"/>
+  <link rel="stylesheet" href="css/nav-bar.css"/>
+  <link rel="stylesheet" href="css/text.css"/>
+  <link rel="stylesheet" href="css/lists.css"/>
+  <link rel="stylesheet" href="css/playground.css"/>
 
-    <!--
-    Specifying the preferred environment colour to be the primary scheme colour.
-    See main.css for the --scheme-primary variable
-    -->
-    <meta name="theme-color" content="#e01a4f" />
-  </head>
-  <body>
-    <script type="module" src="js/plugins.ts"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 
-    <div id="main-frame">
-      <div id="main-frame-content">
-        <div id="top-element">
-          <div id="nav" class="navigation-bar">
-            <ul>
-              <li class="centered">
-                <a href="index.html">
-                  <h1>Kipper</h1>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/Luna-Klatzer/Kipper/releases"
-                  class="button"
-                >
-                  <h4>Downloads</h4>
-                </a>
-              </li>
-              <li class="centered">
-                <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/README.md" class="button"><h4>Docs</h4></a>
-              </li>
-              <li class="centered">
-                <a href="playground.html" class="button"><h4>Playground</h4></a>
-              </li>
-              <li class="centered">
-                <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="button"><h4>Changelog</h4></a>
-              </li>
-            </ul>
-          </div>
-          <div id="header" class="centered white-text">
-            <h1>Get started with Kipper today!</h1>
-          </div>
-          <div id="description" class="centered white-text">
-            <h4>The Kipper Playground is here to show how Kipper works and to give you the ability to play around a bit</h4>
-          </div>
-          <div id="copyright" class="centered white-text">
-            <small>© Luna Klatzer & Maximilian Seebacher</small>
-          </div>
+  <!--
+  Specifying the preferred environment colour to be the primary scheme colour.
+  See main.css for the --scheme-primary variable
+  -->
+  <meta name="theme-color" content="#e01a4f"/>
+</head>
+<body>
+<script type="module" src="js/plugins.ts"></script>
 
-          <div id="separator"></div>
-        </div>
+<div id="main-frame">
+  <div id="main-frame-content">
+    <!-- The top element: menu and search bar -->
+    <div id="top-element">
+      <div id="top-nav-bar">
+        <ul>
+          <li>
+             <a href="index.html" class="free-list flex-row flex-parent-container centered kipper-logo-container">
+              <img id="kipper-logo" src="./img/base_head.png" alt="">
+              <h1>Kipper</h1>
+            </a>
+          </li>
+          <li>
+            <a href="download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+          </li>
+          <li>
+            <a href="docs.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
+          </li>
+          <li>
+            <a href="install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+          </li>
+          <li>
+            <a href="playground.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Playground</h4></a>
+          </li>
+          <li>
+            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button top-nav-menu-items"><h4>
+              Changelog</h4></a>
+          </li>
+          <li id="search-bar" class="free-list flex-row flex-parent-container red-text">
+            <label>
+              <input id="search-bar-input" type="text" placeholder="Search">
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div id="header" class="centered white-text">
+        <h1>Kipper Interactive Playground</h1>
+      </div>
+      <div id="page-description" class="centered white-text">
+        <h4>The Playground for trying out Kipper and learning the basics in a pre-configured setup</h4>
       </div>
     </div>
-  </body>
+    <!-- Main Content, where the text is located and the items unique to this site are defined -->
+    <div id="interactive-console">
+      <ul class="free-list flex-row">
+        <li id="left-console-interface">
+          <ul class="free-list flex-column">
+            <li id="playground-option-menu">
+              <ul class="free-list flex-row">
+                <li class="playground-button"><button>Run</button></li>
+                <li class="playground-button"><button>Export</button></li>
+                <li class="playground-button"><button>Copy Link</button></li>
+              </ul>
+            </li>
+            <li id="code-editor">
+              <label>
+                <textarea type="text" placeholder="Enter your Code here"></textarea>
+              </label>
+            </li>
+          </ul>
+        </li>
+        <li id="shell-sidebar">
+          <ul class="free-list flex-column">
+            <li id="shell-sidebar-menu">
+              <ul class="free-list flex-row">
+                <li id="shell-sidebar-menu-button-1" class="playground-button"><button>Console Output</button></li>
+                <li id="shell-sidebar-menu-button-2" class="playground-button"><button>Compiler Output</button></li>
+              </ul>
+            </li>
+            <li id="side-editor">
+              <pre>
+                <code class="language-bash">my-user@your-machine:~$</code>
+              </pre>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <script src="./js/playground-interactive.ts"></script>
+    <!-- Footer bar - contains some links and general copyright notice -->
+    <div id="footer-bar" class="flex-parent-container">
+      <div id="copyright" class="centered-text white-text">
+        <small>
+          © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
+          <a class="yellow-a" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this license</a>.
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 </html>

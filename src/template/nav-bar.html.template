@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Welcome to Kipper!</title>
+  <title>Title Space</title>
   <meta
     name="description"
     content="Homepage for the Kipper programming language"
@@ -40,12 +40,12 @@
 
 <div id="main-frame">
   <div id="main-frame-content">
-    <!-- The top element: menu and search bar -->
-    <div id="top-element">
+    <!-- Top element -->
+    <div id="top-header">
       <div id="top-nav-bar">
         <ul>
           <li>
-            <a href="index.html" class="free-list flex-row flex-parent-container centered kipper-logo-container">
+             <a href="index.html" class="free-list flex-row flex-parent-container centered kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
               <h1>Kipper</h1>
             </a>
@@ -74,24 +74,29 @@
         </ul>
       </div>
       <div id="header" class="centered white-text">
-        <h1>Get started with Kipper today!</h1>
+        <h1>Header Space</h1>
       </div>
       <div id="page-description" class="centered white-text">
-        <h4>The Simple and Blazing-Fast Open-Source Language.</h4>
-      </div>
-    </div>
-    <!-- Main Content, where the text is located and the items unique to this site are defined -->
-    <div id="main-content" class="text-content"></div>
-    <!-- Footer bar - contains some links and general copyright notice -->
-    <div id="footer-bar" class="flex-parent-container">
-      <div id="copyright" class="centered-text white-text">
-        <small>
-          © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
-          <a class="yellow-a" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this license</a>.
-        </small>
+        <h4>Description Space</h4>
       </div>
     </div>
   </div>
+
+  <!-- Yellow separator - version notice -->
+  <div id="separator"></div>
+
+  <!-- Central Content - all content in the white area -->
+  <div id="central-content" class="flex-parent-container black-text"></div>
+
+  <!-- Footer bar - contains some links and general copyright notice -->
+  <div id="footer-bar" class="flex-parent-container">
+    <div id="copyright" class="centered">
+      <small class="centered">
+        © Luna Klatzer & Maximilian Seebacher
+      </small>
+    </div>
+  </div>
+
 </div>
 </body>
 </html>

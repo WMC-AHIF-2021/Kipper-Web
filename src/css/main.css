@@ -9,6 +9,10 @@
 :root {
   --scheme-primary: #e01a4f;
   --scheme-secondary: #ffe74c;
+  --scheme-gray: #ccc;
+  --scheme-console-gray: #f0f0f0;
+  --default-border-radius: 0.5rem;
+  --default-text-margin: 2rem;
 }
 
 html {
@@ -16,8 +20,14 @@ html {
   font-size: 1em;
 }
 
-#top-element {
-  background-color: var(--scheme-primary);
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .centered {
@@ -33,14 +43,37 @@ html {
   flex-shrink: inherit;
 }
 
+.flex-parent-container {
+  display: flex;
+}
+
+#main-frame-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
 #top-element {
+  background-color: var(--scheme-primary);
   display: flex;
   flex-shrink: 1;
   flex-direction: column;
 }
 
+#page-description {
+  padding-bottom: 1rem;
+}
+
+#footer-bar {
+  margin-top: auto;
+}
+
 #copyright {
-  margin-bottom: 6rem;
+  width: 100vw;
+  padding: 2.5rem;
+  flex-shrink: 1;
+  background-color: var(--scheme-primary);
 }
 
 #separator {
@@ -211,9 +244,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
