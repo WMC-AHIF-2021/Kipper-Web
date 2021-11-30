@@ -100,6 +100,7 @@ section {
   border: 1px solid;
   border-color: var(--scheme-primary);
   color: var(--scheme-primary);
+  padding: 1rem 2rem;
 }
 
 /* Code Block Formatting */
