@@ -37,14 +37,8 @@
   flex-grow: 1;
 }
 
-/* The parent of the text-area/user input field */
-#code-editor label {
-  display: flex;
-  flex-grow: 1;
-}
-
 /* The actual user input field */
-#code-editor label textarea {
+#code-editor textarea {
   flex-grow: 1;
   resize: none;
   border: none;

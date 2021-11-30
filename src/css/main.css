@@ -47,6 +47,15 @@ html {
   display: flex;
 }
 
+.flex-fill-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.flex-fill-to-parent {
+  flex-grow: 1;
+}
+
 #main-frame-content {
   display: flex;
   flex-direction: column;
@@ -67,6 +76,7 @@ html {
 
 #footer-bar {
   margin-top: auto;
+  width: 100vw;
 }
 
 #copyright {
