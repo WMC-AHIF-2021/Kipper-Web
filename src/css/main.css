@@ -37,12 +37,6 @@ html {
   flex-shrink: inherit;
 }
 
-.navigation-bar {
-  display: inherit;
-  justify-content: left;
-  flex-shrink: inherit;
-}
-
 .flex-parent-container {
   display: flex;
 }
@@ -56,6 +50,13 @@ html {
   flex-grow: 1;
 }
 
+.text-page-content-container {
+  display: flex;
+  flex-grow: 1;
+  align-content: center;
+  justify-content: center;
+}
+
 #main-frame-content {
   display: flex;
   flex-direction: column;
@@ -64,26 +65,10 @@ html {
 }
 
 #top-element {
+  width: 100vw;
   background-color: var(--scheme-primary);
   display: flex;
-  flex-shrink: 1;
   flex-direction: column;
-}
-
-#page-description {
-  padding-bottom: 1rem;
-}
-
-#footer-bar {
-  margin-top: auto;
-  width: 100vw;
-}
-
-#copyright {
-  width: 100vw;
-  padding: 2.5rem;
-  flex-shrink: 1;
-  background-color: var(--scheme-primary);
 }
 
 #separator {

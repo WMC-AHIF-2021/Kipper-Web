@@ -44,7 +44,8 @@
   border: none;
   outline: none;
   padding: 1.5rem;
-  font-family: consolas, serif;
+  font-size: 16px;
+  font-family: monospace;
 }
 
 #shell-sidebar {

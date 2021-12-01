@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/nav-bar.css"/>
   <link rel="stylesheet" href="css/text.css"/>
   <link rel="stylesheet" href="css/lists.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
 
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
@@ -72,30 +73,29 @@
           </li>
         </ul>
       </div>
-      <div id="header" class="centered white-text">
-        <h1>Header Space</h1>
-      </div>
-      <div id="page-description" class="centered white-text">
-        <h4>Description Space</h4>
+      <div class="text-page-content-container">
+        <div class="header-text-content flex-fill-container flex-column centered">
+          <div id="page-header" class="white-text">
+            <h1>Header Space</h1>
+          </div>
+          <div id="page-description" class="white-text">
+            <h4>Description Space</h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- Yellow separator - version notice -->
-  <div id="separator"></div>
-
   <!-- Central Content - all content in the white area -->
   <div id="central-content" class="flex-parent-container black-text"></div>
-
   <!-- Footer bar - contains some links and general copyright notice -->
-  <div id="footer-bar" class="flex-parent-container">
-    <div id="copyright" class="centered">
-      <small class="centered">
-        © Luna Klatzer & Maximilian Seebacher
+  <div id="footer-bar" class="flex-parent-container flex-column">
+    <div id="copyright" class="centered-text white-text">
+      <small>
+        © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
+        <a class="yellow-a" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this license</a>.
       </small>
     </div>
   </div>
-
 </div>
 </body>
 </html>

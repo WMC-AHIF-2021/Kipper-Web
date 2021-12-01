@@ -5,11 +5,24 @@ html {
 }
 
 section {
-  margin-left: var(--default-text-margin);
+  margin: var(--default-text-margin);
+}
+
+/* Pure Text Content / Explanatory content */
+.header-text-content {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .text-content {
-  margin: 2rem 20rem;
+  width: 66.6vw;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.shadowed-box {
+  border-radius: var(--default-border-radius);
+  box-shadow: 0 0 0.5em var(--scheme-gray);
 }
 
 .red-text {
@@ -105,7 +118,7 @@ section {
 
 /* Code Block Formatting */
 code {
-  margin-right: var(--default-text-margin);
+  margin-right: 0;
   border-radius: var(--default-border-radius);
 }
 

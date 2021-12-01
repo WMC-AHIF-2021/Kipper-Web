@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/nav-bar.css"/>
   <link rel="stylesheet" href="css/text.css"/>
   <link rel="stylesheet" href="css/lists.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
   <link rel="stylesheet" href="css/playground.css"/>
 
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
@@ -73,11 +74,15 @@
           </li>
         </ul>
       </div>
-      <div id="header" class="centered white-text">
-        <h1>Kipper Interactive Playground</h1>
-      </div>
-      <div id="page-description" class="centered white-text">
-        <h4>The Playground for trying out Kipper and learning the basics in a pre-configured setup</h4>
+      <div class="text-page-content-container">
+        <div class="header-text-content flex-fill-container flex-column centered">
+          <div id="page-header" class="white-text">
+            <h1>Kipper Interactive Playground</h1>
+          </div>
+          <div id="page-description" class="white-text">
+            <h4>The Playground for trying out Kipper and learning the basics in a pre-configured setup</h4>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
@@ -117,7 +122,7 @@
     </div>
     <script src="./js/playground-interactive.ts"></script>
     <!-- Footer bar - contains some links and general copyright notice -->
-    <div id="footer-bar" class="flex-parent-container">
+    <div id="footer-bar" class="flex-parent-container flex-column">
       <div id="copyright" class="centered-text white-text">
         <small>
           © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under

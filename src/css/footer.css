@@ -1,0 +1,18 @@
+/*! Footer Bar Configuration and Styling */
+
+#footer-bar {
+  margin-top: auto;
+  max-width: 100vw;
+  width: 100vw;
+  background-color: var(--scheme-primary);
+}
+
+#footer-bar #social-icon {
+  background-color: var(--scheme-primary);
+}
+
+#copyright {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  flex-shrink: 1;
+}
