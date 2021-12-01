@@ -60,12 +60,11 @@ html {
 #main-frame-content {
   display: flex;
   flex-direction: column;
-  min-width: 100vw;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 #top-element {
-  width: 100vw;
   background-color: var(--scheme-primary);
   display: flex;
   flex-direction: column;

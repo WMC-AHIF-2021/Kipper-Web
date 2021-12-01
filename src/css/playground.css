@@ -1,7 +1,6 @@
 /*! Configuration for the Playground */
 
 #interactive-console {
-  width: 100vw;
   flex-grow: 1;
   display: flex;
 }
