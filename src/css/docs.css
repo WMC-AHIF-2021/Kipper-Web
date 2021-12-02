@@ -1,0 +1,38 @@
+/*! Docs Formatting */
+
+.sidebar-nav-header {
+  margin: 0;
+  padding: 0;
+}
+
+.docs-page-content-container {
+  display: flex;
+  flex-grow: 1;
+  padding-left: 5vw;
+}
+
+#nav-docs-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 5vw 2em 1em;
+  border-right: 3px solid var(--scheme-gray);
+}
+
+#nav-kipper-header {
+  margin: 1em 1em 1em 0;
+  color: var(--scheme-dark-gray);
+}
+
+.sidebar-nav-header {
+  flex-grow: 1;
+  padding: 0.2em;
+}
+
+.sidebar-nav-header a, .sidebar-nav-header a:visited, .sidebar-nav-header a:active {
+  color: black;
+  text-decoration: none;
+}
+
+.sidebar-nav-header a:hover {
+  color: var(--scheme-primary);
+}

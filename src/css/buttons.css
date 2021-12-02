@@ -1,21 +1,29 @@
 /*! Defaults design for the buttons */
 
+:root {
+  --button-dark-primary: #c71242;
+}
+
 .button {
   background-color: var(--scheme-primary);
   border-radius: var(--default-border-radius);
-  border: none;
-  color: white;
+  border: none !important;
+  color: white !important;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 0.5em;
+  margin: 0.75em 0.75em 0.75em 0;
+}
+
+.button:active, .button:visited{
+  color: white !important;
 }
 
 .button:hover {
-  color: var(--scheme-secondary);
-  box-shadow: 0 0 0.75em var(--scheme-gray);
+  background-color: var(--button-dark-primary) !important;
+  box-shadow: 0 0 0.5em var(--scheme-gray);
 }
 
 .menu-button {
