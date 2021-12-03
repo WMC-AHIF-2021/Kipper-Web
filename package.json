@@ -22,7 +22,6 @@
     "prettier": "prettier --write ./src/",
     "tslint": "eslint src/js/**/*.ts",
     "tslint:fix": "npm run lint -- --fix",
-    "test": "ts-mocha -p tsconfig.json --recursive src/js/tests/**/*.ts",
     "posttest": "npm run lint & npm run prettier",
     "dev": "parcel src/index.html --open"
   },
