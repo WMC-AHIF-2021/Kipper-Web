@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Goals and Timeline</title>
+  <meta
+    name="description"
+    content="Goals and planned Timeline for the Project"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <meta property="og:title" content="Kipper"/>
+  <meta property="og:type" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image" content="../img/icon.png"/>
+
+  <link rel="manifest" href="../../site.webmanifest"/>
+  <link rel="apple-touch-icon" href="../img/icon.png"/>
+  <link rel="shortcut icon" type="image/ico" href="../../favicon.ico"/>
+
+  <link rel="stylesheet" href="../css/normalize.css"/>
+  <link rel="stylesheet" href="../css/main.css"/>
+  <link rel="stylesheet" href="../css/buttons.css"/>
+  <link rel="stylesheet" href="../css/nav-bar.css"/>
+  <link rel="stylesheet" href="../css/text.css"/>
+  <link rel="stylesheet" href="../css/lists.css"/>
+  <link rel="stylesheet" href="../css/footer.css"/>
+  <link rel="stylesheet" href="../css/docs.css"/>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!--
+  Specifying the preferred environment colour to be the primary scheme colour.
+  See main.css for the --scheme-primary variable
+  -->
+  <meta name="theme-color" content="#e01a4f"/>
+</head>
+<body>
+<script type="module" src="../js/plugins.ts"></script>
+
+<div id="main-frame">
+  <div id="main-frame-content">
+    <!-- The top element: menu and search bar -->
+    <div id="top-element">
+      <nav id="top-nav-bar">
+        <ul>
+          <li>
+            <a href="../index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
+              <img id="kipper-logo" src="../img/base_head.png" alt="">
+              <h1>Kipper</h1>
+            </a>
+          </li>
+          <li>
+            <a href="../download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+          </li>
+          <li>
+            <a href="../install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+          </li>
+          <li>
+            <a href="./index.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Docs</h4></a>
+          </li>
+          <li>
+            <a href="../playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+          </li>
+          <li>
+            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md"
+               class="menu-button top-nav-menu-items"><h4>
+              Changelog</h4></a>
+          </li>
+          <li id="search-bar" class="no-style-list flex-row flex-parent-container red-text">
+            <label for="search-bar-input"></label>
+            <input id="search-bar-input" type="search" placeholder="Search">
+          </li>
+        </ul>
+      </nav>
+      <div id="header-description-content" class="text-page-content-container">
+      </div>
+      <script src="../js/generate-header-and-description.ts"></script>
+    </div>
+    <!-- Main Content, where the text is located and the items unique to this site are defined -->
+    <div class="flex-parent-container flex-fill-container">
+      <ul class="no-style-list flex-parent-container flex-fill-to-parent">
+        <li class="flex-parent-container">
+          <nav id="nav-docs-sidebar">
+            <h4 id="nav-kipper-header">
+              Kipper Docs
+            </h4>
+            <ul class="bullet-list flex-column">
+              <li>
+                <h4 class="sidebar-nav-header">
+                  <a href="./index.html">Overview</a>
+                </h4>
+              </li>
+              <li>
+                <h4 class="sidebar-nav-header selected-page-sidebar-nav-header">
+                  <a href="../docs/our-goals.html">Goals and Timeline</a>
+                </h4>
+              </li>
+            </ul>
+          </nav>
+        </li>
+        <li class="docs-page-content-container">
+          <div id="docs-content" class="text-content shadowed-box">
+            <section>
+              <nav id="docs-page-nav"></nav>
+              <script src="../js/generate-docs-nav-specifier.ts"></script>
+              <article>
+                <h2 id="our-goals">Our Goals</h2>
+                <ul class="bullet-list flex-column">
+                  <li>Provide simple, straight-forward and useful explanations on the programming language Kipper.</li>
+                  <li>Provide an interactive code-editor (Playground) to try out and use Kipper online.</li>
+                  <li>A good and concise website with all the important info about Kipper and the Project itself.</li>
+                </ul>
+              </article>
+              <article>
+                <h2 id="project-timeline">Timeline for the Project</h2>
+                <ul class="bullet-list flex-column">
+                  <li>
+                    <strong>Until 17th October:</strong>
+                    Grammar file and project setup for Kipper finished <em class="highlighted-green-checkmark">✓</em>
+                  </li>
+                  <li>
+                    <strong>Until 16th January:</strong>
+                    Finished CSS and HTML on the Website <em class="highlighted-red-checkmark">x</em>
+                  </li>
+                  <li>
+                    <strong>Until End of Winter Semester:</strong>
+                    Finish design of Website and complete Static (HTML) Part of the Website
+                    <em class="highlighted-red-checkmark">x</em>
+                  </li>
+                  <li>
+                    <strong>Until Summer Semester:</strong>
+                    Finished Online Compiler (Playground) of Kipper <em class="highlighted-red-checkmark">x</em>
+                  </li>
+                </ul>
+                <div>
+                  <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/README.md#Timeline" class="button">
+                    Show Full Timeline
+                  </a>
+                  <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/milestones" class="button">
+                    Show Milestones on GitHub
+                  </a>
+                </div>
+              </article>
+            </section>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Footer bar - contains some links and general copyright notice -->
+    <div id="footer-bar" class="flex-parent-container flex-column">
+      <div id="copyright" class="centered-text white-text">
+        <small>
+          © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
+          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this
+            license</a>.
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

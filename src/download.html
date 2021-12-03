@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Downloads</title>
+  <title>Downloads for the Kipper Language</title>
   <meta
     name="description"
-    content="Homepage for the Kipper programming language"
+    content="Downloads for the Kipper Language"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -24,7 +24,9 @@
   <link rel="stylesheet" href="css/nav-bar.css"/>
   <link rel="stylesheet" href="css/text.css"/>
   <link rel="stylesheet" href="css/lists.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
@@ -42,79 +44,86 @@
   <div id="main-frame-content">
     <!-- The top element: menu and search bar -->
     <div id="top-element">
-      <div id="top-nav-bar">
+      <nav id="top-nav-bar">
         <ul>
           <li>
-             <a href="index.html" class="free-list flex-row flex-parent-container centered kipper-logo-container">
+            <a href="index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
               <h1>Kipper</h1>
             </a>
           </li>
           <li>
-            <a href="download.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Downloads</h4></a>
+            <a href="./download.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="docs.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
+            <a href="./install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
           </li>
           <li>
-            <a href="install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+            <a href="./docs/index.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+            <a href="./playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
           </li>
           <li>
-            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button top-nav-menu-items"><h4>
+            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md"
+               class="menu-button top-nav-menu-items"><h4>
               Changelog</h4></a>
           </li>
-          <li id="search-bar" class="free-list flex-row flex-parent-container red-text">
-            <label>
-              <input id="search-bar-input" type="text" placeholder="Search">
-            </label>
+          <li id="search-bar" class="flex-fill-container">
+            <label for="search-bar-input"></label>
+            <input id="search-bar-input" class="red-text" type="search" placeholder="Search">
           </li>
         </ul>
+      </nav>
+      <div id="header-description-content" class="text-page-content-container">
       </div>
-      <div id="header" class="centered white-text">
-        <h1>Downloads for the Kipper Language</h1>
-      </div>
-      <div id="page-description" class="centered white-text">
-        <h4>
-          There are no releases yet. So you only can clone an Experimental-Build from Github
-        </h4>
-      </div>
+      <script src="js/generate-header-and-description.ts"></script>
     </div>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
-    <div id="download-content" class="text-content">
-      <section>
-        <h2>Download Development Build of Kipper</h2>
-        <p>
-          To download the source code of Kipper, clone it with the link below:
-        </p>
-        <p>
-          <code>https://github.com/Luna-Klatzer/Kipper.git</code>
-        </p>
-        <a href="https://github.com/Luna-Klatzer/Kipper.git" class="button">Show on Github</a>
-        <h3>Guide to clone the GitHub Repository</h3>
-        <ol class="flex-column">
-          <li>Open a Console-Interface, such as Bash on Linux or Command-Prompt on Windows</li>
-          <li>
-            Switch to the Folder you would like to clone the Repo in:
-            <pre><code class="language-bash">cd dest</code></pre>
-          </li>
-          <li>Type the following into the Console:
-            <pre><code class="language-bash">git clone https://github.com/Luna-Klatzer/Kipper.git</code></pre>
-          </li>
-        </ol>
-        <p>
-          If everything is working git should start downloading the Repo to your specified Folder
-        </p>
-      </section>
+    <div class="text-page-content-container">
+      <div id="download-content" class="text-content shadowed-box">
+        <section>
+          <article>
+            <h2>Npm Download</h2>
+            <p>
+              The main source and most secure option to download Kipper is to directly download the source code from
+              the npm package manager itself. For a guide on that, please go to the <a href="./install.html">Install
+              Guide</a>.
+            </p>
+          </article>
+          <article>
+            <h2>Download Source Code</h2>
+            <p>
+              To download the latest stable source code of Kipper, download the <code>zip</code> or <code>tar.gz</code>
+              with the links below:
+            </p>
+            <ul class="flex-column">
+              <li><a href="https://github.com/Luna-Klatzer/Kipper/zipball/main/">Github Source Code (zip)</a></li>
+              <li><a href="https://github.com/Luna-Klatzer/Kipper/tarball/main/">Github Source Code (tar.gz)</a></li>
+            </ul>
+          </article>
+          <article>
+            <h2>Downloading the GitHub Repository using Git</h2>
+            <p>
+              Git is the preferred way to use the source code of Kipper, as it allows pulling recent changes and updates
+              directly into a directory. This is though recommended only for developers and people, who have an
+              understanding of how git works and how to properly use it.
+            </p>
+            <p>
+              The url to the repository:
+              <code>https://github.com/Luna-Klatzer/Kipper.git</code>
+            </p>
+          </article>
+        </section>
+      </div>
     </div>
     <!-- Footer bar - contains some links and general copyright notice -->
-    <div id="footer-bar" class="flex-parent-container">
+    <div id="footer-bar" class="flex-parent-container flex-column">
       <div id="copyright" class="centered-text white-text">
         <small>
           © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
-          <a class="yellow-a" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this license</a>.
+          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this
+            license</a>.
         </small>
       </div>
     </div>

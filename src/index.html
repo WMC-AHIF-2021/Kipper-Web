@@ -5,7 +5,7 @@
   <title>Welcome to Kipper!</title>
   <meta
     name="description"
-    content="Homepage for the Kipper programming language"
+    content="The Simple and Blazing-Fast Open-Source Language"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -24,7 +24,9 @@
   <link rel="stylesheet" href="css/nav-bar.css"/>
   <link rel="stylesheet" href="css/text.css"/>
   <link rel="stylesheet" href="css/lists.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
@@ -42,52 +44,52 @@
   <div id="main-frame-content">
     <!-- The top element: menu and search bar -->
     <div id="top-element">
-      <div id="top-nav-bar">
+      <nav id="top-nav-bar">
         <ul>
           <li>
-            <a href="index.html" class="free-list flex-row flex-parent-container centered kipper-logo-container">
+            <a href="index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
               <h1>Kipper</h1>
             </a>
           </li>
           <li>
-            <a href="download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+            <a href="./download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="docs.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
+            <a href="./install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
           </li>
           <li>
-            <a href="install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+            <a href="./docs/index.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+            <a href="./playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
           </li>
           <li>
-            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button top-nav-menu-items"><h4>
+            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md"
+               class="menu-button top-nav-menu-items"><h4>
               Changelog</h4></a>
           </li>
-          <li id="search-bar" class="free-list flex-row flex-parent-container red-text">
-            <label>
-              <input id="search-bar-input" type="text" placeholder="Search">
-            </label>
+          <li id="search-bar" class="no-style-list flex-row flex-parent-container red-text">
+            <label for="search-bar-input"></label>
+            <input id="search-bar-input" type="search" placeholder="Search">
           </li>
         </ul>
+      </nav>
+      <div id="header-description-content" class="text-page-content-container">
       </div>
-      <div id="header" class="centered white-text">
-        <h1>Get started with Kipper today!</h1>
-      </div>
-      <div id="page-description" class="centered white-text">
-        <h4>The Simple and Blazing-Fast Open-Source Language.</h4>
-      </div>
+      <script src="js/generate-header-and-description.ts"></script>
     </div>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
-    <div id="main-content" class="text-content"></div>
+    <div class="text-page-content-container">
+      <div id="main-content" class="text-content shadowed-box"></div>
+    </div>
     <!-- Footer bar - contains some links and general copyright notice -->
-    <div id="footer-bar" class="flex-parent-container">
+    <div id="footer-bar" class="flex-parent-container flex-column">
       <div id="copyright" class="centered-text white-text">
         <small>
           © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
-          <a class="yellow-a" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this license</a>.
+          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this
+            license</a>.
         </small>
       </div>
     </div>
