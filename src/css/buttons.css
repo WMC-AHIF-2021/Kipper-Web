@@ -23,7 +23,7 @@
 
 .button:hover {
   background-color: var(--button-dark-primary) !important;
-  box-shadow: 0 0 0.5em var(--scheme-gray);
+  box-shadow: 0 0 0.5em var(--scheme-gray) !important;
 }
 
 .menu-button {

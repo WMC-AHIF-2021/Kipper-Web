@@ -23,7 +23,25 @@
   color: var(--scheme-dark-gray);
 }
 
-#header-nav-origin li {
+#docs-page-nav-kipper-origin, #docs-page-nav-kipper-origin:active, #docs-page-nav-kipper-origin:visited {
+  color: var(--scheme-dark-gray);
+  text-decoration: none !important;
+}
+
+#docs-page-nav-kipper-origin:hover {
+  color: var(--scheme-primary);
+}
+
+#docs-page-nav-header, #docs-page-nav-header:active, #docs-page-nav-header:visited {
+  color: black;
+  text-decoration: none !important;
+}
+
+#docs-page-nav-header:hover {
+  color: var(--scheme-primary);
+}
+
+#docs-page-nav ul li {
   padding-right: 0.25em;
 }
 
