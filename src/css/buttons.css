@@ -17,7 +17,7 @@
   margin: 0.75em 0.75em 0.75em 0;
 }
 
-.button:active, .button:visited{
+.button:active, .button:visited {
   color: white !important;
 }
 

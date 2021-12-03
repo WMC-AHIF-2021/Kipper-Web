@@ -5,8 +5,8 @@
   --min-search-bar-size: 15vw;
   --search-bar-margin: 20vw;
   --search-bar-size: 10vw;
-  --search-bar-margin-expanded: 5vw;
-  --search-bar-size-expanded: 25vw;
+  --search-bar-margin-expanded: 10vw;
+  --search-bar-size-expanded: 20vw;
 }
 
 #top-nav-bar {
@@ -64,7 +64,7 @@
   text-decoration: none;
 }
 
-@media (max-width:1200px) {
+@media (max-width: 1200px) {
   #search-bar #search-bar-input {
     width: var(--min-search-bar-size);
     margin-left: var(--min-search-bar-margin);
@@ -81,7 +81,7 @@
   }
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
   #search-bar #search-bar-input {
     width: var(--search-bar-size);
     margin-left: var(--search-bar-margin);
@@ -101,7 +101,7 @@
   }
 
   @keyframes search-bar-opening {
-    from   {
+    from {
       width: var(--search-bar-size); /* 10vw */
       margin-left: var(--search-bar-margin); /* 20vw */
     }

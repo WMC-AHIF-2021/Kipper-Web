@@ -53,16 +53,16 @@
             </a>
           </li>
           <li>
-            <a href="download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+            <a href="./download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+            <a href="./install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
           </li>
           <li>
-            <a href="docs.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Docs</h4></a>
+            <a href="./docs/index.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+            <a href="./playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
           </li>
           <li>
             <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button top-nav-menu-items"><h4>

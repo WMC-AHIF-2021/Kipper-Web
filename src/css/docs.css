@@ -8,19 +8,23 @@
 .docs-page-content-container {
   display: flex;
   flex-grow: 1;
-  padding-left: 5vw;
+  padding-left: 4vw;
 }
 
 #nav-docs-sidebar {
   display: flex;
   flex-direction: column;
-  padding: 1em 5vw 2em 1em;
+  padding: 1em 4vw 2em 2em;
   border-right: 3px solid var(--scheme-gray);
 }
 
 #nav-kipper-header {
   margin: 1em 1em 1em 0;
   color: var(--scheme-dark-gray);
+}
+
+#header-nav-origin li {
+  padding-right: 0.25em;
 }
 
 .sidebar-nav-header {

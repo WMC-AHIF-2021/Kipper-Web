@@ -8,8 +8,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
+- `generate-header-and-description.ts` for auto-generating the header and description text
+- Docs Navigation Sidebar for the docs pages
+- The `/docs` folder for all documentation sites
+- Added 'Inter' Fonts using the Google-Fonts API
 
 ### Changed
+- Updated fonts and added backups fonts
+- Changed button behaviour to not light as yellow, but change it's background color to a darker fuchsia red
+- Label Handling for proper usage of `<label>` with `<input>` and `<textarea>` elements
+- Fixed partially flex overflow caused by width specifiers
+- Text Boxes with specific handling for `<article>` and `<section>`
 
 ### Removed
 
