@@ -5,16 +5,17 @@
 }
 
 .button {
-  background-color: var(--scheme-primary);
-  border-radius: var(--default-border-radius);
+  display: inline-block !important;
   border: none !important;
   color: white !important;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 0.75em 0.75em 0.75em 0;
+  background-color: var(--scheme-primary) !important;
+  border-radius: var(--default-border-radius) !important;
+  padding: 15px 32px !important;
+  margin: 0.75em 0.75em 0.75em 0 !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  text-decoration: none !important;
 }
 
 .button:active, .button:visited {
@@ -27,11 +28,11 @@
 }
 
 .menu-button {
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  border: none !important;
+  color: white !important;
+  padding: 15px 32px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  font-size: 16px !important;
 }
