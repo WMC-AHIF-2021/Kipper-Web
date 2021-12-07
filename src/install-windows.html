@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Documentation</title>
+  <title>Install Guide - Windows</title>
   <meta
     name="description"
     content="Homepage for the Kipper programming language"
@@ -46,7 +46,7 @@
       <div id="top-nav-bar">
         <ul>
           <li>
-             <a href="index.html" class="free-list flex-row flex-parent-container centered kipper-logo-container">
+            <a href="index.html" class="free-list flex-row flex-parent-container centered kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
               <h1>Kipper</h1>
             </a>
@@ -55,17 +55,19 @@
             <a href="download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="docs.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Docs</h4></a>
+            <a href="docs.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+            <a href="install.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Install Guide</h4></a>
           </li>
           <li>
             <a href="playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
           </li>
           <li>
-            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button top-nav-menu-items"><h4>
-              Changelog</h4></a>
+            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md"
+               class="menu-button top-nav-menu-items">
+              <h4>Changelog</h4>
+            </a>
           </li>
           <li id="search-bar" class="free-list flex-row flex-parent-container red-text">
             <label for="search-bar-input"></label>
@@ -76,56 +78,53 @@
       <div class="text-page-content-container">
         <div class="header-text-content flex-fill-container flex-column centered">
           <div id="page-header" class="white-text">
-            <h1>Kipper v0.1 - Documentation</h1>
+            <h1>Install Guide for Kipper on Windows</h1>
           </div>
           <div id="page-description" class="white-text">
-            <h4>Documentation and Base-Reference for the Kipper language</h4>
+            <h4>Step by Step Guide on installing the Kipper programming language</h4>
           </div>
         </div>
       </div>
     </div>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div class="text-page-content-container">
-      <div id="docs-content" class="text-content shadowed-box">
-      <section>
-        <h2>Our Goals:</h2>
-        <ul class="bullet-list flex-column">
-          <li><b>Provide simple</b>, <b>straight-forward</b> and <b>useful explanations</b> on the programming language Kipper.</li>
-          <li>Provide an <b>interactive code-editor</b> (Playground) to try out and use Kipper online.</li>
-          <li><b>A good and concise website</b> with all the important info about Kipper and the Project itself.</li>
-        </ul>
-      </section>
-      <section>
-        <h2>Our Timeline for the Project:</h2>
-        <ul class="bullet-list flex-column">
-          <li>
-            <strong>Until 17th October:</strong>
-            Grammar file and project setup for Kipper finished <em class="highlighted-green-checkmark">✓</em>
-          </li>
-          <li>
-            <strong>Until 16th January:</strong>
-            Finished CSS and HTML on the Website <em class="highlighted-red-checkmark">x</em>
-          </li>
-          <li>
-            <strong>Until End of Winter Semester:</strong>
-            Finish design of Website and complete Static (HTML) Part of the Website
-            <em class="highlighted-red-checkmark">x</em>
-          </li>
-          <li>
-            <strong>Until Summer Semester:</strong>
-            Finished Online Compiler (Playground) of Kipper <em class="highlighted-red-checkmark">x</em>
-          </li>
-        </ul>
-        <div class="centered-buttons">
-          <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/README.md#Timeline" class="button">
-            Show Full Timeline
-          </a>
-          <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/README.md" class="button">
-            Show Docs on GitHub
-          </a>
-        </div>
-      </section>
-    </div>
+      <div id="install-content" class="text-content shadowed-box">
+        <section>
+          <div class="important-text">
+            <h2>Important</h2>
+            <p>
+              If you do not have installed TypeScript and Node.js, please go back to the Page before and install them.
+            </p>
+            <div class="centered-buttons">
+              <a href="install.html" class="button">Go Back</a>
+            </div>
+          </div>
+          <h2>Install the npm module</h2>
+          <p>
+            The package is hosted on the npm package manager, meaning you can easily fetch it using (This will
+            install it as a global package and make it available in your terminal per default):
+          </p>
+          <pre>
+          <code class="language-cmd">C:\Windows\system32> <b>npm install -g kipper</b></code> or <code class="language-cmd">C:\Users\USERNAME> <b>npm install -g kipper</b></code>
+        </pre>
+        </section>
+        <section class="important-text">
+          <h2>Important</h2>
+          <p>
+            If possible avoid installing Kipper globally, as it can cause issues with locally installed versions, even
+            if it can be handy and easier. For a local TS installation add kipper to your 'package.json'
+          </p>
+        </section>
+        <section>
+          <h2>Run the Compiler</h2>
+          <p>
+            To run the Kipper Compiler, use the following command in the Console:
+          </p>
+          <pre>
+          <code class="language-cmd">C:\Windows\system32> <b>kipper</b></code> or <code class="language-cmd">C:\Users\USERNAME> <b>kipper</b></code>
+        </pre>
+        </section>
+      </div>
     </div>
     <!-- Footer bar - contains some links and general copyright notice -->
     <div id="footer-bar" class="flex-parent-container flex-column">
