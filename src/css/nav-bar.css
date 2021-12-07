@@ -1,6 +1,7 @@
 /*! top-nav-bar Config */
 
 :root {
+  --search-bar-animation-duration: 1s;
   --min-search-bar-margin: 5vw;
   --min-search-bar-size: 15vw;
   --search-bar-margin: 20vw;
