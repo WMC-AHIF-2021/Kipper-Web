@@ -95,20 +95,6 @@
   }
 
   #search-bar #search-bar-input:focus, #search-bar #search-bar-input:hover {
-    animation-name: search-bar-opening;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
     outline: var(--scheme-secondary);
-  }
-
-  @keyframes search-bar-opening {
-    from {
-      width: var(--search-bar-size); /* 10vw */
-      margin-left: var(--search-bar-margin); /* 20vw */
-    }
-    to {
-      width: var(--search-bar-size-expanded); /* 20vw */
-      margin-left: var(--search-bar-margin-expanded); /* 10vw */
-    }
   }
 }
