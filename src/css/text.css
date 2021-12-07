@@ -54,20 +54,8 @@ h4, h5, h6 {
   align-items: center;
 }
 
-.link-on-red-background, .link-on-red-background:visited, .link-on-red-background:active {
-  color: white;
-}
-
-.link-on-red-background:hover {
-  color: var(--scheme-secondary);
-}
-
-a:link {
+a, a:link, a:active {
   color: blue;
-}
-
-a, a:active {
-  color: white;
 }
 
 a:visited {
@@ -76,6 +64,14 @@ a:visited {
 
 a:hover {
   color: var(--scheme-primary);
+}
+
+.link-on-red-background, .link-on-red-background:visited, .link-on-red-background:active {
+  color: white !important;
+}
+
+.link-on-red-background:hover {
+  color: var(--scheme-secondary) !important;
 }
 
 /* Pure Text Content / Explanatory content */
