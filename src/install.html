@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Install Guide</title>
+  <title>Install Guide for Kipper</title>
   <meta
     name="description"
-    content="Homepage for the Kipper programming language"
+    content="Step by Step Guide on installing the Kipper programming language"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/lists.css"/>
   <link rel="stylesheet" href="css/footer.css"/>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
@@ -43,25 +44,25 @@
   <div id="main-frame-content">
     <!-- The top element: menu and search bar -->
     <div id="top-element">
-      <div id="top-nav-bar">
+      <nav id="top-nav-bar">
         <ul>
           <li>
-            <a href="index.html" class="free-list flex-row flex-parent-container centered kipper-logo-container">
+            <a href="index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
               <h1>Kipper</h1>
             </a>
           </li>
           <li>
-            <a href="download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+            <a href="./download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="docs.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
+            <a href="./install.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Install Guide</h4></a>
           </li>
           <li>
-            <a href="install.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Install Guide</h4></a>
+            <a href="./docs/index.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+            <a href="./playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
           </li>
           <li>
             <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md"
@@ -69,20 +70,53 @@
               <h4>Changelog</h4>
             </a>
           </li>
-          <li id="search-bar" class="free-list flex-row flex-parent-container red-text">
+          <li id="search-bar" class="no-style-list flex-row flex-parent-container red-text">
             <label for="search-bar-input"></label>
             <input id="search-bar-input" type="search" placeholder="Search">
           </li>
         </ul>
+      </nav>
+      <div id="header-description-content" class="text-page-content-container">
       </div>
+      <script src="js/generate-header-and-description.ts"></script>
+      </div>
+      <!-- Main Content, where the text is located and the items unique to this site are defined -->
       <div class="text-page-content-container">
-        <div class="header-text-content flex-fill-container flex-column centered">
-          <div id="page-header" class="white-text">
-            <h1>Install Guide for Kipper</h1>
-          </div>
-          <div id="page-description" class="white-text">
-            <h4>Step by Step Guide on installing the Kipper programming language</h4>
-          </div>
+        <div id="install-content" class="text-content shadowed-box">
+          <section>
+            <article>
+              <h2>Pre-Setup</h2>
+              <p>
+                At first you need to install TypeScript and Node.js.
+                The download links are below:
+              </p>
+              <div>
+                <a href="https://www.typescriptlang.org/download" class="button">TypeScript</a>
+                <a href="https://nodejs.org/en/download/" class="button">Node.js</a>
+              </div>
+              <h2>Install the npm module</h2>
+              <p>
+                The package is hosted on the npm package manager, meaning you can easily fetch it using (This will
+                install it as a global package and make it available in your terminal per default):
+              </p>
+              <pre><code class="language-bash">npm install -g kipper</code></pre>
+            </article>
+            <article class="important-text">
+              <h3>Important</h3>
+              <p>
+                If possible avoid installing Kipper globally, as it can cause issues with locally installed versions,
+                even
+                if it can be handy and easier. For a local TS installation add kipper to your 'package.json'.
+              </p>
+            </article>
+            <article>
+              <h2>Run the Compiler</h2>
+              <p>
+                To run the Kipper Compiler, use the following command in the Console:
+              </p>
+              <pre><code class="language-bash">kipper</code></pre>
+            </article>
+          </section>
         </div>
       </div>
     </div>
@@ -117,6 +151,5 @@
       </div>
     </div>
   </div>
-</div>
 </body>
 </html>

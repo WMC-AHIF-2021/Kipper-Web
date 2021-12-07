@@ -1,4 +1,4 @@
-/*! Defaults design for the lists and special formattign */
+/*! Defaults design for the lists and special formatting */
 
 ul, ol {
   display: flex;
@@ -6,7 +6,7 @@ ul, ol {
 }
 
 /* A free list for working on a list with no design */
-.free-list {
+.no-style-list {
   list-style-type: none;
   padding: 0;
   margin: 0;

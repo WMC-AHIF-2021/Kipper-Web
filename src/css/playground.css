@@ -1,23 +1,24 @@
 /*! Configuration for the Playground */
 
 #interactive-console {
-  width: 100vw;
   flex-grow: 1;
   display: flex;
 }
 
 #interactive-console ul {
+  margin: 0;
   display: flex;
   flex-grow: 1;
 }
 
 #left-console-interface {
+  margin: 0;
   display: flex;
   flex-grow: 1;
 }
 
 #left-console-interface #playground-option-menu {
-  border-bottom: 1px solid var(--scheme-gray);
+  border-bottom: 3px solid var(--scheme-gray);
 }
 
 .playground-button button {
@@ -45,10 +46,11 @@
   outline: none;
   padding: 1.5rem;
   font-size: 16px;
-  font-family: monospace;
+  font-family: monospace, consolas;
 }
 
 #shell-sidebar {
+  margin: 0;
   display: flex;
 }
 
@@ -57,8 +59,8 @@
 }
 
 #shell-sidebar #shell-sidebar-menu {
-  border-bottom: 1px solid var(--scheme-gray);
-  border-left: 1px solid var(--scheme-gray);
+  border-bottom: 3px solid var(--scheme-gray);
+  border-left: 3px solid var(--scheme-gray);
   padding: 0;
 }
 
@@ -81,11 +83,11 @@
 }
 
 #shell-sidebar-menu-button-1 {
-  border-right: 1px solid var(--scheme-gray);
+  border-right: 3px solid var(--scheme-gray);
 }
 
 #shell-sidebar #side-editor {
-  border-left: 1px solid var(--scheme-gray);
+  border-left: 3px solid var(--scheme-gray);
   flex-grow: 1;
 }
 
@@ -95,13 +97,13 @@
 }
 
 #shell-sidebar #side-editor pre {
-  background-color: var(--scheme-console-gray);
+  background-color: var(--scheme-gray);
   display: flex;
   flex-grow: 1;
   margin: 0;
 }
 
-#shell-sidebar #side-editor pre>code {
+#shell-sidebar #side-editor pre > code {
   border-radius: 0;
   align-self: flex-end;
   flex-grow: 1;

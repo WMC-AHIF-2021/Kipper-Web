@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Kipper Playground!</title>
+  <title>Kipper Interactive Playground!</title>
   <meta
     name="description"
-    content="Homepage for the Kipper programming language"
+    content="The playground for trying out Kipper and learning the basics in a pre-configured setup"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="css/footer.css"/>
   <link rel="stylesheet" href="css/playground.css"/>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
@@ -44,57 +45,57 @@
   <div id="main-frame-content">
     <!-- The top element: menu and search bar -->
     <div id="top-element">
-      <div id="top-nav-bar">
+      <nav id="top-nav-bar">
         <ul>
           <li>
-             <a href="index.html" class="free-list flex-row flex-parent-container centered kipper-logo-container">
+            <a href="index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
               <h1>Kipper</h1>
             </a>
           </li>
           <li>
-            <a href="download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+            <a href="./download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="docs.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
+            <a href="./install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
           </li>
           <li>
-            <a href="install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+            <a href="./docs/index.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="playground.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Playground</h4></a>
+            <a href="./playground.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Playground</h4></a>
           </li>
           <li>
-            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button top-nav-menu-items"><h4>
+            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md"
+               class="menu-button top-nav-menu-items"><h4>
               Changelog</h4></a>
           </li>
-          <li id="search-bar" class="free-list flex-row flex-parent-container red-text">
+          <li id="search-bar" class="no-style-list flex-row flex-parent-container red-text">
             <label for="search-bar-input"></label>
             <input id="search-bar-input" type="search" placeholder="Search">
           </li>
         </ul>
+      </nav>
+      <div id="header-description-content" class="text-page-content-container">
       </div>
-      <div class="text-page-content-container">
-        <div class="header-text-content flex-fill-container flex-column centered">
-          <div id="page-header" class="white-text">
-            <h1>Kipper Interactive Playground</h1>
-          </div>
-          <div id="page-description" class="white-text">
-            <h4>The Playground for trying out Kipper and learning the basics in a pre-configured setup</h4>
-          </div>
-        </div>
-      </div>
+      <script src="js/generate-header-and-description.ts"></script>
     </div>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div id="interactive-console">
-      <ul class="free-list flex-row">
+      <ul class="no-style-list flex-row">
         <li id="left-console-interface">
-          <ul class="free-list flex-column">
+          <ul class="no-style-list flex-column">
             <li id="playground-option-menu">
-              <ul class="free-list flex-row">
-                <li class="playground-button"><button>Run</button></li>
-                <li class="playground-button"><button>Export</button></li>
-                <li class="playground-button"><button>Copy Link</button></li>
+              <ul class="no-style-list flex-row">
+                <li class="playground-button">
+                  <button>Run</button>
+                </li>
+                <li class="playground-button">
+                  <button>Export</button>
+                </li>
+                <li class="playground-button">
+                  <button>Copy Link</button>
+                </li>
               </ul>
             </li>
             <li id="code-editor">
@@ -104,17 +105,19 @@
           </ul>
         </li>
         <li id="shell-sidebar">
-          <ul class="free-list flex-column">
+          <ul class="no-style-list flex-column">
             <li id="shell-sidebar-menu">
-              <ul class="free-list flex-row">
-                <li id="shell-sidebar-menu-button-1" class="playground-button"><button>Console Output</button></li>
-                <li id="shell-sidebar-menu-button-2" class="playground-button"><button>Compiler Output</button></li>
+              <ul class="no-style-list flex-row">
+                <li id="shell-sidebar-menu-button-1" class="playground-button">
+                  <button>Console Output</button>
+                </li>
+                <li id="shell-sidebar-menu-button-2" class="playground-button">
+                  <button>Compiler Output</button>
+                </li>
               </ul>
             </li>
             <li id="side-editor">
-              <pre>
-                <code class="language-bash">my-user@your-machine:~$</code>
-              </pre>
+              <pre><code class="language-bash">my-user@your-machine:~$</code></pre>
             </li>
           </ul>
         </li>
@@ -126,7 +129,8 @@
       <div id="copyright" class="centered-text white-text">
         <small>
           © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
-          <a class="yellow-a" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this license</a>.
+          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this
+            license</a>.
         </small>
       </div>
     </div>
