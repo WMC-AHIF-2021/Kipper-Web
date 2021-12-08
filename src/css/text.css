@@ -54,20 +54,20 @@ h4, h5, h6 {
   align-items: center;
 }
 
-a, a:link, a:active {
+a, a:link, a:active, a:visited {
   color: blue;
-}
-
-a:visited {
-  color: purple;
+  text-decoration: none;
+  background-color: transparent;
 }
 
 a:hover {
   color: var(--scheme-primary);
+  text-decoration: underline;
 }
 
 .link-on-red-background, .link-on-red-background:visited, .link-on-red-background:active {
   color: white !important;
+  text-decoration: underline !important;
 }
 
 .link-on-red-background:hover {
@@ -114,7 +114,7 @@ a:hover {
   text-align: center;
 }
 
-.important-text {
+.highlight-text {
   border-radius: var(--default-border-radius);
   margin-right: var(--default-text-margin);
   border: 1px solid;
@@ -125,9 +125,9 @@ a:hover {
 
 /* Code Block Formatting */
 code {
-  margin-right: 0;
-  padding: 0.25em;
-  font-size: 16px;
+  margin: 0;
+  padding: .2em .4em;
+  font-size: 85%;
   font-family: monospace, consolas;
   border-radius: var(--default-border-radius);
   background-color: var(--scheme-gray);
