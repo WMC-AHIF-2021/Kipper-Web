@@ -32,7 +32,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function RunSearchBarAnimation(event): void {
+function RunSearchBarAnimation(): void {
   // if the width is smaller than 1200px -> do not animate
   if (window.innerWidth < 1200)
     return;
@@ -53,7 +53,7 @@ function RunSearchBarAnimation(event): void {
   );
 }
 
-function StopSearchBarAnimation(event): void {
+function StopSearchBarAnimation(): void {
   // if the width is smaller than 1200px -> do not animate
   if (window.innerWidth < 1200)
     return;
