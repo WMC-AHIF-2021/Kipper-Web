@@ -8,10 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Spinner and Text Saving to restore the code of the last session (As long as cookies are not cleared!)
+- `search-bar.ts` for Search-bar handling (In Work!)
 
 ### Changed
+- Made the text inside buttons bold
+- Fixed overflow issues with inline `<code>` fields, by changing line-height to `1.5`
+- Updated and replaced info in `install.html` with more descriptive and detailed content
+- Changed `--default-border-radius` to `0.5em` from `0.5rem`
+- Link Behaviour, and removed text-decoration when the link is not visited
 
 ### Removed
+- Linux Bash Tags and replaced them with simple `>`
 
 ## [v0.1.1] - 2021-12-03
 

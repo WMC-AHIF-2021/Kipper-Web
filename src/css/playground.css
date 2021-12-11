@@ -21,14 +21,14 @@
   border-bottom: 3px solid var(--scheme-gray);
 }
 
-.playground-button button {
+#left-console-interface .playground-button button {
   padding: 0.5rem 1rem;
   background-color: white;
   border: none;
   cursor: pointer;
 }
 
-.playground-button button:hover {
+#left-console-interface .playground-button button:hover {
   color: var(--scheme-primary);
 }
 
