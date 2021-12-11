@@ -21,14 +21,14 @@
   border-bottom: 3px solid var(--scheme-gray);
 }
 
-#left-console-interface .playground-button button {
+.playground-button button {
   padding: 0.5rem 1rem;
   background-color: white;
   border: none;
   cursor: pointer;
 }
 
-#left-console-interface .playground-button button:hover {
+.playground-button button:hover {
   color: var(--scheme-primary);
 }
 
@@ -72,6 +72,8 @@
 #shell-sidebar #shell-sidebar-menu li {
   flex-grow: 1;
 }
+
+
 
 #shell-sidebar #shell-sidebar-menu li button:hover {
   color: var(--scheme-primary);
