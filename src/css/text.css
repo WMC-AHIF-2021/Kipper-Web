@@ -65,6 +65,10 @@ a:hover {
   text-decoration: underline;
 }
 
+p {
+  margin: 0;
+}
+
 .link-on-red-background, .link-on-red-background:visited, .link-on-red-background:active {
   color: white !important;
   text-decoration: underline !important;
