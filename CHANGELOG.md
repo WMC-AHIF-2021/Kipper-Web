@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [v0.1.2] - 2021-12-11
 
 ### Added
 - Spinner and Text Saving to restore the code of the last session (As long as cookies are not cleared!)
@@ -17,9 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated and replaced info in `install.html` with more descriptive and detailed content
 - Changed `--default-border-radius` to `0.5em` from `0.5rem`
 - Link Behaviour, and removed text-decoration when the link is not visited
+- Fixed link bug in `docs/index.html` re-directing to itself when clicking on the logo for the homepage
 
 ### Removed
 - Linux Bash Tags and replaced them with simple `>`
+- Remaining site `docs.html`, which was replaced by `/docs`
 
 ## [v0.1.1] - 2021-12-03
 
