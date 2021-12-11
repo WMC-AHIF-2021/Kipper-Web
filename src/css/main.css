@@ -70,7 +70,7 @@ html {
   flex-direction: column;
 }
 
-#top-element {
+#page-header {
   background-color: var(--scheme-primary);
   display: flex;
   flex-direction: column;

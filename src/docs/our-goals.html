@@ -9,11 +9,7 @@
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <meta property="og:title" content="Kipper"/>
-  <meta property="og:type" content=""/>
-  <meta property="og:url" content=""/>
-  <meta property="og:image" content="../img/icon.png"/>
-
+  <script src="../js/main.ts"></script>
   <link rel="manifest" href="../../site.webmanifest"/>
   <link rel="apple-touch-icon" href="../img/icon.png"/>
   <link rel="shortcut icon" type="image/ico" href="../../favicon.ico"/>
@@ -44,8 +40,8 @@
 <div id="main-frame">
   <div id="main-frame-content">
     <!-- The top element: menu and search bar -->
-    <div id="top-element">
-      <nav id="top-nav-bar">
+    <header id="page-header">
+      <nav id="header-nav-bar">
         <ul>
           <li>
             <a href="../index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
@@ -77,10 +73,9 @@
           <script src="../js/search-bar.ts"></script>
         </ul>
       </nav>
-      <div id="header-description-content" class="text-page-content-container">
-      </div>
+      <div id="header-description-content" class="text-page-content-container"></div>
       <script src="../js/generate-header-and-description.ts"></script>
-    </div>
+    </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div class="flex-parent-container flex-fill-container">
       <ul class="no-style-list flex-parent-container flex-fill-to-parent">
@@ -152,15 +147,8 @@
       </ul>
     </div>
     <!-- Footer bar - contains some links and general copyright notice -->
-    <div id="footer-bar" class="flex-parent-container flex-column">
-      <div id="copyright" class="centered-text white-text">
-        <small>
-          © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
-          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this
-            license</a>.
-        </small>
-      </div>
-    </div>
+    <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
+    <script src="../js/generate-footer.ts"></script>
   </div>
 </div>
 </body>
