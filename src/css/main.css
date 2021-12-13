@@ -13,7 +13,7 @@
   --scheme-gray: #f0f0f0;
   --scheme-dark-gray: #787878;
   --scheme-white: #e9eaed;
-  --default-border-radius: 0.5rem;
+  --default-border-radius: 0.5em;
   --default-text-margin: 2rem;
 }
 
@@ -70,7 +70,7 @@ html {
   flex-direction: column;
 }
 
-#top-element {
+#page-header {
   background-color: var(--scheme-primary);
   display: flex;
   flex-direction: column;

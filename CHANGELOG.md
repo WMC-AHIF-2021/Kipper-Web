@@ -6,32 +6,50 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+### Changed
+### Removed
+
+## [v0.1.2] - 2021-12-11
 
 ### Added
+- Spinner and Text Saving to restore the code of the last session (As long as cookies are not cleared!).
+- `search-bar.ts` for Search-bar handling (In Work!).
+- Dynamic Open Graph Meta Tag generation across all sites using `main.ts`.
+- `main.ts` for general definitions of global variables.
+- `generate-footer.ts` to generate the footer across all sites and avoid code-repetition.
 
 ### Changed
+- Made the text inside buttons bold.
+- Fixed overflow issues with inline `<code>` fields, by changing line-height to `1.5`.
+- Updated and replaced info in `install.html` with more descriptive and detailed content.
+- Changed `--default-border-radius` to `0.5em` from `0.5rem`.
+- Link Behaviour, and removed text-decoration when the link is not visited.
+- Fixed link bug in `docs/index.html` re-directing to itself when clicking on the logo for the homepage.
 
 ### Removed
+- Linux Bash Tags and replaced them with simple `>`.
+- Remaining site `docs.html`, which was replaced by `/docs`.
 
 ## [v0.1.1] - 2021-12-03
 
 ### Added
-- `generate-header-and-description.ts` for auto-generating the header and description text
-- Docs Navigation Sidebar for the docs pages
-- The `/docs` folder for all documentation sites, with the default `index.html` being the entry-point
-- 'Inter' Fonts using the Google-Fonts API
-- `generate-docs-nav-specifier.ts` for generating documentation nav bars
-- `generate-header-and-description.ts` for generating the visual header and description on the site
+- `generate-header-and-description.ts` for auto-generating the header and description text.
+- Docs Navigation Sidebar for the docs pages.
+- The `/docs` folder for all documentation sites, with the default `index.html` being the entry-point.
+- 'Inter' Fonts using the Google-Fonts API.
+- `generate-docs-nav-specifier.ts` for generating documentation nav bars.
+- `generate-header-and-description.ts` for generating the visual header and description on the site.
 
 ### Changed
-- Updated fonts and added backups fonts
-- Changed button behaviour to not light as yellow, but change it's background color to a darker fuchsia red
-- Label Handling for proper usage of `<label>` with `<input>` and `<textarea>` elements
-- Fixed partially flex overflow caused by width specifiers
-- Text Boxes with specific handling for `<article>` and `<section>`
+- Updated fonts and added backups fonts.
+- Changed button behaviour to not light as yellow, but change it's background color to a darker fuchsia red.
+- Label Handling for proper usage of `<label>` with `<input>` and `<textarea>` elements.
+- Fixed partially flex overflow caused by width specifiers.
+- Text Boxes with specific handling for `<article>` and `<section>`.
 
 ### Removed
-- Mocha tests that were unneeded
+- Mocha tests that were unneeded.
 
 ## [v0.1] - 2021-11-29
 
@@ -54,5 +72,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed unnecessary `start_local_Server.exe`
 
 [unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/HEAD...base-dev
+[v0.1.2]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.1...v0.1.2
 [v0.1.1]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1...v0.1.1
 [v0.1]: https://github.com/WMC-AHIF-2021/Kipper-Web/tree/v0.1

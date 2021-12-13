@@ -73,6 +73,8 @@
   flex-grow: 1;
 }
 
+
+
 #shell-sidebar #shell-sidebar-menu li button:hover {
   color: var(--scheme-primary);
 }

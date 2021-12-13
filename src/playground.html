@@ -9,23 +9,20 @@
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <meta property="og:title" content="Kipper"/>
-  <meta property="og:type" content=""/>
-  <meta property="og:url" content=""/>
-  <meta property="og:image" content="./img/icon.png"/>
-
+  <script src="./js/main.ts"></script>
   <link rel="manifest" href="../site.webmanifest"/>
   <link rel="apple-touch-icon" href="./img/icon.png"/>
   <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
 
-  <link rel="stylesheet" href="css/normalize.css"/>
-  <link rel="stylesheet" href="css/main.css"/>
-  <link rel="stylesheet" href="css/buttons.css"/>
-  <link rel="stylesheet" href="css/nav-bar.css"/>
-  <link rel="stylesheet" href="css/text.css"/>
-  <link rel="stylesheet" href="css/lists.css"/>
-  <link rel="stylesheet" href="css/footer.css"/>
-  <link rel="stylesheet" href="css/playground.css"/>
+  <link rel="stylesheet" href="./css/normalize.css"/>
+  <link rel="stylesheet" href="./css/main.css"/>
+  <link rel="stylesheet" href="./css/buttons.css"/>
+  <link rel="stylesheet" href="./css/nav-bar.css"/>
+  <link rel="stylesheet" href="./css/text.css"/>
+  <link rel="stylesheet" href="./css/lists.css"/>
+  <link rel="stylesheet" href="./css/footer.css"/>
+  <link rel="stylesheet" href="./css/playground.css"/>
+  <link rel="stylesheet" href="./css/spinner.css">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
@@ -39,16 +36,16 @@
   <meta name="theme-color" content="#e01a4f"/>
 </head>
 <body>
-<script type="module" src="js/plugins.ts"></script>
+<script type="module" src="./js/plugins.ts"></script>
 
 <div id="main-frame">
   <div id="main-frame-content">
     <!-- The top element: menu and search bar -->
-    <div id="top-element">
-      <nav id="top-nav-bar">
+    <header id="page-header">
+      <nav id="header-nav-bar">
         <ul>
           <li>
-            <a href="index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
+            <a href="./index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
               <h1>Kipper</h1>
             </a>
@@ -74,12 +71,12 @@
             <label for="search-bar-input"></label>
             <input id="search-bar-input" type="search" placeholder="Search">
           </li>
+          <script src="./js/search-bar.ts"></script>
         </ul>
       </nav>
-      <div id="header-description-content" class="text-page-content-container">
-      </div>
-      <script src="js/generate-header-and-description.ts"></script>
-    </div>
+      <div id="header-description-content" class="text-page-content-container"></div>
+      <script src="./js/generate-header-and-description.ts"></script>
+    </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div id="interactive-console">
       <ul class="no-style-list flex-row">
@@ -94,8 +91,9 @@
                   <button>Export</button>
                 </li>
                 <li class="playground-button">
-                  <button>Copy Link</button>
+                  <button>Copy Code</button>
                 </li>
+                <li id="text-saving-state" class="flex-row centered"></li>
               </ul>
             </li>
             <li id="code-editor">
@@ -108,16 +106,16 @@
           <ul class="no-style-list flex-column">
             <li id="shell-sidebar-menu">
               <ul class="no-style-list flex-row">
-                <li id="shell-sidebar-menu-button-1" class="playground-button">
+                <li id="console-output-button" class="playground-button">
                   <button>Console Output</button>
                 </li>
-                <li id="shell-sidebar-menu-button-2" class="playground-button">
+                <li id="compiler-output-button" class="playground-button">
                   <button>Compiler Output</button>
                 </li>
               </ul>
             </li>
             <li id="side-editor">
-              <pre><code class="language-bash">my-user@your-machine:~$</code></pre>
+              <pre><code class="language-bash">> </code></pre>
             </li>
           </ul>
         </li>
@@ -125,15 +123,8 @@
     </div>
     <script src="./js/playground-interactive.ts"></script>
     <!-- Footer bar - contains some links and general copyright notice -->
-    <div id="footer-bar" class="flex-parent-container flex-column">
-      <div id="copyright" class="centered-text white-text">
-        <small>
-          © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
-          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this
-            license</a>.
-        </small>
-      </div>
-    </div>
+    <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
+    <script src="./js/generate-footer.ts"></script>
   </div>
 </div>
 </body>

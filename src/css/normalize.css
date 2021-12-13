@@ -9,7 +9,7 @@
  */
 
 html {
-  line-height: 1.15; /* 1 */
+  line-height: 1.5; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -74,7 +74,6 @@ a {
 
 abbr[title] {
   border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
   text-decoration: underline dotted; /* 2 */
 }
 

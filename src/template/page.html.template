@@ -9,22 +9,18 @@
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <meta property="og:title" content="Kipper"/>
-  <meta property="og:type" content=""/>
-  <meta property="og:url" content=""/>
-  <meta property="og:image" content="./img/icon.png"/>
-
+  <script src="./js/main.ts"></script>
   <link rel="manifest" href="../site.webmanifest"/>
   <link rel="apple-touch-icon" href="./img/icon.png"/>
   <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
 
-  <link rel="stylesheet" href="css/normalize.css"/>
-  <link rel="stylesheet" href="css/main.css"/>
-  <link rel="stylesheet" href="css/buttons.css"/>
-  <link rel="stylesheet" href="css/nav-bar.css"/>
-  <link rel="stylesheet" href="css/text.css"/>
-  <link rel="stylesheet" href="css/lists.css"/>
-  <link rel="stylesheet" href="css/footer.css"/>
+  <link rel="stylesheet" href="./css/normalize.css"/>
+  <link rel="stylesheet" href="./css/main.css"/>
+  <link rel="stylesheet" href="./css/buttons.css"/>
+  <link rel="stylesheet" href="./css/nav-bar.css"/>
+  <link rel="stylesheet" href="./css/text.css"/>
+  <link rel="stylesheet" href="./css/lists.css"/>
+  <link rel="stylesheet" href="./css/footer.css"/>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
@@ -38,16 +34,16 @@
   <meta name="theme-color" content="#e01a4f"/>
 </head>
 <body>
-<script type="module" src="js/plugins.ts"></script>
+<script type="module" src="./js/plugins.ts"></script>
 
 <div id="main-frame">
   <div id="main-frame-content">
     <!-- Top element -->
     <div id="top-header">
-      <nav id="top-nav-bar">
+      <nav id="header-nav-bar">
         <ul>
           <li>
-             <a href="index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
+             <a href="./index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
               <h1>Kipper</h1>
             </a>
@@ -72,6 +68,7 @@
             <label for="search-bar-input"></label>
             <input id="search-bar-input" type="search" placeholder="Search">
           </li>
+          <script src="./js/search-bar.ts"></script>
         </ul>
       </nav>
       <div class="text-page-content-container">
@@ -89,14 +86,14 @@
   <!-- Central Content - all content in the white area -->
   <div id="central-content" class="flex-parent-container black-text"></div>
   <!-- Footer bar - contains some links and general copyright notice -->
-  <div id="footer-bar" class="flex-parent-container flex-column">
+  <footer id="footer-bar" class="flex-parent-container flex-column">
     <div id="copyright" class="centered-text white-text">
       <small>
         © 2021 Luna Klatzer & Maximilian Seebacher. Content is available under
         <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this license</a>.
       </small>
     </div>
-  </div>
+  </footer>
 </div>
 </body>
 </html>
