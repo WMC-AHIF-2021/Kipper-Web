@@ -7,12 +7,10 @@
 - Have a simple, organised and well-designed Homepage, providing info on the project and Kipper itsself.
 
 ## Timeline
-- 17th October: Grammar file and project setup for [Kipper](https://github.com/Luna-Klatzer/Kipper) finished.
-- 30th October: Design finalised and base page content is finished. Figma Design is done ([prototype](https://www.figma.com/proto/wpt1dHa6Y1NITO2sq0xdRX/Web-Layout?node-id=0%3A1)).
-- 13th December: Rough Design finished (HTML done) - CSS might be not fully implemented.
-- 16th January: Finished CSS and HTMl - Static part release candidate.
-- End of Winter Semester: Finalised design and release of static part.
-- Summer Semester: Online Compiler (Playground) of Kipper
+- Until 17th October: Grammar file and project setup for Kipper finished ✓
+- Until 16th January: Finished CSS and HTML on the Website x
+- Until End of Winter Semester: Finish design of Website and complete Static (HTML) Part of the Website x
+- Until Summer Semester: Finished Online Compiler (Playground) of Kipper x
 
 ## Team-Members
 
