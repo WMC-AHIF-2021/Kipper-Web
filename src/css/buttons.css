@@ -18,8 +18,31 @@
   text-decoration: none !important;
 }
 
+.button-dark {
+  display: inline-block !important;
+  border: none !important;
+  color: black !important;
+  background-color: var(--scheme-primary) !important;
+  border-radius: var(--default-border-radius) !important;
+  padding: 15px 32px !important;
+  margin: 0.75em 0.75em 0.75em 0 !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  text-decoration: none !important;
+}
+
 .button:active, .button:visited {
   color: white !important;
+}
+
+.button-dark:active, .button-dark:visited {
+  color: white !important;
+}
+
+.button-dark:hover {
+  background-color: var(--button-dark-primary) !important;
+  box-shadow: 0 0 0.5em var(--scheme-gray) !important;
 }
 
 .button:hover {

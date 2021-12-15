@@ -3,61 +3,39 @@
 <head>
   <meta charset="utf-8"/>
   <title>404 - Page Not Found</title>
+  <link rel="stylesheet" href="./css/style-404.css">
+  <link rel="stylesheet" href="./css/buttons.css">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <style>
-    * {
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    html {
-      color: #888;
-      display: table;
-      font-family: 'Inter', Georgia, Verdana, monospace;
-      height: 100%;
-      text-align: center;
-      width: 100%;
-    }
-
     body {
       display: table-cell;
       vertical-align: middle;
       margin: 2em auto;
+      background-color: lightblue;
     }
 
-    h1 {
-      color: #555;
-      font-size: 2em;
-      font-weight: 400;
-    }
-
-    p {
-      margin: 0 auto;
-      width: 280px;
-    }
-
-    @media only screen and (max-width: 280px) {
-      body,
-      p {
-        width: 95%;
-      }
-
-      h1 {
-        font-size: 1.5em;
-        margin: 0 0 0.3em;
-      }
+    .white-box{
+      position: center;
+      text-align: center;
+      background-color: white;
+      opacity: 85;
+      width: 30%;
+      border-radius: 2em;
+      margin-left: 33%;
     }
   </style>
 </head>
 
 <body>
-<div class="404-Number" style="font-size: 3.5em">
-  <p>404</p>
+<div class="white-box">
+  <div class="Number" style="font-size: xxx-large;">
+    <h1>404</h1>
+  </div>
+  <p style="font-size: 1.5em">Page Not Found</p>
+  <p>Sorry, but the page you were trying to view does not exist.</p>
+  <p><a href="./index.html" class="button-dark">Homepage</a></p>
 </div>
-<p style="font-size: 1.5em">Page Not Found</p>
-<p>Sorry, but the page you were trying to view does not exist.</p>
-<p><a href="./index.html" class="button">Homepage</a></p>
 </body>
 </html>
 <!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
