@@ -12,6 +12,23 @@ html {
   width: 100%;
 }
 
+body {
+  display: table-cell;
+  vertical-align: middle;
+  margin: 2em auto;
+  background-color: var(--scheme-primary) ;
+}
+
+.white-box{
+  position: center;
+  text-align: center;
+  background-color: white;
+  opacity: 85;
+  width: 30%;
+  border-radius: 2em;
+  margin-left: 33%;
+}
+
 h1 {
   color: #555;
   font-size: 2em;
