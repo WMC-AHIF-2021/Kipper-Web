@@ -10,6 +10,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Removed
 
+## [v0.1.3] - 2021-12-16
+
+### Added
+- Added quickstart.html and usage-example.html (also to nav)
+
+### Changed
+- Edited Design of 404.html
+- Disabled Spellcheck in Searchbar and Playground Editor
+
+### Removed
+
+
+
 ## [v0.1.2] - 2021-12-11
 
 ### Added

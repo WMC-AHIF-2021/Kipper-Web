@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Kipper Interactive Playground!</title>
+  <title>Changelog</title>
   <meta
     name="description"
-    content="The playground for trying out Kipper and learning the basics in a pre-configured setup"
+    content="Changelog for the Kipper Language"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -21,8 +21,6 @@
   <link rel="stylesheet" href="./css/text.css"/>
   <link rel="stylesheet" href="./css/lists.css"/>
   <link rel="stylesheet" href="./css/footer.css"/>
-  <link rel="stylesheet" href="./css/playground.css"/>
-  <link rel="stylesheet" href="./css/spinner.css">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
@@ -34,6 +32,7 @@
   See main.css for the --scheme-primary variable
   -->
   <meta name="theme-color" content="#e01a4f"/>
+
 </head>
 <body>
 <script type="module" src="./js/plugins.ts"></script>
@@ -60,11 +59,11 @@
             <a href="./docs/index.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="./playground.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Playground</h4></a>
+            <a href="./playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
           </li>
           <li>
             <a href="./changelog.html"
-               class="menu-button top-nav-menu-items"><h4>
+               class="menu-button top-nav-menu-items selected-nav-page"><h4>
               Changelog</h4></a>
           </li>
           <li id="search-bar" class="no-style-list flex-row flex-parent-container red-text">
@@ -78,50 +77,53 @@
       <script src="./js/generate-header-and-description.ts"></script>
     </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
-    <div id="interactive-console">
-      <ul class="no-style-list flex-row">
-        <li id="left-console-interface">
-          <ul class="no-style-list flex-column">
-            <li id="playground-option-menu">
-              <ul class="no-style-list flex-row">
-                <li class="playground-button">
-                  <button>Run</button>
-                </li>
-                <li class="playground-button">
-                  <button>Export</button>
-                </li>
-                <li class="playground-button">
-                  <button>Copy Code</button>
-                </li>
-                <li id="text-saving-state" class="flex-row centered"></li>
-              </ul>
-            </li>
-            <li id="code-editor">
-              <label for="code-editor-textarea"></label>
-              <textarea id="code-editor-textarea" type="text" placeholder="Enter your Code here" spellcheck="false"></textarea>
-            </li>
-          </ul>
-        </li>
-        <li id="shell-sidebar">
-          <ul class="no-style-list flex-column">
-            <li id="shell-sidebar-menu">
-              <ul class="no-style-list flex-row">
-                <li id="console-output-button" class="playground-button">
-                  <button>Console Output</button>
-                </li>
-                <li id="compiler-output-button" class="playground-button">
-                  <button>Compiler Output</button>
-                </li>
-              </ul>
-            </li>
-            <li id="side-editor">
-              <pre><code class="language-bash">> </code></pre>
-            </li>
-          </ul>
-        </li>
-      </ul>
+    <div class="text-page-content-container">
+      <div id="download-content" class="text-content shadowed-box">
+        <section>
+          <div class="centered-text">
+          <article>
+            <p>
+              To view the Full Changelog on Github, click  the Button below:
+            </p>
+            <a href="https://github.com/Luna-Klatzer/Kipper/blob/main/CHANGELOG.md"
+               class="button"><h4>
+              Full Changelog</h4></a>
+          </article>
+          <article>
+            <h2>The most important news of the latest changes in Kipper (v0.1.2): </h2>
+          </article>
+          </div>
+          <article>
+            <!-- The most important news of the latest changes -->
+            <p><b>Added:</b></p>
+              <!-- Text hier her -->
+            <p>- oclif environment with the appropriate tests</p>
+            <p>- /test/module for module specific tests using mocha</p>
+            <p>- KipperErrorListener\<\Token\>for listening to KipperParser and KipperLexer errors</p>
+            <p>- ParserFile for implementing the stream that may be used for KipperCompiler.parser()</p>
+          </article>
+
+          <article>
+            <p><b>Changed:</b></p>
+              <!-- Text hier her -->
+            <p>- Updated file structure to separate commands (for oclif) and compiler (for the compiler source-code)</p>
+          </article>
+
+            <article>
+            <p><b>Removed:</b></p>
+              <!-- Text hier her -->
+            <p>- Nothing</p>
+            </article>
+
+          <article>
+            <p>
+              <!-- Last Updated Time -->
+              Last updated on: 16.12.2021 11:23
+            </p>
+          </article>
+        </section>
+      </div>
     </div>
-    <script src="./js/playground-interactive.ts"></script>
     <!-- Footer bar - contains some links and general copyright notice -->
     <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
     <script src="./js/generate-footer.ts"></script>
