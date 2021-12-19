@@ -37,7 +37,7 @@
 <script type="module" src="./js/plugins.ts"></script>
 
 <div id="main-frame">
-  <div id="main-frame-content">
+  <div id="actual-content">
     <!-- Top element -->
     <div id="top-header">
       <nav id="header-nav-bar">
