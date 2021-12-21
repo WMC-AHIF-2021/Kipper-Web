@@ -10,17 +10,20 @@ function runCode(element) {
 
 function clearContents(element) {
   console.log("Code Cleared!");
-  //Todo: Really clear the Code
+  codeInput.value = "";
+  textSavingState.innerHTML = `<p class="gray-text">Code cleared!</p>`;
 }
 
 function copy(element) {
   console.log("Code Copied!");
   //Todo: Really copy the Code
+  textSavingState.innerHTML = `<p class="gray-text">Code copied!</p>`;
 }
 
 function codeExport(element) {
   console.log("Code exported!");
   //Todo: Really export the Code
+  textSavingState.innerHTML = `<p class="gray-text">Code exported!</p>`;
 }
 
 const codeInput: HTMLTextAreaElement = document.querySelector("#code-editor-textarea");
@@ -28,6 +31,7 @@ const textSavingState: HTMLDivElement = document.querySelector("#text-saving-sta
 
 // reset previously entered text
 codeInput.value = localStorage.getItem("code-editor-textarea");
+
 
 // if the input is not empty, signalise that code was restored
 if (codeInput.value != "")
