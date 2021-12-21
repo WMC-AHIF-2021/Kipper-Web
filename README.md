@@ -7,6 +7,7 @@
 - Have a simple, organised and well-designed Homepage, providing info on the project and Kipper itsself.
 
 ## Timeline
+
 - Until 17th October: Grammar file and project setup for Kipper finished ✓
 - Until 16th January: Finished CSS and HTML on the Website x
 - Until End of Winter Semester: Finish design of Website and complete Static (HTML) Part of the Website x

@@ -83,19 +83,18 @@
           <ul class="no-style-list flex-column">
             <li id="playground-option-menu">
               <ul class="no-style-list flex-row">
-                <li class="playground-button" id="IDRunCode">
-                  <button onclick="runCode()">Run</button>
+                <li class="playground-button" id="RunButtonContainer">
+                  <button onclick="runButtonPress()" id="RunButton">Run</button>
                 </li>
                 <li class="playground-button">
-                  <button onclick="codeExport()">Export</button>
+                  <button onclick="copyButtonPress()" id="CopyButton">Copy Code</button>
                 </li>
                 <li class="playground-button">
-                  <button onclick="copy()">Copy Code</button>
+                  <button onclick="clearButtonPress()" id="ClearContent">Clear</button>
                 </li>
-                <li class="playground-button">
-                  <button onclick="clearContents();">Clear</button>
+                <li id="text-saving-state" class="flex-row centered">
+                  <p></p>
                 </li>
-                <li id="text-saving-state" class="flex-row centered"></li>
               </ul>
             </li>
             <li id="code-editor">
