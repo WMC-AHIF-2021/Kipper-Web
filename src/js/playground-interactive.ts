@@ -12,7 +12,7 @@ codeInput.value = localStorage.getItem("code-editor-textarea");
 if (codeInput.value != "")
   textSavingState.innerHTML = `<p class="gray-text">Welcome back! We restored the code of your last session for you :)</p>`;
 else
-  textSavingState.innerHTML = `<p class="gray-text">Start typing! We will save your change on the way!</p>`;
+  textSavingState.innerHTML = `<p class="gray-text">Start typing! We will save your changes while you are typing!</p>`;
 
 let cancel;
 let spinning: boolean;
