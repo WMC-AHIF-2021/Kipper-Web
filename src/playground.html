@@ -27,7 +27,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
 
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
@@ -84,17 +83,17 @@
           <ul class="no-style-list flex-column">
             <li id="playground-option-menu">
               <ul class="no-style-list flex-row">
-                <li class="playground-button">
-                  <button onclick="runCode(this)">Run</button>
+                <li class="playground-button" id="IDRunCode">
+                  <button onclick="runCode()">Run</button>
                 </li>
                 <li class="playground-button">
-                  <button onclick="codeExport(this)">Export</button>
+                  <button onclick="codeExport()">Export</button>
                 </li>
                 <li class="playground-button">
-                  <button onclick="copy(this)">Copy Code</button>
+                  <button onclick="copy()">Copy Code</button>
                 </li>
                 <li class="playground-button">
-                  <button onclick="clearContents(this);">Clear</button>
+                  <button onclick="clearContents();">Clear</button>
                 </li>
                 <li id="text-saving-state" class="flex-row centered"></li>
               </ul>

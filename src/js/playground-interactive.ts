@@ -2,32 +2,39 @@
  * File for main.html - Currently useless
  */
 
-function runCode(element) {
+const codeInput: HTMLTextAreaElement = document.querySelector("#code-editor-textarea");
+const textSavingState: HTMLDivElement = document.querySelector("#text-saving-state");
+const IDRunCode: HTMLDivElement = document.querySelector("#IDRunCode");
+
+function runCode() {
   console.log("Run Code!");
-  //Todo: Really run the Code
+  textSavingState.innerHTML = `<p class="gray-text">Running...</p>`;
+  IDRunCode.innerHTML = `<button onclick="stopCode(this)" id="stopCode">Stop</button>`;
 }
 
+function stopCode() {
+  console.log("Stopped!");
+  textSavingState.innerHTML = `<p class="gray-text">Stopped...</p>`;
+  IDRunCode.innerHTML = `<button onclick="runCode(this)" id="runCode">Run</button>`;
+}
 
-function clearContents(element) {
+function clearContents() {
   console.log("Code Cleared!");
   codeInput.value = "";
   textSavingState.innerHTML = `<p class="gray-text">Code cleared!</p>`;
 }
 
-function copy(element) {
+function copy() {
   console.log("Code Copied!");
   //Todo: Really copy the Code
   textSavingState.innerHTML = `<p class="gray-text">Code copied!</p>`;
 }
 
-function codeExport(element) {
+function codeExport() {
   console.log("Code exported!");
   //Todo: Really export the Code
   textSavingState.innerHTML = `<p class="gray-text">Code exported!</p>`;
 }
-
-const codeInput: HTMLTextAreaElement = document.querySelector("#code-editor-textarea");
-const textSavingState: HTMLDivElement = document.querySelector("#text-saving-state")
 
 // reset previously entered text
 codeInput.value = localStorage.getItem("code-editor-textarea");
