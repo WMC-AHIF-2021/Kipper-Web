@@ -84,10 +84,19 @@ p {
   margin-bottom: 2rem;
 }
 
-.text-content {
-  width: 66.6vw;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+@media (max-width: 1200px) {
+  .text-content {
+    margin: 4rem;
+    max-width: 100vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-content {
+    width: 66.6vw;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
 }
 
 .shadowed-box {

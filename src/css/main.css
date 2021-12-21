@@ -63,7 +63,7 @@ html {
   display: flex;
 }
 
-#main-frame-content {
+#actual-content {
   display: flex;
   height: 100vh;
   flex-grow: 1;
