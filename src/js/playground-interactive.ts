@@ -2,6 +2,27 @@
  * File for main.html - Currently useless
  */
 
+function runCode(element) {
+  console.log("Run Code!");
+  //Todo: Really run the Code
+}
+
+
+function clearContents(element) {
+  console.log("Code Cleared!");
+  //Todo: Really clear the Code
+}
+
+function copy(element) {
+  console.log("Code Copied!");
+  //Todo: Really copy the Code
+}
+
+function codeExport(element) {
+  console.log("Code exported!");
+  //Todo: Really export the Code
+}
+
 const codeInput: HTMLTextAreaElement = document.querySelector("#code-editor-textarea");
 const textSavingState: HTMLDivElement = document.querySelector("#text-saving-state")
 

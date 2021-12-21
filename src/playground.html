@@ -85,16 +85,16 @@
             <li id="playground-option-menu">
               <ul class="no-style-list flex-row">
                 <li class="playground-button">
-                  <button>Run</button>
+                  <button onclick="runCode(this)">Run</button>
                 </li>
                 <li class="playground-button">
-                  <button>Export</button>
+                  <button onclick="codeExport(this)">Export</button>
                 </li>
                 <li class="playground-button">
-                  <button>Copy Code</button>
+                  <button onclick="copy(this)">Copy Code</button>
                 </li>
                 <li class="playground-button">
-                  <button><a href="#" style="color: black;">Clear</a></button>
+                  <button onclick="clearContents(this);">Clear</button>
                 </li>
                 <li id="text-saving-state" class="flex-row centered"></li>
               </ul>
