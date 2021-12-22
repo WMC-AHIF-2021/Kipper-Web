@@ -10,12 +10,14 @@ function runCode() {
   console.log("Run Code!");
   textSavingState.innerHTML = `<p class="gray-text">Running...</p>`;
   IDRunCode.innerHTML = `<button onclick="stopCode(this)" id="stopCode">Stop</button>`;
+  //TODO:Really run the Code
 }
 
 function stopCode() {
   console.log("Stopped!");
   textSavingState.innerHTML = `<p class="gray-text">Stopped...</p>`;
   IDRunCode.innerHTML = `<button onclick="runCode(this)" id="runCode">Run</button>`;
+  //TODO:Really stop the Code
 }
 
 function clearContents() {
@@ -26,7 +28,7 @@ function clearContents() {
 
 function copy() {
   console.log("Code Copied!");
-  //Todo: Really copy the Code
+  navigator.clipboard.writeText(codeInput.value);
   textSavingState.innerHTML = `<p class="gray-text">Code copied!</p>`;
 }
 
