@@ -30,12 +30,6 @@ function copy() {
   textSavingState.innerHTML = `<p class="gray-text">Code copied!</p>`;
 }
 
-function codeExport() {
-  console.log("Code exported!");
-  //Todo: Really export the Code
-  textSavingState.innerHTML = `<p class="gray-text">Code exported!</p>`;
-}
-
 // reset previously entered text
 codeInput.value = localStorage.getItem("code-editor-textarea");
 
