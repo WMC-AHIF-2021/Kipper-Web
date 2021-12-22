@@ -5,18 +5,36 @@
 const codeInput: HTMLTextAreaElement = document.querySelector("#code-editor-textarea");
 const textSavingState: HTMLDivElement = document.querySelector("#text-saving-state");
 const IDRunCode: HTMLDivElement = document.querySelector("#IDRunCode");
+const IDConsoleOutput: HTMLDivElement = document.querySelector("#side-editor");
+const IDCompilerOutput: HTMLDivElement = document.querySelector("#side-editor");
+
+let OutputConsole: HTMLDivElement = IDConsoleOutput;
+let OutputCompiler: HTMLDivElement = IDCompilerOutput;
+
+let CompilerShowed: boolean;
+let ScriptRunning: boolean;
 
 function runCode() {
   console.log("Run Code!");
+  ScriptRunning = true;
   textSavingState.innerHTML = `<p class="gray-text">Running...</p>`;
   IDRunCode.innerHTML = `<button onclick="stopCode(this)" id="stopCode">Stop</button>`;
+  const currentTime = new Date();
+  const time = currentTime.getHours()+ ":" + currentTime.getMinutes();
+  IDCompilerOutput.innerHTML = time +`<p class="gray-text">: Compilation started...<br>\n</p>`;
+  IDConsoleOutput.innerHTML =  time +`<p class="gray-text">: Script started...<br>\n</p>`;
   //TODO:Really run the Code
 }
 
 function stopCode() {
   console.log("Stopped!");
+  ScriptRunning = false;
   textSavingState.innerHTML = `<p class="gray-text">Stopped...</p>`;
   IDRunCode.innerHTML = `<button onclick="runCode(this)" id="runCode">Run</button>`;
+  const currentTime = new Date();
+  const time = currentTime.getHours()+ ":" + currentTime.getMinutes();
+  IDConsoleOutput.innerHTML = IDConsoleOutput.innerHTML + time +`<p class="gray-text">: Script stopped...</p>`;
+
   //TODO:Really stop the Code
 }
 
@@ -30,6 +48,25 @@ function copy() {
   console.log("Code Copied!");
   navigator.clipboard.writeText(codeInput.value);
   textSavingState.innerHTML = `<p class="gray-text">Code copied!</p>`;
+}
+
+function ConsoleOutput() {
+  console.log("Switched to Console Output");
+  if(!IDConsoleOutput.innerHTML.length){
+    IDConsoleOutput.innerHTML = `<p class="gray-text">Nothing to show</p>`;
+  }
+  OutputConsole = IDConsoleOutput;
+  IDConsoleOutput.innerHTML = OutputConsole.innerHTML;
+}
+
+function CompilerOutput() {
+  console.log("Switched to Compiler Output");
+  CompilerShowed = true;
+  if(!IDCompilerOutput.innerHTML.length){
+    IDCompilerOutput.innerHTML = `<p class="gray-text">Nothing to show</p>`;
+  }
+  OutputCompiler = IDCompilerOutput;
+  IDCompilerOutput.innerHTML = OutputCompiler.innerHTML;
 }
 
 // reset previously entered text

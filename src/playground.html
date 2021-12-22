@@ -36,6 +36,13 @@
 </head>
 <body>
 <script type="module" src="./js/plugins.ts"></script>
+<script>
+  //To show something onload in the Console Space at the right
+  window.onload = function () {
+    IDConsoleOutput.innerHTML = `<p class="gray-text">Nothing to show</p>`;
+    IDCompilerOutput.innerHTML = `<p class="gray-text">Nothing to show</p>`;
+  }
+</script>
 
 <div id="main-frame">
   <div id="actual-content">
@@ -106,10 +113,10 @@
             <li id="shell-sidebar-menu">
               <ul class="no-style-list flex-row">
                 <li id="console-output-button" class="playground-button">
-                  <button>Console Output</button>
+                  <button onclick="ConsoleOutput()">Console Output</button>
                 </li>
                 <li id="compiler-output-button" class="playground-button">
-                  <button>Compiler Output</button>
+                  <button onclick="CompilerOutput()">Compiler Output</button>
                 </li>
               </ul>
             </li>
