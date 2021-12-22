@@ -8,8 +8,14 @@ const IDRunCode: HTMLDivElement = document.querySelector("#IDRunCode");
 const IDConsoleOutput: HTMLDivElement = document.querySelector("#side-editor");
 const IDCompilerOutput: HTMLDivElement = document.querySelector("#side-editor");
 
+const ConsoleOutputButton: HTMLDivElement = document.querySelector("#console-output-button");
+const CompilerOutputButton: HTMLDivElement = document.querySelector("#compiler-output-button");
+
+// reset previously entered text
+codeInput.value = localStorage.getItem("code-editor-textarea");
+
 let OutputConsole: HTMLDivElement = IDConsoleOutput;
-let OutputCompiler: HTMLDivElement = IDCompilerOutput;
+const OutputCompiler: HTMLDivElement = IDCompilerOutput;
 
 let CompilerShowed: boolean;
 let ScriptRunning: boolean;
@@ -23,6 +29,8 @@ function runCode() {
   const time = currentTime.getHours()+ ":" + currentTime.getMinutes();
   IDCompilerOutput.innerHTML = time +`<p class="gray-text">: Compilation started...<br>\n</p>`;
   IDConsoleOutput.innerHTML =  time +`<p class="gray-text">: Script started...<br>\n</p>`;
+  console.log("Compiler: " + IDCompilerOutput.innerHTML);
+  console.log("Console: " + IDConsoleOutput.innerHTML);
   //TODO:Really run the Code
 }
 
@@ -34,6 +42,7 @@ function stopCode() {
   const currentTime = new Date();
   const time = currentTime.getHours()+ ":" + currentTime.getMinutes();
   IDConsoleOutput.innerHTML = IDConsoleOutput.innerHTML + time +`<p class="gray-text">: Script stopped...</p>`;
+  console.log("Console: " + IDConsoleOutput.innerHTML);
 
   //TODO:Really stop the Code
 }
@@ -52,26 +61,26 @@ function copy() {
 
 function ConsoleOutput() {
   console.log("Switched to Console Output");
+  ConsoleOutputButton.innerHTML = "<b><u><button onclick=\"ConsoleOutput()\">Console Output</button></u></b>";
+  CompilerOutputButton.innerHTML = "<button onclick=\"CompilerOutput()\">Compiler Output</button>";
   if(!IDConsoleOutput.innerHTML.length){
     IDConsoleOutput.innerHTML = `<p class="gray-text">Nothing to show</p>`;
   }
   OutputConsole = IDConsoleOutput;
+  console.log("Console: " + OutputConsole.innerHTML);
   IDConsoleOutput.innerHTML = OutputConsole.innerHTML;
 }
 
 function CompilerOutput() {
   console.log("Switched to Compiler Output");
+  ConsoleOutputButton.innerHTML = "<button onclick=\"ConsoleOutput()\">Console Output</button>";
+  CompilerOutputButton.innerHTML = "<b><u><button onclick=\"CompilerOutput()\">Compiler Output</button></u></b>";
   CompilerShowed = true;
   if(!IDCompilerOutput.innerHTML.length){
     IDCompilerOutput.innerHTML = `<p class="gray-text">Nothing to show</p>`;
   }
-  OutputCompiler = IDCompilerOutput;
-  IDCompilerOutput.innerHTML = OutputCompiler.innerHTML;
+  console.log("Compiler: " + OutputCompiler.innerHTML);
 }
-
-// reset previously entered text
-codeInput.value = localStorage.getItem("code-editor-textarea");
-
 
 // if the input is not empty, signalise that code was restored
 if (codeInput.value != "")

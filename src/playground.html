@@ -41,8 +41,13 @@
   window.onload = function () {
     IDConsoleOutput.innerHTML = `<p class="gray-text">Nothing to show</p>`;
     IDCompilerOutput.innerHTML = `<p class="gray-text">Nothing to show</p>`;
+    ConsoleOutputButton.innerHTML = "<b><u><button onclick=\"ConsoleOutput()\">Console Output</button></u></b>";
+    CompilerOutputButton.innerHTML = "<button onclick=\"CompilerOutput()\">Compiler Output</button>";
   }
 </script>
+
+//Show Error if JS is disabled or blocked
+<noscript>Sorry, but you need to enable Java-Script to use our Playground!</noscript>
 
 <div id="main-frame">
   <div id="actual-content">
