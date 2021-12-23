@@ -63,7 +63,7 @@ function ConsoleOutput() {
   console.log("Switched to Console Output");
   ConsoleOutputButton.innerHTML = "<b><u><button onclick=\"ConsoleOutput()\">Console Output</button></u></b>";
   CompilerOutputButton.innerHTML = "<button onclick=\"CompilerOutput()\">Compiler Output</button>";
-  IDConsoleOutput.innerHTML = `<iframe src="./console.html" title="Console Output"></iframe>`;
+  IDConsoleOutput.innerHTML = `<iframe src="https://orf.at/" style="border:0px #ffffff none;" name="consoleOutputIframe" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>`;
 }
 
 function CompilerOutput() {
@@ -71,7 +71,7 @@ function CompilerOutput() {
   ConsoleOutputButton.innerHTML = "<button onclick=\"ConsoleOutput()\">Console Output</button>";
   CompilerOutputButton.innerHTML = "<b><u><button onclick=\"CompilerOutput()\">Compiler Output</button></u></b>";
   CompilerShowed = true;
-  IDConsoleOutput.innerHTML = `<iframe src="./compiler.html" title="Compiler Output"></iframe>`;
+  IDCompilerOutput.innerHTML = `<iframe src="https://orf.at/" style="border:0px #ffffff none;" name="consoleOutputIframe" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>`;
   console.log("Compiler: " + OutputCompiler.innerHTML);
 }
 
