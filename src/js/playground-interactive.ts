@@ -26,7 +26,7 @@ function runCode() {
   textSavingState.innerHTML = `<p class="gray-text">Running...</p>`
   IDRunCode.innerHTML = `<button onclick="stopCode(this)" id="stopCode">Stop</button>`;
   const currentTime = new Date();
-  const time = (currentTime.getHours() >= 10 ? currentTime.getHours(): ("0" + currentTime.getHours()))+ ":" + (currentTime.getMinutes() >= 10 ? currentTime.getMinutes() : ("0" + currentTime.getHours()));
+  const time = (currentTime.getHours() >= 10 ? currentTime.getHours(): ("0" + currentTime.getHours()))+ ":" + (currentTime.getMinutes() >= 10 ? currentTime.getMinutes() : ("0" + currentTime.getMinutes()));
   IDCompilerOutput.innerHTML = time +`<p class="gray-text">: Compilation started...<br>\n</p>`;
   IDConsoleOutput.innerHTML =  time +`<p class="gray-text">: Script started...<br>\n</p>`;
   console.log("Compiler: " + IDCompilerOutput.innerHTML);
@@ -40,7 +40,7 @@ function stopCode() {
   textSavingState.innerHTML = `<p class="gray-text">Stopped...</p>`;
   IDRunCode.innerHTML = `<button onclick="runCode(this)" id="runCode">Run</button>`;
   const currentTime = new Date();
-  const time = (currentTime.getHours() >= 10 ? currentTime.getHours(): ("0" + currentTime.getHours()))+ ":" + (currentTime.getMinutes() >= 10 ? currentTime.getMinutes() : ("0" + currentTime.getHours()));
+  const time = (currentTime.getHours() >= 10 ? currentTime.getHours(): ("0" + currentTime.getHours()))+ ":" + (currentTime.getMinutes() >= 10 ? currentTime.getMinutes() : ("0" + currentTime.getMinutes()));
   IDConsoleOutput.innerHTML = IDConsoleOutput.innerHTML + time +`<p class="gray-text">: Script stopped...</p>`;
   console.log("Console: " + IDConsoleOutput.innerHTML);
 
