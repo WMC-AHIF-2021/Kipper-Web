@@ -42,7 +42,7 @@ jobs:
           npm install -g source-map-resolve@0.6.0
       - name: Insert Disclaimer Header
         run: |
-          curl -o ${{ env.UPDATE_SCRIPT }} ${{ env.SCRIPT_FILE_NAME }}
+          curl ${{ env.UPDATE_SCRIPT }} > ${{ env.SCRIPT_FILE_NAME }}
           python insert-html-banner.py
       - name: Build Files using Parcel
         run: parcel build src/index.html --public-url ${{ env.REDIRECT_URL }} --dist-dir .
