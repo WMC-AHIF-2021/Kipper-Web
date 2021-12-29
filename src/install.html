@@ -97,15 +97,14 @@
           <article>
             <h2>Install the npm module</h2>
             <p>
-              The Kipper-Compiler is hosted and kept up-to-date to the latest GitHub releases on the
-              <a href="https://www.npmjs.com/">npm package manager</a>, meaning you can easily install it using
-              the command line.
-            </p>
-            <p>
-              For simply trying out Kipper the following command can be used, which will globally
-              install it and add the command to the path making it available outside your project as well:
+              The Kipper-Compiler is hosted and kept up-to-date on the <a href="https://www.npmjs.com/">node package
+              manager (npm)</a>, meaning you can easily install it from there using the following command:
             </p>
             <pre><code class="language-bash">npm install -g kipper</code></pre>
+            <p>
+              This will install the latest kipper version globally and make it available in the command line using
+              <code>kipper</code>
+            </p>
           </article>
           <article class="highlight-text">
             <h3>Important</h3>
@@ -113,14 +112,9 @@
               Note though, that if possible avoid installing Kipper globally, as it can cause issues with locally
               installed versions (project dependencies). For a localised / project-dependent TS installation
               <a href="https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file">add
-                <code>kipper</code> to your <code>package.json</code>.
+                <code>kipper</code> to your project <code>package.json</code> file.
               </a>
             </p>
-            <p>
-              To temporarily install the package <code>kipper</code> for trying out the kipper language you may do
-              the following:
-            </p>
-            <pre><code class="language-bash">npm install typescript --save-dev</code></pre>
           </article>
           <article>
             <h2>Run the Compiler</h2>
