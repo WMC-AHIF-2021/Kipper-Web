@@ -38,7 +38,7 @@ jobs:
           npm install -g uuid@8.3.2
           npm install -g source-map-resolve@0.6.0
       - name: Build Files using Parcel
-        run: parcel build src/index.html --public-url ${{ REDIRECT_URL }} --dist-dir .
+        run: parcel build src/index.html --public-url ${{ env.REDIRECT_URL }} --dist-dir .
       - name: Add Local Identification Config
         run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
