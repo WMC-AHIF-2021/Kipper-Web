@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REDIRECT_URL: https://wmc-ahif-2021.github.io/Kipper-Web/
+      PACKAGE_JSON: https://gist.githubusercontent.com/Luna-Klatzer/1a099c115498fbdf01a6c4a749ceb2d5/raw/d4c58fe3e3de74bc0f08683362584854b422ade2/package.json
       UPDATE_SCRIPT: https://gist.githubusercontent.com/Luna-Klatzer/a6f57a7ad7d79dc0a90115846cc98945/raw/834133b554fa5ef35316614783dea8d1e69a92d6/insert-html-banner.py
       SCRIPT_FILE_NAME: insert-html-banner.py
     strategy:
@@ -28,22 +29,12 @@ jobs:
         run: sudo apt-get install tree
       - name: Installs dependencies
         run: |
-          npm install -g parcel@2.0.1
-          npm install -g @parcel/core@2.0.1
-          npm install -g @parcel/transformer-webmanifest@2.0.1
-          npm install -g @parcel/transformer-image@2.0.1
-          npm install -g @parcel/packager-raw-url@2.0.1
-          npm install -g typescript@4.4.3
-          npm install -g ts-node@3.3.0
-          npm install -g tslib@2.3.1
-          npm install -g set-value@4.1.0
-          npm install -g json-schema@0.4.0
-          npm install -g uuid@8.3.2
-          npm install -g source-map-resolve@0.6.0
+          curl ${{ env.PACKAGE_JSON }} > package.json
+          npm i
+      - name: Download Update Script
+        run: curl ${{ env.UPDATE_SCRIPT }} > ${{ env.SCRIPT_FILE_NAME }}
       - name: Insert Disclaimer Header
-        run: |
-          curl ${{ env.UPDATE_SCRIPT }} > ${{ env.SCRIPT_FILE_NAME }}
-          python insert-html-banner.py
+        run: python insert-html-banner.py
       - name: Build Files using Parcel
         run: parcel build src/index.html --public-url ${{ env.REDIRECT_URL }} --dist-dir .
       - name: Add Local Identification Config
