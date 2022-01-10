@@ -14,7 +14,7 @@ const CompilerOutputButton: HTMLDivElement = document.querySelector("#compiler-o
 // reset previously entered text
 codeInput.value = localStorage.getItem("code-editor-textarea");
 
-let OutputConsole: HTMLDivElement = IDConsoleOutput;
+const OutputConsole: HTMLDivElement = IDConsoleOutput;
 const OutputCompiler: HTMLDivElement = IDCompilerOutput;
 
 let CompilerShowed: boolean;
@@ -26,7 +26,7 @@ function runCode() {
   textSavingState.innerHTML = `<p class="gray-text">Running...</p>`;
   IDRunCode.innerHTML = `<button onclick="stopCode(this)" id="stopCode">Stop</button>`;
   const currentTime = new Date();
-  const time = currentTime.getHours()+ ":" + currentTime.getMinutes();
+  const time = (currentTime.getHours() >= 10 ? currentTime.getHours(): ("0" + currentTime.getHours()))+ ":" + (currentTime.getMinutes() >= 10 ? currentTime.getMinutes() : ("0" + currentTime.getHours()));
   IDCompilerOutput.innerHTML = time +`<p class="gray-text">: Compilation started...<br>\n</p>`;
   IDConsoleOutput.innerHTML =  time +`<p class="gray-text">: Script started...<br>\n</p>`;
   console.log("Compiler: " + IDCompilerOutput.innerHTML);
@@ -40,7 +40,7 @@ function stopCode() {
   textSavingState.innerHTML = `<p class="gray-text">Stopped...</p>`;
   IDRunCode.innerHTML = `<button onclick="runCode(this)" id="runCode">Run</button>`;
   const currentTime = new Date();
-  const time = currentTime.getHours()+ ":" + currentTime.getMinutes();
+  const time = (currentTime.getHours() >= 10 ? currentTime.getHours(): ("0" + currentTime.getHours()))+ ":" + (currentTime.getMinutes() >= 10 ? currentTime.getMinutes() : ("0" + currentTime.getHours()));
   IDConsoleOutput.innerHTML = IDConsoleOutput.innerHTML + time +`<p class="gray-text">: Script stopped...</p>`;
   console.log("Console: " + IDConsoleOutput.innerHTML);
 
@@ -65,12 +65,7 @@ function ConsoleOutput() {
   console.log("Switched to Console Output");
   ConsoleOutputButton.innerHTML = "<b><u><button onclick=\"ConsoleOutput()\">Console Output</button></u></b>";
   CompilerOutputButton.innerHTML = "<button onclick=\"CompilerOutput()\">Compiler Output</button>";
-  if(!IDConsoleOutput.innerHTML.length){
-    IDConsoleOutput.innerHTML = `<p class="gray-text">Nothing to show</p>`;
-  }
-  OutputConsole = IDConsoleOutput;
-  console.log("Console: " + OutputConsole.innerHTML);
-  IDConsoleOutput.innerHTML = OutputConsole.innerHTML;
+  IDConsoleOutput.innerHTML = `<iframe src="https://orf.at/" style="border:0px #ffffff none;" name="consoleOutputIframe" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>`;
 }
 
 function CompilerOutput() {
@@ -78,9 +73,7 @@ function CompilerOutput() {
   ConsoleOutputButton.innerHTML = "<button onclick=\"ConsoleOutput()\">Console Output</button>";
   CompilerOutputButton.innerHTML = "<b><u><button onclick=\"CompilerOutput()\">Compiler Output</button></u></b>";
   CompilerShowed = true;
-  if(!IDCompilerOutput.innerHTML.length){
-    IDCompilerOutput.innerHTML = `<p class="gray-text">Nothing to show</p>`;
-  }
+  IDCompilerOutput.innerHTML = `<iframe src="https://orf.at/" style="border:0px #ffffff none;" name="consoleOutputIframe" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>`;
   console.log("Compiler: " + OutputCompiler.innerHTML);
 }
 
