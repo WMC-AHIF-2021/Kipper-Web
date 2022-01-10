@@ -86,15 +86,19 @@
           <ul class="no-style-list flex-column">
             <li id="playground-option-menu">
               <ul class="no-style-list flex-row">
-                <li class="playground-button" id="IDRunCode">
-                  <button onclick="runCode()">Run</button>
+                <li class="playground-button" id="run-code-list-item">
+                  <button>Run</button>
                 </li>
-                <li class="playground-button">
-                  <button onclick="copy()">Copy Code</button>
+                <li class="playground-button" id="copy-code-list-item">
+                  <button>Copy Code</button>
                 </li>
-                <li class="playground-button">
-                  <button onclick="clearContents();">Clear</button>
+                <li class="playground-button" id="clear-content-list-item">
+                  <button>Clear</button>
                 </li>
+                <!--
+                Independent text saving state list item for letting the user
+                know the state of saving
+                -->
                 <li id="text-saving-state" class="flex-row centered"></li>
               </ul>
             </li>
@@ -109,10 +113,10 @@
             <li id="shell-sidebar-menu">
               <ul class="no-style-list flex-row">
                 <li id="console-output-button" class="playground-button">
-                  <button onclick="ConsoleOutput()">Console Output</button>
+                  <button>Console Output</button>
                 </li>
                 <li id="compiler-output-button" class="playground-button">
-                  <button onclick="CompilerOutput()">Compiler Output</button>
+                  <button>Compiler Output</button>
                 </li>
               </ul>
             </li>
