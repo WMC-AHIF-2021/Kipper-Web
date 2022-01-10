@@ -44,15 +44,17 @@ function stopCode() {
   IDConsoleOutput.innerHTML = IDConsoleOutput.innerHTML + time +`<p class="gray-text">: Script stopped...</p>`;
   console.log("Console: " + IDConsoleOutput.innerHTML);
 
-  //TODO:Really stop the Code
+  //TODO: Really stop the Code
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function clearContents() {
   console.log("Code Cleared!");
   codeInput.value = "";
   textSavingState.innerHTML = `<p class="gray-text">Code cleared!</p>`;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function copy() {
   console.log("Code Copied!");
   navigator.clipboard.writeText(codeInput.value);
