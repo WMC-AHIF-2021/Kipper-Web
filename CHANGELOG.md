@@ -7,7 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- `screen.css` for specific screen-based handling and arrangement
+
 ### Changed
+- Updated Responsive Design handling for `text-content` html elements
+
 ### Removed
 
 ## [v0.1.3] - 2021-12-16
@@ -18,10 +22,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Edited Design of 404.html
 - Disabled Spellcheck in Searchbar and Playground Editor
-
-### Removed
-
-
 
 ## [v0.1.2] - 2021-12-11
 
