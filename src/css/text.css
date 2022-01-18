@@ -69,10 +69,25 @@ p {
   margin: 0;
 }
 
+/* Dynamic screen size definitions */
+@media (max-width: 1200px) {
+  .text-content {
+    margin: 2rem;
+    max-width: 100vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-content {
+    width: 66.6vw;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
 .link-on-red-background, .link-on-red-background:visited, .link-on-red-background:active {
   color: white !important;
-  text-decoration: underline
-;
+  text-decoration: underline;
 }
 
 .link-on-red-background:hover {
@@ -82,12 +97,6 @@ p {
 /* Pure Text Content / Explanatory content */
 .header-text-content {
   margin-bottom: 2rem;
-}
-
-.text-content {
-  width: 66.6vw;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
 }
 
 .shadowed-box {

@@ -16,6 +16,7 @@
 
   <link rel="stylesheet" href="./css/normalize.css"/>
   <link rel="stylesheet" href="./css/main.css"/>
+  <link rel="stylesheet" href="./css/screen.css"/>
   <link rel="stylesheet" href="./css/buttons.css"/>
   <link rel="stylesheet" href="./css/nav-bar.css"/>
   <link rel="stylesheet" href="./css/text.css"/>
@@ -25,7 +26,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
 
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
@@ -36,8 +36,11 @@
 <body>
 <script type="module" src="./js/plugins.ts"></script>
 
+<!-- Show Error if JS is disabled or blocked -->
+<noscript>Oops that shouldn't have happened! Please enable Java-Script to use our Site!</noscript>
+
 <div id="main-frame">
-  <div id="main-frame-content">
+  <div id="actual-content">
     <!-- The top element: menu and search bar -->
     <header id="page-header">
       <nav id="header-nav-bar">
@@ -58,7 +61,7 @@
             <a href="./docs/index.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="./playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+            <a href="playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
           </li>
           <li>
             <a href="./changelog.html"
@@ -77,43 +80,9 @@
     </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div class="text-page-content-container">
-      <div id="main-content" class="text-content shadowed-box">
-        <section>
-          <h1>Placeholder</h1>
-          <article>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-              justo duo dolores et ea rebum. Stet clita kasd gubergren,
-              no sea takimata sanctus est Lorem ipsum dolor sit amet.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-              justo duo dolores et ea rebum. Stet clita kasd gubergren,
-              no sea takimata sanctus est Lorem ipsum dolor sit amet.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-              justo duo dolores et ea rebum. Stet clita kasd gubergren,
-              no sea takimata sanctus est Lorem ipsum dolor sit amet.
-            </p>
-          </article>
-        </section>
-      </div>
+      <section id="homepage-content">
+        <!-- TODO! Add here images to showcase the functionality. NO TEXT! -->
+      </section>
     </div>
     <!-- Footer bar - contains some links and general copyright notice -->
     <footer id="footer-bar" class="flex-parent-container flex-column"></footer>

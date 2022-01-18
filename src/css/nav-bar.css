@@ -53,13 +53,7 @@
   flex-shrink: inherit;
 }
 
-#header-nav-bar li a {
-  color: white;
-  text-align: center;
-  text-decoration: none;
-}
-
-#header-nav-bar li h1 {
+#header-nav-bar li a, #header-nav-bar li h1 {
   color: white;
   text-align: center;
   text-decoration: none;
@@ -76,10 +70,6 @@
     height: 2rem;
     padding-left: 1rem;
   }
-
-  #search-bar #search-bar-input:focus, #search-bar #search-bar-input:hover {
-    outline: var(--scheme-secondary);
-  }
 }
 
 @media (min-width: 1200px) {
@@ -93,8 +83,8 @@
     height: 2rem;
     padding-left: 1rem;
   }
+}
 
-  #search-bar #search-bar-input:focus, #search-bar #search-bar-input:hover {
-    outline: var(--scheme-secondary);
-  }
+#search-bar #search-bar-input:focus, #search-bar #search-bar-input:hover {
+  outline: var(--scheme-secondary);
 }
