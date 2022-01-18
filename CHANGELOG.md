@@ -7,12 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+
+### Changed
+
+### Removed
+
+## [v0.1.4] - 2021-12-16
+### Added
 - `screen.css` for specific screen-based handling and arrangement
 
 ### Changed
 - Updated Responsive Design handling for `text-content` html elements
+- Minor responsive design handling, and formatting
 
 ### Removed
+- Outdated placeholders and replacements 
 
 ## [v0.1.3] - 2021-12-16
 
@@ -85,6 +94,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed unnecessary `start_local_Server.exe`
 
 [unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/HEAD...base-dev
+[v0.1.4]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.3...v0.1.4
+[v0.1.3]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.1...v0.1.2
 [v0.1.1]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1...v0.1.1
 [v0.1]: https://github.com/WMC-AHIF-2021/Kipper-Web/tree/v0.1
