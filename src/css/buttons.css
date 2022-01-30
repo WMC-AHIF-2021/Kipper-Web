@@ -16,20 +16,11 @@
   font-weight: bold !important;
   text-align: center !important;
   text-decoration: none !important;
-  box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px, rgba(9, 30, 66, 0.08) 0 0 0 1px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px, rgba(9, 30, 66, 0.08) 0 0 0 1px !important;
 }
 
 .button:active, .button:visited {
   color: white !important;
-}
-
-.button-dark:active, .button-dark:visited {
-  color: white !important;
-}
-
-.button-dark:hover {
-  background-color: var(--button-dark-primary) !important;
-  box-shadow: 0 0 0.5em var(--scheme-gray) !important;
 }
 
 .button:hover {
@@ -84,4 +75,30 @@
   background-color: var(--button-dark-primary) !important;
   box-shadow: 0 0 0.5em var(--scheme-gray) !important;
   color: white;
+}
+
+.inverted-button {
+  display: inline-block !important;
+  border: 2px solid var(--scheme-primary) !important;
+  color: var(--scheme-primary) !important;
+  background-color: transparent !important;
+  border-radius: var(--default-border-radius) !important;
+  font-size: 16px !important;
+  padding: calc(1em - 2px) 2em !important;
+  margin: 0.75em 0.75em 0.75em 0 !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px, rgba(9, 30, 66, 0.08) 0 0 0 1px !important;
+}
+
+.inverted-button:active, .button:visited {
+  color: white !important;
+}
+
+.inverted-button:hover {
+  background-color: var(--button-dark-primary) !important;
+  box-shadow: 0 0 0.5em var(--scheme-gray) !important;
+  color: white !important;
+  border-color: var(--button-dark-primary) !important;
 }

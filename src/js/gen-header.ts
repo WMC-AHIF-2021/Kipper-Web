@@ -3,7 +3,7 @@
  */
 
 function GenHeaderAndDescription(): string {
-  return `<div class="header-text-content flex-fill-container flex-column centered">
+  return `<div class="header-text-content flex-fill-container flex-column flex-center">
     <div id="page-header" class="white-text">
       <h1>${documentTitle}${isNestedDir ? " - Kipper Docs" : ""}</h1>
     </div>

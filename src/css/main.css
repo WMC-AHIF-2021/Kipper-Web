@@ -33,11 +33,23 @@ html {
   flex-direction: column;
 }
 
-.centered {
+.flex-center {
   display: inherit;
   justify-content: center;
   align-items: center;
   flex-shrink: inherit;
+}
+
+.flex-start {
+  display: inherit;
+  flex-shrink: inherit;
+  align-items: flex-start;
+}
+
+.flex-end {
+  display: inherit;
+  flex-shrink: inherit;
+  align-items: flex-end;
 }
 
 .flex-parent-container {
@@ -61,7 +73,30 @@ html {
 }
 
 #home-page-header {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 120%, 0% 120%);
+}
 
+#homepage-content {
+  display: flex;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  justify-content: space-between;
+  row-gap: 5rem;
+  width: 90vw;
+}
+
+#welcome-text {
+  padding-right: 5vw;
+  padding-left: 5vw;
+  margin: 0;
+}
+
+#welcome-header {
+  text-align: start !important;
+}
+
+#welcome-image {
+  height: 25rem;
 }
 
 /*

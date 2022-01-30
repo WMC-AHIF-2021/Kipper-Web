@@ -1,12 +1,12 @@
 /* Dynamically creates the footer */
 
 function GenFooter(): string {
-  return `<ul id="footer-content" class="no-style-list flex-column flex-parent-container centered">
+  return `<ul id="footer-content" class="no-style-list flex-column flex-parent-container flex-center">
   <li>
     <img id="htl-leonding-logo" src="https://edufs.edu.htl-leonding.ac.at/htl_leonding_logo_hell.png" alt="" height="48px">
   </li>
   <li>
-    <ul id="footer-bar-list" class="no-style-list flex-row flex-parent-container centered">
+    <ul id="footer-bar-list" class="no-style-list flex-row flex-parent-container flex-center">
       <li>
         <small>
           <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">License</a>

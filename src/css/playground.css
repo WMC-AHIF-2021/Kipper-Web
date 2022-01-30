@@ -18,15 +18,15 @@
 }
 
 #left-console-interface #playground-option-menu {
-  border-bottom: 3px solid var(--scheme-gray);
+  border-bottom: 2px solid var(--scheme-gray);
 }
 
 #clear-content-list-item {
-  padding-right: 1rem;
+  margin-right: 1rem;
 }
 
 .playground-button button {
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   background-color: white;
   border: none;
   cursor: pointer;
@@ -34,13 +34,14 @@
 
 .playground-button button:hover {
   color: var(--scheme-primary);
+  background-color: var(--scheme-gray);
 }
 
 /* The entire code entire window -> parent of the label and textarea */
 #code-editor {
   display: flex;
   flex-grow: 1;
-  min-height: 75vw;
+  min-height: 60vh;
 }
 
 /* The actual user input field */
@@ -64,41 +65,38 @@
 }
 
 #shell-sidebar #shell-sidebar-menu {
-  border-bottom: 3px solid var(--scheme-gray);
-  border-left: 3px solid var(--scheme-gray);
+  border-bottom: 2px solid var(--scheme-gray);
+  border-left: 2px solid var(--scheme-gray);
   padding: 0;
 }
 
-#shell-sidebar #shell-sidebar-menu ul {
-  display: flex;
-  flex-grow: 1;
-}
-
 #shell-sidebar #shell-sidebar-menu li {
+  display: flex;
   flex-grow: 1;
 }
 
-#shell-sidebar #shell-sidebar-menu li button:hover {
-  color: var(--scheme-primary);
-}
-
-#shell-sidebar-menu .playground-button {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-#shell-sidebar-menu-button-1 {
-  border-right: 3px solid var(--scheme-gray);
+#shell-sidebar #shell-sidebar-menu li button {
+  flex-grow: 1;
 }
 
 #shell-sidebar #side-editor {
-  border-left: 3px solid var(--scheme-gray);
+  border-left: 2px solid var(--scheme-gray);
   flex-grow: 1;
 }
 
 #shell-sidebar #side-editor {
   display: flex;
   flex-grow: 1;
+}
+
+#shell-sidebar-menu {
+  width: 20vw;
+}
+
+#shell-sidebar-menu .console-output-button {
+  flex-grow: 1;
+  padding: 0 !important;
+  width: 10vw;
 }
 
 #shell-sidebar #side-editor pre {

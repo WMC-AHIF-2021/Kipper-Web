@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Properly working `Copy code` button in `playground.html`
 - Added minor box-shadows to buttons and the search-bar
+- Added basic entry image and header
+- Added new `inverted-button` class, which has a white background with red borders and red text (This should be used
+  for less important buttons to highlight the default ones)
 
 ### Changed
 - Properly implemented the search-bar animation
