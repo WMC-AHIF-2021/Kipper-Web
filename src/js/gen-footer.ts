@@ -1,12 +1,35 @@
 /* Dynamically creates the footer */
 
 function GenFooter(): string {
-  return `<div id="copyright" class="centered-text white-text">
-    <small>
-      © 2021 Luna Klatzer, Maximilian Lehner & Maximilian Seebacher. Content is available under
-      <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">this license</a>.
+  return `<ul id="footer-content" class="no-style-list flex-column flex-parent-container centered">
+  <li>
+    <img id="htl-leonding-logo" src="https://edufs.edu.htl-leonding.ac.at/htl_leonding_logo_hell.png" alt="" height="48px">
+  </li>
+  <li>
+    <ul id="footer-bar-list" class="no-style-list flex-row flex-parent-container centered">
+      <li>
+        <small>
+          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">License</a>
+        </small>
+      </li>
+      <li>
+        <small>
+          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/">GitHub</a>
+        </small>
+      </li>
+      <li>
+        <small>
+          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/">Website Source Code</a>
+        </small>
+      </li>
+    </ul>
+  </li>
+  <li id="copyright">
+    <small class="centered-text white-text">
+      © 2021-2022 Luna Klatzer, Maximilian Lehner & Maximilian Seebacher
     </small>
-  </div>`;
+  </li>
+</ul>`;
 }
 
 // writing the content to the innerHtml of the footer

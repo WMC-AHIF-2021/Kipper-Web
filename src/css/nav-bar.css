@@ -1,9 +1,6 @@
 /*! header-nav-bar Config */
 
 :root {
-  --search-bar-animation-duration: 1s;
-  --min-search-bar-margin: 5vw;
-  --min-search-bar-size: 15vw;
   --search-bar-margin: 20vw;
   --search-bar-size: 10vw;
   --search-bar-margin-expanded: 10vw;
@@ -59,30 +56,17 @@
   text-decoration: none;
 }
 
-@media (max-width: 1200px) {
-  #search-bar #search-bar-input {
-    width: var(--min-search-bar-size);
-    margin-left: var(--min-search-bar-margin);
-    background-color: white;
-    color: var(--scheme-primary);
-    border-radius: var(--default-border-radius);
-    border: none;
-    height: 2rem;
-    padding-left: 1rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  #search-bar #search-bar-input {
-    width: var(--search-bar-size);
-    margin-left: var(--search-bar-margin);
-    background-color: white;
-    color: var(--scheme-primary);
-    border-radius: var(--default-border-radius);
-    border: none;
-    height: 2rem;
-    padding-left: 1rem;
-  }
+#search-bar #search-bar-input {
+  width: var(--search-bar-size);
+  margin-left: var(--search-bar-margin);
+  background-color: white;
+  color: var(--scheme-primary);
+  border-radius: var(--default-border-radius);
+  border: none;
+  height: 2rem;
+  padding-left: 1rem;
+  overflow-wrap: break-word;
+  box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px, rgba(9, 30, 66, 0.08) 0 0 0 1px;
 }
 
 #search-bar #search-bar-input:focus, #search-bar #search-bar-input:hover {

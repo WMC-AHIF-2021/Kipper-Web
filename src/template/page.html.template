@@ -40,7 +40,7 @@
 <div id="main-frame">
   <div id="actual-content">
     <!-- Top element -->
-    <div id="top-header">
+    <header class="page-header">
       <nav id="header-nav-bar">
         <ul>
           <li>
@@ -67,21 +67,12 @@
           </li>
           <li id="search-bar" class="no-style-list flex-row flex-parent-container red-text">
             <label for="search-bar-input"></label>
-            <input id="search-bar-input" type="search" placeholder="Search">
+            <input id="search-bar-input" type="search" placeholder="Search...">
           </li>
           <script src="./js/search-bar.ts"></script>
         </ul>
       </nav>
-      <div class="text-page-content-container">
-        <div class="header-text-content flex-fill-container flex-column centered">
-          <div id="page-header" class="white-text">
-            <h1>Header Space</h1>
-          </div>
-          <div id="page-description" class="white-text">
-            <p>Description Space</p>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
   <!-- Central Content - all content in the white area -->

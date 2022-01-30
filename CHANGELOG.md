@@ -7,8 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Properly working `Copy code` button in `playground.html`
+- Added minor box-shadows to buttons and the search-bar
 
 ### Changed
+- Properly implemented the search-bar animation
+- Renamed generation files and changed the prefix to `gen-`
+- Updated footer bar and added HTL Leonding logo with additional links
 
 ### Removed
 

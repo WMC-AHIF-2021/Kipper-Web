@@ -20,8 +20,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-style: normal;
   font-weight: bold;
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 30px;
+  line-height: 36px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -30,8 +30,8 @@ h1 {
 h2 {
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
-  line-height: 36px;
+  font-size: 24px;
+  line-height: 29px;
   display: flex;
   align-items: center;
 }
@@ -39,8 +39,8 @@ h2 {
 h3 {
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 18px;
+  line-height: 22px;
   display: flex;
   align-items: center;
 }
@@ -87,11 +87,12 @@ p {
 
 .link-on-red-background, .link-on-red-background:visited, .link-on-red-background:active {
   color: white !important;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .link-on-red-background:hover {
   color: var(--scheme-secondary) !important;
+  text-decoration: underline;
 }
 
 /* Pure Text Content / Explanatory content */

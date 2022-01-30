@@ -21,6 +21,10 @@
   border-bottom: 3px solid var(--scheme-gray);
 }
 
+#clear-content-list-item {
+  padding-right: 1rem;
+}
+
 .playground-button button {
   padding: 0.5rem 1rem;
   background-color: white;
@@ -36,6 +40,7 @@
 #code-editor {
   display: flex;
   flex-grow: 1;
+  min-height: 75vw;
 }
 
 /* The actual user input field */
@@ -45,8 +50,8 @@
   border: none;
   outline: none;
   padding: 1.5rem;
-  font-size: 16px;
-  font-family: monospace, consolas;
+  font-size: 14px;
+  font-family: consolas, monospace;
 }
 
 #shell-sidebar {
@@ -72,8 +77,6 @@
 #shell-sidebar #shell-sidebar-menu li {
   flex-grow: 1;
 }
-
-
 
 #shell-sidebar #shell-sidebar-menu li button:hover {
   color: var(--scheme-primary);

@@ -8,6 +8,7 @@
 
 :root {
   --scheme-primary: #e01a4f;
+  --scheme-dark-primary: #c71242;
   --scheme-secondary: #ffe74c;
   --scheme-shadow-gray: #ccc;
   --scheme-gray: #f0f0f0;
@@ -57,6 +58,10 @@ html {
   flex-grow: 1;
   align-content: center;
   justify-content: center;
+}
+
+#home-page-header {
+
 }
 
 /*
