@@ -69,24 +69,10 @@ p {
   margin: 0;
 }
 
-.link-on-red-background, .link-on-red-background:visited, .link-on-red-background:active {
-  color: white !important;
-  text-decoration: underline
-;
-}
-
-.link-on-red-background:hover {
-  color: var(--scheme-secondary) !important;
-}
-
-/* Pure Text Content / Explanatory content */
-.header-text-content {
-  margin-bottom: 2rem;
-}
-
+/* Dynamic screen size definitions */
 @media (max-width: 1200px) {
   .text-content {
-    margin: 4rem;
+    margin: 2rem;
     max-width: 100vw;
   }
 }
@@ -97,6 +83,20 @@ p {
     margin-top: 4rem;
     margin-bottom: 4rem;
   }
+}
+
+.link-on-red-background, .link-on-red-background:visited, .link-on-red-background:active {
+  color: white !important;
+  text-decoration: underline;
+}
+
+.link-on-red-background:hover {
+  color: var(--scheme-secondary) !important;
+}
+
+/* Pure Text Content / Explanatory content */
+.header-text-content {
+  margin-bottom: 2rem;
 }
 
 .shadowed-box {

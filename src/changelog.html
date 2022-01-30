@@ -16,6 +16,7 @@
 
   <link rel="stylesheet" href="./css/normalize.css"/>
   <link rel="stylesheet" href="./css/main.css"/>
+  <link rel="stylesheet" href="./css/screen.css"/>
   <link rel="stylesheet" href="./css/buttons.css"/>
   <link rel="stylesheet" href="./css/nav-bar.css"/>
   <link rel="stylesheet" href="./css/text.css"/>
@@ -36,6 +37,9 @@
 </head>
 <body>
 <script type="module" src="./js/plugins.ts"></script>
+
+<!-- Show Error if JS is disabled or blocked -->
+<noscript>Oops that shouldn't have happened! Please enable Java-Script to use our Site!</noscript>
 
 <div id="main-frame">
   <div id="actual-content">
@@ -59,7 +63,7 @@
             <a href="./docs/index.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="./playground/playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+            <a href="playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
           </li>
           <li>
             <a href="./changelog.html"
@@ -78,7 +82,7 @@
     </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div class="text-page-content-container">
-      <div id="download-content" class="text-content shadowed-box">
+      <div id="changelog-content" class="text-content shadowed-box">
         <section>
           <!-- Add generation script here -->
         </section>

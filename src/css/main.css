@@ -59,28 +59,6 @@ html {
   justify-content: center;
 }
 
-#main-frame {
-  display: flex;
-}
-
-#actual-content {
-  display: flex;
-  height: 100vh;
-  flex-grow: 1;
-  flex-direction: column;
-}
-
-#page-header {
-  background-color: var(--scheme-primary);
-  display: flex;
-  flex-direction: column;
-}
-
-#separator {
-  padding: 1.5rem;
-  background-color: var(--scheme-secondary);
-}
-
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
