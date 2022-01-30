@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Minor responsive design handling, and formatting
 
 ### Removed
-- Outdated placeholders and replacements 
+- Outdated placeholders and replacements
 
 ## [v0.1.3] - 2021-12-16
 
@@ -39,7 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `search-bar.ts` for Search-bar handling (In Work!).
 - Dynamic Open Graph Meta Tag generation across all sites using `main.ts`.
 - `main.ts` for general definitions of global variables.
-- `generate-footer.ts` to generate the footer across all sites and avoid code-repetition.
+- `gen-footer.ts` to generate the footer across all sites and avoid code-repetition.
 
 ### Changed
 - Made the text inside buttons bold.
@@ -56,12 +56,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v0.1.1] - 2021-12-03
 
 ### Added
-- `generate-header-and-description.ts` for auto-generating the header and description text.
+- `gen-header.ts` for auto-generating the header and description text.
 - Docs Navigation Sidebar for the docs pages.
 - The `/docs` folder for all documentation sites, with the default `index.html` being the entry-point.
 - 'Inter' Fonts using the Google-Fonts API.
-- `generate-docs-nav-specifier.ts` for generating documentation nav bars.
-- `generate-header-and-description.ts` for generating the visual header and description on the site.
+- `gen-docs-nav-specifier.ts` for generating documentation nav bars.
+- `gen-header.ts` for generating the visual header and description on the site.
 
 ### Changed
 - Updated fonts and added backups fonts.

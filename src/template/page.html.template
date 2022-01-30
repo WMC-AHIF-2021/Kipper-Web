@@ -88,7 +88,7 @@
   <div id="central-content" class="flex-parent-container black-text"></div>
   <!-- Footer bar - contains some links and general copyright notice -->
   <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
-  <script src="../js/generate-footer.ts"></script>
+  <script src="../js/gen-footer.ts"></script>
 </div>
 </body>
 </html>
