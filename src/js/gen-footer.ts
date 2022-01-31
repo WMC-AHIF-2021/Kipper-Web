@@ -19,7 +19,7 @@ function GenFooter(): string {
       </li>
       <li>
         <small>
-          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/">Website Source Code</a>
+          <a class="link-on-red-background" href="https://github.com/WMC-AHIF-2021/Kipper-Web">Website Source Code</a>
         </small>
       </li>
     </ul>
