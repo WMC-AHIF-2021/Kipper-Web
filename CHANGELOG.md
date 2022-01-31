@@ -7,16 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Properly working `Copy code` button in `playground.html`
-- Added minor box-shadows to buttons and the search-bar
-- Added basic entry image and header
+- Properly working `Copy code` button in `playground.html`.
+- Added minor box-shadows to buttons and the search-bar.
+- Added basic entry image and header.
 - Added new `inverted-button` class, which has a white background with red borders and red text (This should be used
-  for less important buttons to highlight the default ones)
+  for less important buttons to highlight the default ones).
+- Added transition animation for the homepage image.
 
 ### Changed
-- Properly implemented the search-bar animation
-- Renamed generation files and changed the prefix to `gen-`
-- Updated footer bar and added HTL Leonding logo with additional links
+- Properly implemented the search-bar animation.
+- Renamed generation files and changed the prefix to `gen-`.
+- Updated footer bar and added HTL Leonding logo with additional links.
+- Replaced search-bar animation with css transition.
 
 ### Removed
 

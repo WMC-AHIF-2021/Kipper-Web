@@ -103,10 +103,25 @@ html {
 
 #welcome-image {
   width: 45vw;
+  padding: 0;
+  border-radius: var(--default-border-radius);
+  box-shadow: rgba(var(--scheme-primary-rgb), 0.6) -5px 5px,
+              rgba(var(--scheme-primary-rgb), 0.4) -10px 10px,
+              rgba(var(--scheme-primary-rgb), 0.3) -15px 15px,
+              rgba(var(--scheme-primary-rgb), 0.2) -20px 20px,
+              rgba(var(--scheme-primary-rgb), 0.1) -25px 25px;
+  transition: width 1s ease-in-out, box-shadow 1s ease-in-out;
 }
 
 #welcome-image:hover {
-  box-shadow: rgba(var(--scheme-primary-rgb), 0.4) 0px 5px, rgba(var(--scheme-primary-rgb), 0.3) 0px 10px, rgba(var(--scheme-primary-rgb), 0.2) 0px 15px, rgba(var(--scheme-primary-rgb), 0.1) 0px 20px, rgba(var(--scheme-primary-rgb), 0.05) 0px 25px;
+  width: 48vw;
+  box-shadow: rgba(var(--scheme-primary-rgb), 0.6) -5px 5px,
+              rgba(var(--scheme-primary-rgb), 0.5) -10px 10px,
+              rgba(var(--scheme-primary-rgb), 0.4) -15px 15px,
+              rgba(var(--scheme-primary-rgb), 0.3) -20px 20px,
+              rgba(var(--scheme-primary-rgb), 0.2) -25px 25px,
+              rgba(var(--scheme-primary-rgb), 0.1) -30px 30px,
+              rgba(var(--scheme-primary-rgb), 0.05) -30px 30px;
 }
 
 /*
@@ -117,7 +132,7 @@ html {
  * https://stackoverflow.com/a/16982510/7133471
  *
  * Customize the background color to match your design.
- */
+ *
 
 ::-moz-selection {
   background: #b3d4fc;
