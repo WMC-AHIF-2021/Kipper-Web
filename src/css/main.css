@@ -8,12 +8,19 @@
 
 :root {
   --scheme-primary: #e01a4f;
+  --scheme-primary-rgb: 224, 26, 79;
   --scheme-dark-primary: #c71242;
+  --scheme-dark-primary-rgb: 199, 18, 66;
   --scheme-secondary: #ffe74c;
+  --scheme-secondary-rgb: 255, 231, 76;
   --scheme-shadow-gray: #ccc;
+  --scheme-shadow-gray-rgb: 204, 204, 204;
   --scheme-gray: #f0f0f0;
+  --scheme-gray-rgb: 240, 240, 240;
   --scheme-dark-gray: #787878;
+  --scheme-dark-gray-rgb: 120, 120, 120;
   --scheme-white: #e9eaed;
+  --scheme-white-rgb: 233, 234, 237;
   --default-border-radius: 0.5em;
   --default-text-margin: 2rem;
 }
@@ -87,7 +94,6 @@ html {
 
 #welcome-text {
   padding-right: 5vw;
-  padding-left: 5vw;
   margin: 0;
 }
 
@@ -96,7 +102,11 @@ html {
 }
 
 #welcome-image {
-  height: 25rem;
+  width: 45vw;
+}
+
+#welcome-image:hover {
+  box-shadow: rgba(var(--scheme-primary-rgb), 0.4) 0px 5px, rgba(var(--scheme-primary-rgb), 0.3) 0px 10px, rgba(var(--scheme-primary-rgb), 0.2) 0px 15px, rgba(var(--scheme-primary-rgb), 0.1) 0px 20px, rgba(var(--scheme-primary-rgb), 0.05) 0px 25px;
 }
 
 /*
