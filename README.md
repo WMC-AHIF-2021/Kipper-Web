@@ -17,3 +17,4 @@
 
 - Luna Klatzer (Team-Lead): Main Developer for the programming language and interactive editor (Mainly JS/TS)
 - Maximilian Seebacher: Main Developer for the Website and design (Mainly CSS, HTML)
+- Maximilian Lehner: Main Developer for Text and Assistant for WebDesign
