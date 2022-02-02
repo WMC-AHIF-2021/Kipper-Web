@@ -83,7 +83,7 @@ h6 {
 }
 
 a, a:link, a:active, a:visited {
-  color: var(--scheme-url-blue);
+  color: blue;
   text-decoration: none;
   background-color: transparent;
 
@@ -182,7 +182,7 @@ p {
   text-align: center;
 }
 
-.highlight-text {
+.red-highlight-text {
   border-radius: var(--default-border-radius);
   margin-right: var(--default-text-margin);
   border: 1px solid;

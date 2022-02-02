@@ -32,7 +32,12 @@
 #header-nav-bar .selected-nav-page h4 {
   padding-top: 0.25em;
   padding-bottom: 0.25rem;
-  border-bottom: 3px solid white;
+  border-bottom: 2px solid white;
+}
+
+.underline-button.selected-nav-page::before {
+  /* Overwriting the background color of the underline-button */
+  background-color: transparent !important;
 }
 
 #header-nav-bar #kipper-logo {

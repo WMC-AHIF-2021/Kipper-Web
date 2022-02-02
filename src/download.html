@@ -87,23 +87,17 @@
           <article>
             <h2>Installation Requirements</h2>
             <p>
-              Kipper runs on native TypeScript + Node.js, meaning you will need to install both of them. The links to
-              their download sites are down below:
+              Kipper runs on native Node.js, meaning you will need to install Node.js. The link to the download page
+              is down below:
             </p>
             <div>
-              <a href="https://nodejs.org/en/download/" class="button">Node.js</a>
-              <a href="https://www.typescriptlang.org/download" class="button">TypeScript</a>
+              <a href="https://nodejs.org/en/download/" class="button">Node.js Download Page</a>
             </div>
             <p>
-              Kipper runs on all major platforms, including macOS, Windows and most linux distributions. Kipper also
-              only requires a small amount of other modules to run properly, which will also be automatically handled
-              by npm, meaning you will not have to download any other requirements other than Node.JS.
-            </p>
-          </article>
-          <article>
-            <h2>Npm Download</h2>
-            <p>
-              The recommend and easiest way to use Kipper, is to directly go to the <code>npm</code>
+              Kipper runs on all major platforms, including macOS, Windows and most linux distributions, and also
+              only requires a small amount of dependencies to run properly. Those dependencies, besides Node.js, will
+              be automatically handled and installed by npm, meaning you will not have to download any other
+              dependencies other than Node.js.
             </p>
           </article>
           <article>
@@ -119,37 +113,46 @@
           </article>
           <article>
             <h2>Install the <code>npm</code> module</h2>
-            <p>
-              The Kipper compiler may be installed using the npm <a href="https://www.npmjs.com/">npm package
-              manager</a>, meaning you can easily install it inside your terminal.
-            </p>
+            <h3>Trying out Kipper</h3>
             <p>
               For simply trying out Kipper the following command can be used, which will globally
-              install it and add the command to the path making it available for the entire nodejs
+              install kipper and add the command to the path making it available for the entire nodejs installation and
+              your operating system (This also means you can call it from any terminal in any directory on your system):
             </p>
             <pre><code class="language-bash">npm install -g kipper</code></pre>
-          </article>
-          <article class="highlight-text">
-            <h3>Important</h3>
-            <p>
-              Note though, that if possible avoid installing Kipper globally, as it can cause issues with locally
-              installed versions (project dependencies). For a localised / project-dependent kipper installation
-              <a href="https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file">add
-                <code>kipper</code> to your <code>package.json</code>.
+            <article class="red-highlight-text">
+              <h3>Important</h3>
+              If possible avoid installing Kipper globally if you intend to use it inside your own projects, as it can
+              cause issues with locally installed versions (node project dependencies). For a localised and
+              project-dependent kipper installation
+              <a href="https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file">
+                add <code>kipper</code> to your <code>package.json</code>.
               </a>
-            </p>
+            </article>
+            <h3>Add Kipper to your project</h3>
             <p>
-              To add kipper to your project development dependencies use <code>--save</code>, to add it to the
-              development dependencies use <code>--save-dev</code>
+              This steps requires that you have a working node project already setup and ready to be used. If you
+              don't have one yet, you can simply do the following to allow you to use Kipper:
+            </p>
+            <pre><code class="language-bash">npm init</code></pre>
+            <p>
+              To add kipper to your project development dependencies use <code>--save</code> or to add it to the
+              development dependencies use <code>--save-dev</code>:
             </p>
             <pre><code class="language-bash">npm install kipper --save/--save-dev</code></pre>
           </article>
           <article>
-            <h2>Run the Compiler</h2>
+            <h2>Check Compiler installation</h2>
             <p>
-              To run the Kipper Compiler, use the following command in the Console:
+              To check whether the Kipper compiler has been properly installed, run the following command in your
+              project's working directory (where it has been set up) or if you have it installed globally, anywhere:
             </p>
-            <pre><code class="language-bash">kipper</code></pre>
+            <pre><code class="language-bash">kipper --version</code></pre>
+            <p>
+              If the output shows something like the following output (version, operating system and nodejs version
+              might be different), your kipper installation should be set up and ready to use!
+            </p>
+            <pre><code class="language-bash">kipper/0.0.2 win32-x64 node-v16.13.0</code></pre>
           </article>
         </section>
       </div>
