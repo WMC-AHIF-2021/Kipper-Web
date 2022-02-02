@@ -193,10 +193,11 @@ p {
 
 /* Code Block Formatting */
 code {
-  margin: 0;
+  margin-left: .4rem;
+  margin-right: .4rem;
   padding: .2em .4em;
   font-size: 85%;
-  font-family: monospace, consolas;
+  font-family: consolas, monospace;
   border-radius: var(--default-border-radius);
   background-color: var(--scheme-gray);
 }
