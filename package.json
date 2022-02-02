@@ -15,6 +15,7 @@
   "scripts": {
     "prebuild": "npm run tslint",
     "build": "parcel build src/index.html",
+    "gh-pages-build": "parcel build src/index.html --public-url https://wmc-ahif-2021.github.io/Kipper-Web/ --dist-dir .",
     "watch": "parcel watch src/index.html",
     "start": "npm run build && npm run dev",
     "lint": "npm run tslint && npm run prettier",
