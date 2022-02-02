@@ -4,18 +4,38 @@
   --button-dark-primary: #c71242;
 }
 
-.button {
+/* Default sizing for buttons */
+@media (max-width: 1200px) {
+  .button, .inverted-button, .button-dark {
+    padding: 0.5em 2em !important;
+    margin: 0.5em 0.5em 0.5em 0 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .button, .inverted-button, .button-dark {
+    padding: 1em 2em !important;
+    margin: 0.75em 0.75em 0.75em 0 !important;
+  }
+}
+
+/* Base Button Properties */
+.button, .inverted-button, .button-dark {
   display: inline-block !important;
-  border: none !important;
-  color: white !important;
-  background-color: var(--scheme-primary) !important;
   border-radius: var(--default-border-radius) !important;
   font-size: 16px !important;
-  padding: 1em 2em !important;
-  margin: 0.75em 0.75em 0.75em 0 !important;
   font-weight: bold !important;
   text-align: center !important;
   text-decoration: none !important;
+  box-sizing: border-box !important; /* Include border into the size-properties */
+  box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px, rgba(9, 30, 66, 0.08) 0 0 0 1px !important;
+}
+
+/* Default Button */
+.button {
+  border: none !important;
+  color: white !important;
+  background-color: var(--scheme-primary) !important;
   box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px, rgba(9, 30, 66, 0.08) 0 0 0 1px !important;
 }
 
@@ -28,42 +48,33 @@
   box-shadow: 0 0 0.5em var(--scheme-gray) !important;
 }
 
+/* Navigation Menu Button */
+.top-nav-button {
+  border: none !important;
+  color: white !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  font-size: 16px !important;
+}
+
 @media (max-width: 1200px) {
-  .menu-button {
-    border: none !important;
-    color: white !important;
+  .top-nav-button {
     padding: 0.25em 0.5em !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-    font-size: 16px !important;
   }
 }
 
 @media (min-width: 1200px) {
-  .menu-button {
-    border: none !important;
-    color: white !important;
+  .top-nav-button {
     padding: 1em 2em !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-    font-size: 16px !important;
   }
 }
 
+/* Darker Button */
 .button-dark {
-  display: inline-block !important;
   border: none !important;
+  color: white !important;
   background-color: var(--button-dark-primary) !important;
-  border-radius: var(--default-border-radius) !important;
-  padding: 15px 32px !important;
-  margin: 0.75em 0.75em 0.75em 0 !important;
-  font-size: 16px !important;
-  font-weight: bold !important;
-  text-align: center !important;
-  text-decoration: none !important;
-  color: white;
 }
 
 .button-dark:active, .button-dark:visited {
@@ -77,22 +88,14 @@
   color: white;
 }
 
+/* Inverted Transparent-Background Button */
 .inverted-button {
-  display: inline-block !important;
   border: 2px solid var(--scheme-primary) !important;
   color: var(--scheme-primary) !important;
   background-color: transparent !important;
-  border-radius: var(--default-border-radius) !important;
-  font-size: 16px !important;
-  padding: calc(1em - 2px) 2em !important;
-  margin: 0.75em 0.75em 0.75em 0 !important;
-  font-weight: bold !important;
-  text-align: center !important;
-  text-decoration: none !important;
-  box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px, rgba(9, 30, 66, 0.08) 0 0 0 1px !important;
 }
 
-.inverted-button:active, .button:visited {
+.inverted-button:active, .inverted-button:visited {
   color: white !important;
 }
 
