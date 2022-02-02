@@ -15,9 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v0.1.5] - 2022-02-02
 ### Added
 - Properly working `Copy code` button in `playground.html`.
-- Added minor box-shadows to buttons and the search-bar.
+- Added minor box-shadows to buttons and the search bar.
 - Added basic entry image and header.
-- Added new `inverted-button` class, which has a white background with red borders and red text (This should be used
+- Added a new `inverted-button` class, which has a white background with red borders and red text (This should be used
   for less important buttons to highlight the default ones).
 - Added transition animation for the homepage image.
 - New animation class `underline-button` for buttons and applied it to the navigation bar.
@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated footer bar and added HTL Leonding logo with additional links.
 - Replaced search-bar animation with css transition.
 - Changed text bottom margin, by defining new variables for `section`, `article` and `p` tags.
-- Updated button formatting and adding dynamic sizing.
+- Updated button formatting and added dynamic sizing.
 
 ### Removed
 
