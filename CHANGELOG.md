@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+
+### Changed
+
+### Removed
+
+## [v0.1.5] - 2022-02-02
+### Added
 - Properly working `Copy code` button in `playground.html`.
 - Added minor box-shadows to buttons and the search-bar.
 - Added basic entry image and header.
@@ -108,6 +115,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed unnecessary `start_local_Server.exe`
 
 [unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/HEAD...base-dev
+[v0.1.5]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.1...v0.1.2
