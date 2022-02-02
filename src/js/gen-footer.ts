@@ -9,17 +9,17 @@ function GenFooter(): string {
     <ul id="footer-bar-list" class="no-style-list flex-row flex-parent-container flex-center">
       <li>
         <small>
-          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">License</a>
+          <a class="link-on-red-background underline-button" href="https://github.com/Luna-Klatzer/Kipper/blob/main/LICENSE">License</a>
         </small>
       </li>
       <li>
         <small>
-          <a class="link-on-red-background" href="https://github.com/Luna-Klatzer/Kipper/">GitHub</a>
+          <a class="link-on-red-background underline-button" href="https://github.com/Luna-Klatzer/Kipper/">GitHub</a>
         </small>
       </li>
       <li>
         <small>
-          <a class="link-on-red-background" href="https://github.com/WMC-AHIF-2021/Kipper-Web">Website Source Code</a>
+          <a class="link-on-red-background underline-button" href="https://github.com/WMC-AHIF-2021/Kipper-Web">Website Source Code</a>
         </small>
       </li>
     </ul>

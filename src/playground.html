@@ -50,31 +50,32 @@
           <li>
             <a href="index.html" class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
               <img id="kipper-logo" src="img/base_head.png" alt="">
-              <h1>Kipper</h1>
+              <a class="underline-button" href="./index.html">
+                <h1>Kipper</h1>
+              </a>
             </a>
           </li>
           <li>
-            <a href="download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+            <a href="./download.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+            <a href="./docs/index.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="docs/index.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
+            <a href="./playground.html" class="underline-button selected-nav-page top-nav-menu-item"><h4>Playground</h4></a>
           </li>
           <li>
-            <a href="playground.html" class="menu-button selected-nav-page top-nav-menu-items"><h4>Playground</h4></a>
-          </li>
-          <li>
-            <a href="changelog.html"
-               class="menu-button top-nav-menu-items"><h4>
+            <a href="./changelog.html"
+               class="underline-button top-nav-menu-item top-nav-button"><h4>
               Changelog</h4></a>
           </li>
-          <li id="search-bar" class="no-style-list flex-row flex-parent-container red-text">
+        </ul>
+        <ul id="search-bar-wrapper">
+          <li id="search-bar">
             <label for="search-bar-input"></label>
             <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
+            <script src="./js/search-bar.ts"></script>
           </li>
-          <script src="js/search-bar.ts"></script>
         </ul>
       </nav>
       <div id="header-description-content" class="text-page-content-container"></div>

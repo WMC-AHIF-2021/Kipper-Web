@@ -11,8 +11,10 @@
   --scheme-primary-rgb: 224, 26, 79;
   --scheme-dark-primary: #c71242;
   --scheme-dark-primary-rgb: 199, 18, 66;
-  --scheme-secondary: #ffe74c;
-  --scheme-secondary-rgb: 255, 231, 76;
+  --scheme-secondary: #ffe74c; /* Get new secondary */
+  --scheme-secondary-rgb: 255, 231, 76; /* Get new secondary */
+  --scheme-url-blue: #002240;
+  --scheme-background-gray: #002240;
   --scheme-shadow-gray: #ccc;
   --scheme-shadow-gray-rgb: 204, 204, 204;
   --scheme-gray: #f0f0f0;
@@ -22,7 +24,6 @@
   --scheme-white: #e9eaed;
   --scheme-white-rgb: 233, 234, 237;
   --default-border-radius: 0.5em;
-  --default-text-margin: 2rem;
 }
 
 html {
@@ -115,13 +116,17 @@ html {
 
 #welcome-image:hover {
   width: 48vw;
-  box-shadow: rgba(var(--scheme-primary-rgb), 0.6) -5px 5px,
-              rgba(var(--scheme-primary-rgb), 0.5) -10px 10px,
-              rgba(var(--scheme-primary-rgb), 0.4) -15px 15px,
-              rgba(var(--scheme-primary-rgb), 0.3) -20px 20px,
-              rgba(var(--scheme-primary-rgb), 0.2) -25px 25px,
-              rgba(var(--scheme-primary-rgb), 0.1) -30px 30px,
-              rgba(var(--scheme-primary-rgb), 0.05) -30px 30px;
+  box-shadow: rgba(var(--scheme-primary-rgb), 0.8) -5px 5px,
+              rgba(var(--scheme-primary-rgb), 0.6) -10px 10px,
+              rgba(var(--scheme-primary-rgb), 0.5) -15px 15px,
+              rgba(var(--scheme-primary-rgb), 0.4) -20px 20px,
+              rgba(var(--scheme-primary-rgb), 0.3) -25px 25px,
+              rgba(var(--scheme-primary-rgb), 0.2) -30px 30px,
+              rgba(var(--scheme-primary-rgb), 0.1) -30px 30px;
+}
+
+.kipper-logo-container a {
+  margin: 0 !important;
 }
 
 /*

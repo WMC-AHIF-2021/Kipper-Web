@@ -49,31 +49,32 @@
           <li>
             <a href="./index.html" class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
-              <h1>Kipper</h1>
+              <a class="underline-button" href="./index.html">
+                <h1>Kipper</h1>
+              </a>
             </a>
           </li>
           <li>
-            <a href="./download.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Downloads</h4></a>
+            <a href="./download.html" class="underline-button top-nav-menu-item top-nav-button selected-nav-page"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="./install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+            <a href="./docs/index.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="./docs/index.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
-          </li>
-          <li>
-            <a href="playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+            <a href="playground.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Playground</h4></a>
           </li>
           <li>
             <a href="./changelog.html"
-               class="menu-button top-nav-menu-items"><h4>
+               class="underline-button top-nav-menu-item top-nav-button"><h4>
               Changelog</h4></a>
           </li>
-          <li id="search-bar" class="no-style-list flex-row flex-parent-container red-text">
+        </ul>
+        <ul id="search-bar-wrapper">
+          <li id="search-bar">
             <label for="search-bar-input"></label>
             <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
+            <script src="./js/search-bar.ts"></script>
           </li>
-          <script src="./js/search-bar.ts"></script>
         </ul>
       </nav>
       <div id="header-description-content" class="text-page-content-container"></div>
@@ -84,18 +85,32 @@
       <div id="download-content" class="text-content shadowed-box">
         <section>
           <article>
+            <h2>Installation Requirements</h2>
+            <p>
+              Kipper runs on native TypeScript + Node.js, meaning you will need to install both of them. The links to
+              their download sites are down below:
+            </p>
+            <div>
+              <a href="https://nodejs.org/en/download/" class="button">Node.js</a>
+              <a href="https://www.typescriptlang.org/download" class="button">TypeScript</a>
+            </div>
+            <p>
+              Kipper runs on all major platforms, including macOS, Windows and most linux distributions. Kipper also
+              only requires a small amount of other modules to run properly, which will also be automatically handled
+              by npm, meaning you will not have to download any other requirements other than Node.JS.
+            </p>
+          </article>
+          <article>
             <h2>Npm Download</h2>
             <p>
-              The main source and most secure option to download Kipper is to directly download the source code from
-              the npm package manager itself. For a guide on that, please go to the <a href="./install.html">Install
-              Guide</a>.
+              The recommend and easiest way to use Kipper, is to directly go to the <code>npm</code>
             </p>
           </article>
           <article>
             <h2>Download Source Code</h2>
             <p>
-              To download the latest stable source code of Kipper, download the <code>zip</code> or <code>tar.gz</code>
-              with the links below:
+              To download the latest stable source code of Kipper, download the package <code>zip</code> or
+              <code>tar.gz</code> with the links below:
             </p>
             <ul class="flex-column">
               <li><a href="https://github.com/Luna-Klatzer/Kipper/zipball/main/">Github Source Code (zip)</a></li>
@@ -103,16 +118,38 @@
             </ul>
           </article>
           <article>
-            <h2>Downloading the GitHub Repository using Git</h2>
+            <h2>Install the <code>npm</code> module</h2>
             <p>
-              Git is the preferred way to use the source code of Kipper, as it allows pulling recent changes and updates
-              directly into a directory. This is though recommended only for developers and people, who have an
-              understanding of how git works and how to properly use it.
+              The Kipper compiler may be installed using the npm <a href="https://www.npmjs.com/">npm package
+              manager</a>, meaning you can easily install it inside your terminal.
             </p>
             <p>
-              The url to the repository:
-              <code>https://github.com/Luna-Klatzer/Kipper.git</code>
+              For simply trying out Kipper the following command can be used, which will globally
+              install it and add the command to the path making it available for the entire nodejs
             </p>
+            <pre><code class="language-bash">npm install -g kipper</code></pre>
+          </article>
+          <article class="highlight-text">
+            <h3>Important</h3>
+            <p>
+              Note though, that if possible avoid installing Kipper globally, as it can cause issues with locally
+              installed versions (project dependencies). For a localised / project-dependent kipper installation
+              <a href="https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file">add
+                <code>kipper</code> to your <code>package.json</code>.
+              </a>
+            </p>
+            <p>
+              To add kipper to your project development dependencies use <code>--save</code>, to add it to the
+              development dependencies use <code>--save-dev</code>
+            </p>
+            <pre><code class="language-bash">npm install kipper --save/--save-dev</code></pre>
+          </article>
+          <article>
+            <h2>Run the Compiler</h2>
+            <p>
+              To run the Kipper Compiler, use the following command in the Console:
+            </p>
+            <pre><code class="language-bash">kipper</code></pre>
           </article>
         </section>
       </div>

@@ -13,12 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added new `inverted-button` class, which has a white background with red borders and red text (This should be used
   for less important buttons to highlight the default ones).
 - Added transition animation for the homepage image.
+- New animation class `underline-button` for buttons and applied it to the navigation bar.
+- Changed background color of the footer.
 
 ### Changed
 - Properly implemented the search-bar animation.
 - Renamed generation files and changed the prefix to `gen-`.
 - Updated footer bar and added HTL Leonding logo with additional links.
 - Replaced search-bar animation with css transition.
+- Changed text bottom margin, by defining new variables for `section`, `article` and `p` tags.
+- Updated button formatting and adding dynamic sizing.
 
 ### Removed
 
