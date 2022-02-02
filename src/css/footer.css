@@ -2,15 +2,31 @@
 
 #footer-bar {
   margin-top: auto;
-  background-color: var(--scheme-primary);
+  background-color: var(--scheme-background-gray);
 }
 
 #footer-bar #social-icon {
-  background-color: var(--scheme-primary);
+  background-color: black;
+}
+
+#footer-content {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  flex-shrink: 1;
+}
+
+#htl-leonding-logo {
+  margin: 0 2rem 1rem;
+}
+
+#footer-bar-list li {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-weight: 600; /* semi-bold */
 }
 
 #copyright {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  flex-shrink: 1;
+  border-top: 2px solid #f4f4f4;
+  margin-top: 1em;
+  padding-top: 1rem;
 }

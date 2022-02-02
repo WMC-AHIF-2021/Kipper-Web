@@ -1,15 +1,25 @@
 /*! Text and Header Formatting */
 
+:root {
+  --default-section-margin: 2rem;
+  --default-article-margin: 1rem;
+  --default-parapgraph-margin: 1rem;
+}
+
 html {
   font-family: 'Inter', Georgia, Verdana, monospace;
 }
 
-article {
-  margin-bottom: var(--default-text-margin);
+section {
+  margin: var(--default-section-margin);
 }
 
-section {
-  margin: var(--default-text-margin);
+article {
+  margin-bottom: var(--default-article-margin);
+}
+
+p + p {
+  margin-top: var(--default-parapgraph-margin);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,8 +30,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-style: normal;
   font-weight: bold;
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 30px;
+  line-height: 36px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -30,8 +40,8 @@ h1 {
 h2 {
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
-  line-height: 36px;
+  font-size: 24px;
+  line-height: 29px;
   display: flex;
   align-items: center;
 }
@@ -39,15 +49,33 @@ h2 {
 h3 {
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 18px;
+  line-height: 22px;
   display: flex;
   align-items: center;
 }
 
-h4, h5, h6 {
+h4 {
+  font-style: normal;
+  font-weight: 600; /* Semi-bold */
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+}
+
+h5 {
   font-style: normal;
   font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+}
+
+h6 {
+  font-style: normal;
+  font-weight: 300; /* Smaller */
   font-size: 18px;
   line-height: 22px;
   display: flex;
@@ -58,6 +86,7 @@ a, a:link, a:active, a:visited {
   color: blue;
   text-decoration: none;
   background-color: transparent;
+
 }
 
 a:hover {
@@ -67,6 +96,30 @@ a:hover {
 
 p {
   margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .super-large-header {
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 48px !important;
+    line-height: 58px !important;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .super-large-header {
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 96px !important;
+    line-height: 116px !important;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 /* Dynamic screen size definitions */
@@ -87,11 +140,12 @@ p {
 
 .link-on-red-background, .link-on-red-background:visited, .link-on-red-background:active {
   color: white !important;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .link-on-red-background:hover {
-  color: var(--scheme-secondary) !important;
+  color: white !important;
+  text-decoration: underline;
 }
 
 /* Pure Text Content / Explanatory content */
@@ -128,7 +182,7 @@ p {
   text-align: center;
 }
 
-.highlight-text {
+.red-highlight-text {
   border-radius: var(--default-border-radius);
   margin-right: var(--default-text-margin);
   border: 1px solid;
@@ -139,10 +193,11 @@ p {
 
 /* Code Block Formatting */
 code {
-  margin: 0;
+  margin-left: .4rem;
+  margin-right: .4rem;
   padding: .2em .4em;
   font-size: 85%;
-  font-family: monospace, consolas;
+  font-family: consolas, monospace;
   border-radius: var(--default-border-radius);
   background-color: var(--scheme-gray);
 }

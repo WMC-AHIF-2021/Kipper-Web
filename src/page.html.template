@@ -40,55 +40,46 @@
 <div id="main-frame">
   <div id="actual-content">
     <!-- Top element -->
-    <div id="top-header">
+    <header class="page-header">
       <nav id="header-nav-bar">
         <ul>
           <li>
-             <a href="./index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
+             <a href="./index.html" class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
-              <h1>Kipper</h1>
+              <a class="underline-button" href="./index.html">
+                <h1>Kipper</h1>
+              </a>
             </a>
           </li>
           <li>
-            <a href="./download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+            <a href="./download.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="./install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+            <a href="./docs/index.html" class="underline-button top-nav-menu-item top-nav-button selected-nav-page"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="./docs/index.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Docs</h4></a>
+            <a href="./playground.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Playground</h4></a>
           </li>
           <li>
-            <a href="./playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
-          </li>
-          <li>
-            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="menu-button top-nav-menu-items"><h4>
+            <a href="https://github.com/WMC-AHIF-2021/Kipper-Web/blob/main/CHANGELOG.md" class="underline-button top-nav-menu-item top-nav-button"><h4>
               Changelog</h4></a>
           </li>
-          <li id="search-bar" class="no-style-list flex-row flex-parent-container red-text">
+        </ul>
+        <ul id="search-bar-wrapper">
+          <li id="search-bar">
             <label for="search-bar-input"></label>
-            <input id="search-bar-input" type="search" placeholder="Search">
+            <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
+            <script src="./js/search-bar.ts"></script>
           </li>
-          <script src="./js/search-bar.ts"></script>
         </ul>
       </nav>
-      <div class="text-page-content-container">
-        <div class="header-text-content flex-fill-container flex-column centered">
-          <div id="page-header" class="white-text">
-            <h1>Header Space</h1>
-          </div>
-          <div id="page-description" class="white-text">
-            <p>Description Space</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <!-- Central Content - all content in the white area -->
   <div id="central-content" class="flex-parent-container black-text"></div>
   <!-- Footer bar - contains some links and general copyright notice -->
   <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
-  <script src="../js/generate-footer.ts"></script>
+  <script src="../js/gen-footer.ts"></script>
 </div>
 </body>
 </html>

@@ -12,6 +12,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [v0.1.5] - 2022-02-02
+### Added
+- Properly working `Copy code` button in `playground.html`.
+- Added minor box-shadows to buttons and the search bar.
+- Added basic entry image and header.
+- Added a new `inverted-button` class, which has a white background with red borders and red text (This should be used
+  for less important buttons to highlight the default ones).
+- Added transition animation for the homepage image.
+- New animation class `underline-button` for buttons and applied it to the navigation bar.
+- Changed background color of the footer.
+
+### Changed
+- Properly implemented the search-bar animation.
+- Renamed generation files and changed the prefix to `gen-`.
+- Updated footer bar and added HTL Leonding logo with additional links.
+- Replaced search-bar animation with css transition.
+- Changed text bottom margin, by defining new variables for `section`, `article` and `p` tags.
+- Updated button formatting and added dynamic sizing.
+
+### Removed
+
 ## [v0.1.4] - 2021-12-16
 ### Added
 - `screen.css` for specific screen-based handling and arrangement
@@ -21,7 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Minor responsive design handling, and formatting
 
 ### Removed
-- Outdated placeholders and replacements 
+- Outdated placeholders and replacements
 
 ## [v0.1.3] - 2021-12-16
 
@@ -39,7 +60,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `search-bar.ts` for Search-bar handling (In Work!).
 - Dynamic Open Graph Meta Tag generation across all sites using `main.ts`.
 - `main.ts` for general definitions of global variables.
-- `generate-footer.ts` to generate the footer across all sites and avoid code-repetition.
+- `gen-footer.ts` to generate the footer across all sites and avoid code-repetition.
 
 ### Changed
 - Made the text inside buttons bold.
@@ -56,12 +77,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v0.1.1] - 2021-12-03
 
 ### Added
-- `generate-header-and-description.ts` for auto-generating the header and description text.
+- `gen-header.ts` for auto-generating the header and description text.
 - Docs Navigation Sidebar for the docs pages.
 - The `/docs` folder for all documentation sites, with the default `index.html` being the entry-point.
 - 'Inter' Fonts using the Google-Fonts API.
-- `generate-docs-nav-specifier.ts` for generating documentation nav bars.
-- `generate-header-and-description.ts` for generating the visual header and description on the site.
+- `gen-docs-nav-specifier.ts` for generating documentation nav bars.
+- `gen-header.ts` for generating the visual header and description on the site.
 
 ### Changed
 - Updated fonts and added backups fonts.
@@ -94,6 +115,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed unnecessary `start_local_Server.exe`
 
 [unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/HEAD...base-dev
+[v0.1.5]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.1...v0.1.2

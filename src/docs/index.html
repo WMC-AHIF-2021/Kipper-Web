@@ -41,41 +41,42 @@
 <div id="main-frame">
   <div id="actual-content">
     <!-- The top element: menu and search bar -->
-    <header id="page-header">
+    <header class="page-header">
       <nav id="header-nav-bar">
         <ul>
           <li>
-            <a href="../index.html" class="no-style-list flex-row flex-parent-container centered kipper-logo-container">
+            <a href="../index.html" class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
               <img id="kipper-logo" src="../img/base_head.png" alt="">
-              <h1>Kipper</h1>
+              <a class="underline-button" href="./index.html">
+                <h1>Kipper</h1>
+              </a>
             </a>
           </li>
           <li>
-            <a href="../download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+            <a href="../download.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="../install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+            <a href="./index.html" class="underline-button top-nav-menu-item top-nav-button selected-nav-page"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="./index.html" class="menu-button top-nav-menu-items selected-nav-page"><h4>Docs</h4></a>
-          </li>
-          <li>
-            <a href="../playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+            <a href="../playground.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Playground</h4></a>
           </li>
           <li>
             <a href="../changelog.html"
-               class="menu-button top-nav-menu-items"><h4>
+               class="underline-button top-nav-menu-item top-nav-button"><h4>
               Changelog</h4></a>
           </li>
-          <li id="search-bar" class="no-style-list flex-row flex-parent-container red-text">
+        </ul>
+        <ul id="search-bar-wrapper">
+          <li id="search-bar">
             <label for="search-bar-input"></label>
-            <input id="search-bar-input" type="search" placeholder="Search" spellcheck="false">
+            <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
+            <script src="../js/search-bar.ts"></script>
           </li>
-          <script src="../js/search-bar.ts"></script>
         </ul>
       </nav>
       <div id="header-description-content" class="text-page-content-container"></div>
-      <script src="../js/generate-header-and-description.ts"></script>
+      <script src="../js/gen-header.ts"></script>
     </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div class="flex-parent-container flex-fill-container">
@@ -85,26 +86,27 @@
             <h4 id="nav-kipper-header">
               Kipper Docs
             </h4>
+            <!-- TODO! Create header generation script for automatizing these headers -->
             <ul class="bullet-list flex-column">
               <li>
-                <h4 class="sidebar-nav-header selected-page-sidebar-nav-header">
+                <h5 class="sidebar-nav-header selected-page-sidebar-nav-header">
                   <a href="./index.html">Overview</a>
-                </h4>
+                </h5>
               </li>
               <li>
-                <h4 class="sidebar-nav-header">
+                <h5 class="sidebar-nav-header">
                   <a href="../docs/our-goals.html">Goals and Timeline</a>
-                </h4>
+                </h5>
               </li>
               <li>
-                <h4 class="sidebar-nav-header">
+                <h5 class="sidebar-nav-header">
                   <a href="../docs/quickstart.html">Quickstart Guide</a>
-                </h4>
+                </h5>
               </li>
               <li>
-                <h4 class="sidebar-nav-header">
+                <h5 class="sidebar-nav-header">
                   <a href="../docs/usage-example.html">Usage Example</a>
-                </h4>
+                </h5>
               </li>
             </ul>
           </nav>
@@ -113,7 +115,7 @@
           <div id="docs-content" class="text-content shadowed-box">
             <section>
               <nav id="docs-page-nav"></nav>
-              <script src="../js/generate-docs-nav-specifier.ts"></script>
+              <script src="../js/gen-docs-nav-specifier.ts"></script>
               <article>
                 <h2 id="docs-overview">Docs Overview</h2>
                 <p>
@@ -137,7 +139,7 @@
     </div>
     <!-- Footer bar - contains some links and general copyright notice -->
     <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
-    <script src="../js/generate-footer.ts"></script>
+    <script src="../js/gen-footer.ts"></script>
   </div>
 </div>
 </body>
