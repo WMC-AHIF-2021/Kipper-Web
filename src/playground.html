@@ -107,7 +107,12 @@
             </li>
             <li id="code-editor">
               <label for="code-editor-textarea"></label>
-              <textarea id="code-editor-textarea" type="text" placeholder="Enter your Code here" spellcheck="false"></textarea>
+              <textarea id="code-editor-textarea" type="text" placeholder="Enter your Code here"
+                        spellcheck="false" autocomplete="off" autocorrect="off"
+                        autocapitalize="off" data-gramm="false"
+                        oninput="editorUpdate(this.value);">
+              </textarea>
+              <pre id="highlighting-field" aria-hidden="true"><code class="language-typescript" id="highlighting-field-content"></code></pre>
             </li>
           </ul>
         </li>

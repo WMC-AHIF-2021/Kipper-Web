@@ -4,6 +4,7 @@
 
 // main items
 const codeInput: HTMLTextAreaElement = document.querySelector("#code-editor-textarea");
+const codeInputResult: HTMLElement = document.querySelector("#highlighting-field-content");
 const textSavingState: HTMLDivElement = document.querySelector("#text-saving-state");
 
 // menu buttons
@@ -22,8 +23,9 @@ const compilerOutputButton: HTMLButtonElement = document.querySelector("#compile
 
 let ScriptRunning: boolean;
 
-// reset previously entered text
-codeInput.value = localStorage.getItem("code-editor-textarea");
+codeInput.innerHTML = localStorage.getItem("kipper-code-editor-content");
+// hljs is present in 'playground.html'
+editorUpdate(localStorage.getItem("kipper-code-editor-content"));
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function runCode() {
@@ -51,6 +53,7 @@ function stopCode() {
 function clearContent() {
   console.log("Code Cleared!");
   codeInput.value = "";
+  codeInputResult.innerHTML = "";
   textSavingState.innerHTML = `<p class="gray-text">Code cleared!</p>`;
 }
 
@@ -102,7 +105,7 @@ codeInput.addEventListener("keyup", event => {
   // only done when the user finished typing!
   cancel = setTimeout(() => {
     const givenTextArea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
-    localStorage.setItem("code-editor-textarea", givenTextArea.value);
+    localStorage.setItem("kipper-code-editor-content", givenTextArea.value);
 
     spinning = false;
     textSavingState.innerHTML = `<p class="gray-text">Code Saved!</p>`;
@@ -130,4 +133,26 @@ codeInput.addEventListener("keyup", event => {
     spinning = true;
   }
 })
+
+// Editor-Update, which allows for syntax highlighting
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function editorUpdate(value: string) {
+  // properly allow newlines
+  value = value
+    .replace(new RegExp("&", "g"), "&")
+    .replace(new RegExp("<", "g"), "<");
+
+  // If the last character is a newline character
+  // Add a placeholder space character to the final line
+  if(value[value.length-1] == "\n") {
+    value += " ";
+  }
+
+  // Write results
+  codeInputResult.innerHTML = value;
+
+  // @ts-ignore
+  // hljs is present in 'playground.html'
+  hljs.highlightAll();
+}
 
