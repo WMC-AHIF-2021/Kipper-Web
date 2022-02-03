@@ -24,6 +24,7 @@
   --scheme-white: #e9eaed;
   --scheme-white-rgb: 233, 234, 237;
   --default-border-radius: 0.5em;
+  --default-text-margin: 2em;
 }
 
 html {
@@ -127,6 +128,11 @@ html {
 
 .kipper-logo-container a {
   margin: 0 !important;
+}
+
+img {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
 /*
