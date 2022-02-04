@@ -189,8 +189,9 @@ p {
   border-color: var(--scheme-primary);
   color: var(--scheme-primary);
   padding: 1rem 2rem;
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: calc(100% - 4rem);
 }
 
 /* Code Block Formatting */
