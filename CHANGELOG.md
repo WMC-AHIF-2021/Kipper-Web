@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- `0.4rem` top and bottom margins for the class `red-highlight-text`
 
 ### Changed
+- Changed syntax highlighting library to `Prism` and added `./prism/prism.css` and `./prism/prism.js`
 
 ### Removed
 

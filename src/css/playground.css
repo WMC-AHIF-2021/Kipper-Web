@@ -117,12 +117,19 @@
   flex-grow: 1;
 }
 
-#shell-sidebar #side-editor {
+#shell-sidebar > ul > #side-editor {
   border-left: 2px solid var(--scheme-gray);
-  flex-grow: 1;
 }
 
-#shell-sidebar #side-editor {
+/* Removing any border radius inside the editor*/
+#shell-sidebar > ul > #side-editor  > .code-toolbar pre,
+#shell-sidebar > ul > #side-editor  > .code-toolbar code {
+  border-radius: 0;
+}
+
+#shell-sidebar > ul > #side-editor,
+#shell-sidebar > ul > #side-editor > .code-toolbar,
+#shell-sidebar > ul > #side-editor > .code-toolbar > pre {
   display: flex;
   flex-grow: 1;
 }
@@ -137,14 +144,14 @@
   width: 10vw;
 }
 
-#shell-sidebar #side-editor pre {
+#shell-sidebar > ul > #side-editor pre {
   background-color: var(--scheme-gray);
   display: flex;
   flex-grow: 1;
   margin: 0;
 }
 
-#shell-sidebar #side-editor pre > code {
+#shell-sidebar > ul > #side-editor pre > code {
   border-radius: 0;
   align-self: flex-end;
   flex-grow: 1;

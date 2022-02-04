@@ -137,22 +137,22 @@ codeInput.addEventListener("keyup", event => {
 // Editor-Update, which allows for syntax highlighting
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function editorUpdate(value: string) {
-  // properly allow newlines
-  value = value
-    .replace(new RegExp("&", "g"), "&")
-    .replace(new RegExp("<", "g"), "<");
-
   // If the last character is a newline character
   // Add a placeholder space character to the final line
   if(value[value.length-1] == "\n") {
     value += " ";
   }
 
+  // properly allow newlines
+  value = value
+    .replace(new RegExp("&", "g"), "&")
+    .replace(new RegExp("<", "g"), "<");
+
   // Write results
   codeInputResult.innerHTML = value;
 
   // @ts-ignore
-  // hljs is present in 'playground.html'
-  hljs.highlightAll();
+  // Prism should be imported
+  Prism.highlightElement(codeInputResult);
 }
 
