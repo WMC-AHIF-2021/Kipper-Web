@@ -7,12 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- `1rem` top and bottom margins for the class `red-highlight-text`
+- `1rem` top and bottom margins for the class `red-highlight-text`.
 - Remaining docs pages that are required for the next release.
 - Implemented basic online code-editor, which allows multi-line syntax-highlighting.
 
 ### Changed
-- Changed syntax highlighting library to `Prism` and added `./prism/prism.css` and `./prism/prism.js`
+- Changed syntax highlighting library to `Prism` and added `./prism/prism.css` and `./prism/prism.js`.
+- Updated `index.html` entry image, as it's previous content was outdated.
+- Fixed missing border-margin for `<pre><code></code></pre` items, due to an invalid selector.
 
 ### Removed
 
