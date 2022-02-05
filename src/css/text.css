@@ -196,7 +196,7 @@ p {
 
 /* Code Block Formatting */
 code,
-:not(pre[class*="language-"]) > code[class*="language-"],
+:not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   border-radius: var(--default-border-radius);
   margin-left: .4rem;
