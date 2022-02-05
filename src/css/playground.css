@@ -54,8 +54,8 @@
   flex-grow: 1;
 
   /* Allow scrolling */
-  overflow: auto;
-  white-space: nowrap;
+  overflow: hidden; /* overflow: auto; TODO! Implement proper scrolling in the future */
+  /* white-space: nowrap; TODO! Implement proper new-lines */
 
   /* Identical styling */
   margin: 10px;
@@ -64,14 +64,16 @@
   border: none;
   outline: none;
   min-width: 75vw;
+  min-height: 50vh;
 }
 
 #code-editor-textarea, #highlighting-field, #highlighting-field * {
   /* Also add text styles to highlighting tokens */
   font-size: 14px;
   font-family: consolas, monospace;
-  line-height: 20pt;
+  line-height: 18px;
   background-color: white;
+  tab-size: 2;
 }
 
 #code-editor-textarea {

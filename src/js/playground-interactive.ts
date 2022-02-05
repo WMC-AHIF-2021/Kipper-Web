@@ -23,9 +23,13 @@ const compilerOutputButton: HTMLButtonElement = document.querySelector("#compile
 
 let ScriptRunning: boolean;
 
-codeInput.innerHTML = localStorage.getItem("kipper-code-editor-content");
-// hljs is present in 'playground.html'
-editorUpdate(localStorage.getItem("kipper-code-editor-content"));
+const localStorageCodeInput = localStorage.getItem("kipper-code-editor-content");
+if (localStorageCodeInput != undefined) {
+  codeInput.value = localStorageCodeInput;
+  editorUpdate(localStorageCodeInput);
+} else {
+  codeInput.value = "";
+}
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function runCode() {
@@ -134,8 +138,10 @@ codeInput.addEventListener("keyup", event => {
   }
 })
 
-// Editor-Update, which allows for syntax highlighting
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+/**
+ * Editor-Update, which allows for syntax highlighting
+ * @param value The value the element was updated to
+ */
 function editorUpdate(value: string) {
   // If the last character is a newline character
   // Add a placeholder space character to the final line
@@ -143,16 +149,25 @@ function editorUpdate(value: string) {
     value += " ";
   }
 
-  // properly allow newlines
-  value = value
+  // Write results to the original 'codeInput' <textarea> and syntax-highlighted result
+  codeInput.innerText = value;
+  codeInputResult.innerHTML = value
     .replace(new RegExp("&", "g"), "&")
-    .replace(new RegExp("<", "g"), "<");
-
-  // Write results
-  codeInputResult.innerHTML = value;
+    .replace(new RegExp("<", "g"), "<"); // Allow newlines
 
   // @ts-ignore
   // Prism should be imported
   Prism.highlightElement(codeInputResult);
+}
+
+/**
+ * Syncs the scrolling for both <textarea> and codeInputResult
+ */
+function syncScroll() {
+  /* Scroll result to scroll coords of event - sync with textarea */
+
+  // Get and set x and y
+  codeInputResult.scrollTop = codeInput.scrollTop;
+  codeInputResult.scrollLeft = codeInput.scrollLeft;
 }
 
