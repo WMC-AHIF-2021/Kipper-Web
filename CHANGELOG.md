@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Changed syntax highlighting library to `Prism` and added `./prism/prism.css` and `./prism/prism.js`.
 - Updated `index.html` entry image, as it's previous content was outdated.
-- Fixed missing border-margin for `<pre><code></code></pre` items, due to an invalid selector.
+- Fixed missing border-margin for `<pre><code></code></pre` items, that was caused due to an invalid selector.
 
 ### Removed
 
