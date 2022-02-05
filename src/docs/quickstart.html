@@ -5,7 +5,7 @@
   <title>Quickstart Guide</title>
   <meta
     name="description"
-    content="How to quickly Start with Kipper"
+    content="How to quickly start with Kipper"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -25,10 +25,7 @@
   <link rel="stylesheet" href="../css/docs.css"/>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
-
+    <link rel="stylesheet" href="../prism/prism.css" />
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
@@ -36,7 +33,8 @@
   <meta name="theme-color" content="#e01a4f"/>
 </head>
 <body>
-<script type="module" src="../js/plugins.ts"></script>
+<script src="../js/plugins.ts"></script>
+<script src="../prism/prism.js"></script>
 
 <div id="main-frame">
   <div id="actual-content">
@@ -81,54 +79,17 @@
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div class="flex-parent-container flex-fill-container">
       <ul class="no-style-list flex-parent-container flex-fill-to-parent">
-        <li class="flex-parent-container">
-          <nav id="nav-docs-sidebar">
-            <h4 id="nav-kipper-header">
-              Kipper Docs
-            </h4>
-            <!-- TODO! Create header generation script for automatizing these headers -->
-            <ul class="bullet-list flex-column">
-              <li>
-                <h5 class="sidebar-nav-header">
-                  <a href="./index.html">Overview</a>
-                </h5>
-              </li>
-              <li>
-                <h5 class="sidebar-nav-header">
-                  <a href="../docs/our-goals.html">Goals and Timeline</a>
-                </h5>
-              </li>
-              <li>
-                <h5 class="sidebar-nav-header selected-page-sidebar-nav-header">
-                  <a href="../docs/quickstart.html">Quickstart Guide</a>
-                </h5>
-              </li>
-              <li>
-                <h5 class="sidebar-nav-header">
-                  <a href="../docs/usage-example.html">Usage Example</a>
-                </h5>
-              </li>
-            </ul>
-          </nav>
-        </li>
+        <li id="docs-sidebar-nav-wrapper" class="flex-parent-container"></li>
+        <script src="../js/gen-sidebar-docs-nav.ts"></script>
         <li class="docs-page-content-container">
           <div id="docs-content" class="text-content shadowed-box">
             <section>
               <nav id="docs-page-nav"></nav>
               <script src="../js/gen-docs-nav-specifier.ts"></script>
               <article>
-                <h2 id="docs-overview">Quickstart Guide</h2>
+                <h2>Quickstart</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                  sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                  magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                  et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                  sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                  magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                  et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
                 </p>
               </article>
             </section>

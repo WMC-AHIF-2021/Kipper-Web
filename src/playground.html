@@ -26,8 +26,7 @@
   <link rel="stylesheet" href="./css/spinner.css">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="./prism/prism.css">
 
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
@@ -36,7 +35,8 @@
   <meta name="theme-color" content="#e01a4f"/>
 </head>
 <body>
-<script type="module" src="js/plugins.ts"></script>
+<script src="./js/plugins.ts"></script>
+<script src="./prism/prism.js"></script>
 
 <!-- Show Error if JS is disabled or blocked -->
 <noscript>Oops that shouldn't have happened! Please enable Java-Script to use our Site!</noscript>
@@ -107,7 +107,13 @@
             </li>
             <li id="code-editor">
               <label for="code-editor-textarea"></label>
-              <textarea id="code-editor-textarea" type="text" placeholder="Enter your Code here" spellcheck="false"></textarea>
+              <textarea id="code-editor-textarea" type="text" placeholder="Enter your Code here"
+                        spellcheck="false" autocomplete="off" autocorrect="off"
+                        autocapitalize="off" data-gramm="false" wrap="off"
+                        oninput="editorUpdate(this.value); syncScroll();"
+                        onscroll="syncScroll();">
+              </textarea>
+              <pre id="highlighting-field" aria-hidden="true"><code class="language-typescript" id="highlighting-field-content"></code></pre>
             </li>
           </ul>
         </li>

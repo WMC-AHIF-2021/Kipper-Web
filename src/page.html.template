@@ -24,10 +24,7 @@
   <link rel="stylesheet" href="./css/footer.css"/>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
-
+    <link rel="stylesheet" href="./prism/prism.css" />
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
@@ -35,12 +32,13 @@
   <meta name="theme-color" content="#e01a4f"/>
 </head>
 <body>
-<script type="module" src="./js/plugins.ts"></script>
+<script src="./js/plugins.ts"></script>
+<script src="./prism/prism.js"></script>
 
 <div id="main-frame">
-  <div id="actual-content">
+  <header id="actual-content">
     <!-- Top element -->
-    <header class="page-header">
+    <div class="page-header">
       <nav id="header-nav-bar">
         <ul>
           <li>
@@ -74,12 +72,12 @@
         </ul>
       </nav>
     </div>
-  </div>
+  </header>
   <!-- Central Content - all content in the white area -->
   <div id="central-content" class="flex-parent-container black-text"></div>
   <!-- Footer bar - contains some links and general copyright notice -->
   <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
-  <script src="../js/gen-footer.ts"></script>
+  <script src="./js/gen-footer.ts"></script>
 </div>
 </body>
 </html>

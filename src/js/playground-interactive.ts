@@ -4,6 +4,7 @@
 
 // main items
 const codeInput: HTMLTextAreaElement = document.querySelector("#code-editor-textarea");
+const codeInputResult: HTMLElement = document.querySelector("#highlighting-field-content");
 const textSavingState: HTMLDivElement = document.querySelector("#text-saving-state");
 
 // menu buttons
@@ -22,8 +23,13 @@ const compilerOutputButton: HTMLButtonElement = document.querySelector("#compile
 
 let ScriptRunning: boolean;
 
-// reset previously entered text
-codeInput.value = localStorage.getItem("code-editor-textarea");
+const localStorageCodeInput = localStorage.getItem("kipper-code-editor-content");
+if (localStorageCodeInput != undefined) {
+  codeInput.value = localStorageCodeInput;
+  editorUpdate(localStorageCodeInput);
+} else {
+  codeInput.value = "";
+}
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function runCode() {
@@ -51,6 +57,7 @@ function stopCode() {
 function clearContent() {
   console.log("Code Cleared!");
   codeInput.value = "";
+  codeInputResult.innerHTML = "";
   textSavingState.innerHTML = `<p class="gray-text">Code cleared!</p>`;
 }
 
@@ -102,7 +109,7 @@ codeInput.addEventListener("keyup", event => {
   // only done when the user finished typing!
   cancel = setTimeout(() => {
     const givenTextArea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
-    localStorage.setItem("code-editor-textarea", givenTextArea.value);
+    localStorage.setItem("kipper-code-editor-content", givenTextArea.value);
 
     spinning = false;
     textSavingState.innerHTML = `<p class="gray-text">Code Saved!</p>`;
@@ -130,4 +137,37 @@ codeInput.addEventListener("keyup", event => {
     spinning = true;
   }
 })
+
+/**
+ * Editor-Update, which allows for syntax highlighting
+ * @param value The value the element was updated to
+ */
+function editorUpdate(value: string) {
+  // If the last character is a newline character
+  // Add a placeholder space character to the final line
+  if(value[value.length-1] == "\n") {
+    value += " ";
+  }
+
+  // Write results to the original 'codeInput' <textarea> and syntax-highlighted result
+  codeInput.innerText = value;
+  codeInputResult.innerHTML = value
+    .replace(new RegExp("&", "g"), "&")
+    .replace(new RegExp("<", "g"), "<"); // Allow newlines
+
+  // @ts-ignore
+  // Prism should be imported
+  Prism.highlightElement(codeInputResult);
+}
+
+/**
+ * Syncs the scrolling for both <textarea> and codeInputResult
+ */
+function syncScroll() {
+  /* Scroll result to scroll coords of event - sync with textarea */
+
+  // Get and set x and y
+  codeInputResult.scrollTop = codeInput.scrollTop;
+  codeInputResult.scrollLeft = codeInput.scrollLeft;
+}
 
