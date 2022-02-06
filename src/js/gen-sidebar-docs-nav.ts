@@ -43,6 +43,10 @@ const docsFiles = {
     file: "while-loop.html",
     title: "While-Loop"
   },
+  doWhileLoop: {
+    file: "do-while-loop.html",
+    title: "Do-While-Loop"
+  },
   forLoop: {
     file: "for-loop.html",
     title: "For-Loop"

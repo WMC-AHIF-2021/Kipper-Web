@@ -5,7 +5,7 @@
   <title>While-Loop</title>
   <meta
     name="description"
-    content="While-loop to run a block of code under certain conditions"
+    content="While-loop to run a block of code multiple times under certain conditions"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -90,8 +90,44 @@
               <article>
                 <h2>While-loop</h2>
                 <p>
-
+                  While-loops are code blocks that are executed multiple times as long as the specified
+                  <code>CONDITION</code> is met. The behaviour of while-loops is very similar to
+                  <a href="do-while-loop.html">do-while-loops</a>, and in some cases it even might be better to use
+                  do-while than while-loops, so watch out for opportunities to replace while-loops with do-while loops.
                 </p>
+                <h3>Syntax</h3>
+                <pre><code class="language-typescript">
+while (CONDITION) STATEMENT;
+                </code></pre>
+                <h3>Execution Schema</h3>
+                <ul class="bullet-list flex-column">
+                  <li>
+                    Check <code>CONDITION</code>, if it exists, before running the <code>STATEMENT</code>. If
+                    <code>CONDITION</code> is <code>False</code>, then the loop will be stopped!
+                  </li>
+                  <li>Run <code>STATEMENT</code> if <code>CONDITION</code> was true.</li>
+                </ul>
+                <h3>Examples</h3>
+                <pre><code class="language-typescript">
+var var1: num = 0;
+// ✓ Simple loop
+while (var1 <= 5) {
+  var1++;
+}
+call print(f"'var1' is now '{var1}'"); // -> 'var1' is now '6'
+
+var var2: num = 0;
+// ✓ Simple loop, without braces
+while (var2 > 0 && var2 <= 25)
+  var2++;
+call print(f"'var1' is now '{var2}'"); // -> 'var1' is now '0'
+
+// X Infinite Loop - Avoid this, as it can result in freezing of your program without proper forced stopping
+while (True) {
+  call print("An unnecessary print!");
+}
+
+                </code></pre>
               </article>
             </section>
           </div>
