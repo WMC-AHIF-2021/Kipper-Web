@@ -100,7 +100,257 @@
                   can contain text, symbols or numbers, but saves them as a text. This makes them for example
                   impossible to use for calculations.
                 </p>
+                <article class="red-highlight-text">
+                  <h3>Remember!</h3>
+                  You may NEVER mix data types or do incompatible interactions with them!
+                  <ul class="bullet-list flex-column">
+                    <li>
+                      <em class="highlighted-green-checkmark">✓ VALID CODE</em>
+                      <pre><code class="language-typescript">
+// ✓ Valid
+var var1: str = "This ";
+var var2: str = "is ";
+var var3: str = "a string";
+var result: str = var1 + var2 + var3; // -> "This is a string"
 
+// ✓ Also Valid
+var var4: str = "42";
+var var5: num = var4 as num; // Converts the value to 'num' -> 42
+
+// ✓ Also Valid
+var var6: num = 32;
+var var7: num = var6 as num; // Converts the value to 'num' -> 32
+                      </code></pre>
+                    </li>
+                    <li>
+                      <em class="highlighted-red-checkmark">X INVALID CODE</em>
+                      <pre><code class="language-typescript">
+// X Invalid - May not re-define with new type signature
+var var1: str = "3";
+var var1: num = 3;
+
+// X Invalid - Invalid conversion from 'str' to 'num'
+var var2: str = "Obviously not a number";
+var var3: num = var4 as num; // Impossible to convert!
+
+// X Invalid - Invalid conversion from 'str' to 'num'
+var var2: str = ""; // empty
+var var3: num = var2 as num; // Impossible to convert, as it is an empty value!
+                      </code></pre>
+                    </li>
+                  </ul>
+                </article>
+                <h3>List of data types in Kipper</h3>
+                <ul class="bullet-list flex-column">
+                  <li>
+                    <h4>Numeric Value - <code>num</code></h4>
+                    <p>
+                      Represents a number in the Kipper language. This datatype may always be used with
+                      the standard mathematical <a href="./expressions.html">expressions</a>, such as:
+                    </p>
+                    <pre><code class="language-typescript">
+// ✓ Plus
+var var1: num = 400.3 + 26.3; // -> 426.6
+
+// ✓ Minus
+var var2: num = 87 - 2.5; // -> 84.5
+
+// ✓ Multiply
+var var2: num = 2.4 * 5; // -> 12
+
+// ✓ Divide
+var var2: num = 25 / 4; // -> 6.25
+
+// ✓ Power to
+var var2: num = 2 ** 8; // -> 256
+
+// ✓ Rest of Divide
+var var2: num = 51 % 10; // -> 1
+                    </code></pre>
+                    <p>
+                      This datatype also accepts both floating point <code>0.3492</code> and standard integer
+                      values, such as <code>202</code>. Also, important to remember is the fact that Kipper will
+                      interpret mathematical calculations properly as defined in the standard math conventions.
+                    </p>
+                    <pre><code class="language-typescript">
+// ✓ Simple integer number
+var var1: num = 400;
+
+// ✓ Simple floating point number
+var var2: num = 0.43493;
+
+// ✓ Calculations using floating point 'num' and integer 'num'
+var var3: num = var2 + var1; // -> 400.43493
+
+// ✓ Standard math rules apply
+var var4: num = 4 + 4 * 5; // -> 24
+
+                    </code></pre>
+                    <p>
+                      Additionally, to the default Base-10 values, you may also use the following with <code>num</code>:
+                    </p>
+                    <pre><code class="language-typescript">
+// ✓ Bytes Support
+var bytes: num = 0b11111010; // -> 250
+
+// ✓ Hex-Decimal Number Support
+var hex: num = 0xFFA2; // -> 65442
+
+// ✓ Octal Number Support
+var octal: num = 0o347; // -> 231
+                    </code></pre>
+                  </li>
+                  <li>
+                    <h4>String Value - <code>str</code></h4>
+                    <p>
+                      A string is a simple sequence of characters in UTF-16. A string may be any length, as underneath
+                      the length of the list that represents the string will always be increased as needed.
+                    </p>
+                    <pre><code class="language-typescript">
+// ✓ Standard addition and concatenations are allowed
+var var5: str = "This is a";
+var var6: str = " string";
+var result_str: str = var5 + var6; // -> "This is a string"
+
+// ✓ Single character UTF-16 characters in strings
+var kipper: str = "ƛ";
+
+// ✓ Multi character UTF-16 characters in strings
+var kipper: str = "Kipper is 🦊💘";
+                    </code></pre>
+                    <p>
+                      Strings are defined using the <code>""</code> syntax, which automatically hints the
+                      <code>str</code> type!
+                    </p>
+                  </li>
+                  <li>
+                    <h4>Char Value - <code>char</code></h4>
+                    <p>
+                      A char-value is a simple UTF-16 character, which may represent any Unicode character that is
+                      defined in the UTF-16 standard. To define a simple character, you use the <code>''</code> syntax,
+                      hinting a single character:
+                    </p>
+                    <pre><code class="language-typescript">
+// ✓ Simple UTF-16 Character
+var var7: char = '4';
+
+// ✓ Single character UTF-16 character
+var kipper: str = "ƛ";
+
+// X Char may only be a single character
+var var8: char = 'This is obviously more than a single character';
+
+// X Char has to be a string and "" signalises a string!
+var var8: char = "x";
+                    </code></pre>
+                    <p>
+                      A character may be also initialised with a simple integer, like:
+                    </p>
+                    <pre><code class="language-typescript">
+// ✓ UTF-16 Char Conversion
+var var9: char = '4';
+var encoded_c: num = var9 as num; // Converts from Char to UT6-16 number -> 52 (UTF-16 from 0 to 65535)
+var is_equal: bool = var9 == (encoded_c as char); // Converts from UTF-16 number to Char -> true
+
+// X No direct calculations between 'char' and 'num' without conversion
+var var10: char = '8'; // -> 8
+var var11: num = 48; // -> 0
+var result: char = var10 + var11; // -> Incompatible types 'char' and 'num'
+
+// X No usage of emojis that use multi-character UTF-16 sequences like 💘 (U+1F498 / 128152), which are bigger than the
+// allowed range of 65535. For these use 'str' instead, as they require multiple characters!
+var var12: char = '💘';
+
+// ✓ Multi character UTF-16 characters in strings
+var var13: str = "💘";
+                    </code></pre>
+                  </li>
+                  <li>
+                    <h4>Boolean Value - <code>bool</code></h4>
+                    <p>
+                      The boolean is a simple binary value that may be either <code>True</code> or <code>False</code>.
+                      The value can be also represented as 0 (<code>False</code>) and 1 (<code>True</code>).
+                    </p>
+                    <pre><code class="language-typescript">
+// ✓ Simple bool value using 'True' and 'False'
+var var14: bool = False;
+var var15: bool = True;
+
+// ✓ Simple comparison
+var var16: num = 3;
+var var17: num = 48;
+var is_equal: bool = var10 <= var11; // 3 smaller than 48 -> True
+
+// ✓ Boolean calculations with numbers
+var var18: bool = True;
+var var19: num = var18 as num + 2; // -> 3
+                    </code></pre>
+                  </li>
+                  <li>
+                    <h4>Void Value - <code>void</code></h4>
+                    <p>
+                      The <code>void</code> type represents a value that is nothing and may only be <code>void</code>.
+                      This is usually used for functions to hint they have no return. Otherwise, this data type is
+                      practically useless, and it should be avoided for variable usage!
+                    </p>
+                    <pre><code class="language-typescript">
+// ✓ Creating a void variable - This may only be 'void'
+var var20: void = void;
+
+// X May not set a 'void' variable to anything except 'void'
+var var21: void = 4;
+
+// ✓ Returning void for a function - Returns 'void' per default
+def func1() -> void {
+  return;
+}
+
+// ✓ Returning void for a function manually
+def func2() -> void {
+  return void;
+}
+
+// ✓ Assigning void return to variable of type 'void'
+var var22: void = func2();
+                    </code></pre>
+                  </li>
+                  <li>
+                    <h4>List Value - <code>list&lt;type&gt;</code></h4>
+                    <p>
+                      The <code>list&lt;type&gt;</code> data type is a unique data type, as it does not represent itself
+                      a value, but rather a sequence of other data types. Therefore, a list has also a length, and
+                      indexes for each item, which you may use to access them using the following syntax:
+                      <code>VAR[INDEX]</code>
+                    </p>
+                    <pre><code class="language-typescript">
+// ✓ Creating a simple list
+var var23: list&lt;num&gt; = [ 2, 3, 4 ];
+
+// ✓ Accessing item of value per index (0 = first item)
+var var24: list&lt;num&gt; = [ 2, 3, 4 ];
+var item_of_list: num = var26[2]; // -> 4
+
+// ✓ Accessing the length of the list using 'len()'
+var len_of_list: num = len(var26); // -> 3
+
+// ✓ Accessing the last item of the list using 'last()'
+var len_of_list: num = last(var26); // -> 4
+
+// ✓ Accessing the first item of the list using 'first()'
+var len_of_list: num = first(var26); // -> 2
+
+// X May not set a list to a single value
+var var25: list&lt;num&gt; = 2;
+
+// X May not set item of list to an invalid type
+var var26: list&lt;num&gt; = [ "string" ];
+
+// X May not convert list to another type as a whole!
+var var27: list&lt;str&gt; = [ "99", "1893", "4" ];
+var var28: list&lt;num&gt; = var27 as list&lt;num&gt;; // -> Invalid conversion
+                    </code></pre>
+                  </li>
+                </ul>
               </article>
             </section>
           </div>

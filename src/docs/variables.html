@@ -126,21 +126,21 @@
                       <em class="highlighted-green-checkmark">✓ VALID CODE</em>
                       <pre><code class="language-typescript">
 // ✓ Valid
-var var1: string;
-var var1: string;
+var var1: str;
+var var1: str;
                       </code></pre>
                     </li>
                     <li>
                       <em class="highlighted-red-checkmark">X INVALID CODE</em>
                       <pre><code class="language-typescript">
 // X Invalid - May not re-declare with new type signature
-var var2: string;
+var var2: str;
 var var2: num;
 
 // X Invalid - May not re-declare in a different scope
-var var3: string;
+var var3: str;
 {
-  var var3: string;
+  var var3: str;
 }
                       </code></pre>
                     </li>
@@ -167,23 +167,23 @@ var var3: string;
                       <em class="highlighted-green-checkmark">✓ VALID CODE</em>
                       <pre><code class="language-typescript">
 // ✓ Valid
-var var1: string = "3"; // Declaring and defining a variable in a one-line statement
+var var1: str = "3"; // Declaring and defining a variable in a one-line statement
 var1 = "Another string"; // Assigning a new value
 
 // ✓ Also Valid
-var var2: string; // Declaring a variable
-var var2: string = "3"; // Declaring again and defining a variable in a one-line statement
+var var2: str; // Declaring a variable
+var var2: str = "3"; // Declaring again and defining a variable in a one-line statement
                       </code></pre>
                     </li>
                     <li>
                       <em class="highlighted-red-checkmark">X INVALID CODE</em>
                       <pre><code class="language-typescript">
 // X Invalid - May not re-define with new type signature
-var var1: string = "3";
+var var1: str = "3";
 var var1: num = 3;
 
 // X Also Invalid - May not overwrite with a different type
-var var2: string = "3";
+var var2: str = "3";
 var2 = 3; // typeof(3) -> num
                       </code></pre>
                     </li>

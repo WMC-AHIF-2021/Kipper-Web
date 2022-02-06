@@ -196,8 +196,8 @@ p {
 
 /* Code Block Formatting */
 code {
-  margin-left: .4rem;
-  margin-right: .4rem;
+  margin-left: .2rem;
+  margin-right: .2rem;
   padding: .2em .4em;
   font-size: 85%;
   font-family: consolas, monospace;
