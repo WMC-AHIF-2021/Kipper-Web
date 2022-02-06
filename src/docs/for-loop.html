@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="../css/lists.css"/>
   <link rel="stylesheet" href="../css/footer.css"/>
   <link rel="stylesheet" href="../css/docs.css"/>
+  <link rel="stylesheet" href="../css/table.css"/>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
     <link rel="stylesheet" href="../prism/prism.css" />
@@ -89,8 +90,51 @@
               <article>
                 <h2>For-Loop</h2>
                 <p>
-
+                  For-loops are statements with a loop-expression, a loop condition and a statement body that are
+                  executed as long as a specified condition is met. For-loops have the unique attribute, unlike
+                  <a href="./while-loop.html">while-loops</a> and <a href="./do-while-loop.html">do-while-loops</a>,
+                  of having an executable <code>LOOP_EXPRESSION</code>, which is evaluated at the end of every loop
+                  cycle. This <code>LOOP_EXPRESSION</code> can be used very nicely to do repeating tasks at
+                  the end of a loop cycle, like calling a function or increasing a counter.
                 </p>
+                <h3>Syntax</h3>
+                <pre><code class="language-typescript">
+for (INIT_EXPRESSION (OPTIONAL); CONDITION (OPTIONAL); LOOP_EXPRESSIONS (OPTIONAL)...) STATEMENT;
+                </code></pre>
+                <p>
+                  The execution of a for-loop follows this schema:
+                </p>
+                <ul class="bullet-list flex-column">
+                  <li>Evaluate <code>INIT_EXPRESSION</code>, if it exists (Only the first time).</li>
+                  <li>
+                    Check <code>CONDITION</code>, if it exists, before running the <code>STATEMENT</code>. If
+                    <code>CONDITION</code> is <code>False</code>, then the loop will be stopped!
+                  </li>
+                  <li>Run <code>STATEMENT</code> if <code>CONDITION</code> was true.</li>
+                  <li>
+                    Evaluate <code>LOOP_EXPRESSION</code> after finishing the execution of <code>STATEMENT</code>,
+                    and the loop was not stopped using <code>return;</code> or <code>break;</code>.
+                  </li>
+                </ul>
+                <h3>Examples</h3>
+                <pre><code class="language-typescript">
+// ✓ Simple for-loop with an execution counter
+for (var i: num = 1; i < 10; i++) {
+  call print(f"Running for the {i}. time!");
+}
+
+// ✓ Simple for-loop with an execution counter
+var j: num = 0;
+for (var i: num = 1; i < 10; i++, j++) {
+  call print(f"i = {i}");
+}
+call print(f"Additional variable j = {j}"); // -> Additional variable j = 10
+
+// X Infinite loop - Avoid this, as it can result in freezing of your program without proper forced stopping
+for ( ; ; ) {
+  call print(f"Running for the {i}. time!");
+}
+                </code></pre>
               </article>
             </section>
           </div>

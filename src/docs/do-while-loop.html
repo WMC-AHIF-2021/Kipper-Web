@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>While-Loop</title>
+  <title>Do-While-Loop</title>
   <meta
     name="description"
-    content="While-loop to run a block of code multiple times under certain conditions"
+    content="Do-While-loop to run a block of code multiple times under certain conditions"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="../css/table.css"/>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-    <link rel="stylesheet" href="../prism/prism.css" />
+  <link rel="stylesheet" href="../prism/prism.css" />
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
@@ -88,21 +88,21 @@
               <nav id="docs-page-nav"></nav>
               <script src="../js/gen-docs-nav-specifier.ts"></script>
               <article>
-                <h2>While-loop</h2>
+                <h2>Do-While-loop</h2>
                 <p>
-                  While-loops are code blocks that are executed multiple times as long as the specified
-                  <code>CONDITION</code> is met. The behaviour of while-loops is very similar to
-                  <a href="do-while-loop.html">do-while-loops</a>, and in some cases it even might be better to use
-                  do-while than while-loops, so watch out for opportunities to replace while-loops with do-while loops.
+                  Do-while-loops are loops that run the loop-statement once before starting with the
+                  actual loop, where the behaviour matches <a href="while-loop.html">while-loops</a>.
+                  The loop runs after the first run as long as the <code>CONDITION</code> is met.
                 </p>
                 <h3>Syntax</h3>
                 <pre><code class="language-typescript">
-while (CONDITION) STATEMENT;
-                </code></pre>
+do STATEMENT while (CONDITION);
+                    </code></pre>
                 <h3>Execution Schema</h3>
                 <ul class="bullet-list flex-column">
+                  <li>Run <code>STATEMENT</code> (Only the first time).</li>
                   <li>
-                    Check <code>CONDITION</code>, if it exists, before running the <code>STATEMENT</code>. If
+                    Check <code>CONDITION</code>, if it exists, before running the <code>STATEMENT</code> again. If
                     <code>CONDITION</code> is <code>False</code>, then the loop will be stopped!
                   </li>
                   <li>Run <code>STATEMENT</code> if <code>CONDITION</code> was true.</li>
@@ -111,9 +111,9 @@ while (CONDITION) STATEMENT;
                 <pre><code class="language-typescript">
 var var1: num = 0;
 // ✓ Simple loop
-while (var1 <= 5) {
+do {
   var1++;
-}
+} while (var1 <= 5);
 call print(f"'var1' is now '{var1}'"); // -> 'var1' is now '6'
 
 var var2: num = 0;

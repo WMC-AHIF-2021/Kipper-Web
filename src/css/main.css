@@ -32,6 +32,11 @@ html {
   font-size: 1em;
 }
 
+ul, ol {
+  margin-bottom: .4rem;
+  margin-top: .4rem;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;

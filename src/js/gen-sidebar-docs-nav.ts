@@ -31,6 +31,10 @@ const docsFiles = {
     file: "expressions.html",
     title: "Expressions"
   },
+  statements: {
+    file: "statements.html",
+    title: "Statements"
+  },
   decisionMaking: {
     file: "decision-making.html",
     title: "If-Statement"
@@ -38,6 +42,10 @@ const docsFiles = {
   whileLoop: {
     file: "while-loop.html",
     title: "While-Loop"
+  },
+  doWhileLoop: {
+    file: "do-while-loop.html",
+    title: "Do-While-Loop"
   },
   forLoop: {
     file: "for-loop.html",
