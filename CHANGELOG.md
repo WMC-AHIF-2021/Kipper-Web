@@ -7,17 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+
+### Changed
+
+### Removed
+
+## [v0.2.0] - 2022-02-06
+### Added
 - `1rem` top and bottom margins for the class `red-highlight-text`.
 - Remaining docs pages that are required for the next release.
 - Implemented basic online code-editor, which allows multi-line syntax-highlighting.
+- Remaining docs pages content
 
 ### Changed
 - Changed syntax highlighting library to `Prism` and added `./prism/prism.css` and `./prism/prism.js`.
 - Updated `index.html` entry image, as it's previous content was outdated.
 - Fixed missing border-margin for `<code></code>` items, that was caused due to an invalid selector, and
   updated its formatting based whether it has a `<pre></pre>` parent element.
-
-### Removed
 
 ## [v0.1.5] - 2022-02-02
 ### Added
@@ -122,6 +128,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed unnecessary `start_local_Server.exe`
 
 [unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/HEAD...base-dev
+[v0.2.0]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.5...v0.2.0
 [v0.1.5]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.2...v0.1.3
