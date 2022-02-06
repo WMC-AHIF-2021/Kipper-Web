@@ -117,6 +117,35 @@
                   not set a value yet, attempting to read from a variable will result in a compiler error, as
                   you can not read from a variable with no value.
                 </p>
+                <article class="red-highlight-text">
+                  <h3>Remember!</h3>
+                  You may re-declare a variable as often as you want, as long as the types match and the scope is
+                  identical. If they are not, it will result in a compiler error!
+                  <ul class="bullet-list flex-column">
+                    <li>
+                      <em class="highlighted-green-checkmark">✓ VALID CODE</em>
+                      <pre><code class="language-typescript">
+// ✓ Valid
+var var1: string;
+var var1: string;
+                      </code></pre>
+                    </li>
+                    <li>
+                      <em class="highlighted-red-checkmark">X INVALID CODE</em>
+                      <pre><code class="language-typescript">
+// X Invalid - May not re-declare with new type signature
+var var1: string;
+var var1: num;
+
+// X Invalid - May not re-declare in a different scope
+var var1: string;
+{
+  var var1: string;
+}
+                      </code></pre>
+                    </li>
+                  </ul>
+                </article>
                 <h3>How to define variables in Kipper</h3>
                 <p>
                   Defining a variable is fairly straightforward in Kipper, as like in declarations you specify
@@ -138,12 +167,12 @@
                       <em class="highlighted-green-checkmark">✓ VALID CODE</em>
                       <pre><code class="language-typescript">
 // ✓ Valid
-var var1: string = "3";
-var1 = "3";
+var var1: string = "3"; // Declaring and defining a variable in a one-line statement
+var1 = "Another string"; // Assigning a new value
 
 // ✓ Also Valid
-var var1: string;
-var var1: string = "3";
+var var1: string; // Declaring a variable
+var var1: string = "3"; // Declaring again and defining a variable in a one-line statement
                       </code></pre>
                     </li>
                     <li>
