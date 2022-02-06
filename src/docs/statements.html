@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Usage Examples</title>
+  <title>Kipper Statements</title>
   <meta
     name="description"
-    content="Example to Show how Kipper Works"
+    content="Kipper Statements, which represent the core functionality of Kipper"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="../css/table.css"/>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-    <link rel="stylesheet" href="../prism/prism.css" />
+  <link rel="stylesheet" href="../prism/prism.css" />
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
@@ -88,14 +88,28 @@
               <nav id="docs-page-nav"></nav>
               <script src="../js/gen-docs-nav-specifier.ts"></script>
               <article>
-                <h2>Usage Examples</h2>
+                <h2>Kipper Statements</h2>
                 <p>
-
+                  Statements form the basis of Kipper next to <a href="./expressions.html">expressions</a>, and can
+                  fundamentally change the flow of execution in your program. They can be easily identified
+                  with their usage of either curly brackets (<code>{ }</code>) or a semicolon (<code>;</code>).
                 </p>
-                <p class="red-highlight-text">
-                  This section will be added later when Kipper moves out of early development and is stable.
-                  (-> May - June 2022)
+                <h3>List of statements in Kipper</h3>
+                <p>
+                  <em>Note that most of these statements will be explained in their own docs page!</em>
                 </p>
+                <ul class="bullet-list flex-column">
+                  <li>
+                    <h4>Compound Statement</h4>
+                    <p>
+                      A compound statement is also called block of code, and defines, as already explained in
+                      <a href="./variables.html">variables</a>, a scope for variables. Compound statements are commonly
+                      used together with other statements, such as <a href="./decision-making.html">if-statements</a>,
+                      <a href="./while-loop.html">while-loops</a> and <a href="./for-loop.html">for-loops</a>.
+                    </p>
+                    <h5>Syntax</h5>
+                  </li>
+                </ul>
               </article>
             </section>
           </div>

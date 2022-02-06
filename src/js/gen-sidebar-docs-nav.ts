@@ -31,6 +31,10 @@ const docsFiles = {
     file: "expressions.html",
     title: "Expressions"
   },
+  statements: {
+    file: "statements.html",
+    title: "Statements"
+  },
   decisionMaking: {
     file: "decision-making.html",
     title: "If-Statement"
