@@ -11,6 +11,10 @@
   padding-left: 4vw;
 }
 
+#kipper-docs-img {
+  width: 100%;
+}
+
 #docs-sidebar-nav-wrapper {
   display: flex;
   flex-direction: column;
