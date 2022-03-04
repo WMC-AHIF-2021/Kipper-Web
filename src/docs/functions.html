@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Quickstart Guide</title>
+  <title>Functions</title>
   <meta
     name="description"
-    content="How to quickly start with Kipper"
+    content="Functions (callable code-blocks) for reusing code"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -88,22 +88,82 @@
               <nav id="docs-page-nav"></nav>
               <script src="../js/gen-docs-nav-specifier.ts"></script>
               <article>
-                <h2>Quickstart</h2>
+                <h2>Kipper Functions</h2>
                 <p>
-                  Welcome to the Quickstart Guide for the Kipper programming language! Here you will find a concise
-                  guide on how to install Kipper and start using it for your projects.
+                  Functions are an easy way to re-use code and provide interface to do certain things over and over
+                  again. These functions may also accept arguments/parameters to change the functions behaviour and
+                  also return values after execution.
                 </p>
-                <h3>Download Kipper</h3>
                 <p>
-                  First of all, you will need to install Kipper using the
-                  <a href="https://www.npmjs.com/">Node Package Manager (npm)</a> and set it up properly. We've already
-                  written on another page a concise guide on how to do that. So check that out
-                  <a href="../download.html">here</a>!
+                  Functions are essential for every program, as the ability to re-execute statements over and over
+                  again, makes them an extremely powerful tool for every program allowing the creation of complex
+                  behaviour.
                 </p>
-                <article class="red-highlight-text">
-                  This section will be finished later when Kipper moves out of early development and can be installed
-                  and used properly. (-> May - June 2022)
-                </article>
+                <h3>Syntax</h3>
+                <p>
+                  Defining a Kipper function:
+                </p>
+                <pre><code class="language-typescript">
+def NAME(ARG_NAME: TYPE (OPTIONAL), ...) -> RETURN_TYPE {
+  STATEMENTS... (OPTIONAL) // Function content
+
+  return; // Optional if RETURN_TYPE is void, invalid if RETURN_TYPE is not void
+  return VALUE; // Required if RETURN_TYPE is not void
+}
+                </code></pre>
+                <p>
+                  Calling a defined function (<a href="./expressions.html">Function call expression</a>):
+                </p>
+                <pre><code class="language-typescript">
+call NAME(REQ_ARGS...);
+                </code></pre>
+                <h3>Behaviour</h3>
+                <p>
+                  When calling a function all arguments have to be passed with the argument types matching. When
+                  calling, the variables are going to be copied to the local function stack (local scope), where the
+                  function may utilise them for its behaviour.
+                </p>
+                <p>
+                  <em>
+                    Note! A function allows for an infinite amount of arguments (<code>ARG_NAME: TYPE</code>), though
+                    at the current stage of development, no optional or default arguments are available/planned. Meaning
+                    <b>all</b> arguments have to be passed when calling a function!
+                  </em>
+                </p>
+                <h3>Examples</h3>
+                <pre><code class="language-typescript">
+// ✓ Simple void function with no arguments and return
+def print_banner() -> void {
+  call print("Welcome to Kipper!");
+  return; // Optional
+}
+
+// ✓ Calling the function
+call print_banner();
+
+// ✓ Simple function with arguments and return-type
+// Note: It is good to always document your functions to make sure you understand their behaviour even later on!
+/*
+ * @brief Adds the prefix before the main_str
+ * @param prefix The prefix that shall be added
+ * @param main_str The main_str to append to
+ */
+def add_prefix(prefix: str, main_str: str) -> str {
+  return prefix + main_str;
+}
+
+// ✓ Calling the function with all the required arguments and passing the result to a variable
+var result_str: str = call add_prefix("pre", "fix"); // -> "prefix"
+
+// X May not pass the function itself to a variable!
+var any_var: str = add_prefix("pre", "fix");
+
+// X May not pass the function itself to a variable!
+var any_var: str = add_prefix;
+
+// X May not call a function without its arguments!
+var any_var: str = call add_prefix;
+                </code></pre>
               </article>
             </section>
           </div>

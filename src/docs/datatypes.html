@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Variable Datatypes</title>
+  <meta
+    name="description"
+    content="Datatypes in the Kipper language"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <script src="../js/main.ts"></script>
+  <link rel="manifest" href="../../site.webmanifest"/>
+  <link rel="apple-touch-icon" href="../img/icon.png"/>
+  <link rel="shortcut icon" type="image/ico" href="../../favicon.ico"/>
+
+  <link rel="stylesheet" href="../css/normalize.css"/>
+  <link rel="stylesheet" href="../css/main.css"/>
+  <link rel="stylesheet" href="../css/screen.css"/>
+  <link rel="stylesheet" href="../css/buttons.css"/>
+  <link rel="stylesheet" href="../css/nav-bar.css"/>
+  <link rel="stylesheet" href="../css/text.css"/>
+  <link rel="stylesheet" href="../css/lists.css"/>
+  <link rel="stylesheet" href="../css/footer.css"/>
+  <link rel="stylesheet" href="../css/docs.css"/>
+  <link rel="stylesheet" href="../css/table.css"/>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <link rel="stylesheet" href="../prism/prism.css" />
+  <!--
+  Specifying the preferred environment colour to be the primary scheme colour.
+  See main.css for the --scheme-primary variable
+  -->
+  <meta name="theme-color" content="#e01a4f"/>
+</head>
+<body>
+<script src="../js/plugins.ts"></script>
+<script src="../prism/prism.js"></script>
+
+<div id="main-frame">
+  <div id="actual-content">
+    <!-- The top element: menu and search bar -->
+    <header class="page-header">
+      <nav id="header-nav-bar">
+        <ul>
+          <li>
+            <a href="../index.html" class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
+              <img id="kipper-logo" src="../img/base_head.png" alt="">
+              <a class="underline-button" href="../index.html">
+                <h1>Kipper</h1>
+              </a>
+            </a>
+          </li>
+          <li>
+            <a href="../download.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Downloads</h4></a>
+          </li>
+          <li>
+            <a href="./index.html" class="underline-button top-nav-menu-item top-nav-button selected-nav-page"><h4>Docs</h4></a>
+          </li>
+          <li>
+            <a href="../playground.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Playground</h4></a>
+          </li>
+          <li>
+            <a href="../changelog.html"
+               class="underline-button top-nav-menu-item top-nav-button"><h4>
+              Changelog</h4></a>
+          </li>
+        </ul>
+        <ul id="search-bar-wrapper">
+          <li id="search-bar">
+            <label for="search-bar-input"></label>
+            <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
+            <script src="../js/search-bar.ts"></script>
+          </li>
+        </ul>
+      </nav>
+      <div id="header-description-content" class="text-page-content-container"></div>
+      <script src="../js/gen-header.ts"></script>
+    </header>
+    <!-- Main Content, where the text is located and the items unique to this site are defined -->
+    <div class="flex-parent-container flex-fill-container">
+      <ul class="no-style-list flex-parent-container flex-fill-to-parent">
+        <li id="docs-sidebar-nav-wrapper" class="flex-parent-container"></li>
+        <script src="../js/gen-sidebar-docs-nav.ts"></script>
+        <li class="docs-page-content-container">
+          <div id="docs-content" class="text-content shadowed-box">
+            <section>
+              <nav id="docs-page-nav"></nav>
+              <script src="../js/gen-docs-nav-specifier.ts"></script>
+              <article>
+                <h2>Kipper Datatypes</h2>
+                <p>
+                  As previously shown in the docs page <a href="./variables.html">Variables</a>, a variable always
+                  has a type that defines how you can interact with it. This also means that you often can not mix
+                  variables of different data types together, as they fundamentally represent different things.
+                </p>
+                <h3>What is a datatype?</h3>
+                <p>
+                  A data type defines the type of value saved in a variable or constant. A variable with the datatype
+                  <code>num</code>, for example, can only contain numbers. A variable with an <code>str</code> datatype
+                  can contain text, symbols or numbers, but saves them as a text. This makes them for example
+                  impossible to use for calculations.
+                </p>
+                <article class="red-highlight-text">
+                  <h3>Remember!</h3>
+                  You may NEVER mix data types or do incompatible interactions with them!
+                  <ul class="bullet-list flex-column">
+                    <li>
+                      <em class="highlighted-green-checkmark">✓ VALID CODE</em>
+                      <pre><code class="language-typescript">
+// ✓ Valid
+var var1: str = "This ";
+var var2: str = "is ";
+var var3: str = "a string";
+var result: str = var1 + var2 + var3; // -> "This is a string"
+
+// ✓ Also Valid
+var var4: str = "42";
+var var5: num = var4 as num; // Converts the value to 'num' -> 42
+
+// ✓ Also Valid
+var var6: num = 32;
+var var7: num = var6 as num; // Converts the value to 'num' -> 32
+                      </code></pre>
+                    </li>
+                    <li>
+                      <em class="highlighted-red-checkmark">X INVALID CODE</em>
+                      <pre><code class="language-typescript">
+// X Invalid - May not re-define with new type signature
+var var1: str = "3";
+var var1: num = 3;
+
+// X Invalid - Invalid conversion from 'str' to 'num'
+var var2: str = "Obviously not a number";
+var var3: num = var4 as num; // Impossible to convert!
+
+// X Invalid - Invalid conversion from 'str' to 'num'
+var var2: str = ""; // empty
+var var3: num = var2 as num; // Impossible to convert, as it is an empty value!
+                      </code></pre>
+                    </li>
+                  </ul>
+                </article>
+                <h3>List of data types in Kipper</h3>
+                <ul class="bullet-list flex-column">
+                  <li>
+                    <h4>Numeric Value - <code>num</code></h4>
+                    <p>
+                      Represents a number (both floating point and integer) in the Kipper language. This datatype may
+                      always be used with the standard mathematical <a href="./expressions.html">expressions</a>.
+                    </p>
+                    <h5>Examples</h5>
+                    <pre><code class="language-typescript">
+// ✓ Simple integer number
+var var1: num = 400;
+
+// ✓ Simple floating point number
+var var2: num = 0.43493;
+
+// ✓ Calculations using floating point 'num' and integer 'num'
+var var3: num = var2 + var1; // -> 400.43493
+
+// ✓ Plus
+var var1: num = 400.3 + 26.3; // -> 426.6
+
+// ✓ Minus
+var var2: num = 87 - 2.5; // -> 84.5
+
+// ✓ Multiply
+var var2: num = 2.4 * 5; // -> 12
+
+// ✓ Divide
+var var2: num = 25 / 4; // -> 6.25
+
+// ✓ Power to
+var var2: num = 2 ** 8; // -> 256
+
+// ✓ Rest of Divide
+var var2: num = 51 % 10; // -> 1
+                    </code></pre>
+                    <article class="red-highlight-text">
+                      <h4>Important</h4>
+                      <p>
+                        Remember fact that Kipper will interpret mathematical calculations properly as defined in the
+                        standard math conventions.
+                      </p>
+                      <pre><code class="language-typescript">
+// ✓ Standard math rules apply
+var result: num = 4 + 4 * 5; // -> 24
+                      </code></pre>
+                    </article>
+                    <p>
+                      Additionally, to the default Base-10 values, you may also use the following with <code>num</code>:
+                    </p>
+                    <pre><code class="language-typescript">
+// ✓ Bytes Support
+var bytes: num = 0b11111010; // -> 250
+
+// ✓ Hex-Decimal Number Support
+var hex: num = 0xFFA2; // -> 65442
+
+// ✓ Octal Number Support
+var octal: num = 0o347; // -> 231
+                    </code></pre>
+                  </li>
+                  <li>
+                    <h4>String Value - <code>str</code></h4>
+                    <p>
+                      A string is a simple sequence of characters in UTF-16. A string may be any length, as underneath
+                      the length of the list that represents the string will always be increased as needed.
+                    </p>
+                    <h5>Examples</h5>
+                    <pre><code class="language-typescript">
+// ✓ Standard addition and concatenations are allowed
+var var4: str = "This is a";
+var var5: str = " string";
+var result_str: str = var5 + var6; // -> "This is a string"
+
+// ✓ Single character UTF-16 characters in strings
+var kipper: str = "ƛ";
+
+// ✓ Multi character UTF-16 characters in strings
+var kipper: str = "Kipper is 🦊💘";
+                    </code></pre>
+                    <p>
+                      Strings are defined using the <code>""</code> syntax, which automatically hints the
+                      <code>str</code> type!
+                    </p>
+                  </li>
+                  <li>
+                    <h4>Char Value - <code>char</code></h4>
+                    <p>
+                      A char-value is a simple UTF-16 character, which may represent any Unicode character that is
+                      defined in the UTF-16 standard. To define a simple character, you use the <code>''</code> syntax,
+                      hinting a single character.
+                    </p>
+                    <h5>Examples</h5>
+                    <pre><code class="language-typescript">
+// ✓ Simple UTF-16 Character
+var var6: char = '4';
+
+// ✓ Single character UTF-16 character
+var var7: char = "ƛ";
+
+// X Char may not be empty
+var var8: char = '';
+
+// X Char may only be a single character
+var var9: char = 'This is obviously more than a single character';
+
+// X Char has to be a string and "" signalises a string!
+var var10: char = "x";
+
+// X No direct calculations between 'char' and 'num' without conversion
+var var11: char = '8'; // -> 8
+var var12: num = 48; // -> 0
+var result: char = var10 + var11; // -> Incompatible types 'char' and 'num'
+
+// X No usage of emojis that use multi-character UTF-16 sequences like 💘 (U+1F498 / 128152), which are bigger than the
+// allowed range of 65535. For these use 'str' instead, as they require multiple characters!
+var var13: char = '💘'; // -> X Char may only be a single character
+
+// ✓ Multi character UTF-16 characters in strings
+var var14: str = "💘";
+                    </code></pre>
+                  </li>
+                  <li>
+                    <h4>Boolean Value - <code>bool</code></h4>
+                    <p>
+                      The boolean is a simple binary value that may be either <code>True</code> or <code>False</code>.
+                      The value can be also represented as 0 (<code>False</code>) and 1 (<code>True</code>).
+                    </p>
+                    <h5>Examples</h5>
+                    <pre><code class="language-typescript">
+// ✓ Simple bool value using 'True' and 'False'
+var var15: bool = False;
+var var16: bool = True;
+
+// ✓ Simple comparison
+var var17: num = 3;
+var var18: num = 48;
+var is_equal: bool = var10 <= var11; // 3 smaller than 48 -> True
+
+// ✓ Boolean calculations with numbers
+var var19: bool = True;
+var var20: num = var18 as num + 2; // -> 3
+                    </code></pre>
+                  </li>
+                  <li>
+                    <h4>Void Value - <code>void</code></h4>
+                    <p>
+                      The <code>void</code> type represents a value that is nothing and may only be <code>void</code>.
+                      This is usually used for functions to hint they have no return. Otherwise, this data type is
+                      practically useless, and it should be avoided for variable usage!
+                    </p>
+                    <h5>Examples</h5>
+                    <pre><code class="language-typescript">
+// ✓ Creating a void variable - This may only be 'void'
+var var21: void = void;
+
+// X May not set a 'void' variable to anything except 'void'
+var var22: void = 4;
+
+// ✓ Returning void for a function - Returns 'void' per default
+def func1() -> void {
+  return;
+}
+
+// ✓ Returning void for a function manually
+def func2() -> void {
+  return void;
+}
+
+// ✓ Assigning void return to variable of type 'void'
+var var23: void = func2();
+                    </code></pre>
+                  </li>
+                  <li>
+                    <h4>List Value - <code>list&lt;type&gt;</code></h4>
+                    <p>
+                      The <code>list&lt;type&gt;</code> data type is a unique data type, as it does not represent itself
+                      a value, but rather a sequence of other data types. Therefore, a list has also a length, and
+                      indexes for each item, which you may use to access them using the following syntax:
+                    </p>
+                    <pre><code class="language-typescript">
+VAR[INDEX]
+                    </code></pre>
+                    <h5>Examples</h5>
+                    <pre><code class="language-typescript">
+// ✓ Creating a simple list
+var var24: list&lt;num&gt; = [ 2, 3, 4 ];
+
+// ✓ Accessing item of value per index (0 = first item)
+var var25: list&lt;num&gt; = [ 2, 3, 4 ];
+var item_of_list: num = var26[2]; // -> 4
+
+// ✓ Accessing the length of the list using 'len()'
+var len_of_list: num = len(var26); // -> 3
+
+// ✓ Accessing the last item of the list using 'last()'
+var len_of_list: num = last(var26); // -> 4
+
+// ✓ Accessing the first item of the list using 'first()'
+var len_of_list: num = first(var26); // -> 2
+
+// X May not set a list to a single value
+var var26: list&lt;num&gt; = 2;
+
+// X May not set item of list to an invalid type
+var var27: list&lt;num&gt; = [ "string" ];
+
+// X May not convert list to another type as a whole!
+var var28: list&lt;str&gt; = [ "99", "1893", "4" ];
+var var29: list&lt;num&gt; = var27 as list&lt;num&gt;; // -> Invalid conversion
+                    </code></pre>
+                  </li>
+                </ul>
+              </article>
+            </section>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Footer bar - contains some links and general copyright notice -->
+    <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
+    <script src="../js/gen-footer.ts"></script>
+  </div>
+</div>
+</body>
+</html>

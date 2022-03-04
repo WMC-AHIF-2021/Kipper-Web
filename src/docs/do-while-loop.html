@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Quickstart Guide</title>
+  <title>Do-While-Loop</title>
   <meta
     name="description"
-    content="How to quickly start with Kipper"
+    content="Do-While-loop to run a block of code multiple times under certain conditions"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="../css/table.css"/>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-    <link rel="stylesheet" href="../prism/prism.css" />
+  <link rel="stylesheet" href="../prism/prism.css" />
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
@@ -88,22 +88,46 @@
               <nav id="docs-page-nav"></nav>
               <script src="../js/gen-docs-nav-specifier.ts"></script>
               <article>
-                <h2>Quickstart</h2>
+                <h2>Do-While-loop</h2>
                 <p>
-                  Welcome to the Quickstart Guide for the Kipper programming language! Here you will find a concise
-                  guide on how to install Kipper and start using it for your projects.
+                  Do-while-loops are loops that run the loop-statement once before starting with the
+                  actual loop, where the behaviour matches <a href="while-loop.html">while-loops</a>.
+                  The loop runs after the first run as long as the <code>CONDITION</code> is met.
                 </p>
-                <h3>Download Kipper</h3>
-                <p>
-                  First of all, you will need to install Kipper using the
-                  <a href="https://www.npmjs.com/">Node Package Manager (npm)</a> and set it up properly. We've already
-                  written on another page a concise guide on how to do that. So check that out
-                  <a href="../download.html">here</a>!
-                </p>
-                <article class="red-highlight-text">
-                  This section will be finished later when Kipper moves out of early development and can be installed
-                  and used properly. (-> May - June 2022)
-                </article>
+                <h3>Syntax</h3>
+                <pre><code class="language-typescript">
+do STATEMENT while (CONDITION);
+                    </code></pre>
+                <h3>Execution Schema</h3>
+                <ul class="bullet-list flex-column">
+                  <li>Run <code>STATEMENT</code> (Only the first time).</li>
+                  <li>
+                    Check <code>CONDITION</code>, if it exists, before running the <code>STATEMENT</code> again. If
+                    <code>CONDITION</code> is <code>False</code>, then the loop will be stopped!
+                  </li>
+                  <li>Run <code>STATEMENT</code> if <code>CONDITION</code> was true.</li>
+                </ul>
+                <h3>Examples</h3>
+                <pre><code class="language-typescript">
+var var1: num = 0;
+// ✓ Simple loop
+do {
+  var1++;
+} while (var1 <= 5);
+call print(f"'var1' is now '{var1}'"); // -> 'var1' is now '6'
+
+var var2: num = 0;
+// ✓ Simple loop, without braces
+while (var2 > 0 && var2 <= 25)
+  var2++;
+call print(f"'var1' is now '{var2}'"); // -> 'var1' is now '0'
+
+// X Infinite Loop - Avoid this, as it can result in freezing of your program without proper forced stopping
+while (True) {
+  call print("An unnecessary print!");
+}
+
+                </code></pre>
               </article>
             </section>
           </div>

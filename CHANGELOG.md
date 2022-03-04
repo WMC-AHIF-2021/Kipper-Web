@@ -7,16 +7,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Properly working `Copy code` button in `playground.html`
-- Added minor box-shadows to buttons and the search-bar
-- Added basic entry image and header
-- Added new `inverted-button` class, which has a white background with red borders and red text (This should be used
-  for less important buttons to highlight the default ones)
 
 ### Changed
-- Properly implemented the search-bar animation
-- Renamed generation files and changed the prefix to `gen-`
-- Updated footer bar and added HTL Leonding logo with additional links
+
+### Removed
+
+## [v0.2.0] - 2022-02-06
+### Added
+- `1rem` top and bottom margins for the class `red-highlight-text`.
+- Remaining docs pages that are required for the next release.
+- Implemented basic online code-editor, which allows multi-line syntax-highlighting.
+- Remaining docs pages content
+
+### Changed
+- Changed syntax highlighting library to `Prism` and added `./prism/prism.css` and `./prism/prism.js`.
+- Updated `index.html` entry image, as it's previous content was outdated.
+- Fixed missing border-margin for `<code></code>` items, that was caused due to an invalid selector, and
+  updated its formatting based whether it has a `<pre></pre>` parent element.
+
+## [v0.1.5] - 2022-02-02
+### Added
+- Properly working `Copy code` button in `playground.html`.
+- Added minor box-shadows to buttons and the search bar.
+- Added basic entry image and header.
+- Added a new `inverted-button` class, which has a white background with red borders and red text (This should be used
+  for less important buttons to highlight the default ones).
+- Added transition animation for the homepage image.
+- New animation class `underline-button` for buttons and applied it to the navigation bar.
+- Changed background color of the footer.
+
+### Changed
+- Properly implemented the search-bar animation.
+- Renamed generation files and changed the prefix to `gen-`.
+- Updated footer bar and added HTL Leonding logo with additional links.
+- Replaced search-bar animation with css transition.
+- Changed text bottom margin, by defining new variables for `section`, `article` and `p` tags.
+- Updated button formatting and added dynamic sizing.
 
 ### Removed
 
@@ -102,6 +128,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed unnecessary `start_local_Server.exe`
 
 [unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/HEAD...base-dev
+[v0.2.0]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.5...v0.2.0
+[v0.1.5]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.1...v0.1.2

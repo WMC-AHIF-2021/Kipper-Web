@@ -8,19 +8,33 @@
 
 :root {
   --scheme-primary: #e01a4f;
+  --scheme-primary-rgb: 224, 26, 79;
   --scheme-dark-primary: #c71242;
-  --scheme-secondary: #ffe74c;
+  --scheme-dark-primary-rgb: 199, 18, 66;
+  --scheme-secondary: #ffe74c; /* Get new secondary */
+  --scheme-secondary-rgb: 255, 231, 76; /* Get new secondary */
+  --scheme-url-blue: #002240;
+  --scheme-background-gray: #002240;
   --scheme-shadow-gray: #ccc;
+  --scheme-shadow-gray-rgb: 204, 204, 204;
   --scheme-gray: #f0f0f0;
+  --scheme-gray-rgb: 240, 240, 240;
   --scheme-dark-gray: #787878;
+  --scheme-dark-gray-rgb: 120, 120, 120;
   --scheme-white: #e9eaed;
+  --scheme-white-rgb: 233, 234, 237;
   --default-border-radius: 0.5em;
-  --default-text-margin: 2rem;
+  --default-text-margin: 2em;
 }
 
 html {
   color: #222;
   font-size: 1em;
+}
+
+ul, ol {
+  margin-bottom: .4rem;
+  margin-top: .4rem;
 }
 
 .flex-row {
@@ -87,7 +101,6 @@ html {
 
 #welcome-text {
   padding-right: 5vw;
-  padding-left: 5vw;
   margin: 0;
 }
 
@@ -96,7 +109,35 @@ html {
 }
 
 #welcome-image {
-  height: 25rem;
+  width: 45vw;
+  padding: 0;
+  border-radius: var(--default-border-radius);
+  box-shadow: rgba(var(--scheme-primary-rgb), 0.6) -5px 5px,
+              rgba(var(--scheme-primary-rgb), 0.4) -10px 10px,
+              rgba(var(--scheme-primary-rgb), 0.3) -15px 15px,
+              rgba(var(--scheme-primary-rgb), 0.2) -20px 20px,
+              rgba(var(--scheme-primary-rgb), 0.1) -25px 25px;
+  transition: width 1s ease-in-out, box-shadow 1s ease-in-out;
+}
+
+#welcome-image:hover {
+  width: 48vw;
+  box-shadow: rgba(var(--scheme-primary-rgb), 0.8) -5px 5px,
+              rgba(var(--scheme-primary-rgb), 0.6) -10px 10px,
+              rgba(var(--scheme-primary-rgb), 0.5) -15px 15px,
+              rgba(var(--scheme-primary-rgb), 0.4) -20px 20px,
+              rgba(var(--scheme-primary-rgb), 0.3) -25px 25px,
+              rgba(var(--scheme-primary-rgb), 0.2) -30px 30px,
+              rgba(var(--scheme-primary-rgb), 0.1) -30px 30px;
+}
+
+.kipper-logo-container a {
+  margin: 0 !important;
+}
+
+img {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
 /*
@@ -107,7 +148,7 @@ html {
  * https://stackoverflow.com/a/16982510/7133471
  *
  * Customize the background color to match your design.
- */
+ *
 
 ::-moz-selection {
   background: #b3d4fc;
