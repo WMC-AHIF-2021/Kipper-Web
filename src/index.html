@@ -22,10 +22,16 @@
   <link rel="stylesheet" href="./css/text.css"/>
   <link rel="stylesheet" href="./css/lists.css"/>
   <link rel="stylesheet" href="./css/footer.css"/>
+  <link rel="stylesheet" href="./css/table.css"/>
 
+  <!-- Loading the prism highlighting style-sheet -->
+  <link rel="stylesheet" href="./prism/prism.css"/>
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/951ef1f046.js" crossorigin="anonymous"></script>
+
+  <!-- Including stylesheet for the Inter-Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
 
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
@@ -34,7 +40,8 @@
   <meta name="theme-color" content="#e01a4f"/>
 </head>
 <body>
-<script type="module" src="./js/plugins.ts"></script>
+<script src="./js/plugins.ts"></script>
+<script src="./prism/prism.js"></script>
 
 <!-- Show Error if JS is disabled or blocked -->
 <noscript>Oops that shouldn't have happened! Please enable Java-Script to use our Site!</noscript>
@@ -48,31 +55,34 @@
           <li>
             <a href="./index.html" class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
-              <h1>Kipper</h1>
+              <a class="underline-button" href="./index.html">
+                <h1>Kipper</h1>
+              </a>
             </a>
           </li>
           <li>
-            <a href="./download.html" class="menu-button top-nav-menu-items"><h4>Downloads</h4></a>
+            <a href="./download.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="./install.html" class="menu-button top-nav-menu-items"><h4>Install Guide</h4></a>
+            <a href="./docs/index.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="./docs/index.html" class="menu-button top-nav-menu-items"><h4>Docs</h4></a>
-          </li>
-          <li>
-            <a href="playground.html" class="menu-button top-nav-menu-items"><h4>Playground</h4></a>
+            <a href="playground.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Playground</h4></a>
           </li>
           <li>
             <a href="./changelog.html"
-               class="menu-button top-nav-menu-items"><h4>
+               class="underline-button top-nav-menu-item top-nav-button"><h4>
               Changelog</h4></a>
           </li>
-          <li id="search-bar" class="no-style-list flex-row flex-parent-container red-text">
+        </ul>
+        <!-- The Search icon -->
+        <i class="fa-solid fa-magnifying-glass" style="margin-right: -28em; margin-top: 2em;"></i>
+        <ul id="search-bar-wrapper">
+          <li id="search-bar">
             <label for="search-bar-input"></label>
             <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
+            <script src="./js/search-bar.ts"></script>
           </li>
-          <script src="./js/search-bar.ts"></script>
         </ul>
       </nav>
     </header>
@@ -90,7 +100,9 @@
             </section>
           </li>
           <li>
-            <img id="welcome-image" src="./img/carbon-code-main.png" alt="">
+            <a href="./playground.html">
+              <img id="welcome-image" src="./img/carbon-code-main.png" alt="">
+            </a>
           </li>
         </ul>
       </section>
