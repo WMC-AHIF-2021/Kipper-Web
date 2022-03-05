@@ -220,6 +220,12 @@ pre[class*="language-"] code {
   background: 0 0;
 }
 
+/* Overwrite unfitting coloring */
+.language-css .token.string, .style .token.string, .token.entity, .token.operator, .token.url {
+  color: #9a6e3a;
+  background: transparent;
+}
+
 .highlighted-green-checkmark {
   text-emphasis: none;
   color: green;
