@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8" />
   <title>Kipper Interactive Playground!</title>
   <meta
     name="description"
     content="The playground for trying out Kipper and learning the basics in a pre-configured setup"
   />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <script src="js/main.ts"></script>
-  <link rel="manifest" href="../site.webmanifest"/>
-  <link rel="apple-touch-icon" href="img/icon.png"/>
-  <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+  <link rel="manifest" href="../site.webmanifest" />
+  <link rel="apple-touch-icon" href="img/icon.png" />
+  <link rel="shortcut icon" type="image/ico" href="../favicon.ico" />
 
-  <link rel="stylesheet" href="./css/normalize.css"/>
-  <link rel="stylesheet" href="./css/main.css"/>
-  <link rel="stylesheet" href="./css/screen.css"/>
-  <link rel="stylesheet" href="./css/buttons.css"/>
-  <link rel="stylesheet" href="./css/nav-bar.css"/>
-  <link rel="stylesheet" href="./css/text.css"/>
-  <link rel="stylesheet" href="./css/lists.css"/>
-  <link rel="stylesheet" href="./css/footer.css"/>
-  <link rel="stylesheet" href="./css/table.css"/>
-  <link rel="stylesheet" href="./css/playground.css"/>
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/screen.css" />
+  <link rel="stylesheet" href="./css/buttons.css" />
+  <link rel="stylesheet" href="./css/nav-bar.css" />
+  <link rel="stylesheet" href="./css/text.css" />
+  <link rel="stylesheet" href="./css/lists.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/table.css" />
+  <link rel="stylesheet" href="./css/playground.css" />
   <link rel="stylesheet" href="./css/spinner.css">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-  <link rel="stylesheet" href="./prism/prism.css">
+  <!-- Including stylesheet for the Inter-Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
+
+  <!-- Loading the prism highlighting style-sheet -->
+  <link rel="stylesheet" href="./prism/prism.css" />
 
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
   -->
-  <meta name="theme-color" content="#e01a4f"/>
+  <meta name="theme-color" content="#e01a4f" />
 </head>
 <body>
 <script src="./js/plugins.ts"></script>
@@ -63,7 +66,8 @@
             <a href="./docs/index.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Docs</h4></a>
           </li>
           <li>
-            <a href="./playground.html" class="underline-button selected-nav-page top-nav-menu-item top-nav-button"><h4>Playground
+            <a href="./playground.html" class="underline-button selected-nav-page top-nav-menu-item top-nav-button"><h4>
+              Playground
             </h4></a>
           </li>
           <li>
@@ -114,7 +118,8 @@
                         oninput="editorUpdate(this.value); syncScroll();"
                         onscroll="syncScroll();">
               </textarea>
-              <pre id="highlighting-field" aria-hidden="true"><code class="language-typescript" id="highlighting-field-content"></code></pre>
+              <pre id="highlighting-field" aria-hidden="true"><code class="language-typescript"
+                                                                    id="highlighting-field-content"></code></pre>
             </li>
           </ul>
         </li>

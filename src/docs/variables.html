@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8" />
   <title>Variables</title>
   <meta
     name="description"
     content="Storing values and defining variables"
   />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <script src="../js/main.ts"></script>
-  <link rel="manifest" href="../../site.webmanifest"/>
-  <link rel="apple-touch-icon" href="../img/icon.png"/>
-  <link rel="shortcut icon" type="image/ico" href="../../favicon.ico"/>
+  <link rel="manifest" href="../../site.webmanifest" />
+  <link rel="apple-touch-icon" href="../img/icon.png" />
+  <link rel="shortcut icon" type="image/ico" href="../../favicon.ico" />
 
-  <link rel="stylesheet" href="../css/normalize.css"/>
-  <link rel="stylesheet" href="../css/main.css"/>
-  <link rel="stylesheet" href="../css/screen.css"/>
-  <link rel="stylesheet" href="../css/buttons.css"/>
-  <link rel="stylesheet" href="../css/nav-bar.css"/>
-  <link rel="stylesheet" href="../css/text.css"/>
-  <link rel="stylesheet" href="../css/lists.css"/>
-  <link rel="stylesheet" href="../css/footer.css"/>
-  <link rel="stylesheet" href="../css/docs.css"/>
-  <link rel="stylesheet" href="../css/table.css"/>
+  <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/screen.css" />
+  <link rel="stylesheet" href="../css/buttons.css" />
+  <link rel="stylesheet" href="../css/nav-bar.css" />
+  <link rel="stylesheet" href="../css/text.css" />
+  <link rel="stylesheet" href="../css/lists.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/table.css" />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-    <link rel="stylesheet" href="../prism/prism.css" />
+  <!-- Including stylesheet for the Inter-Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
+
+  <!-- Loading the prism highlighting style-sheet -->
+  <link rel="stylesheet" href="../prism/prism.css" />
+
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
   -->
-  <meta name="theme-color" content="#e01a4f"/>
+  <meta name="theme-color" content="#e01a4f" />
 </head>
 <body>
 <script src="../js/plugins.ts"></script>
@@ -44,7 +48,8 @@
       <nav id="header-nav-bar">
         <ul>
           <li>
-            <a href="../index.html" class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
+            <a href="../index.html"
+               class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
               <img id="kipper-logo" src="../img/base_head.png" alt="">
               <a class="underline-button" href="../index.html">
                 <h1>Kipper</h1>
@@ -55,10 +60,12 @@
             <a href="../download.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Downloads</h4></a>
           </li>
           <li>
-            <a href="./index.html" class="underline-button top-nav-menu-item top-nav-button selected-nav-page"><h4>Docs</h4></a>
+            <a href="./index.html" class="underline-button top-nav-menu-item top-nav-button selected-nav-page"><h4>
+              Docs</h4></a>
           </li>
           <li>
-            <a href="../playground.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Playground</h4></a>
+            <a href="../playground.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Playground</h4>
+            </a>
           </li>
           <li>
             <a href="../changelog.html"
@@ -86,7 +93,6 @@
           <div id="docs-content" class="text-content shadowed-box">
             <section>
               <nav id="docs-page-nav"></nav>
-              <script src="../js/gen-docs-nav-specifier.ts"></script>
               <article>
                 <h2>Kipper Variables</h2>
                 <h3>What are variables?</h3>
@@ -105,7 +111,8 @@
                 <ul class="bullet-list flex-column">
                   <li>Declaring a variable = Reserving the name of the variable and setting its type.</li>
                   <li>Defining a variable = Defining and setting the value of a variable. Can be combined with
-                  the declaration in a single line.</li>
+                    the declaration in a single line.
+                  </li>
                 </ul>
                 <h3>How to declare variables in Kipper</h3>
                 <p>
@@ -207,8 +214,8 @@ var2 = 3; // typeof(3) -> num
 }
                 </code></pre>
                 <p>
-                In this code-block, you may only reference/use variables that were defines in this scope, or
-                a scope that is above it (parent scope).
+                  In this code-block, you may only reference/use variables that were defines in this scope, or
+                  a scope that is above it (parent scope).
                 </p>
                 <p>
                   The scope that you can always access is the highest scope and is called "global scope". It's
@@ -229,10 +236,10 @@ var var3: num = 0;
 }
                 </code></pre>
                 <p>
-                Though, if you try to access a variable in another scope, you will get a compiler error, as you
-                may not access variables from other scopes. They are invisible to you, so you will get an
-                <code>Undefined Reference</code> error, saying the value is not defined in your or any other
-                parent scope!
+                  Though, if you try to access a variable in another scope, you will get a compiler error, as you
+                  may not access variables from other scopes. They are invisible to you, so you will get an
+                  <code>Undefined Reference</code> error, saying the value is not defined in your or any other
+                  parent scope!
                 </p>
                 <pre><code class="language-typescript">
 // Global variable
@@ -310,6 +317,7 @@ const var2: num = "4"; // typeof("4") -> string
                   </ul>
                 </article>
               </article>
+              <script src="../js/gen-docs-nav-specifier.ts"></script>
             </section>
           </div>
         </li>

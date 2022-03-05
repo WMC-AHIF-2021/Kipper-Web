@@ -124,8 +124,8 @@
 }
 
 /* Removing any border radius inside the editor*/
-#shell-sidebar > ul > #side-editor  > .code-toolbar pre,
-#shell-sidebar > ul > #side-editor  > .code-toolbar code {
+#shell-sidebar > ul > #side-editor > .code-toolbar pre,
+#shell-sidebar > ul > #side-editor > .code-toolbar code {
   border-radius: 0;
 }
 

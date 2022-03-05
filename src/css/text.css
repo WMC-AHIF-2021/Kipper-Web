@@ -1,9 +1,9 @@
 /*! Text and Header Formatting */
 
 :root {
-  --default-section-margin: 2rem;
-  --default-article-margin: 1rem;
-  --default-parapgraph-margin: 1rem;
+  --default-section-margin: 1.6rem;
+  --default-article-margin: .8rem;
+  --default-parapgraph-margin: .4rem;
 }
 
 html {
@@ -18,12 +18,26 @@ article {
   margin-bottom: var(--default-article-margin);
 }
 
+#docs-page-nav + article > :first-child {
+  margin-top: 0.4rem;
+}
+
+.red-highlight-text h1,
+.red-highlight-text h2,
+.red-highlight-text h3,
+.red-highlight-text h4,
+.red-highlight-text h5,
+.red-highlight-text h6 {
+  margin-top: 0;
+  margin-bottom: 0.4em;
+}
+
 p + p {
   margin-top: var(--default-parapgraph-margin);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 1em;
+  margin-top: .8em;
   margin-bottom: .4em;
 }
 
@@ -188,7 +202,7 @@ p {
   border: 1px solid;
   border-color: var(--scheme-primary);
   color: var(--scheme-primary);
-  padding: 1rem 2rem;
+  padding: 2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: calc(100% - 4rem);

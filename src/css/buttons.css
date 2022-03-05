@@ -85,7 +85,7 @@
 }
 
 @media (max-width: 1200px) {
-  .inverted-button{
+  .inverted-button {
     padding: calc(0.5em - 2px) calc(1em - 2px) !important;
     margin: 0.5em 0.5em 0.5em 0 !important;
   }
@@ -93,7 +93,7 @@
 
 @media (min-width: 1200px) {
   .inverted-button {
-    padding: calc(1em - 2px) calc(2em - 2px)  !important;
+    padding: calc(1em - 2px) calc(2em - 2px) !important;
     margin: 0.75em 0.75em 0.75em 0 !important;
   }
 }
@@ -144,13 +144,13 @@
 
 /* Navigation Menu Button */
 @media (max-width: 1200px) {
-  .top-nav-button  {
+  .top-nav-button {
     margin: 0.25em 0.5em !important;
   }
 }
 
 @media (min-width: 1200px) {
-  .top-nav-button  {
+  .top-nav-button {
     margin: 1em 2em !important;
   }
 }

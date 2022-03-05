@@ -28,7 +28,7 @@
     "timelineEnd",
     "timeStamp",
     "trace",
-    "warn",
+    "warn"
   ];
   let length = methods.length;
   // @ts-ignore
