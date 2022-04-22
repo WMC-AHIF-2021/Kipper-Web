@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Implemented a proper search-bar icon across the site that moves with the flex container.
+  Resizing on focus moves it with the rest of the input-bar.
 
 ### Changed
 
