@@ -2,79 +2,101 @@
  * File for main.html - Currently useless
  */
 
-// main items
+// Main items
 const codeInput: HTMLTextAreaElement = document.querySelector("#code-editor-textarea");
 const codeInputResult: HTMLElement = document.querySelector("#highlighting-field-content");
 const textSavingState: HTMLDivElement = document.querySelector("#text-saving-state");
 
-// menu buttons
+// Menu buttons
 const runCodeListItem: HTMLLIElement = document.querySelector("#run-code-list-item");
 let runCodeButton: HTMLButtonElement = document.querySelector("#run-code-list-item button");
 const copyCodeButton: HTMLButtonElement = document.querySelector("#copy-code-list-item button");
 const clearContentButton: HTMLButtonElement = document.querySelector("#clear-content-list-item button");
 
-// for now, don't update the side-editor
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// For now, don't update the side-editor
 const sideEditor: HTMLDivElement = document.querySelector("#side-editor");
 
-// sidebar buttons
+// Sidebar buttons
 const consoleOutputButton: HTMLButtonElement = document.querySelector("#console-output-button button");
 const compilerOutputButton: HTMLButtonElement = document.querySelector("#compiler-output-button button");
 
-let ScriptRunning: boolean;
+// Global web worker that will run the code
+let worker: Worker | undefined = undefined;
 
-const localStorageCodeInput = localStorage.getItem("kipper-code-editor-content");
-if (localStorageCodeInput != undefined) {
-  codeInput.value = localStorageCodeInput;
-  editorUpdate(localStorageCodeInput);
-} else {
-  codeInput.value = "";
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function runCode() {
-  console.log("Running Code!");
-  ScriptRunning = true;
+/**
+ * @summary Runs the code using a web worker and writes the console output to the "virtual" terminal.
+ */
+function runCode(): void {
   runCodeListItem.innerHTML = `<button>Stop</button>`;
   runCodeButton = document.querySelector("#run-code-list-item button");
   runCodeButton.addEventListener("click", stopCode);
 
-  // TODO: Actually run the Code
+  if (window.Worker) {
+    // If there is a program running at the moment, stop execution and run the most recent code.
+    if (worker !== undefined) {
+      stopCode();
+    }
+
+    // Prepare the worker to run the code
+    // @ts-ignore
+    worker = new Worker(new URL('./compile/compile-worker.ts', import.meta.url));
+
+    // Event handler for the return. This imitates stdout.
+    worker.onmessage = function(event) {
+      if (typeof event.data === 'string' || event.data instanceof String) {
+        console.log(`Received from worker: ${event.data}`);
+      } else if (typeof event.data === 'number' || event.data instanceof Number) {
+        console.log(`Finished execution with exit code ${event.data}.`);
+        stopCode();
+      } else {
+        console.error(`Invalid message from WebWorker: ${event.data}`);
+      }
+    }
+
+    // Post the message to tell the worker to process the code
+    worker.postMessage(localStorage.getItem("kipper-code-editor-content"));
+  } else {
+    alert("Your browser does not support web-workers! Aborting operation.");
+  }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function stopCode() {
-  console.log("Stopped!");
-  ScriptRunning = false;
+function stopCode(): void {
   runCodeListItem.innerHTML = `<button>Run</button>`;
   runCodeButton = document.querySelector("#run-code-list-item button");
   runCodeButton.addEventListener("click", runCode);
 
-  // TODO: Actually stop the Code
+  if (window.Worker) {
+    // If there is no current execution, return.
+    if (worker === undefined) {
+      return;
+    }
+
+    // Terminate the worker
+    worker.terminate();
+    worker = undefined;
+  } else {
+    alert("Your browser does not support web-workers! Aborting operation.");
+  }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function clearContent() {
+function clearContent(): void {
   console.log("Code Cleared!");
   codeInput.value = "";
   codeInputResult.innerHTML = "";
   textSavingState.innerHTML = `<p class="gray-text">Code cleared!</p>`;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function copyContent() {
+function copyContent(): void {
   console.log("Code Copied!");
   navigator.clipboard.writeText(codeInput.value).then(() => {
     textSavingState.innerHTML = `<p class="gray-text">Code copied!</p>`;
   });
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function SwitchToConsoleOutput() {
   // this will depend on the future implementation. Stop Development on this
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function SwitchToCompilerOutput() {
   // this will depend on the future implementation. Stop Development on this
 }
@@ -93,6 +115,17 @@ clearContentButton.addEventListener("click", clearContent);
 // adding event listeners to the sidebar buttons
 consoleOutputButton.addEventListener("click", SwitchToConsoleOutput);
 compilerOutputButton.addEventListener("click", SwitchToCompilerOutput);
+
+// Initialise the codeInput
+(() => {
+  const localStorageCodeInput = localStorage.getItem("kipper-code-editor-content");
+  if (localStorageCodeInput != undefined) {
+    codeInput.value = localStorageCodeInput;
+    editorUpdate(localStorageCodeInput);
+  } else {
+    codeInput.value = "";
+  }
+})();
 
 // runtime variable for the writing event listener
 let cancel;
