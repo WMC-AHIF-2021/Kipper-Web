@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8" />
   <title>Welcome to Kipper!</title>
   <meta
     name="description"
     content="The Simple and Blazing-Fast Open-Source Language"
   />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <script src="./js/main.ts"></script>
-  <link rel="manifest" href="../site.webmanifest"/>
-  <link rel="apple-touch-icon" href="./img/icon.png"/>
-  <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+  <link rel="manifest" href="../site.webmanifest" />
+  <link rel="apple-touch-icon" href="./img/icon.png" />
+  <link rel="shortcut icon" type="image/ico" href="../favicon.ico" />
 
-  <link rel="stylesheet" href="./css/normalize.css"/>
-  <link rel="stylesheet" href="./css/main.css"/>
-  <link rel="stylesheet" href="./css/screen.css"/>
-  <link rel="stylesheet" href="./css/buttons.css"/>
-  <link rel="stylesheet" href="./css/nav-bar.css"/>
-  <link rel="stylesheet" href="./css/text.css"/>
-  <link rel="stylesheet" href="./css/lists.css"/>
-  <link rel="stylesheet" href="./css/footer.css"/>
-  <link rel="stylesheet" href="./css/table.css"/>
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/screen.css" />
+  <link rel="stylesheet" href="./css/buttons.css" />
+  <link rel="stylesheet" href="./css/nav-bar.css" />
+  <link rel="stylesheet" href="./css/text.css" />
+  <link rel="stylesheet" href="./css/lists.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/table.css" />
 
-  <!--For Font Awesome Icons-->
+  <!-- Loading the prism highlighting style-sheet -->
+  <link rel="stylesheet" href="./prism/prism.css" />
+
+  <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/951ef1f046.js" crossorigin="anonymous"></script>
 
-  <!-- For Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-
-  <!-- For Cloudflare Highlighting -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <!-- Including stylesheet for the Inter-Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
 
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
   -->
-  <meta name="theme-color" content="#e01a4f"/>
+  <meta name="theme-color" content="#e01a4f" />
 </head>
 <body>
 <script src="./js/plugins.ts"></script>
@@ -53,7 +53,8 @@
       <nav id="header-nav-bar">
         <ul>
           <li>
-            <a href="./index.html" class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
+            <a href="./index.html"
+               class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
               <img id="kipper-logo" src="./img/base_head.png" alt="">
               <a class="underline-button" href="./index.html">
                 <h1>Kipper</h1>
@@ -75,15 +76,18 @@
               Changelog</h4></a>
           </li>
         </ul>
-        <!-- The Search icon -->
-        <i class="fa-solid fa-magnifying-glass" style="margin-right: -28em; margin-top: 2em;"></i>
-        <ul id="search-bar-wrapper">
-          <li id="search-bar">
-            <label for="search-bar-input"></label>
-            <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
-            <script src="./js/search-bar.ts"></script>
-          </li>
-        </ul>
+        <div id="search-bar-wrapper">
+          <ul>
+            <li>
+              <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+            </li>
+            <li id="search-bar">
+              <label for="search-bar-input"></label>
+              <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
+              <script src="./js/search-bar.ts"></script>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->

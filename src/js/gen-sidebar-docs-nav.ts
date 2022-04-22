@@ -88,4 +88,4 @@ function GenDocsSidebarNavigation(): string {
 }
 
 // writing the content to the innerHtml of the document docs page navigation list
-document.getElementById("docs-sidebar-nav-wrapper").innerHTML = GenDocsSidebarNavigation()
+document.getElementById("docs-sidebar-nav-wrapper").innerHTML = GenDocsSidebarNavigation();

@@ -113,10 +113,9 @@ codeInput.addEventListener("keyup", event => {
 
     spinning = false;
     textSavingState.innerHTML = `<p class="gray-text">Code Saved!</p>`;
-  }, 1000)
+  }, 1000);
 
-  if (!spinning)
-  {
+  if (!spinning) {
     textSavingState.innerHTML = `<div id="text-save-spinner" class="spinner">
         <!-- This may look stupid, but don't delete it -->
         <div></div>
@@ -136,7 +135,7 @@ codeInput.addEventListener("keyup", event => {
     `;
     spinning = true;
   }
-})
+});
 
 /**
  * Editor-Update, which allows for syntax highlighting
@@ -145,7 +144,7 @@ codeInput.addEventListener("keyup", event => {
 function editorUpdate(value: string) {
   // If the last character is a newline character
   // Add a placeholder space character to the final line
-  if(value[value.length-1] == "\n") {
+  if (value[value.length - 1] == "\n") {
     value += " ";
   }
 

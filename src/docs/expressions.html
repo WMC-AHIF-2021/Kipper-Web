@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8" />
   <title>Kipper Expressions</title>
   <meta
     name="description"
     content="Kipper Expressions, which represent the core functionality of Kipper"
   />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <script src="../js/main.ts"></script>
-  <link rel="manifest" href="../../site.webmanifest"/>
-  <link rel="apple-touch-icon" href="../img/icon.png"/>
-  <link rel="shortcut icon" type="image/ico" href="../../favicon.ico"/>
+  <link rel="manifest" href="../../site.webmanifest" />
+  <link rel="apple-touch-icon" href="../img/icon.png" />
+  <link rel="shortcut icon" type="image/ico" href="../../favicon.ico" />
 
-  <link rel="stylesheet" href="../css/normalize.css"/>
-  <link rel="stylesheet" href="../css/main.css"/>
-  <link rel="stylesheet" href="../css/screen.css"/>
-  <link rel="stylesheet" href="../css/buttons.css"/>
-  <link rel="stylesheet" href="../css/nav-bar.css"/>
-  <link rel="stylesheet" href="../css/text.css"/>
-  <link rel="stylesheet" href="../css/lists.css"/>
-  <link rel="stylesheet" href="../css/footer.css"/>
-  <link rel="stylesheet" href="../css/docs.css"/>
-  <link rel="stylesheet" href="../css/table.css"/>
+  <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/screen.css" />
+  <link rel="stylesheet" href="../css/buttons.css" />
+  <link rel="stylesheet" href="../css/nav-bar.css" />
+  <link rel="stylesheet" href="../css/text.css" />
+  <link rel="stylesheet" href="../css/lists.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/table.css" />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-  <link rel="stylesheet" href="../prism/prism.css"/>
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/951ef1f046.js" crossorigin="anonymous"></script>
+
+  <!-- Including stylesheet for the Inter-Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
+
+  <link rel="stylesheet" href="../prism/prism.css" />
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
   -->
-  <meta name="theme-color" content="#e01a4f"/>
+  <meta name="theme-color" content="#e01a4f" />
 </head>
 <body>
 <script src="../js/plugins.ts"></script>
@@ -69,13 +74,18 @@
               Changelog</h4></a>
           </li>
         </ul>
-        <ul id="search-bar-wrapper">
-          <li id="search-bar">
-            <label for="search-bar-input"></label>
-            <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
-            <script src="../js/search-bar.ts"></script>
-          </li>
-        </ul>
+        <div id="search-bar-wrapper">
+          <ul>
+            <li>
+              <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+            </li>
+            <li id="search-bar">
+              <label for="search-bar-input"></label>
+              <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
+              <script src="../js/search-bar.ts"></script>
+            </li>
+          </ul>
+        </div>
       </nav>
       <div id="header-description-content" class="text-page-content-container"></div>
       <script src="../js/gen-header.ts"></script>
@@ -89,7 +99,6 @@
           <div id="docs-content" class="text-content shadowed-box">
             <section>
               <nav id="docs-page-nav"></nav>
-              <script src="../js/gen-docs-nav-specifier.ts"></script>
               <article>
                 <h2>Kipper Expressions</h2>
                 <p>
@@ -153,8 +162,8 @@ var result = val1 + val2 * val3;
                   </tr>
                   <tr>
                     <td>3.</td>
-                    <td>* <br>/ <br>%</td>
-                    <td>Multiplication<br>Division<br>Rest of Division / Remainder<br></td>
+                    <td>* <br>/ <br>% <br>**</td>
+                    <td>Multiplication<br>Division<br>Rest of Division / Remainder<br>Power-To<br></td>
                     <td rowspan="6">Left-To-Right</td>
                   </tr>
                   <tr>
@@ -529,6 +538,7 @@ var example2 = call func2() + call func2(); // -> 50
                   </li>
                 </ul>
               </article>
+              <script src="../js/gen-docs-nav-specifier.ts"></script>
             </section>
           </div>
         </li>
