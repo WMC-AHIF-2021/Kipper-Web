@@ -9,7 +9,7 @@
   />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <script src="js/main.ts"></script>
+  <script src="./js/main.ts"></script>
   <link rel="manifest" href="../site.webmanifest" />
   <link rel="apple-touch-icon" href="img/icon.png" />
   <link rel="shortcut icon" type="image/ico" href="../favicon.ico" />
@@ -34,6 +34,7 @@
 
   <!-- Loading the prism highlighting style-sheet -->
   <link rel="stylesheet" href="./prism/prism.css" />
+  <link rel="stylesheet" href="./prism/shades-of-purple.css" />
 
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
@@ -93,67 +94,57 @@
         </div>
       </nav>
       <div id="header-description-content" class="text-page-content-container"></div>
-      <script src="js/gen-header.ts"></script>
+      <script src="./js/gen-header.ts"></script>
     </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
-    <div id="interactive-console">
-      <ul class="no-style-list flex-row">
-        <li id="left-console-interface">
-          <ul class="no-style-list flex-column">
-            <li id="playground-option-menu">
-              <ul class="no-style-list flex-row">
-                <li class="playground-button" id="run-code-list-item">
-                  <button>Run</button>
-                </li>
-                <li class="playground-button" id="copy-code-list-item">
-                  <button>Copy Code</button>
-                </li>
-                <li class="playground-button" id="clear-content-list-item">
-                  <button>Clear</button>
-                </li>
-                <!--
-                Independent text saving state list item for letting the user
-                know the state of saving
-                -->
-                <li id="text-saving-state" class="flex-row flex-center"></li>
-              </ul>
-            </li>
-            <li id="code-editor">
-              <label for="code-editor-textarea"></label>
-              <textarea id="code-editor-textarea" type="text" placeholder="Write your Code here"
-                        spellcheck="false" autocomplete="off" autocorrect="off"
-                        autocapitalize="off" data-gramm="false" wrap="off"
-                        oninput="editorUpdate(this.value); syncScroll();"
-                        onscroll="syncScroll();">
+    <div id="interactive-console" class="flex-parent-container flex-fill-to-parent flex-row">
+      <div id="left-console-interface" class="flex-column">
+        <div id="playground-option-menu" class="flex-row">
+          <div class="playground-button" id="run-code-list-item">
+            <button>Run</button>
+          </div>
+          <div class="playground-button" id="copy-code-list-item">
+            <button>Copy Code</button>
+          </div>
+          <div class="playground-button" id="clear-content-list-item">
+            <button>Clear</button>
+          </div>
+          <!--
+          Independent text saving state list item for letting the user
+          know the state of saving
+          -->
+          <div id="text-saving-state" class="flex-row flex-center"></div>
+        </div>
+        <div id="code-editor">
+          <label for="code-editor-textarea"></label>
+          <textarea id="code-editor-textarea" type="text" placeholder="Write your Code here"
+                    spellcheck="false" autocomplete="off" autocorrect="off"
+                    autocapitalize="off" data-gramm="false" wrap="off">
               </textarea>
-              <pre id="highlighting-field" aria-hidden="true"><code class="language-typescript"
-                                                                    id="highlighting-field-content"></code></pre>
-            </li>
-          </ul>
-        </li>
-        <li id="shell-sidebar">
-          <ul class="no-style-list flex-column">
-            <li>
-              <ul id="shell-sidebar-menu" class="no-style-list flex-row">
-                <li id="console-output-button" class="playground-button flex-parent-container">
-                  <button>Console Output</button>
-                </li>
-                <li id="compiler-output-button" class="playground-button flex-parent-container">
-                  <button>Compiler Output</button>
-                </li>
-              </ul>
-            </li>
-            <li id="side-editor">
-              <pre><code class="language-bash">> </code></pre>
-            </li>
-          </ul>
-        </li>
-      </ul>
+          <pre id="highlighting-field" aria-hidden="true"><code class="language-typescript"
+                                                                 id="highlighting-field-content"></code></pre>
+        </div>
+      </div>
+      <div id="shell-sidebar" class="flex-column">
+        <div id="shell-sidebar-menu" class="flex-parent-container flex-row">
+          <div id="console-output-button" class="playground-button">
+            <button>Console Output</button>
+          </div>
+          <div id="compiler-output-button" class="playground-button">
+            <button>Compiler Output</button>
+          </div>
+        </div>
+        <div id="shell-output">
+              <pre id="shell-sidebar-highlight-field" class="console-bash"><code class="language-bash console-bash"
+                                                                                 id="shell-sidebar-highlight-field-content"></code></pre>
+        </div>
+      </div>
     </div>
-    <script type="module" src="js/playground-interactive.ts"></script>
+
+    <script type="module" src="./js/playground-interactive.ts"></script>
     <!-- Footer bar - contains some links and general copyright notice -->
     <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
-    <script src="js/gen-footer.ts"></script>
+    <script src="./js/gen-footer.ts"></script>
   </div>
 </div>
 </body>

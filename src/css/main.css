@@ -23,6 +23,8 @@
   --scheme-dark-gray-rgb: 120, 120, 120;
   --scheme-white: #e9eaed;
   --scheme-white-rgb: 233, 234, 237;
+  --scheme-console-blue: #1e1e3f;
+  --scheme-console-blue-rgb: 30, 30, 63;
   --default-border-radius: 0.5em;
   --default-text-margin: 2em;
 }
@@ -68,11 +70,6 @@ ul, ol {
 
 .flex-parent-container {
   display: flex;
-}
-
-.flex-fill-container {
-  display: flex;
-  flex-grow: 1;
 }
 
 .flex-fill-to-parent {
