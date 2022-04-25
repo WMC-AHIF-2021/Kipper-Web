@@ -13,11 +13,11 @@ const docsFiles = {
   },
   ourGoals: {
     file: "our-goals.html",
-    title: "Goals and Project Timeline"
+    title: "Goals & Timeline"
   },
   supportedPlatforms: {
     file: "supported-platforms.html",
-    title: "Supported Platforms and Browsers"
+    title: "Supported platforms"
   },
   usageExamples: {
     file: "usage-examples.html",

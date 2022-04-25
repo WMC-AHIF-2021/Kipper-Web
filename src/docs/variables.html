@@ -139,7 +139,7 @@
                   identical. If they are not, it will result in a compiler error!
                   <ul class="bullet-list flex-column">
                     <li>
-                      <em class="highlighted-green-checkmark">✓ VALID CODE</em>
+                      <em class="green-checkmark">✓ VALID CODE</em>
                       <pre><code class="language-typescript">
 // ✓ Valid
 var var1: str;
@@ -147,7 +147,7 @@ var var1: str;
                       </code></pre>
                     </li>
                     <li>
-                      <em class="highlighted-red-checkmark">X INVALID CODE</em>
+                      <em class="red-checkmark">X INVALID CODE</em>
                       <pre><code class="language-typescript">
 // X Invalid - May not re-declare with new type signature
 var var2: str;
@@ -180,7 +180,7 @@ var var3: str;
                   anymore, but only overwrite its value with the same type!
                   <ul class="bullet-list flex-column">
                     <li>
-                      <em class="highlighted-green-checkmark">✓ VALID CODE</em>
+                      <em class="green-checkmark">✓ VALID CODE</em>
                       <pre><code class="language-typescript">
 // ✓ Valid
 var var1: str = "3"; // Declaring and defining a variable in a one-line statement
@@ -192,7 +192,7 @@ var var2: str = "3"; // Declaring again and defining a variable in a one-line st
                       </code></pre>
                     </li>
                     <li>
-                      <em class="highlighted-red-checkmark">X INVALID CODE</em>
+                      <em class="red-checkmark">X INVALID CODE</em>
                       <pre><code class="language-typescript">
 // X Invalid - May not re-define with new type signature
 var var1: str = "3";
@@ -299,7 +299,7 @@ const var10: num = var9 + var8; // 4 + 3 -> 4
                   You may NEVER overwrite the set value of a constant or only <b>declare</b> a constant.
                   <ul class="bullet-list flex-column">
                     <li>
-                      <em class="highlighted-green-checkmark">✓ VALID CODE</em>
+                      <em class="green-checkmark">✓ VALID CODE</em>
                       <pre><code class="language-typescript">
 // ✓ Valid
 const var1: num = 4;
@@ -309,7 +309,7 @@ const var2: num = var1;
                       </code></pre>
                     </li>
                     <li>
-                      <em class="highlighted-red-checkmark">X INVALID CODE</em>
+                      <em class="red-checkmark">X INVALID CODE</em>
                       <pre><code class="language-typescript">
 // X Also Invalid - A value must be present for a constant definition!
 const var1;

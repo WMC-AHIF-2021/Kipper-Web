@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Docs Overview</title>
+  <title>Supported platforms</title>
   <meta
     name="description"
-    content="Docs Overview and General Info"
+    content="Supported platforms for Kipper"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -102,43 +102,77 @@
             <section>
               <nav id="docs-page-nav"></nav>
               <article>
-                <img id="kipper-docs-img" src="../img/Kipper-Docs.png" alt="">
-                <h2>Welcome to the Kipper Docs!</h2>
-                <p>
-                  This is the place to get to know the general info and details to all the features in Kipper. It will
-                  go in depth and explain details about how to use Kipper and configure it properly.
-                </p>
-              </article>
-              <article>
-                <h3>Introduction To Kipper</h3>
-                <p>
-                  These are the introduction sites of Kipper explaining the basis of Kipper and the Kipper project:
-                </p>
-                <ul class="bullet-list flex-column">
-                  <li><a class="DocsLink" href="./quickstart.html">Kipper Quickstart</a></li>
-                  <li><a href="./our-goals.html">Goals & Timeline</a></li>
-                  <li><a href="./usage-examples.html">Supported platforms</a></li>
-                  <li><a href="./supported-platforms.html">Usage Examples</a></li>
-                </ul>
-              </article>
-              <article>
-                <h3>Kipper Language Reference</h3>
-                <p>
-                  These are the language-specific sites, which try to explain the kipper language in-depth and show
-                  how the language works and how it is properly used.
-                </p>
-                <ul class="bullet-list flex-column">
-                  <li><a href="./variables.html">Variables</a></li>
-                  <li><a href="./datatypes.html">Variable Datatypes</a></li>
-                  <li><a href="./expressions.html">Kipper Expressions</a></li>
-                  <li><a href="./statements.html">Kipper Statements</a></li>
-                  <li><a href="./decision-making.html">If-Statement</a></li>
-                  <li><a href="./while-loop.html">While-Loop</a></li>
-                  <li><a href="./do-while-loop.html">Do-While-Loop</a></li>
-                  <li><a href="./for-loop.html">For-Loop</a></li>
-                  <li><a href="./functions.html">Functions</a></li>
-                  <li><a href="./built-in-functions.html">Built-In Functions</a></li>
-                </ul>
+                <h2 id="our-goals">Supported platforms</h2>
+                <h3>Node.js support</h3>
+                <article>
+                  <p>
+                    All Node.js versions that are above or equal the release <code>16.0.0</code> (Gallium) are
+                    supported by Kipper.
+                  </p>
+                  <p>
+                    OS-wise Kipper only actively supports Windows 10/11 and Linux, even if Node.js supports more operating
+                    systems. (Therefore, Kipper will likely still work on more systems than listed here, but there is no
+                    guarantee.)
+                  </p>
+                  <h3>Browser Support</h3>
+                  <p>
+                    List of all browsers that were tested for support of Kipper (<em>Please report any mistakes</em>):
+                  </p>
+                  <table>
+                    <colgroup>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                      <th>Browser / Version<br></th>
+                      <th>Status<br></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>Chrome 90+<br></td>
+                      <td>Supported and tested <em class="green-checkmark">✓</em><br><br></td>
+                    </tr>
+                    <tr>
+                      <td>Chrome 58-90<br></td>
+                      <td>Likely compatible <em class="red-checkmark">?</em><br><br><br></td>
+                    </tr>
+                    <tr>
+                      <td>Chrome &lt;58<br></td>
+                      <td>Unlikely compatible <em class="red-checkmark">x</em><br><br></td>
+                    </tr>
+                    <tr>
+                      <td>Firefox 89+ (Incl. Nightly 100)<br></td>
+                      <td>Supported and tested <em class="green-checkmark">✓</em><br><br></td>
+                    </tr>
+                    <tr>
+                      <td>Firefox 52-88<br><br></td>
+                      <td>Likely compatible <em class="red-checkmark">?</em><br><br></td>
+                    </tr>
+                    <tr>
+                      <td>Firefox &lt;52<br></td>
+                      <td>Unlikely compatible <em class="red-checkmark">x</em><br><br></td>
+                    </tr>
+                    <tr>
+                      <td>Safari<br></td>
+                      <td>Unknown <em class="red-checkmark">?</em><br><br><br><br></td>
+                    </tr>
+                    <tr>
+                      <td>Edge</td>
+                      <td>Unknown <em class="red-checkmark">?</em><br><br></td>
+                    </tr>
+                    <tr>
+                      <td>Opera</td>
+                      <td>Unknown <em class="red-checkmark">?</em><br></td>
+                    </tr>
+                    <tr>
+                      <td>Internet Explorer<br></td>
+                      <td>No support <em class="red-checkmark">x</em><br></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </article>
               </article>
               <script src="../js/gen-docs-nav-specifier.ts"></script>
             </section>

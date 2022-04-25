@@ -100,7 +100,6 @@ a, a:link, a:active, a:visited {
   color: #c71239;
   text-decoration: none;
   background-color: transparent;
-
 }
 
 a:hover {
@@ -208,6 +207,14 @@ p {
   width: calc(100% - 4rem);
 }
 
+.red-highlight-text a,
+.red-highlight-text a:link,
+.red-highlight-text a:active,
+.red-highlight-text a:visited {
+  /* Add additional emphasis, as red on red text is not highlighted well! */
+  color: red;
+}
+
 /* Code Block Formatting */
 code {
   margin-left: .2rem;
@@ -240,12 +247,12 @@ pre[class*="language-"] code {
   background: transparent;
 }
 
-.highlighted-green-checkmark {
+.green-checkmark {
   text-emphasis: none;
   color: green;
 }
 
-.highlighted-red-checkmark {
+.red-checkmark {
   text-emphasis: none;
   color: var(--scheme-primary);
 }
