@@ -43,26 +43,45 @@ function runCode(): void {
     }
 
     // Clear the console
-    clearConsole();
+    clearConsoleOutput();
+    clearCompilerOutput();
+
+    // Enable compiler logs
+    SwitchToCompilerOutput();
 
     // Prepare the worker to run the code
     // @ts-ignore
     worker = new Worker(new URL('./compile/compile-worker.ts', import.meta.url));
 
     // Event handler for the return. This imitates stdout.
+    let writeOntoConsoleOutput = false;
     worker.onmessage = function(event) {
       if (typeof event.data === 'string' || event.data instanceof String) {
-        writeLineToConsole(event.data as string);
+        if (writeOntoConsoleOutput) {
+          // Write stdout output
+          writeLineToConsoleOutput(event.data as string);
+        } else {
+          // Write compiler logs
+          writeLineToCompilerOutput(event.data as string);
+        }
       } else if (typeof event.data === 'number' || event.data instanceof Number) {
-        writeLineToConsole(`\nFinished execution with exit code ${event.data}.`);
-        stopCode();
+        if (writeOntoConsoleOutput) {
+          // Stop as this is the console exit status
+          writeLineToConsoleOutput(`\nFinished execution with exit code ${event.data}.`);
+          stopCode();
+        } else {
+          // Enable output to 'stdout'
+          SwitchToConsoleOutput();
+          writeOntoConsoleOutput = true;
+        }
       } else {
         console.error(`Invalid message from WebWorker: ${event.data}`);
       }
     }
 
     // Post the message to tell the worker to process the code
-    worker.postMessage(localStorage.getItem(localStorageIdentifier));
+    const currentCode = codeTextArea.value;
+    worker.postMessage(currentCode);
   } else {
     alert("Your browser does not support web-workers! Aborting operation.");
   }
@@ -102,16 +121,27 @@ function copyContent(): void {
   });
 }
 
+let consoleOutput = "";
+let compilerOutput = "";
+
 function SwitchToConsoleOutput() {
-  // this will depend on the future implementation. Stop Development on this
+  // Change styling
+  compilerOutputButton.style.borderBottom = "2px solid var(--scheme-gray)";
+  consoleOutputButton.style.borderBottom = "3px solid var(--scheme-primary)";
+
+  writeConsoleResultAndHighlight(consoleOutput);
 }
 
 function SwitchToCompilerOutput() {
-  // this will depend on the future implementation. Stop Development on this
+  // Change styling
+  consoleOutputButton.style.borderBottom = "2px solid var(--scheme-gray)";
+  compilerOutputButton.style.borderBottom = "3px solid var(--scheme-primary)";
+
+  writeConsoleResultAndHighlight(compilerOutput);
 }
 
 // if the input is not empty, signalise that code was restored
-if (codeTextArea.value != "")
+if (codeTextArea.value.trim() !== "")
   textSavingState.innerHTML = `<p class="gray-text">Welcome back! We restored the code of your last session for you :)</p>`;
 else
   textSavingState.innerHTML = `<p class="gray-text">Start typing! We will save your changes while you are typing!</p>`;
@@ -125,16 +155,23 @@ clearContentButton.addEventListener("click", clearContent);
 consoleOutputButton.addEventListener("click", SwitchToConsoleOutput);
 compilerOutputButton.addEventListener("click", SwitchToCompilerOutput);
 
-// Initialise the codeInput
-(() => {
-  const localStorageCodeInput = localStorage.getItem(localStorageIdentifier);
-  if (localStorageCodeInput != undefined) {
-    codeTextArea.value = localStorageCodeInput;
-    writeEditorResultAndHighlight(localStorageCodeInput);
-  } else {
-    codeTextArea.value = "";
-  }
-})();
+codeTextArea.addEventListener("input", event => {
+  const givenTextArea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
+  writeEditorResultAndHighlight(givenTextArea.value);
+})
+
+codeTextArea.addEventListener("scroll", () => {
+  syncTextAreaSizeAndScroll();
+})
+
+codeTextArea.addEventListener('keydown', (event) => {
+  checkForTab(event);
+});
+
+// Properly configure the sizes of the items in the browser window. This should set every item relative to the maximum
+// possible space available.
+window.addEventListener('DOMContentLoaded', setEditorAndConsoleSizes);
+window.addEventListener('resize', setEditorAndConsoleSizes);
 
 // runtime variable for the writing event listener
 let cancel;
@@ -179,14 +216,31 @@ codeTextArea.addEventListener("keyup", event => {
   }
 });
 
-codeTextArea.addEventListener("input", event => {
-  const givenTextArea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
-  writeEditorResultAndHighlight(givenTextArea.value);
-})
+// Initialise the codeInput
+(() => {
+  const localStorageCodeInput = localStorage.getItem(localStorageIdentifier);
+  if (localStorageCodeInput != undefined) {
+    codeTextArea.value = localStorageCodeInput;
+    writeEditorResultAndHighlight(localStorageCodeInput);
+  } else {
+    codeTextArea.value = "";
+  }
+})();
 
-codeTextArea.addEventListener("scroll", () => {
-  syncTextAreaSizeAndScroll();
-})
+// Initialise the default console output
+(() => {
+  const welcomeMessage: Array<string> = [
+    "Welcome to the Kipper Playground!\n",
+    "Try out your first program by writing:\n",
+    "  call print(\"Hello world\");"
+  ];
+
+  // Write to the console
+  for (const msg of welcomeMessage) {
+    writeLineToConsoleOutput(msg);
+  }
+  SwitchToConsoleOutput();
+})();
 
 /**
  * Editor-Update, which allows for syntax highlighting
@@ -200,7 +254,6 @@ function writeEditorResultAndHighlight(value: string): void {
   }
 
   // Write results to the original 'codeInput' <textarea> and syntax-highlighted result
-  codeTextArea.innerText = value;
   codeTextAreaResult.innerHTML = value
     .replace(new RegExp("&", "g"), "&")
     .replace(new RegExp("<", "g"), "<"); // Allow newlines
@@ -213,6 +266,27 @@ function writeEditorResultAndHighlight(value: string): void {
   syncTextAreaSizeAndScroll();
 }
 
+function checkForTab(event) {
+  const element = codeTextArea;
+  const code = element.value;
+  if(event.key == "Tab") {
+    event.preventDefault();
+
+    const beforeTab = code.slice(0, element.selectionStart);
+    const afterTab = code.slice(element.selectionEnd, element.value.length);
+
+    // where cursor moves after tab - moving forward by 1 char to after tab
+    const cursorPos = element.selectionEnd + 1;
+
+    // Add tab char
+    element.value = beforeTab + "\t" + afterTab;
+
+    // Move cursor
+    element.selectionStart = cursorPos;
+    element.selectionEnd = cursorPos;
+  }
+}
+
 /**
  * Syncs the scrolling for both <textarea> and codeInputResult.
  */
@@ -222,25 +296,6 @@ function syncTextAreaSizeAndScroll(): void {
   // Get and set x and y
   codeTextAreaResultWrapper.scrollTop = codeTextArea.scrollTop;
   codeTextAreaResultWrapper.scrollLeft = codeTextArea.scrollLeft;
-}
-
-let consoleContent = "";
-
-/**
- * Appends a new line to the console output and applies syntax highlighting.
- * @param value The line to add.
- */
-function writeLineToConsole(value: string): void {
-  consoleContent += value + '\n';
-  writeConsoleResultAndHighlight(consoleContent);
-}
-
-/**
- * Clears the content of the console.
- */
-function clearConsole(): void {
-  consoleContent = "";
-  writeConsoleResultAndHighlight("");
 }
 
 /**
@@ -265,6 +320,33 @@ function writeConsoleResultAndHighlight(value: string): void {
 }
 
 /**
+ * Appends a new line to the console output and applies syntax highlighting.
+ * @param value The line to add.
+ */
+function writeLineToConsoleOutput(value: string): void {
+  consoleOutput += value + '\n';
+  writeConsoleResultAndHighlight(consoleOutput);
+}
+
+function writeLineToCompilerOutput(value: string): void {
+  compilerOutput += value + '\n';
+  writeConsoleResultAndHighlight(compilerOutput);
+}
+
+/**
+ * Clears the content of the console.
+ */
+function clearConsoleOutput(): void {
+  consoleOutput = "";
+  writeConsoleResultAndHighlight(compilerOutput);
+}
+
+function clearCompilerOutput(): void {
+  compilerOutput = "";
+  writeConsoleResultAndHighlight("");
+}
+
+/**
  * Fixes the sizes of the code editor
  */
 function setEditorAndConsoleSizes(): void {
@@ -280,8 +362,3 @@ function setEditorAndConsoleSizes(): void {
   shellOutputResult.style.height = `${shellOutput.clientHeight - 2 * rem}px`;
   shellOutputResult.style.width = `${shellOutput.clientWidth - 2 * rem}px`;
 }
-
-// Properly configure the sizes of the items in the browser window. This should set every item relative to the maximum
-// possible space available.
-window.addEventListener('DOMContentLoaded', setEditorAndConsoleSizes);
-window.addEventListener('resize', setEditorAndConsoleSizes);

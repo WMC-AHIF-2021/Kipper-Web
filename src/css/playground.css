@@ -90,7 +90,6 @@
 }
 
 #shell-sidebar #shell-sidebar-menu {
-  border-left: 2px solid var(--scheme-gray);
   padding: 0;
 }
 
@@ -100,6 +99,7 @@
 }
 
 #shell-sidebar #shell-sidebar-menu button {
+  border-bottom: 2px solid var(--scheme-gray);
   flex-grow: 1;
 }
 

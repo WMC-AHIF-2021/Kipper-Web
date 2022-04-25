@@ -7,7 +7,7 @@ importScripts('//unpkg.com/@babel/standalone/babel.min.js');
 // The message handler for the compiler log messages - We don't handle those yet and just log them onto the console
 const msgHandler = (level, msg) => {
   // @ts-ignore
-  console.log(`KipperCompiler - [${Kipper.getLogLevelString(level)}]: ${msg}`);
+  postMessage(`[${Kipper.getLogLevelString(level)}]: ${msg}`);
 }
 
 // The log handler that will be used inside the kipper program to handle print messages and allow them to be sent
@@ -43,6 +43,8 @@ onmessage = async function(event) {
 
   // Compile the code to TypeScript
   const result = (await compiler.compile(event.data, {globals: [logHandler]})).write();
+
+  postMessage(0);
 
   // Transpile the code from TypeScript to JavaScript
   // @ts-ignore
