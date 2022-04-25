@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+
+### Changed
+
+### Removed
+
+## [v0.3.0] - 2022-04-25
+### Added
 - Implemented a proper search-bar icon across the site that moves with the flex container.
   Resizing on focus moves it with the rest of the input-bar.implemented graphical compile interface
 - Properly included Kipper compiler and execution script using a WebWorker that executed in its own thread and sends
@@ -133,6 +140,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed unnecessary `start_local_Server.exe`
 
 [unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/HEAD...base-dev
+[v0.3.0]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.5...v0.2.0
 [v0.1.5]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.3...v0.1.4
