@@ -10,6 +10,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
   ],
   rules: {
-    "@typescript-eslint/ban-ts-comment": "off"
-  }
+    "@typescript-eslint/ban-ts-comment": "off",
+    "no-undef": "off"
+  },
 };

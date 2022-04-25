@@ -1,21 +1,9 @@
 /*! Configuration for the Playground */
 
-#interactive-console {
-  flex-grow: 1;
-  display: flex;
-}
-
-#interactive-console ul {
-  margin: 0;
-  display: flex;
-  flex-grow: 1;
-}
-
 #left-console-interface {
   margin: 0;
   display: flex;
-  flex-grow: 1;
-  min-width: 75vw;
+  flex-grow: 2;
 }
 
 #left-console-interface #playground-option-menu {
@@ -40,8 +28,10 @@
 
 /* The entire code entire window -> parent of the label and textarea */
 #code-editor {
+  display: flex;
   flex-grow: 1;
-  min-height: 60vh;
+  min-width: 0;
+  min-height: 0;
 }
 
 /*
@@ -51,20 +41,19 @@
 #code-editor-textarea, #highlighting-field {
   /* Putting them on top of each other */
   position: absolute;
-  flex-grow: 1;
+  flex-grow: 0;
 
   /* Allow scrolling */
-  overflow: hidden; /* overflow: auto; TODO! Implement proper scrolling in the future */
-  /* white-space: nowrap; TODO! Implement proper new-lines */
+  overflow: auto;
 
   /* Identical styling */
-  margin: 10px;
-  padding: 10px;
+  margin: 0;
+  padding: 1rem;
   resize: none;
   border: none;
   outline: none;
-  min-width: 75vw;
-  min-height: 50vh;
+  max-height: 60vh;
+  max-width: 70vw;
 }
 
 #code-editor-textarea, #highlighting-field, #highlighting-field * {
@@ -100,62 +89,62 @@
   display: flex;
 }
 
-#shell-sidebar ul {
-  flex-grow: 1;
-}
-
 #shell-sidebar #shell-sidebar-menu {
-  border-bottom: 2px solid var(--scheme-gray);
-  border-left: 2px solid var(--scheme-gray);
   padding: 0;
 }
 
-#shell-sidebar #shell-sidebar-menu li {
+#shell-sidebar #shell-sidebar-menu .playground-button {
   display: flex;
   flex-grow: 1;
 }
 
-#shell-sidebar #shell-sidebar-menu li button {
+#shell-sidebar #shell-sidebar-menu button {
+  border-bottom: 2px solid var(--scheme-gray);
   flex-grow: 1;
 }
 
-#shell-sidebar > ul > #side-editor {
-  border-left: 2px solid var(--scheme-gray);
-}
-
 /* Removing any border radius inside the editor*/
-#shell-sidebar > ul > #side-editor > .code-toolbar pre,
-#shell-sidebar > ul > #side-editor > .code-toolbar code {
+#shell-sidebar > #shell-output > .code-toolbar pre,
+#shell-sidebar > #shell-output > .code-toolbar code {
   border-radius: 0;
 }
 
-#shell-sidebar > ul > #side-editor,
-#shell-sidebar > ul > #side-editor > .code-toolbar,
-#shell-sidebar > ul > #side-editor > .code-toolbar > pre {
+#shell-sidebar > #shell-output,
+#shell-sidebar > #shell-output > .code-toolbar,
+#shell-sidebar > #shell-output > .code-toolbar > pre {
   display: flex;
   flex-grow: 1;
 }
 
 #shell-sidebar-menu {
-  width: 20vw;
+  width: inherit;
 }
 
-#shell-sidebar-menu .console-output-button {
-  flex-grow: 1;
-  padding: 0 !important;
-  width: 10vw;
-}
-
-#shell-sidebar > ul > #side-editor pre {
-  background-color: var(--scheme-gray);
+#shell-sidebar > #shell-output #shell-sidebar-highlight-field {
+  background-color: var(--scheme-console-blue);
   display: flex;
   flex-grow: 1;
   margin: 0;
+  padding: 0;
+  width: inherit;
 }
 
-#shell-sidebar > ul > #side-editor pre > code {
+#shell-sidebar > #shell-output #shell-sidebar-highlight-field > #shell-sidebar-highlight-field-content {
   border-radius: 0;
-  align-self: flex-end;
-  flex-grow: 1;
+  align-self: flex-start;
+  overflow: auto;
+  overflow-wrap: break-word;
+
+  /* Apply proper formatting */
   margin: 0;
+  padding: 1rem;
+  width: 30vw;
+  max-height: 60vh;
+  min-height: 0;
+  min-width: 0;
+  flex-grow: 1;
+
+  /* Update font */
+  font-size: 14px;
+  line-height: 18px;
 }
