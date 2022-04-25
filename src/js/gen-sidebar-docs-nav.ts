@@ -15,6 +15,10 @@ const docsFiles = {
     file: "our-goals.html",
     title: "Goals and Project Timeline"
   },
+  supportedPlatforms: {
+    file: "supported-platforms.html",
+    title: "Supported Platforms and Browsers"
+  },
   usageExamples: {
     file: "usage-examples.html",
     title: "Usage Examples"

@@ -26,7 +26,15 @@ const consoleOutputButton: HTMLButtonElement = document.querySelector("#console-
 const compilerOutputButton: HTMLButtonElement = document.querySelector("#compiler-output-button button");
 
 // Global web worker that will run the code
-let worker: Worker | undefined = undefined;
+// @ts-ignore
+let worker: Worker = new Worker(new URL('./compile/compile-worker.ts', import.meta.url));
+
+// Status code returns
+const statusFailure = 1;
+
+// Compilation running
+let compiling = false;
+let running = false;
 
 /**
  * @summary Runs the code using a web worker and writes the console output to the "virtual" terminal.
@@ -37,43 +45,52 @@ function runCode(): void {
   runCodeButton.addEventListener("click", stopCode);
 
   if (window.Worker) {
-    // If there is a program running at the moment, stop execution and run the most recent code.
-    if (worker !== undefined) {
-      stopCode();
-    }
-
     // Clear the console
     clearConsoleOutput();
     clearCompilerOutput();
 
     // Enable compiler logs
-    SwitchToCompilerOutput();
+    switchToCompilerOutput();
 
-    // Prepare the worker to run the code
-    // @ts-ignore
-    worker = new Worker(new URL('./compile/compile-worker.ts', import.meta.url));
+    // Start timer
+    const startTime: number = new Date().getTime();
+
+    // Signalise compilation is currently undergoing
+    compiling = true;
 
     // Event handler for the return. This imitates stdout.
-    let writeOntoConsoleOutput = false;
     worker.onmessage = function(event) {
-      if (typeof event.data === 'string' || event.data instanceof String) {
-        if (writeOntoConsoleOutput) {
-          // Write stdout output
-          writeLineToConsoleOutput(event.data as string);
-        } else {
+      const stringMsg: boolean = typeof event.data === 'string' || event.data instanceof String;
+      const numMsg: boolean = typeof event.data === 'number' || event.data instanceof Number;
+
+      // String values represent runtime or compilation log messages
+      if (stringMsg) {
+        if (!running) {
           // Write compiler logs
           writeLineToCompilerOutput(event.data as string);
-        }
-      } else if (typeof event.data === 'number' || event.data instanceof Number) {
-        if (writeOntoConsoleOutput) {
-          // Stop as this is the console exit status
-          writeLineToConsoleOutput(`\nFinished execution with exit code ${event.data}.`);
-          stopCode();
         } else {
-          // Enable output to 'stdout'
-          SwitchToConsoleOutput();
-          writeOntoConsoleOutput = true;
+          // Write stdout output
+          writeLineToConsoleOutput(event.data as string);
         }
+      // Numeric values signalise change of state or program handling
+      } else if (numMsg) {
+        if (!running) {
+          // Compilation finished -> Say how long it took
+          const endTimeInSeconds: number = (new Date().getTime() - startTime) / 1000;
+          writeLineToCompilerOutput(`\nCompilation finished in ${endTimeInSeconds}s`);
+
+          // Enable output to 'stdout'
+          switchToConsoleOutput();
+          running = true;
+        } else {
+          // Stop as this is the console exit status
+          const exitCode = event.data as number;
+
+          // End of the program
+          printProgramExitCode(exitCode);
+          switchButtonToRun();
+        }
+      // Unknown
       } else {
         console.error(`Invalid message from WebWorker: ${event.data}`);
       }
@@ -87,11 +104,20 @@ function runCode(): void {
   }
 }
 
-function stopCode(): void {
+/**
+ * Switches the interaction button to 'Run', so a new program can be started again.
+ */
+function switchButtonToRun(): void {
   runCodeListItem.innerHTML = `<button>Run</button>`;
   runCodeButton = document.querySelector("#run-code-list-item button");
   runCodeButton.addEventListener("click", runCode);
+}
 
+/**
+ * Stops the WebWorker from executing the current code.
+ */
+function stopCode(): void {
+  switchButtonToRun();
   if (window.Worker) {
     // If there is no current execution, return.
     if (worker === undefined) {
@@ -99,14 +125,39 @@ function stopCode(): void {
     }
 
     // Terminate the worker
+    // Sadly only using a full termination of the worker we can stop the code from running
+    // This has the downside of recreating the worker and as such losing the warmup performance boost of the Parser.
     worker.terminate();
-    worker = undefined;
+
+    // Recreate the worker now to save time for the next run call.
+    // @ts-ignore
+    worker = new Worker(new URL('./compile/compile-worker.ts', import.meta.url));
   } else {
     alert("Your browser does not support web-workers! Aborting operation.");
   }
+
+  if (compiling) {
+    switchToCompilerOutput();
+    writeLineToCompilerOutput("\nCompilation terminated.")
+
+    compiling = false;
+  } else {
+    switchToConsoleOutput();
+    printProgramExitCode(statusFailure);
+  }
 }
 
-function clearContent(): void {
+/**
+ * Prints the passed exit status onto the console
+ * @param exitCode The exit code to print.
+ */
+function printProgramExitCode(exitCode: number) {
+  writeLineToConsoleOutput(`\nFinished execution with exit code ${exitCode}.`);
+  running = false;
+  compiling = false;
+}
+
+function clearEditorContent(): void {
   console.log("Code Cleared!");
   codeTextArea.value = "";
   codeTextAreaResult.innerHTML = "";
@@ -114,7 +165,7 @@ function clearContent(): void {
   textSavingState.innerHTML = `<p class="gray-text">Code cleared!</p>`;
 }
 
-function copyContent(): void {
+function copyEditorContent(): void {
   console.log("Code Copied!");
   navigator.clipboard.writeText(codeTextArea.value).then(() => {
     textSavingState.innerHTML = `<p class="gray-text">Code copied!</p>`;
@@ -124,7 +175,7 @@ function copyContent(): void {
 let consoleOutput = "";
 let compilerOutput = "";
 
-function SwitchToConsoleOutput() {
+function switchToConsoleOutput() {
   // Change styling
   compilerOutputButton.style.borderBottom = "2px solid var(--scheme-gray)";
   consoleOutputButton.style.borderBottom = "3px solid var(--scheme-primary)";
@@ -132,7 +183,7 @@ function SwitchToConsoleOutput() {
   writeConsoleResultAndHighlight(consoleOutput);
 }
 
-function SwitchToCompilerOutput() {
+function switchToCompilerOutput() {
   // Change styling
   consoleOutputButton.style.borderBottom = "2px solid var(--scheme-gray)";
   compilerOutputButton.style.borderBottom = "3px solid var(--scheme-primary)";
@@ -140,20 +191,14 @@ function SwitchToCompilerOutput() {
   writeConsoleResultAndHighlight(compilerOutput);
 }
 
-// if the input is not empty, signalise that code was restored
-if (codeTextArea.value.trim() !== "")
-  textSavingState.innerHTML = `<p class="gray-text">Welcome back! We restored the code of your last session for you :)</p>`;
-else
-  textSavingState.innerHTML = `<p class="gray-text">Start typing! We will save your changes while you are typing!</p>`;
-
 // adding event listeners to the menu buttons
 runCodeButton.addEventListener("click", runCode);
-copyCodeButton.addEventListener("click", copyContent);
-clearContentButton.addEventListener("click", clearContent);
+copyCodeButton.addEventListener("click", copyEditorContent);
+clearContentButton.addEventListener("click", clearEditorContent);
 
 // adding event listeners to the sidebar buttons
-consoleOutputButton.addEventListener("click", SwitchToConsoleOutput);
-compilerOutputButton.addEventListener("click", SwitchToCompilerOutput);
+consoleOutputButton.addEventListener("click", switchToConsoleOutput);
+compilerOutputButton.addEventListener("click", switchToCompilerOutput);
 
 codeTextArea.addEventListener("input", event => {
   const givenTextArea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
@@ -218,12 +263,20 @@ codeTextArea.addEventListener("keyup", event => {
 
 // Initialise the codeInput
 (() => {
+  // Restore the code if there has been a previous session
   const localStorageCodeInput = localStorage.getItem(localStorageIdentifier);
   if (localStorageCodeInput != undefined) {
     codeTextArea.value = localStorageCodeInput;
     writeEditorResultAndHighlight(localStorageCodeInput);
   } else {
     codeTextArea.value = "";
+  }
+
+  // If the input is not empty, signalise that code was restored
+  if (codeTextArea.value.trim() !== "") {
+    textSavingState.innerHTML = `<p class="gray-text">Welcome back! We restored the code of your last session for you :)</p>`;
+  } else {
+    textSavingState.innerHTML = `<p class="gray-text">Start typing! We will save your changes while you are typing!</p>`;
   }
 })();
 
@@ -239,7 +292,7 @@ codeTextArea.addEventListener("keyup", event => {
   for (const msg of welcomeMessage) {
     writeLineToConsoleOutput(msg);
   }
-  SwitchToConsoleOutput();
+  switchToConsoleOutput();
 })();
 
 /**
