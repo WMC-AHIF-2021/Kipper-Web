@@ -15,9 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v0.3.0] - 2022-04-25
 ### Added
 - Implemented a proper search-bar icon across the site that moves with the flex container.
-  Resizing on focus moves it with the rest of the input-bar.implemented graphical compile interface
-- Properly included Kipper compiler and execution script using a WebWorker that executed in its own thread and sends
-  compiler messages and stdout messages to the main window.
+  Resizing on focus moves it with the rest of the input-bar.
+- Properly implemented Kipper compiler and execution script using a WebWorker. The WebWorker will run in its own thread
+  and sends compiler messages and stdout messages to the main window.
 - Implemented console output and compiler output window.
 
 ### Changed
