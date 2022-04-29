@@ -108,11 +108,11 @@
               .then(response => response.text())
               .then(response => {
                 console.log(response);
-                //document.getElementById('changelog-text').innerHTML = response.toString();
-                text = response.toString();
+                document.getElementById('changelog-text').innerHTML = response.toString();
+                //text = response.toString();
               })
 
-            const response = await fetch("https://helloacm.com/api/markdown/", {
+            /*const response = await fetch("https://helloacm.com/api/markdown/", {
               method: 'POST',
               headers: {
                 'Accept': 'application/json',
@@ -128,7 +128,7 @@
             });
 
               document.getElementById('changelog-text').innerHTML = HtmlCode;
-
+          */
           </script>
           <div id="changelog">
             <br>
