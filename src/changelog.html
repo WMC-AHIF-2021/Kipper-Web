@@ -100,6 +100,41 @@
       <div id="changelog-content" class="text-content shadowed-box">
         <section>
           <!-- Add generation script here -->
+          <script>
+            console.log("Loading Changelog...");
+            let text = "";
+            const url = "https://raw.githubusercontent.com/WMC-AHIF-2021/Kipper-Web/main/CHANGELOG.md"
+            fetch(url)
+              .then(response => response.text())
+              .then(response => {
+                console.log(response);
+                //document.getElementById('changelog-text').innerHTML = response.toString();
+                text = response.toString();
+              })
+
+            const response = await fetch("https://helloacm.com/api/markdown/", {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              body: `{
+                `.$text
+              }`,
+                        });
+
+            response.json().then(data => {
+              console.log(data);
+            });
+
+              document.getElementById('changelog-text').innerHTML = HtmlCode;
+
+          </script>
+          <div id="changelog">
+            <br>
+            <div id="changelog-text"></div>
+            <br>
+          </div>
         </section>
       </div>
     </div>
