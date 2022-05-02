@@ -99,6 +99,7 @@
     <div class="text-page-content-container">
       <div id="changelog-content" class="text-content shadowed-box">
         <section>
+          <script src="./js/showdown.js"></script>
           <!-- Add generation script here -->
           <script>
             console.log("Loading Changelog...");
@@ -107,8 +108,17 @@
             fetch(url)
               .then(response => response.text())
               .then(response => {
-                console.log(response);
-                document.getElementById('changelog-text').innerHTML = response.toString();
+                //console.log(response);
+                let text = "<pre><code>" + response.toString() + "</code></pre>";
+                text = text.replace(/`/gi, "'");
+                text = text.replace(/  /gi, " ");
+
+                var converter = new showdown.Converter(),
+                  md      = response.toString(),
+                  HTMLtext      = converter.makeHtml(md);
+
+                //document.getElementById('changelog-text').innerHTML = "<pre><code>" + response.toString() + "</code></pre>";
+                document.getElementById('changelog-text').innerHTML = HTMLtext;
                 //text = response.toString();
               })
 
@@ -130,9 +140,21 @@
               document.getElementById('changelog-text').innerHTML = HtmlCode;
           */
           </script>
+          <style>
+            #changelog-text li {
+              float:left;
+              width:260px;
+              padding-left:20px;
+              font-size:16px;
+              color:#333;
+              font-weight:bold;
+              margin:5px 0;
+              padding-bottom:1px;
+            }
+          </style>
           <div id="changelog">
             <br>
-            <div id="changelog-text"></div>
+            <div id="changelog-tex></div>
             <br>
           </div>
         </section>
