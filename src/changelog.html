@@ -99,14 +99,74 @@
     <div class="text-page-content-container">
       <div id="changelog-content" class="text-content shadowed-box">
         <section>
+          <script src="./js/showdown.js"></script>
           <!-- Add generation script here -->
+          <script>
+            console.log("Loading Changelog...");
+            let text = "";
+            const url = "https://raw.githubusercontent.com/WMC-AHIF-2021/Kipper-Web/main/CHANGELOG.md"
+            fetch(url)
+              .then(response => response.text())
+              .then(response => {
+                //console.log(response);
+                let text = "<pre><code>" + response.toString() + "</code></pre>";
+                text = text.replace(/`/gi, "'");
+                text = text.replace(/  /gi, " ");
+
+                var converter = new showdown.Converter(),
+                  md      = response.toString(),
+                  HTMLtext      = converter.makeHtml(md);
+
+                //document.getElementById('changelog-text').innerHTML = "<pre><code>" + response.toString() + "</code></pre>";
+                document.getElementById('changelog-text').innerHTML = HTMLtext;
+                //text = response.toString();
+              })
+
+            /*const response = await fetch("https://helloacm.com/api/markdown/", {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              body: `{
+                `.$text
+              }`,
+                        });
+            response.json().then(data => {
+              console.log(data);
+            });
+              document.getElementById('changelog-text').innerHTML = HtmlCode;
+          */
+          </script>
+          <style>
+            #changelog-text li {
+              float:left;
+              width:260px;
+              padding-left:20px;
+              font-size:16px;
+              color:#333;
+              font-weight:bold;
+              margin:5px 0;
+              padding-bottom:1px;
+            }
+          </style>
+          <div id="changelog">
+            <br>
+            <div id="changelog-tex"></div>
+            <br>
+          </div>
         </section>
       </div>
     </div>
     <!-- Footer bar - contains some links and general copyright notice -->
-    <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
-    <script src="./js/gen-footer.ts"></script>
+    <footer id="footer-bar" class="flex-parent-container flex-column">
+            <script src="./js/gen-footer.ts"></script>
+            </footer>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
-</div>
+      </div>
 </body>
 </html>
