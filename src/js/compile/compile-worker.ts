@@ -55,7 +55,4 @@ onmessage = async function(event) {
 
   // Return with exit code 0 (Success)
   postMessage(0);
-
-  // Close the worker when we are finished
-  close();
 }
