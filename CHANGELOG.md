@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added Showdown library (Markdown Converter)
+- Added Renderer and Converter for changelog.html
+- Added Implementation to convert the Markdown
+from GitHub to HTML for the changelog.html
+- Used Renderer to show converted Markdown on the Page
 
 ### Changed
 
