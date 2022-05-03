@@ -100,60 +100,20 @@
       <div id="changelog-content" class="text-content shadowed-box">
         <section>
           <script src="./js/showdown.js"></script>
-          <!-- Add generation script here -->
           <script>
             console.log("Loading Changelog...");
-            let text = "";
-            const url = "https://raw.githubusercontent.com/WMC-AHIF-2021/Kipper-Web/main/CHANGELOG.md"
+            const url = "https://raw.githubusercontent.com/Luna-Klatzer/Kipper/main/CHANGELOG.md";
             fetch(url)
               .then(response => response.text())
               .then(response => {
-                //console.log(response);
-                let text = "<pre><code>" + response.toString() + "</code></pre>";
-                text = text.replace(/`/gi, "'");
-                text = text.replace(/  /gi, " ");
-
-                var converter = new showdown.Converter(),
-                  md      = response.toString(),
-                  HTMLtext      = converter.makeHtml(md);
-
-                //document.getElementById('changelog-text').innerHTML = "<pre><code>" + response.toString() + "</code></pre>";
-                document.getElementById('changelog-text').innerHTML = HTMLtext;
-                //text = response.toString();
+                const converter = new showdown.Converter();
+                const md = response.toString();
+                document.getElementById('markdown-content').innerHTML = converter.makeHtml(md);
               })
-
-            /*const response = await fetch("https://helloacm.com/api/markdown/", {
-              method: 'POST',
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              },
-              body: `{
-                `.$text
-              }`,
-                        });
-            response.json().then(data => {
-              console.log(data);
-            });
-              document.getElementById('changelog-text').innerHTML = HtmlCode;
-          */
           </script>
-          <style>
-            #changelog-text li {
-              float:left;
-              width:260px;
-              padding-left:20px;
-              font-size:16px;
-              color:#333;
-              font-weight:bold;
-              margin:5px 0;
-              padding-bottom:1px;
-            }
-          </style>
           <div id="changelog">
-            <br>
-            <div id="changelog-tex"></div>
-            <br>
+            <!-- Markdown will be added here -->
+            <div id="markdown-content"></div>
           </div>
         </section>
       </div>
