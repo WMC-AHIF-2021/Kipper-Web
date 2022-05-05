@@ -94,7 +94,7 @@
     </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div class="flex-parent-container flex-fill-to-parent">
-      <ul class="no-style-list flex-parent-container flex-fill-to-parent">
+      <ul class="no-style-list flex-parent-container flex-fill-to-parent flex-row">
         <li id="docs-sidebar-nav-wrapper" class="flex-parent-container"></li>
         <script src="../js/gen-sidebar-docs-nav.ts"></script>
         <li class="docs-page-content-container">
@@ -103,13 +103,30 @@
               <nav id="docs-page-nav"></nav>
               <article>
                 <h2>Built-in Functions</h2>
-                <p>
-
-                </p>
-                <p class="red-highlight-text">
-                  This section will be added later when Kipper moves out of early development and is stable.
-                  (-> May - June 2022)
-                </p>
+                <article>
+                  <h3><code>def print(printText: string) -> void</code></h3>
+                  <p>
+                    Prints the argument <code>printText</code> onto stdout of the specific platform.
+                  </p>
+                  <p>
+                    List of supported platforms:
+                  </p>
+                  <table>
+                    <thead>
+                    <tr>
+                      <th></th>
+                      <th>Node.js</th>
+                      <th>Browser</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>Supported</td>
+                      <td><em class="green-checkmark">✓</em></td>
+                      <td><em class="green-checkmark">✓</em></td>
+                    </tr>
+                    </tbody>
+                  </table>
               </article>
               <script src="../js/gen-docs-nav-specifier.ts"></script>
             </section>
