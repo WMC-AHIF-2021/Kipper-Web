@@ -110,9 +110,8 @@
                   do-while than while-loops, so watch out for opportunities to replace while-loops with do-while loops.
                 </p>
                 <h3>Syntax</h3>
-                <pre><code class="language-typescript">
-while (CONDITION) STATEMENT;
-                </code></pre>
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">while (CONDITION) STATEMENT;</code></pre>
                 <h3>Execution Schema</h3>
                 <ul class="bullet-list flex-column">
                   <li>
@@ -122,8 +121,8 @@ while (CONDITION) STATEMENT;
                   <li>Run <code>STATEMENT</code> if <code>CONDITION</code> was true.</li>
                 </ul>
                 <h3>Examples</h3>
-                <pre><code class="language-typescript">
-var var1: num = 0;
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">var var1: num = 0;
 // ✓ Simple loop
 while (var1 <= 5) {
   var1++;
@@ -139,9 +138,7 @@ call print(f"'var1' is now '{var2}'"); // -> 'var1' is now '0'
 // X Infinite Loop - Avoid this, as it can result in freezing of your program without proper forced stopping
 while (True) {
   call print("An unnecessary print!");
-}
-
-                </code></pre>
+}</code></pre>
               </article>
               <script src="../js/gen-docs-nav-specifier.ts"></script>
             </section>

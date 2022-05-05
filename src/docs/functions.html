@@ -117,8 +117,8 @@
                 <p>
                   Defining a Kipper function:
                 </p>
-                <pre><code class="language-typescript">
-def NAME(ARG_NAME: TYPE (OPTIONAL), ...) -> RETURN_TYPE {
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">def NAME(ARG_NAME: TYPE (OPTIONAL), ...) -> RETURN_TYPE {
   STATEMENTS... (OPTIONAL) // Function content
 
   return; // Optional if RETURN_TYPE is void, invalid if RETURN_TYPE is not void
@@ -128,9 +128,8 @@ def NAME(ARG_NAME: TYPE (OPTIONAL), ...) -> RETURN_TYPE {
                 <p>
                   Calling a defined function (<a href="./expressions.html">Function call expression</a>):
                 </p>
-                <pre><code class="language-typescript">
-call NAME(REQ_ARGS...);
-                </code></pre>
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">call NAME(REQ_ARGS...);</code></pre>
                 <h3>Behaviour</h3>
                 <p>
                   When calling a function all arguments have to be passed with the argument types matching. When
@@ -145,8 +144,8 @@ call NAME(REQ_ARGS...);
                   </em>
                 </p>
                 <h3>Examples</h3>
-                <pre><code class="language-typescript">
-// ✓ Simple void function with no arguments and return
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">// ✓ Simple void function with no arguments and return
 def print_banner() -> void {
   call print("Welcome to Kipper!");
   return; // Optional
@@ -176,8 +175,7 @@ var any_var: str = add_prefix("pre", "fix");
 var any_var: str = add_prefix;
 
 // X May not call a function without its arguments!
-var any_var: str = call add_prefix;
-                </code></pre>
+var any_var: str = call add_prefix;</code></pre>
               </article>
               <script src="../js/gen-docs-nav-specifier.ts"></script>
             </section>

@@ -109,18 +109,16 @@
                 <p>
                   A simple example for expressions can be a simple calculation, like this:
                 </p>
-                <pre><code class="language-typescript">
-val1 + val2 * val3 // Mathematical/Arithmetic expression
-                </code></pre>
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">val1 + val2 * val3 // Mathematical/Arithmetic expression</code></pre>
                 <p>
                   Notice how in this case we are not assigning the result to anything? This is an important fact of
                   expressions that they are usually independent and do a single task, meaning if we wanted to assign
                   this result to a variable, we would have to use an assignment expression like this:
                 </p>
-                <pre><code class="language-typescript">
-// Assign and arithmetic expression
-var result = val1 + val2 * val3;
-                </code></pre>
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">// Assign and arithmetic expression
+var result = val1 + val2 * val3;</code></pre>
                 <p>
                   Though, in this case, we also now created a statement (ends in <code>;</code>), though these will
                   be explained further in the docs section <a href="./statements.html">Statements</a>.
@@ -225,43 +223,37 @@ var result = val1 + val2 * val3;
                   be done here in Kipper as well, where you can forcefully increase the order of precedence using
                   brackets:
                 </p>
-                <pre><code class="language-typescript">
-15 + 4 * 6 // -> 15 + (4 * 6) -> 15 + 24 -> 39
-                </code></pre>
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">15 + 4 * 6 // -> 15 + (4 * 6) -> 15 + 24 -> 39</code></pre>
                 <p>
                   Forced higher precedence using brackets:
                 </p>
-                <pre><code class="language-typescript">
-(15 + 4) * 6 // -> (15 + 4) * 6 -> 19 * 6 -> 114
-                </code></pre>
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">(15 + 4) * 6 // -> (15 + 4) * 6 -> 19 * 6 -> 114</code></pre>
                 <h3>What does associativity mean?</h3>
                 <p>
                   As you should have already seen in the table above, there is an extra column defining the so-called
                   associativity. What does that mean? It's relatively simple and means whether the following
                   (<code>( )</code> meaning the expression is read first):
                 </p>
-                <pre><code class="language-typescript">
-a OPR b OPR c
-                </code></pre>
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">a OPR b OPR c</code></pre>
                 <p>
                   is evaluated as (left-associative - Reads from left to right):
                 </p>
-                <pre><code class="language-typescript">
-(a OPR b) OPR c
-                </code></pre>
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">(a OPR b) OPR c</code></pre>
                 <p>
                   or as (right-associative - reads from right to left):
                 </p>
-                <pre><code class="language-typescript">
-a OPR (b OPR c)
-                </code></pre>
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">a OPR (b OPR c)</code></pre>
                 <p>
                   This is especially important as it can change how certain things are evaluated, and also cause
                   unwanted errors! For example the following would be interpreted as (left-associative):
                 </p>
-                <pre><code class="language-typescript">
-32 / 4 / 4 // -> (8 / 4) -> 2
-                </code></pre>
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">32 / 4 / 4 // -> (8 / 4) -> 2</code></pre>
                 <h3>List of expressions in the Kipper language</h3>
                 <p>
                   This is a concise list of all expressions in the Kipper language that may be used:
@@ -275,12 +267,11 @@ a OPR (b OPR c)
                       their order of precedence, where each item is one after one evaluated.
                     </p>
                     <h5>Syntax</h5>
-                    <pre><code class="language-typescript">
-VALUE_1 ( + | - | * | / | ** | % ) VALUE_2
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">VALUE_1 ( + | - | * | / | ** | % ) VALUE_2</code></pre>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// Plus
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// Plus
 400.3 + 26.3 // -> 426.6
 
 // Minus
@@ -296,8 +287,7 @@ VALUE_1 ( + | - | * | / | ** | % ) VALUE_2
 2 ** 8 // -> 256
 
 // Rest of Divide
-51 % 10 // -> 1
-                    </code></pre>
+51 % 10 // -> 1</code></pre>
                   </li>
                   <li>
                     <h3>Relational Expressions (Comparisons)</h3>
@@ -309,12 +299,11 @@ VALUE_1 ( + | - | * | / | ** | % ) VALUE_2
                       value (Either <code>True</code> or <code>False</code>).
                     </p>
                     <h5>Syntax</h5>
-                    <pre><code class="language-typescript">
-VALUE_1 ( == | != | > | >= | < | <= ) VALUE_2
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">VALUE_1 ( == | != | > | >= | < | <= ) VALUE_2</code></pre>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// Is equal
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// Is equal
 20 == 20 // -> True
 92 == 20 // -> False
 
@@ -338,8 +327,7 @@ VALUE_1 ( == | != | > | >= | < | <= ) VALUE_2
 // Is smaller or equal to
 12 <= 29 // -> True
 56 <= 56 // -> True
-21 <= 13 // -> False
-                    </code></pre>
+21 <= 13 // -> False</code></pre>
                   </li>
                   <li>
                     <h3>Logical Expressions</h3>
@@ -350,16 +338,14 @@ VALUE_1 ( == | != | > | >= | < | <= ) VALUE_2
                     </p>
                     <h5>Syntax</h5>
                     For the logical <code>AND</code> and <code>OR</code>:
-                    <pre><code class="language-typescript">
-VALUE_1 ( && | || ) VALUE_2
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">VALUE_1 ( && | || ) VALUE_2</code></pre>
                     For the logical <code>NOT</code>:
-                    <pre><code class="language-typescript">
-!VALUE
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">!VALUE</code></pre>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// Logical AND - All must be true
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// Logical AND - All must be true
 True && True   // -> True
 False && True  // -> False
 True && False  // -> False
@@ -373,13 +359,12 @@ False || False // -> False
 
 // Logical NOT - Negate
 !False         // -> True
-!True          // -> False
-                    </code></pre>
+!True          // -> False</code></pre>
                     <p>
                       Logical Expressions may be also chained together as long as you want, like this:
                     </p>
-                    <pre><code class="language-typescript">
-// Chained Logical AND - All must be true
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// Chained Logical AND - All must be true
 True && True && True     // -> True
 True && False && True    // -> False
 
@@ -390,16 +375,14 @@ False || False || False  // -> False
 
 // Chained Logical NOT - Negate (Practically useless)
 !!True                    // -> True
-!!False                   // -> False
-                    </code></pre>
+!!False                   // -> False</code></pre>
                     <p>
                       You can also combine relational expressions with logical expressions, like this for example:
                     </p>
-                    <pre><code class="language-typescript">
-// ✓ Combined relational and logical expressions
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// ✓ Combined relational and logical expressions
 3 == 4 && 3 != 4 || 2 != 22 && 3 == 3
-// Following the order of precedence -> (False && True || True && True) -> (False || True) -> True
-                    </code></pre>
+// Following the order of precedence -> (False && True || True && True) -> (False || True) -> True</code></pre>
                   </li>
                   <li>
                     <h4>Conditional Expressions (Ternary conditional)</h4>
@@ -409,25 +392,23 @@ False || False || False  // -> False
                       a certain condition is met or not met.
                     </p>
                     <h5>Syntax</h5>
-                    <pre><code class="language-typescript">
-CONDITION ? EVALUATE_IF_TRUE : EVALUATE_IF_FALSE
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">CONDITION ? EVALUATE_IF_TRUE : EVALUATE_IF_FALSE</code></pre>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// Simple evaluation of a number
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// Simple evaluation of a number
 True ? 3 : 2 // -> 3
 True ? 3 : 2 // -> 2
 
 // ✓ Simple evaluation of a number that will be assigned
 var var1 = 2;
 var var2 = 9;
-var smallest_or_equal = var1 <= var2 ? var1 : var2; // -> 2
-                    </code></pre>
+var smallest_or_equal = var1 <= var2 ? var1 : var2; // -> 2</code></pre>
                     <p>
                       As the ternary operator evaluates to more expressions, you can also chain it like this:
                     </p>
-                    <pre><code class="language-typescript">
-// ✓ Valid - Chained if ... else-if ... else-if ... else ternary operator
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// ✓ Valid - Chained if ... else-if ... else-if ... else ternary operator
 val result = condition1 ? value1
          : condition2 ? value2
          : condition3 ? value3
@@ -437,8 +418,7 @@ val result = condition1 ? value1
 if (condition1) { var result = value1; }
 else if (condition2) { var result = value2; }
 else if (condition3) { var result = value3; }
-else { var result = value4; }
-                    </code></pre>
+else { var result = value4; }</code></pre>
                   </li>
                   <li>
                     <h3>Conversion Expression</h3>
@@ -447,9 +427,8 @@ else { var result = value4; }
                       inside a string for actual numeric calculations.
                     </p>
                     <h4>Syntax</h4>
-                    <pre><code class="language-typescript">
-VALUE as TYPE
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">VALUE as TYPE</code></pre>
                     <h4>Allowed conversions</h4>
                     <ul class="bullet-list flex-column">
                       <li>
@@ -462,9 +441,7 @@ VALUE as TYPE
                           <li>Only contains numeric characters (<code>0 - 9</code>)</li>
                           <li>Is not empty (length > 0)</li>
                         </ul>
-                        <pre><code class="language-typescript">
-"203" as num // -> 203
-                        </code></pre>
+                        <pre><code class="language-typescript">"203" as num // -> 203</code></pre>
                       </li>
                       <li>
                         <h5>From <code>num</code> to <code>str</code></h5>
@@ -472,18 +449,14 @@ VALUE as TYPE
                           Converts a number (<code>255</code>) to an identical string representation
                           (<code>"255"</code>). This works on all numbers that were defined!
                         </p>
-                        <pre><code class="language-typescript">
-203 as str // -> "203"
-                        </code></pre>
+                        <pre><code class="language-typescript">203 as str // -> "203"</code></pre>
                       </li>
                       <li>
                         <h5>From <code>char</code> to <code>str</code></h5>
                         <p>
                           Converts a single character to a string. This works on all characters that were defined!
                         </p>
-                        <pre><code class="language-typescript">
-'c' as str // -> "c"
-                        </code></pre>
+                        <pre><code class="language-typescript">'c' as str // -> "c"</code></pre>
                       </li>
                       <li>
                         <h5>From <code>num</code> to <code>bool</code></h5>
@@ -491,10 +464,8 @@ VALUE as TYPE
                           Converts a number to a bool. This evaluates to <code>True</code> if it's a non-zero value.
                           This works on all numbers that were defined!
                         </p>
-                        <pre><code class="language-typescript">
-20 as bool // -> True
-0 as bool // -> False
-                        </code></pre>
+                        <pre><code class="language-typescript">20 as bool // -> True
+0 as bool // -> False</code></pre>
                       </li>
                       <li>
                         <h5>From <code>bool</code> to <code>num</code></h5>
@@ -502,10 +473,8 @@ VALUE as TYPE
                           Converts a bool to a number. This evaluates to <code>1</code> if it's <code>True</code>,
                           otherwise it's <code>0</code>. This works on all bools that were defined!
                         </p>
-                        <pre><code class="language-typescript">
-True as num // -> 1
-False as num // -> 0
-                        </code></pre>
+                        <pre><code class="language-typescript">True as num // -> 1
+False as num // -> 0</code></pre>
                       </li>
                     </ul>
                   </li>
@@ -517,12 +486,11 @@ False as num // -> 0
                       is not assigned to any variable, then it will be simply dropped, as if it never existed.
                     </p>
                     <h4>Syntax</h4>
-                    <pre><code class="language-typescript">
-call FUNC(ARGS...)
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">call FUNC(ARGS...)</code></pre>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// ✓ Calls a defined function
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// ✓ Calls a defined function
 def func1() -> num { return 5; }
 call func1(); // -> 5
 
@@ -532,9 +500,7 @@ var example1 = call func2(); // -> 10
 
 // ✓ Multiple function calls with the end-result being assigned to a variable
 def func3() -> num { return 25; }
-var example2 = call func2() + call func2(); // -> 50
-
-                    </code></pre>
+var example2 = call func2() + call func2(); // -> 50</code></pre>
                   </li>
                 </ul>
               </article>

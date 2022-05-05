@@ -120,9 +120,8 @@
                       evaluates one or more expressions, without the involvement of any other statements.
                     </p>
                     <h5>Syntax</h5>
-                    <pre><code class="language-typescript">
-EXPRESSION;
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">EXPRESSION;</code></pre>
                     <h5>Examples</h5>
                     <p>
                       Common examples of expression statements are with increment or decrement expressions (
@@ -130,12 +129,11 @@ EXPRESSION;
                       These often do not require any other expressions, and can simply be used as a whole statement,
                       like this:
                     </p>
-                    <pre><code class="language-typescript">
-// Defining a variable
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// Defining a variable
 var increase_this: num = 4;
 increase_this++; // Expression statement -> 5
-increase_this--; // Expression statement -> 4
-                    </code></pre>
+increase_this--; // Expression statement -> 4</code></pre>
                   </li>
                   <li>
                     <h4>Compound Statement</h4>
@@ -146,11 +144,10 @@ increase_this--; // Expression statement -> 4
                       <a href="./while-loop.html">while-loops</a> and <a href="./for-loop.html">for-loops</a>.
                     </p>
                     <h5>Syntax</h5>
-                    <pre><code class="language-typescript">
-{
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">{
   STATEMENTS (OPTIONAL)...
-}
-                    </code></pre>
+}</code></pre>
                   </li>
                   <li>
                     <h4>Selection statement</h4>
@@ -165,14 +162,13 @@ increase_this--; // Expression statement -> 4
                       if</code> branches and can have a single ending <code>else</code> branch, which is
                       evaluated if the previous condition were all <code>False</code>.
                     </p>
-                    <pre><code class="language-typescript">
-if (CONDITION) STATEMENT      // Required
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">if (CONDITION) STATEMENT      // Required
 else if (CONDITION) STATEMENT // Optional - No limit for the amount of 'else if' branches
-else STATEMENT                // Optional
-                    </code></pre>
+else STATEMENT                // Optional</code></pre>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// Simple comparison of a value
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// Simple comparison of a value
 var var1: num = 4;
 if (var1 == 4) {
   call print("It's 4");
@@ -188,8 +184,7 @@ if (var2 < 5) {
   call print("It's 5");
 } else {
   call print("It's more than 4");
-}
-                    </code></pre>
+}</code></pre>
                   </li>
                   <li>
                     <h4>For-loop Statement</h4>
@@ -199,9 +194,8 @@ if (var2 < 5) {
                       for-loops go to the docs section <a href="./for-loop.html">for-loop</a>.
                     </p>
                     <h5>Syntax</h5>
-                    <pre><code class="language-typescript">
-for (INIT_EXPRESSION (OPTIONAL); CONDITION (OPTIONAL); LOOP_EXPRESSION (OPTIONAL)) STATEMENT;
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">for (INIT_EXPRESSION (OPTIONAL); CONDITION (OPTIONAL); LOOP_EXPRESSION (OPTIONAL)) STATEMENT;</code></pre>
                     <p>
                       The execution of a for-loop follows this schema:
                     </p>
@@ -226,9 +220,8 @@ for (INIT_EXPRESSION (OPTIONAL); CONDITION (OPTIONAL); LOOP_EXPRESSION (OPTIONAL
                       <a href="./while-loop.html">while-loop</a>.
                     </p>
                     <h5>Syntax</h5>
-                    <pre><code class="language-typescript">
-while (CONDITION) STATEMENT;
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">while (CONDITION) STATEMENT;</code></pre>
                     <p>
                       The execution of a while-loop follows this schema:
                     </p>
@@ -250,9 +243,8 @@ while (CONDITION) STATEMENT;
                       <a href="./do-while-loop.html">do-while-loop</a>.
                     </p>
                     <h5>Syntax</h5>
-                    <pre><code class="language-typescript">
-do STATEMENT while (CONDITION);
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">do STATEMENT while (CONDITION);</code></pre>
                     <p>
                       The execution of a do-while-loop follows this schema:
                     </p>
@@ -290,16 +282,15 @@ do STATEMENT while (CONDITION);
                       </li>
                     </ul>
                     <h5>Syntax</h5>
-                    <pre><code class="language-typescript">
-// Only valid in functions
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// Only valid in functions
 return VALUE (OPTIONAL);
 
 // Only valid in loops
 break;
 
 // Only valid in loops
-continue;
-                    </code></pre>
+continue;</code></pre>
                   </li>
                 </ul>
               </article>
