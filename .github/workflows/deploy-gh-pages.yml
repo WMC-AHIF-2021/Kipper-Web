@@ -24,11 +24,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - name: Run Setup for "tree"
-        run: sudo apt-get install tree
       - name: Installs dependencies
         run: |
-          npm i
+          npm install
       - name: Download Update Script
         run: curl ${{ env.UPDATE_SCRIPT }} > ${{ env.SCRIPT_FILE_NAME }}
       - name: Insert Disclaimer Header
