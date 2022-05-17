@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
   <title>For-Loop</title>
   <meta
     name="description"
     content="For-loop to run a block of code under certain conditions"
   />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <script src="../js/main.ts"></script>
-  <link rel="manifest" href="../../site.webmanifest" />
-  <link rel="apple-touch-icon" href="../img/icon.png" />
-  <link rel="shortcut icon" type="image/ico" href="../../favicon.ico" />
+  <link rel="manifest" href="../../site.webmanifest"/>
+  <link rel="apple-touch-icon" href="../img/icon.png"/>
+  <link rel="shortcut icon" type="image/ico" href="../../favicon.ico"/>
 
-  <link rel="stylesheet" href="../css/normalize.css" />
-  <link rel="stylesheet" href="../css/main.css" />
-  <link rel="stylesheet" href="../css/screen.css" />
-  <link rel="stylesheet" href="../css/buttons.css" />
-  <link rel="stylesheet" href="../css/nav-bar.css" />
-  <link rel="stylesheet" href="../css/text.css" />
-  <link rel="stylesheet" href="../css/lists.css" />
-  <link rel="stylesheet" href="../css/footer.css" />
-  <link rel="stylesheet" href="../css/docs.css" />
-  <link rel="stylesheet" href="../css/table.css" />
+  <link rel="stylesheet" href="../css/normalize.css"/>
+  <link rel="stylesheet" href="../css/main.css"/>
+  <link rel="stylesheet" href="../css/screen.css"/>
+  <link rel="stylesheet" href="../css/buttons.css"/>
+  <link rel="stylesheet" href="../css/nav-bar.css"/>
+  <link rel="stylesheet" href="../css/text.css"/>
+  <link rel="stylesheet" href="../css/lists.css"/>
+  <link rel="stylesheet" href="../css/footer.css"/>
+  <link rel="stylesheet" href="../css/docs.css"/>
+  <link rel="stylesheet" href="../css/table.css"/>
 
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/951ef1f046.js" crossorigin="anonymous"></script>
 
   <!-- Including stylesheet for the Inter-Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter"/>
 
   <!-- Loading the prism highlighting style-sheet -->
-  <link rel="stylesheet" href="../prism/prism.css" />
+  <link rel="stylesheet" href="../prism/prism.css"/>
 
   <!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
   -->
-  <meta name="theme-color" content="#e01a4f" />
+  <meta name="theme-color" content="#e01a4f"/>
 </head>
 <body>
 <script src="../js/plugins.ts"></script>
@@ -94,7 +94,7 @@
     </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div class="flex-parent-container flex-fill-to-parent">
-      <ul class="no-style-list flex-parent-container flex-fill-to-parent">
+      <ul class="no-style-list flex-parent-container flex-fill-to-parent flex-row">
         <li id="docs-sidebar-nav-wrapper" class="flex-parent-container"></li>
         <script src="../js/gen-sidebar-docs-nav.ts"></script>
         <li class="docs-page-content-container">
@@ -112,9 +112,8 @@
                   the end of a loop cycle, like calling a function or increasing a counter.
                 </p>
                 <h3>Syntax</h3>
-                <pre><code class="language-typescript">
-for (INIT_EXPRESSION (OPTIONAL); CONDITION (OPTIONAL); LOOP_EXPRESSIONS (OPTIONAL)...) STATEMENT;
-                </code></pre>
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">for (INIT_EXPRESSION (OPTIONAL); CONDITION (OPTIONAL); LOOP_EXPRESSIONS (OPTIONAL)...) STATEMENT;</code></pre>
                 <p>
                   The execution of a for-loop follows this schema:
                 </p>
@@ -131,8 +130,8 @@ for (INIT_EXPRESSION (OPTIONAL); CONDITION (OPTIONAL); LOOP_EXPRESSIONS (OPTIONA
                   </li>
                 </ul>
                 <h3>Examples</h3>
-                <pre><code class="language-typescript">
-// ✓ Simple for-loop with an execution counter
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">// ✓ Simple for-loop with an execution counter
 for (var i: num = 1; i < 10; i++) {
   call print(f"Running for the {i}. time!");
 }
@@ -147,8 +146,7 @@ call print(f"Additional variable j = {j}"); // -> Additional variable j = 10
 // X Infinite loop - Avoid this, as it can result in freezing of your program without proper forced stopping
 for ( ; ; ) {
   call print(f"Running for the {i}. time!");
-}
-                </code></pre>
+}</code></pre>
               </article>
               <script src="../js/gen-docs-nav-specifier.ts"></script>
             </section>

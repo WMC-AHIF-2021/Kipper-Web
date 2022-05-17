@@ -94,7 +94,7 @@
     </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div class="flex-parent-container flex-fill-to-parent">
-      <ul class="no-style-list flex-parent-container flex-fill-to-parent">
+      <ul class="no-style-list flex-parent-container flex-fill-to-parent flex-row">
         <li id="docs-sidebar-nav-wrapper" class="flex-parent-container"></li>
         <script src="../js/gen-sidebar-docs-nav.ts"></script>
         <li class="docs-page-content-container">
@@ -121,8 +121,7 @@
                   <ul class="bullet-list flex-column">
                     <li>
                       <em class="green-checkmark">✓ VALID CODE</em>
-                      <pre><code class="language-typescript">
-// ✓ Valid
+                      <pre><code class="language-typescript">// ✓ Valid
 var var1: str = "This ";
 var var2: str = "is ";
 var var3: str = "a string";
@@ -134,13 +133,11 @@ var var5: num = var4 as num; // Converts the value to 'num' -> 42
 
 // ✓ Also Valid
 var var6: num = 32;
-var var7: num = var6 as num; // Converts the value to 'num' -> 32
-                      </code></pre>
+var var7: num = var6 as num; // Converts the value to 'num' -> 32</code></pre>
                     </li>
                     <li>
                       <em class="red-checkmark">X INVALID CODE</em>
-                      <pre><code class="language-typescript">
-// X Invalid - May not re-define with new type signature
+                      <pre><code class="language-typescript">// X Invalid - May not re-define with new type signature
 var var1: str = "3";
 var var1: num = 3;
 
@@ -150,8 +147,7 @@ var var3: num = var4 as num; // Impossible to convert!
 
 // X Invalid - Invalid conversion from 'str' to 'num'
 var var2: str = ""; // empty
-var var3: num = var2 as num; // Impossible to convert, as it is an empty value!
-                      </code></pre>
+var var3: num = var2 as num; // Impossible to convert, as it is an empty value!</code></pre>
                     </li>
                   </ul>
                 </article>
@@ -164,8 +160,8 @@ var var3: num = var2 as num; // Impossible to convert, as it is an empty value!
                       always be used with the standard mathematical <a href="./expressions.html">expressions</a>.
                     </p>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// ✓ Simple integer number
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// ✓ Simple integer number
 var var1: num = 400;
 
 // ✓ Simple floating point number
@@ -190,32 +186,28 @@ var var2: num = 25 / 4; // -> 6.25
 var var2: num = 2 ** 8; // -> 256
 
 // ✓ Rest of Divide
-var var2: num = 51 % 10; // -> 1
-                    </code></pre>
+var var2: num = 51 % 10; // -> 1</code></pre>
                     <article class="red-highlight-text">
                       <h4>Important</h4>
                       <p>
                         Remember fact that Kipper will interpret mathematical calculations properly as defined in the
                         standard math conventions.
                       </p>
-                      <pre><code class="language-typescript">
-// ✓ Standard math rules apply
-var result: num = 4 + 4 * 5; // -> 24
-                      </code></pre>
+                      <pre><code class="language-typescript">// ✓ Standard math rules apply
+var result: num = 4 + 4 * 5; // -> 24</code></pre>
                     </article>
                     <p>
                       Additionally, to the default Base-10 values, you may also use the following with <code>num</code>:
                     </p>
-                    <pre><code class="language-typescript">
-// ✓ Bytes Support
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// ✓ Bytes Support
 var bytes: num = 0b11111010; // -> 250
 
 // ✓ Hex-Decimal Number Support
 var hex: num = 0xFFA2; // -> 65442
 
 // ✓ Octal Number Support
-var octal: num = 0o347; // -> 231
-                    </code></pre>
+var octal: num = 0o347; // -> 231</code></pre>
                   </li>
                   <li>
                     <h4>String Value - <code>str</code></h4>
@@ -224,8 +216,8 @@ var octal: num = 0o347; // -> 231
                       the length of the list that represents the string will always be increased as needed.
                     </p>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// ✓ Standard addition and concatenations are allowed
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// ✓ Standard addition and concatenations are allowed
 var var4: str = "This is a";
 var var5: str = " string";
 var result_str: str = var5 + var6; // -> "This is a string"
@@ -234,8 +226,7 @@ var result_str: str = var5 + var6; // -> "This is a string"
 var kipper: str = "ƛ";
 
 // ✓ Multi character UTF-16 characters in strings
-var kipper: str = "Kipper is 🦊💘";
-                    </code></pre>
+var kipper: str = "Kipper is 🦊💘";</code></pre>
                     <p>
                       Strings are defined using the <code>""</code> syntax, which automatically hints the
                       <code>str</code> type!
@@ -249,8 +240,8 @@ var kipper: str = "Kipper is 🦊💘";
                       hinting a single character.
                     </p>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// ✓ Simple UTF-16 Character
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// ✓ Simple UTF-16 Character
 var var6: char = '4';
 
 // ✓ Single character UTF-16 character
@@ -275,8 +266,7 @@ var result: char = var10 + var11; // -> Incompatible types 'char' and 'num'
 var var13: char = '💘'; // -> X Char may only be a single character
 
 // ✓ Multi character UTF-16 characters in strings
-var var14: str = "💘";
-                    </code></pre>
+var var14: str = "💘";</code></pre>
                   </li>
                   <li>
                     <h4>Boolean Value - <code>bool</code></h4>
@@ -285,8 +275,8 @@ var var14: str = "💘";
                       The value can be also represented as 0 (<code>False</code>) and 1 (<code>True</code>).
                     </p>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// ✓ Simple bool value using 'True' and 'False'
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// ✓ Simple bool value using 'True' and 'False'
 var var15: bool = False;
 var var16: bool = True;
 
@@ -297,8 +287,7 @@ var is_equal: bool = var10 <= var11; // 3 smaller than 48 -> True
 
 // ✓ Boolean calculations with numbers
 var var19: bool = True;
-var var20: num = var18 as num + 2; // -> 3
-                    </code></pre>
+var var20: num = var18 as num + 2; // -> 3</code></pre>
                   </li>
                   <li>
                     <h4>Void Value - <code>void</code></h4>
@@ -308,8 +297,8 @@ var var20: num = var18 as num + 2; // -> 3
                       practically useless, and it should be avoided for variable usage!
                     </p>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// ✓ Creating a void variable - This may only be 'void'
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// ✓ Creating a void variable - This may only be 'void'
 var var21: void = void;
 
 // X May not set a 'void' variable to anything except 'void'
@@ -326,8 +315,7 @@ def func2() -> void {
 }
 
 // ✓ Assigning void return to variable of type 'void'
-var var23: void = func2();
-                    </code></pre>
+var var23: void = func2();</code></pre>
                   </li>
                   <li>
                     <h4>List Value - <code>list&lt;type&gt;</code></h4>
@@ -336,12 +324,11 @@ var var23: void = func2();
                       a value, but rather a sequence of other data types. Therefore, a list has also a length, and
                       indexes for each item, which you may use to access them using the following syntax:
                     </p>
-                    <pre><code class="language-typescript">
-VAR[INDEX]
-                    </code></pre>
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">VAR[INDEX]</code></pre>
                     <h5>Examples</h5>
-                    <pre><code class="language-typescript">
-// ✓ Creating a simple list
+                    <!-- prettier-ignore -->
+                    <pre><code class="language-typescript">// ✓ Creating a simple list
 var var24: list&lt;num&gt; = [ 2, 3, 4 ];
 
 // ✓ Accessing item of value per index (0 = first item)
@@ -365,8 +352,7 @@ var var27: list&lt;num&gt; = [ "string" ];
 
 // X May not convert list to another type as a whole!
 var var28: list&lt;str&gt; = [ "99", "1893", "4" ];
-var var29: list&lt;num&gt; = var27 as list&lt;num&gt;; // -> Invalid conversion
-                    </code></pre>
+var var29: list&lt;num&gt; = var27 as list&lt;num&gt;; // -> Invalid conversion</code></pre>
                   </li>
                 </ul>
               </article>

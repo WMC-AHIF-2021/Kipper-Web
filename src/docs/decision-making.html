@@ -94,7 +94,7 @@
     </header>
     <!-- Main Content, where the text is located and the items unique to this site are defined -->
     <div class="flex-parent-container flex-fill-to-parent">
-      <ul class="no-style-list flex-parent-container flex-fill-to-parent">
+      <ul class="no-style-list flex-parent-container flex-fill-to-parent flex-row">
         <li id="docs-sidebar-nav-wrapper" class="flex-parent-container"></li>
         <script src="../js/gen-sidebar-docs-nav.ts"></script>
         <li class="docs-page-content-container">
@@ -118,14 +118,13 @@
                   if</code> branches and can have a single ending <code>else</code> branch, which is
                   evaluated if the previous condition were all <code>False</code>.
                 </p>
-                <pre><code class="language-typescript">
-if (CONDITION) STATEMENT      // Required
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">if (CONDITION) STATEMENT      // Required
 else if (CONDITION) STATEMENT // Optional - No limit for the amount of 'else if' branches
-else STATEMENT                // Optional
-                    </code></pre>
+else STATEMENT                // Optional</code></pre>
                 <h3>Examples</h3>
-                <pre><code class="language-typescript">
-// Simple comparison of a value
+                <!-- prettier-ignore -->
+                <pre><code class="language-typescript">// Simple comparison of a value
 var var1: num = 4;
 if (var1 == 4) {
   call print("It's 4");
@@ -160,8 +159,7 @@ else
   if (var4 == "Hello!")
     call print("It says Hello! Hello back!");
   else
-    call print(f"It says: {var4}");
-                    </code></pre>
+    call print(f"It says: {var4}");</code></pre>
               </article>
               <script src="../js/gen-docs-nav-specifier.ts"></script>
             </section>

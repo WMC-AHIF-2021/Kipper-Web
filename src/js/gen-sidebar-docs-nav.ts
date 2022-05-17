@@ -15,6 +15,10 @@ const docsFiles = {
     file: "our-goals.html",
     title: "Goals & Timeline"
   },
+  compiler: {
+    file: "compiler.html",
+    title: "Kipper Compiler"
+  },
   supportedPlatforms: {
     file: "supported-platforms.html",
     title: "Supported platforms"
