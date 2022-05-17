@@ -1,5 +1,5 @@
 // Import the kipper module
-importScripts('//cdn.jsdelivr.net/npm/@kipper/base@latest/kipper-standalone.min.js');
+importScripts('//cdn.jsdelivr.net/npm/@kipper/core@latest/kipper-standalone.min.js');
 
 // Import the babel transpiler
 importScripts('//unpkg.com/@babel/standalone/babel.min.js');
