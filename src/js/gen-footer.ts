@@ -26,7 +26,7 @@ function GenFooter(): string {
   </li>
   <li id="copyright">
     <small class="centered-text white-text">
-      © 2021-2022 Luna Klatzer, Maximilian Lehner & Maximilian Seebacher
+      © 2021-2022 Luna Klatzer, Maximilian Seebacher & Maximilian Lehner
     </small>
   </li>
 </ul>`;
