@@ -42,7 +42,13 @@ onmessage = async function(event) {
   console.log("Received compilation request from main thread. Preparing compilation in Worker.");
 
   // Compile the code to TypeScript
-  const result = (await compiler.compile(event.data, {globals: [logHandler]})).write();
+  let result: string;
+  try {
+    result = (await compiler.compile(event.data, {globals: [logHandler]})).write();
+  } catch (e) {
+    postMessage(1);
+    throw e;
+  }
 
   postMessage(0);
 
