@@ -104,6 +104,7 @@
   "dependencies": {
     "commonmark": "^0.30.0",
     "marked": "^4.0.15",
-    "showdown": "^2.1.0"
+    "showdown": "^2.1.0",
+    "vuepress-plugin-meilisearch": "^0.12.2"
   }
 }
