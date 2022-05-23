@@ -7,9 +7,8 @@ from glob import glob
 BANNER_TO_INSERT: str = """
 <div id="disclaimer-banner" style="display: flex; justify-content: center; background-color: white;">
     <p style="padding: 0.5rem; font-style: italic; margin: 0;">
-      Educational, non-profit project created by Webstorm
+      Educational, non-profit project created by students
     </p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/WebStorm_Icon.png/1024px-WebStorm_Icon.png" alt="Webstorm Logo"/>
     <a href="https://www.htl-leonding.at/" style="padding: 0.5rem 0; font-style: italic;">
       @ HTL Leonding.
     </a>
