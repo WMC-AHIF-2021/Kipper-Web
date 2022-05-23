@@ -74,20 +74,24 @@ function runCode(): void {
         }
       // Numeric values signalise change of state or program handling
       } else if (numMsg) {
+        const statusCode = event.data as number;
         if (!running) {
-          // Compilation finished -> Say how long it took
-          const endTimeInSeconds: number = (new Date().getTime() - startTime) / 1000;
-          writeLineToCompilerOutput(`\nCompilation finished in ${endTimeInSeconds}s`);
+          // Only if the status code is 0 the compilation successfully finished.
+          if (statusCode === 0) {
+            // Compilation finished -> Say how long it took
+            const endTimeInSeconds: number = (new Date().getTime() - startTime) / 1000;
+            writeLineToCompilerOutput(`\nCompilation finished in ${endTimeInSeconds}s`);
 
-          // Enable output to 'stdout'
-          switchToConsoleOutput();
-          running = true;
+            // Enable output to 'stdout'
+            switchToConsoleOutput();
+            running = true;
+          } else {
+            // Abort because of the error
+            stopCode();
+          }
         } else {
-          // Stop as this is the console exit status
-          const exitCode = event.data as number;
-
           // End of the program
-          printProgramExitCode(exitCode);
+          printProgramExitCode(statusCode);
           switchButtonToRun();
         }
       // Unknown
