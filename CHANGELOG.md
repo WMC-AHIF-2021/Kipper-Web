@@ -5,15 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [v0.4.0] - 2022-05-17
 ### Added
 - Included Showdown library (Markdown Converter).
 - Renderer and Converter for the changelog.html page.
-- Implementation to convert the Markdown from GitHub to HTML for the changelog.html page.
+- Implemented translation of the [Kipper CHANGELOG.md](https://github.com/Luna-Klatzer/Kipper/tree/main/CHANGELOG.md) to
+  HTML on the changelog.html page.
+- Implemented error handling for Kipper compilation errors.
 
 ### Changed
 - Set default `flex-direction` of lists to `column` instead of previously `row`.
 - Updated list format for the header.
+- Updated Kipper package to `@kipper/core@latest`.
 
 ### Removed
 
@@ -145,6 +148,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed unnecessary `start_local_Server.exe`
 
 [unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/HEAD...base-dev
+[v0.4.0]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.5...v0.2.0
 [v0.1.5]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.4...v0.1.5
