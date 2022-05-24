@@ -3,6 +3,7 @@ Goals;/docs/our-goals.html
 Goal;/docs/our-goals.html
 Timeline;/docs/our-goals.html
 Supported Platforms;/docs/supported-platforms.html
+Supported;/docs/supported-platforms.html
 Platforms;/docs/supported-platforms.html
 Usage;/docs/usage-examples.html
 Usage Examples;/docs/usage-examples.html
