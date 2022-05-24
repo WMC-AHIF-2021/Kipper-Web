@@ -83,7 +83,7 @@
             </li>
             <li id="search-bar">
               <label for="search-bar-input"></label>
-              <input id="search-bar-input" type="search" onKeyPress="return checkSubmit(event)" onsubmit="search()" placeholder="Search..." spellcheck="false">
+              <input id="search-bar-input" type="search" onkeyup="search()" placeholder="Search..." spellcheck="false">
               <script src="./js/search-bar.ts"></script>
             </li>
           </ul>
@@ -181,10 +181,10 @@
     }
     if(link != ""){
       //Positive Result at Search
-      console.log("The Search found: " + link + " for your request (" + searchInput + ")!");
+      console.log("The Search found: " + link + " for your request! (" + searchInput + ")");
     }else{
       //Negative Result at Search
-      console.log("Search didnt find anything");
+      //console.log("Search didnt find anything");
     }
   }
 </script>
