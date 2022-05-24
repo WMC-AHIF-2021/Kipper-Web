@@ -5,10 +5,6 @@
   background-color: var(--scheme-background-gray);
 }
 
-#footer-bar #social-icon {
-  background-color: black;
-}
-
 #footer-content {
   padding-top: 2rem;
   padding-bottom: 2rem;

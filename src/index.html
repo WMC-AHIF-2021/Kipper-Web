@@ -3,10 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Welcome to Kipper!</title>
-  <meta
-    name="description"
-    content="The Simple and Blazing-Fast Open-Source Language"
-  />
+  <meta name="description" content="The Simple and Blazing-Fast Open-Source Language" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <script src="./js/main.ts"></script>
@@ -34,18 +31,60 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
 
   <!--
-  Specifying the preferred environment colour to be the primary scheme colour.
-  See main.css for the --scheme-primary variable
-  -->
-  <meta name="theme-color" content="#e01a4f" />
+Specifying the preferred environment colour to be the primary scheme colour.
+See main.css for the --scheme-primary variable
+-->
+<meta name="theme-color" content="#e01a4f" />
+  <script>
+  function search() {
+  document.getElementById("search-result").style.display = "block";
+  document.getElementById("overlay-search").style.display = "block";
+  document.getElementById("overlay-dark").style.display = "block";
+  document.getElementById("search-result").innerHTML = "Type to search the Page...";
+  let link = "";
+  let searchBarInput = document.getElementById("search-bar-input");
+  let searchInput = searchBarInput.value;
+  let count = 0;
+  let EndCount = 0;
+
+  for (let i = 0; i < SearchIndexArray.length; i++) {
+  if (SearchIndexArray[i][0].toLowerCase() == searchInput.toLowerCase()) {
+  link = SearchIndexArray[i][1];
+  EndCount = count;
+  } else {
+  count++;
+  }
+  }
+  count = EndCount;
+  let PageTitle = SearchIndexArray[count][2];
+  let PageDescription = SearchIndexArray[count][3];
+  if (link != "") {
+  //Positive Result at Search
+  console.log("The Search found: " + link + " for your request! (" + searchInput + ")");
+  document.getElementById("search-result").innerHTML = '<p><a  href="' + link + '">' + capitalizeFirstLetter(PageTitle) + "</a></p><small>" + PageDescription + "</small>";
+  } else {
+  //Negative Result at Search
+  //console.log("Search didnt find anything");
+  document.getElementById("search-result").innerHTML = "Sorry, we couldn't find anything for your Search!";
+  }
+  document.getElementById("search-result").style.display = "block";
+  document.getElementById("overlay-search").style.display = "block";
+  document.getElementById("overlay-dark").style.display = "block";
+  }
+  </script>
 </head>
 <body>
+<!-- Overlay for Displaying the Search Results-->
+<div id="overlay-dark">
+  <div id="overlay-search">
+    <div class="search-result" style="margin: 1em;" id="search-result"></div>
+  </div>
+</div>
 <script src="./js/plugins.ts"></script>
 <script src="./prism/prism.js"></script>
 
 <!-- Show Error if JS is disabled or blocked -->
 <noscript>Oops that shouldn't have happened! Please enable Java-Script to use our Site!</noscript>
-
 <div id="main-frame">
   <div id="actual-content">
     <!-- The top element: menu and search bar -->
@@ -53,9 +92,8 @@
       <nav id="header-nav-bar">
         <ul>
           <li>
-            <a href="./index.html"
-               class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
-              <img id="kipper-logo" src="./img/base_head.png" alt="">
+            <a href="./index.html" class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
+              <img id="kipper-logo" src="./img/base_head.png" alt="" />
               <a class="underline-button" href="./index.html">
                 <h1>Kipper</h1>
               </a>
@@ -71,9 +109,11 @@
             <a href="playground.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Playground</h4></a>
           </li>
           <li>
-            <a href="./changelog.html"
-               class="underline-button top-nav-menu-item top-nav-button"><h4>
-              Changelog</h4></a>
+            <a href="./changelog.html" class="underline-button top-nav-menu-item top-nav-button">
+              <h4>
+                Changelog
+              </h4>
+            </a>
           </li>
         </ul>
         <div id="search-bar-wrapper">
@@ -83,7 +123,7 @@
             </li>
             <li id="search-bar">
               <label for="search-bar-input"></label>
-              <input id="search-bar-input" type="search" onkeyup="search()" placeholder="Search..." spellcheck="false">
+              <input id="search-bar-input" type="search" onkeyup="search()" placeholder="Search..." spellcheck="false" />
               <script src="./js/search-bar.ts"></script>
             </li>
           </ul>
@@ -105,7 +145,7 @@
           </li>
           <li>
             <a href="./playground.html">
-              <img id="welcome-image" src="./img/carbon-code-main.png" alt="">
+              <img id="welcome-image" src="./img/carbon-code-main.png" alt="" />
             </a>
           </li>
         </ul>
@@ -117,76 +157,76 @@
   </div>
 </div>
 <script>
+  document.getElementById("search-result").innerHTML = "Type to search the Page...";
   console.log("Search loaded!");
-  let StringOfSearchIndex = "Quickstart;/docs/quickstart.html\n" +
-    "Goals;/docs/our-goals.html\n" +
-    "Goal;/docs/our-goals.html\n" +
-    "Timeline;/docs/our-goals.html\n" +
-    "Supported Platforms;/docs/supported-platforms.html\n" +
-    "Supported;/docs/supported-platforms.html\n" +
-    "Platforms;/docs/supported-platforms.html\n" +
-    "Usage;/docs/usage-examples.html\n" +
-    "Usage Examples;/docs/usage-examples.html\n" +
-    "Examples;/docs/usage-examples.html\n" +
-    "Variables;/docs/variables.html\n" +
-    "Variables Datatypes;/docs/datatypes.html\n" +
-    "Kipper Expressions;/docs/expressions.html\n" +
-    "Expressions;/docs/expressions.html\n" +
-    "Kipper Statements;/docs/statements.html\n" +
-    "Statements;/docs/statements.html\n" +
-    "If;/docs/decision-making.html\n" +
-    "If-Statement;/docs/decision-making.html\n" +
-    "While;/docs/while-loop.html\n" +
-    "While-Loop;/docs/while-loop.html\n" +
-    "Do-While;/docs/do-while-loop.html\n" +
-    "Do-While-Loop;/docs/do-while-loop.html\n" +
-    "For;/docs/for-loop.html\n" +
-    "For-Loop;/docs/for-loop.html\n" +
-    "Function;/docs/functions.html\n" +
-    "Functions;/docs/functions.html\n" +
-    "Method;/docs/functions.html\n" +
-    "Methods;/docs/functions.html\n" +
-    "Built-In;/docs/built-in-functions.html\n" +
-    "Playground;/playground.html\n" +
-    "Docs;/docs/index.html\n" +
-    "Changelog;/changelog.html\n" +
-    "Download;/download.html\n" +
-    "Downloads;/download.html\n" +
-    "Install;/download.html\n";
+  let StringOfSearchIndex =
+    "Quickstart;/docs/quickstart.html;Quickstart;How to quickly start with Kipper\n" +
+    "Goals;/docs/our-goals.html;Our Goals;Goals & Timeline for Kipper\n" +
+    "Goal;/docs/our-goals.html;Our Goals;Goals & Timeline for Kipper\n" +
+    "Our Goal;/docs/our-goals.html;Our Goals;Goals & Timeline for Kipper\n" +
+    "Our Goals;/docs/our-goals.html;Our Goals;Goals & Timeline for Kipper\n" +
+    "Timeline;/docs/our-goals.html;Our Timeline;Goals & Timeline for Kipper\n" +
+    "Supported Platforms;/docs/supported-platforms.html;Supported Platforms;Supported platforms for Kipper\n" +
+    "Supported;/docs/supported-platforms.html;Supported Platforms;Supported platforms for Kipper\n" +
+    "Platforms;/docs/supported-platforms.html;Supported Platforms;Supported platforms for Kipper\n" +
+    "Usage;/docs/usage-examples.html;Usage;Example to Show how Kipper Works\n" +
+    "Usage Examples;/docs/usage-examples.html;Usage;Example to Show how Kipper Works\n" +
+    "Examples;/docs/usage-examples.html;Usage;Example to Show how Kipper Works\n" +
+    "Variables;/docs/variables.html;Variables;Storing values and defining variables\n" +
+    "Variables Datatypes;/docs/datatypes.html;Variables Datatypes;Datatypes in the Kipper language\n" +
+    "Kipper Expressions;/docs/expressions.html;Kipper Expressions;Expressions, which represent the core functionality of Kipper\n" +
+    "Expressions;/docs/expressions.html;Kipper Expressions;Expressions, which represent the core functionality of Kipper\n" +
+    "Kipper Statements;/docs/statements.html;Kipper Statements;Statements, which represent the core functionality of Kipper\n" +
+    "Statements;/docs/statements.html;Kipper Statements;Statements, which represent the core functionality of Kipper\n" +
+    "If;/docs/decision-making.html;If-Statement;Decision making using if-statements\n" +
+    "If-Statement;/docs/decision-making.html;If-Statement;Decision making using if-statements\n" +
+    "While;/docs/while-loop.html;While-Loop;While-loop to run a block of code multiple times under certain conditions\n" +
+    "While-Loop;/docs/while-loop.html;While-Loop;While-loop to run a block of code multiple times under certain conditions\n" +
+    "Do-While;/docs/do-while-loop.html;Do-While-Loop;While-loop to run a block of code multiple times under certain conditions\n" +
+    "Do-While-Loop;/docs/do-while-loop.html;Do-While-Loop;While-loop to run a block of code multiple times under certain conditions\n" +
+    "For;/docs/for-loop.html;For-Loop;For-loop to run a block of code under certain conditions\n" +
+    "For-Loop;/docs/for-loop.html;For-Loop;For-loop to run a block of code under certain conditions\n" +
+    "Function;/docs/functions.html;Functions;Functions (callable code-blocks) for reusing code\n" +
+    "Functions;/docs/functions.html;Functions;Functions (callable code-blocks) for reusing code\n" +
+    "Method;/docs/functions.html;Functions;Functions (callable code-blocks) for reusing code\n" +
+    "Methods;/docs/functions.html;Functions;Functions (callable code-blocks) for reusing code\n" +
+    "Built-In;/docs/built-in-functions.html;Built-In;Built-in Functions\n" +
+    "Playground;/playground.html;Playground;The playground for trying out Kipper and learning the basics in a pre-configured setup\n" +
+    "Play;/playground.html;Playground;The playground for trying out Kipper and learning the basics in a pre-configured setup\n" +
+    "Docs;/docs/index.html;Documentation;Docs Overview and General Info\n" +
+    "Changelog;/changelog.html;Changelog;Changelog for the Kipper Language\n" +
+    "Change;/changelog.html;Changelog;Changelog for the Kipper Language\n" +
+    "Download;/download.html;Downloads;Downloads for the Kipper Language\n" +
+    "Downloads;/download.html;Downloads;Downloads for the Kipper Language\n" +
+    "Install;/download.html;Downloads;Downloads for the Kipper Language\n";
 
   let IndexArray = StringOfSearchIndex.split("\n");
   let SearchIndexArray = [];
   let count = 0;
   for (let i of IndexArray) {
     let temp = i.split(";");
-    let TempStringOne = temp[0];
-    let TempStringTwo = temp[1];
-    SearchIndexArray.push([TempStringOne, TempStringTwo]);
+    let Keyword = temp[0];
+    let Path = temp[1];
+    let PageTitle = temp[2];
+    let PageDescription = temp[3];
+    SearchIndexArray.push([Keyword, Path, PageTitle, PageDescription]);
     count++;
   }
-  if(SearchIndexArray == []){
+  if (SearchIndexArray == []) {
     console.error("Critical Error: Searchbar couldn't be initialised because the Index could not be loaded!");
-  }else{
+    document.getElementById("search-bar").style.display = "none";
+  } else {
     console.log("Index initialised!");
   }
-  function search(){
-    let link = "";
-    let searchBarInput = document.getElementById('search-bar-input');
-    let searchInput = searchBarInput.value;
 
-    for(let i = 0; i < SearchIndexArray.length; i++){
-      if(SearchIndexArray[i][0].toLowerCase() == searchInput.toLowerCase()){
-        link = SearchIndexArray[i][1];
-      }
-    }
-    if(link != ""){
-      //Positive Result at Search
-      console.log("The Search found: " + link + " for your request! (" + searchInput + ")");
-    }else{
-      //Negative Result at Search
-      //console.log("Search didnt find anything");
-    }
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    console.log("DOM fully loaded and parsed");
+  });
 </script>
 </body>
 </html>
