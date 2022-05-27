@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
   <title>Welcome to Kipper!</title>
-  <meta name="description" content="The Simple and Blazing-Fast Open-Source Language" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The Simple and Blazing-Fast Open-Source Language"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <script src="./js/main.ts"></script>
-  <link rel="manifest" href="../site.webmanifest" />
-  <link rel="apple-touch-icon" href="./img/icon.png" />
-  <link rel="shortcut icon" type="image/ico" href="../favicon.ico" />
+  <link rel="manifest" href="../site.webmanifest"/>
+  <link rel="apple-touch-icon" href="./img/icon.png"/>
+  <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
 
-  <link rel="stylesheet" href="./css/normalize.css" />
-  <link rel="stylesheet" href="./css/main.css" />
-  <link rel="stylesheet" href="./css/screen.css" />
-  <link rel="stylesheet" href="./css/buttons.css" />
-  <link rel="stylesheet" href="./css/nav-bar.css" />
-  <link rel="stylesheet" href="./css/text.css" />
-  <link rel="stylesheet" href="./css/lists.css" />
-  <link rel="stylesheet" href="./css/footer.css" />
-  <link rel="stylesheet" href="./css/table.css" />
+  <link rel="stylesheet" href="./css/normalize.css"/>
+  <link rel="stylesheet" href="./css/main.css"/>
+  <link rel="stylesheet" href="./css/screen.css"/>
+  <link rel="stylesheet" href="./css/buttons.css"/>
+  <link rel="stylesheet" href="./css/nav-bar.css"/>
+  <link rel="stylesheet" href="./css/text.css"/>
+  <link rel="stylesheet" href="./css/lists.css"/>
+  <link rel="stylesheet" href="./css/footer.css"/>
+  <link rel="stylesheet" href="./css/table.css"/>
 
   <!-- Loading the prism highlighting style-sheet -->
-  <link rel="stylesheet" href="./prism/prism.css" />
+  <link rel="stylesheet" href="./prism/prism.css"/>
 
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/951ef1f046.js" crossorigin="anonymous"></script>
 
   <!-- Including stylesheet for the Inter-Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter"/>
 
   <!--
 Specifying the preferred environment colour to be the primary scheme colour.
 See main.css for the --scheme-primary variable
 -->
-<meta name="theme-color" content="#e01a4f" />
+  <meta name="theme-color" content="#e01a4f"/>
   <script>
-  function search() {
-  document.getElementById("search-result").style.display = "block";
-  document.getElementById("overlay-search").style.display = "block";
-  document.getElementById("overlay-dark").style.display = "block";
-  document.getElementById("search-result").innerHTML = "Type to search the Page...";
-  let link = "";
-  let searchBarInput = document.getElementById("search-bar-input");
-  let searchInput = searchBarInput.value;
-  let count = 0;
-  let EndCount = 0;
+    function search() {
+      document.getElementById("search-result").style.display = "block";
+      document.getElementById("overlay-search").style.display = "block";
+      document.getElementById("overlay-dark").style.display = "block";
+      document.getElementById("search-result").innerHTML = "Type to search the Page...";
+      let link = "";
+      let searchBarInput = document.getElementById("search-bar-input");
+      let searchInput = searchBarInput.value;
+      let count = 0;
+      let EndCount = 0;
 
-  for (let i = 0; i < SearchIndexArray.length; i++) {
-  if (SearchIndexArray[i][0].toLowerCase() == searchInput.toLowerCase()) {
-  link = SearchIndexArray[i][1];
-  EndCount = count;
-  } else {
-  count++;
-  }
-  }
-  count = EndCount;
-  let PageTitle = SearchIndexArray[count][2];
-  let PageDescription = SearchIndexArray[count][3];
-  if (link != "") {
-  //Positive Result at Search
-  console.log("The Search found: " + link + " for your request! (" + searchInput + ")");
-  document.getElementById("search-result").innerHTML = '<p><a  href="' + link + '">' + capitalizeFirstLetter(PageTitle) + "</a></p><small>" + PageDescription + "</small>";
-  } else {
-  //Negative Result at Search
-  //console.log("Search didnt find anything");
-  document.getElementById("search-result").innerHTML = "Sorry, we couldn't find anything for your Search!";
-  }
-  document.getElementById("search-result").style.display = "block";
-  document.getElementById("overlay-search").style.display = "block";
-  document.getElementById("overlay-dark").style.display = "block";
-  }
+      for (let i = 0; i < SearchIndexArray.length; i++) {
+        if (SearchIndexArray[i][0].toLowerCase() === searchInput.toLowerCase()) {
+          link = SearchIndexArray[i][1];
+          EndCount = count;
+        } else {
+          count++;
+        }
+      }
+      count = EndCount;
+      let PageTitle = SearchIndexArray[count][2];
+      let PageDescription = SearchIndexArray[count][3];
+      if (link !== "") {
+        // Positive Result at Search
+        console.log("The Search found: " + link + " for your request! (" + searchInput + ")");
+        document.getElementById("search-result").innerHTML = '<p><a  href="' + link + '">' + capitalizeFirstLetter(PageTitle) + "</a></p><small>" + PageDescription + "</small>";
+      } else {
+        // Negative Result at Search
+        // console.log("Search didnt find anything");
+        document.getElementById("search-result").innerHTML = "Sorry, we couldn't find anything for your search!";
+      }
+      document.getElementById("search-result").style.display = "block";
+      document.getElementById("overlay-search").style.display = "block";
+      document.getElementById("overlay-dark").style.display = "block";
+    }
   </script>
 </head>
 <body>
@@ -92,8 +92,9 @@ See main.css for the --scheme-primary variable
       <nav id="header-nav-bar">
         <ul>
           <li>
-            <a href="./index.html" class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
-              <img id="kipper-logo" src="./img/base_head.png" alt="" />
+            <a href="./index.html"
+               class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
+              <img id="kipper-logo" src="./img/base_head.png" alt=""/>
               <a class="underline-button" href="./index.html">
                 <h1>Kipper</h1>
               </a>
@@ -123,7 +124,7 @@ See main.css for the --scheme-primary variable
             </li>
             <li id="search-bar">
               <label for="search-bar-input"></label>
-              <input id="search-bar-input" type="search" onkeyup="search()" placeholder="Search..." spellcheck="false" />
+              <input id="search-bar-input" type="search" onkeyup="search()" placeholder="Search..." spellcheck="false"/>
               <script src="./js/search-bar.ts"></script>
             </li>
           </ul>
@@ -145,7 +146,7 @@ See main.css for the --scheme-primary variable
           </li>
           <li>
             <a href="./playground.html">
-              <img id="welcome-image" src="./img/carbon-code-main.png" alt="" />
+              <img id="welcome-image" src="./img/carbon-code-main.png" alt=""/>
             </a>
           </li>
         </ul>
@@ -224,7 +225,7 @@ See main.css for the --scheme-primary variable
   }
 </script>
 <script>
-  document.addEventListener("DOMContentLoaded", function(event) {
+  document.addEventListener("DOMContentLoaded", function (event) {
     console.log("DOM fully loaded and parsed");
   });
 </script>
