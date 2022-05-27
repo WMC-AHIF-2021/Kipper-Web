@@ -73,6 +73,11 @@
   caret-color: var(--scheme-primary);
 }
 
+#code-editor-textarea::selection {
+  text-shadow: none;
+  background: rgba(70, 93, 160, 0.2);
+}
+
 #highlighting-field-content {
   margin: 0 !important;
   padding: 0 !important;
