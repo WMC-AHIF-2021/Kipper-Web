@@ -2,12 +2,12 @@
 
 :root {
   --default-section-margin: 1.6rem;
-  --default-article-margin: .8rem;
-  --default-parapgraph-margin: .4rem;
+  --default-article-margin: 0.8rem;
+  --default-parapgraph-margin: 0.4rem;
 }
 
 html {
-  font-family: 'Inter', Georgia, Verdana, monospace;
+  font-family: "Inter", Georgia, Verdana, monospace;
 }
 
 section {
@@ -36,9 +36,14 @@ p + p {
   margin-top: var(--default-parapgraph-margin);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin-top: .8em;
-  margin-bottom: .4em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
 }
 
 h1 {
@@ -96,7 +101,10 @@ h6 {
   align-items: center;
 }
 
-a, a:link, a:active, a:visited {
+a,
+a:link,
+a:active,
+a:visited {
   color: #c71239;
   text-decoration: none;
   background-color: transparent;
@@ -151,7 +159,9 @@ p {
   }
 }
 
-.link-on-red-background, .link-on-red-background:visited, .link-on-red-background:active {
+.link-on-red-background,
+.link-on-red-background:visited,
+.link-on-red-background:active {
   color: white !important;
   text-decoration: none;
 }
@@ -217,9 +227,9 @@ p {
 
 /* Code Block Formatting */
 code {
-  margin-left: .2rem;
-  margin-right: .2rem;
-  padding: .2em .4em;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  padding: 0.2em 0.4em;
   font-size: 85%;
   font-family: consolas, monospace;
   border-radius: var(--default-border-radius);
@@ -227,7 +237,7 @@ code {
 }
 
 pre[class*="language-"] {
-  margin: .5em 0;
+  margin: 0.5em 0;
   padding: 1em;
   overflow: auto;
   border-radius: var(--default-border-radius);
@@ -242,7 +252,11 @@ pre[class*="language-"] code {
 }
 
 /* Overwrite unfitting coloring */
-.language-css .token.string, .style .token.string, .token.entity, .token.operator, .token.url {
+.language-css .token.string,
+.style .token.string,
+.token.entity,
+.token.operator,
+.token.url {
   color: #9a6e3a !important;
   background: transparent !important;
 }

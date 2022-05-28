@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Included Showdown library (Markdown Converter).
 - Renderer and Converter for the changelog.html page.
-- Implemented translation of the [Kipper CHANGELOG.md](https://github.com/Luna-Klatzer/Kipper/tree/main/CHANGELOG.md) to
+- Implemented translation of the [Kipper Changelog..md](https://github.com/Luna-Klatzer/Kipper/tree/main/CHANGELOG.md) to
   HTML on the changelog.html page.
 - Implemented error handling for Kipper compilation errors.
 

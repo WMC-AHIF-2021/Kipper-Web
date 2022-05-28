@@ -82,7 +82,6 @@
             <li id="search-bar">
               <label for="search-bar-input"></label>
               <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
-              <script src="./js/search-bar.ts"></script>
             </li>
           </ul>
         </div>

@@ -15,4 +15,5 @@ function GenHeaderAndDescription(): string {
 }
 
 // writing the content to the innerHtml of the header
-document.getElementById("header-description-content").innerHTML = GenHeaderAndDescription();
+document.getElementById("header-description-content").innerHTML =
+  GenHeaderAndDescription();

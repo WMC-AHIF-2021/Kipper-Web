@@ -1,32 +1,32 @@
 export const rawSearchIndex: Array<string> = [
-  "Quickstart;/docs/quickstart.html;Quickstart;How to quickly start with Kipper",
-  "Our Goals;/docs/our-goals.html;Our Goals;Goals & Timeline for Kipper",
-  "Supported Platforms;/docs/supported-platforms.html;Supported Platforms;Supported platforms for Kipper",
-  "Usage Examples;/docs/usage-examples.html;Usage;Example to Show how Kipper Works",
-  "Variables;/docs/variables.html;Variables;Storing values and defining variables",
-  "Variable Datatypes;/docs/datatypes.html;Variable Datatypes;Datatypes in the Kipper language",
-  "Expressions;/docs/expressions.html;Kipper Expressions;Expressions, which represent the core functionality of Kipper",
-  "Statements;/docs/statements.html;Kipper Statements;Statements, which represent the core functionality of Kipper",
-  "If-Statement;/docs/decision-making.html;If-Statement;Decision making using if-statements",
-  "While-Loop;/docs/while-loop.html;While-Loop;While-loop to run a block of code multiple times under certain conditions",
-  "Do-While-Loop;/docs/do-while-loop.html;Do-While-Loop;While-loop to run a block of code multiple times under certain conditions",
-  "For-Loop;/docs/for-loop.html;For-Loop;For-loop to run a block of code under certain conditions",
-  "Functions;/docs/functions.html;Functions;Functions (callable code-blocks) for reusing code",
-  "Built-In Functions;/docs/built-in-functions.html;Built-In;Built-in Functions",
-  "Playground;/playground.html;Playground;The playground for trying out Kipper and learning the basics in a pre-configured setup",
-  "Docs;/docs/index.html;Documentation;Docs Overview and General Info",
-  "Changelog;/changelog.html;Changelog;Changelog for the Kipper Language",
-  "Downloads;/download.html;Downloads;Downloads for the Kipper Language"
+  "Quickstart;/docs/quickstart.html;Quickstart;The quickstart guide for Kipper.",
+  "Our Goals;/docs/our-goals.html;Our Goals;Goals & Timeline for Kipper.",
+  "Supported Platforms;/docs/supported-platforms.html;Supported Platforms;Supported platforms for Kipper.",
+  "Usage Examples;/docs/usage-examples.html;Usage;Usage examples for the Kipper language.",
+  "Variables;/docs/variables.html;Variables;Kipper variables for storing and reusing data.",
+  "Variable Datatypes;/docs/datatypes.html;Variable Datatypes;Variable datatypes in the Kipper language.",
+  "Expressions;/docs/expressions.html;Kipper Expressions;Kipper Expressions, which can perform various operations and evaluate to a new value.",
+  "Statements;/docs/statements.html;Kipper Statements;Kipper Statements, which are standalone units of execution able to perform various tasks.",
+  "If-Statement;/docs/decision-making.html;If-Statement;Decision making using if, else-if and else statements.",
+  "While-Loop;/docs/while-loop.html;While-Loop;While-loop statements, which allow for the repeated execution of code.",
+  "Do-While-Loop;/docs/do-while-loop.html;Do-While-Loop;Do-While-loop statements, which allow for the repeated execution of code.",
+  "For-Loop;/docs/for-loop.html;For-Loop;For-loop statements, which allow for the repeated execution of code.",
+  "Functions;/docs/functions.html;Functions;Kipper Functions, which allow for the repeated execution of code using arguments.",
+  "Built-in Kipper Functions;/docs/built-in-functions.html;Built-In;Built-in Kipper Functions, which are available in every program per default.",
+  "Playground;/playground.html;Playground;Online Playground for using Kipper in your browser.",
+  "Docs;/docs/index.html;Documentation;Kipper Documentation and API Reference.",
+  "Changelog;/changelog.html;Changelog;Kipper Changelog.",
+  "Downloads;/download.html;Downloads;Downloads for the Kipper Language.",
 ];
 
 /**
  * The index for a single Kipper docs page.
  */
 export interface PageIndex {
-  keyword: string,
-  uriPath: string,
-  pageTitle: string,
-  pageDescription: string
+  keyword: string;
+  uriPath: string;
+  pageTitle: string;
+  pageDescription: string;
 }
 
 export const searchIndex: Array<PageIndex> = rawSearchIndex.map((index) => {
@@ -35,6 +35,6 @@ export const searchIndex: Array<PageIndex> = rawSearchIndex.map((index) => {
     keyword: lineContent[0],
     uriPath: lineContent[1],
     pageTitle: lineContent[2],
-    pageDescription: lineContent[3]
-  }
+    pageDescription: lineContent[3],
+  };
 });

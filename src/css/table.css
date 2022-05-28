@@ -24,9 +24,10 @@ table thead tr th {
   font-weight: bold;
 }
 
-table tbody tr td, table thead tr th {
+table tbody tr td,
+table thead tr th {
   text-align: left;
   vertical-align: top;
-  padding: .8rem .4rem;
+  padding: 0.8rem 0.4rem;
   line-height: 1.5em;
 }

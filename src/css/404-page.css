@@ -6,7 +6,7 @@
 html {
   color: #888;
   display: table;
-  font-family: 'Inter', Georgia, Verdana, monospace;
+  font-family: "Inter", Georgia, Verdana, monospace;
   height: 100%;
   text-align: center;
   width: 100%;
@@ -18,7 +18,6 @@ body {
   margin: 2em auto;
   background-color: var(--scheme-primary);
 }
-
 
 .white-box {
   position: center;
@@ -55,7 +54,8 @@ p {
   text-decoration: none !important;
 }
 
-.button-dark:active, .button-dark:visited {
+.button-dark:active,
+.button-dark:visited {
   color: var(--button-dark-primary) !important;
 }
 

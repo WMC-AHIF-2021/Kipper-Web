@@ -1,144 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <title>Welcome to Kipper!</title>
-  <meta name="description" content="The Simple and Blazing-Fast Open-Source Language"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to Kipper!</title>
+    <meta
+      name="description"
+      content="The simple, easy-to-use and fast open-source language designed for Browsers, Node.js and Deno"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <script src="./js/main.ts"></script>
-  <link rel="manifest" href="../site.webmanifest"/>
-  <link rel="apple-touch-icon" href="./img/icon.png"/>
-  <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+    <script src="./js/main.ts"></script>
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="./img/icon.png" />
+    <link rel="shortcut icon" type="image/ico" href="../favicon.ico" />
 
-  <link rel="stylesheet" href="./css/normalize.css"/>
-  <link rel="stylesheet" href="./css/main.css"/>
-  <link rel="stylesheet" href="./css/screen.css"/>
-  <link rel="stylesheet" href="./css/buttons.css"/>
-  <link rel="stylesheet" href="./css/nav-bar.css"/>
-  <link rel="stylesheet" href="./css/text.css"/>
-  <link rel="stylesheet" href="./css/lists.css"/>
-  <link rel="stylesheet" href="./css/footer.css"/>
-  <link rel="stylesheet" href="./css/table.css"/>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/screen.css" />
+    <link rel="stylesheet" href="./css/buttons.css" />
+    <link rel="stylesheet" href="./css/nav-bar.css" />
+    <link rel="stylesheet" href="./css/text.css" />
+    <link rel="stylesheet" href="./css/lists.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/table.css" />
 
-  <!-- Loading the prism highlighting style-sheet -->
-  <link rel="stylesheet" href="./prism/prism.css"/>
+    <!-- Loading the prism highlighting style-sheet -->
+    <link rel="stylesheet" href="./prism/prism.css" />
 
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/951ef1f046.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/951ef1f046.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Including stylesheet for the Inter-Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter"/>
+    <!-- Including stylesheet for the Inter-Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter"
+    />
 
-  <!--
+    <!--
 Specifying the preferred environment colour to be the primary scheme colour.
 See main.css for the --scheme-primary variable
 -->
-  <meta name="theme-color" content="#e01a4f"/>
-  <script>
+    <meta name="theme-color" content="#e01a4f" />
+    <script></script>
+  </head>
+  <body>
+    <script src="./js/plugins.ts"></script>
+    <script src="./prism/prism.js"></script>
 
-  </script>
-</head>
-<body>
-<script src="./js/plugins.ts"></script>
-<script src="./prism/prism.js"></script>
-
-<!-- Show Error if JS is disabled or blocked -->
-<noscript>Oops that shouldn't have happened! Please enable Java-Script to use our Site!</noscript>
-<div id="main-frame">
-  <div id="actual-content">
-    <!-- The top element: menu and search bar -->
-    <header id="home-page-header" class="page-header">
-      <nav id="header-nav-bar">
-        <ul>
-          <li>
-            <a href="./index.html"
-               class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
-              <img id="kipper-logo" src="./img/base_head.png" alt=""/>
-              <a class="underline-button" href="./index.html">
-                <h1>Kipper</h1>
-              </a>
-            </a>
-          </li>
-          <li>
-            <a href="./download.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Downloads</h4></a>
-          </li>
-          <li>
-            <a href="./docs/index.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Docs</h4></a>
-          </li>
-          <li>
-            <a href="playground.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Playground</h4></a>
-          </li>
-          <li>
-            <a href="./changelog.html" class="underline-button top-nav-menu-item top-nav-button">
-              <h4>
-                Changelog
-              </h4>
-            </a>
-          </li>
-        </ul>
-        <div id="search-bar-wrapper">
-          <ul>
-            <li>
-              <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
-            </li>
-            <li id="search-bar">
-              <label for="search-bar-input"></label>
-              <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false"/>
-              <script src="./js/search-bar.ts"></script>
-            </li>
-          </ul>
+    <!-- Show Error if JS is disabled or blocked -->
+    <noscript
+      >Oops that shouldn't have happened! Please enable Java-Script to use our
+      Site!</noscript
+    >
+    <div id="main-frame">
+      <div id="actual-content">
+        <!-- The top element: menu and search bar -->
+        <header id="home-page-header" class="page-header">
+          <nav id="header-nav-bar">
+            <ul>
+              <li>
+                <a
+                  href="./index.html"
+                  class="
+                    no-style-list
+                    flex-row flex-parent-container flex-center
+                    kipper-logo-container
+                  "
+                >
+                  <img id="kipper-logo" src="./img/base_head.png" alt="" />
+                  <a class="underline-button" href="./index.html">
+                    <h1>Kipper</h1>
+                  </a>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="./download.html"
+                  class="underline-button top-nav-menu-item top-nav-button"
+                  ><h4>Downloads</h4></a
+                >
+              </li>
+              <li>
+                <a
+                  href="./docs/index.html"
+                  class="underline-button top-nav-menu-item top-nav-button"
+                  ><h4>Docs</h4></a
+                >
+              </li>
+              <li>
+                <a
+                  href="playground.html"
+                  class="underline-button top-nav-menu-item top-nav-button"
+                  ><h4>Playground</h4></a
+                >
+              </li>
+              <li>
+                <a
+                  href="./changelog.html"
+                  class="underline-button top-nav-menu-item top-nav-button"
+                >
+                  <h4>Changelog</h4>
+                </a>
+              </li>
+            </ul>
+            <div id="search-bar-wrapper">
+              <ul>
+                <li>
+                  <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+                </li>
+                <li id="search-bar">
+                  <label for="search-bar-input"></label>
+                  <input
+                    id="search-bar-input"
+                    type="search"
+                    placeholder="Search..."
+                    spellcheck="false"
+                  />
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <!-- Main Content, where the text is located and the items unique to this site are defined -->
+        <div class="text-page-content-container">
+          <section>
+            <ul
+              id="homepage-content"
+              class="no-style-list flex-row flex-parent-container flex-end"
+            >
+              <li>
+                <section
+                  id="welcome-text"
+                  class="flex-parent-container flex-column flex-start"
+                >
+                  <h1 id="welcome-header" class="super-large-header">
+                    Welcome to Kipper!
+                  </h1>
+                  <p class="flex-parent-container flex-row flex-start">
+                    <a href="./playground.html" class="button"
+                      >Try our Playground</a
+                    >
+                    <a href="./docs/index.html" class="inverted-button"
+                      >View the Kipper docs</a
+                    >
+                  </p>
+                </section>
+              </li>
+              <li>
+                <a href="./playground.html">
+                  <img
+                    id="welcome-image"
+                    src="./img/carbon-code-main.png"
+                    alt=""
+                  />
+                </a>
+              </li>
+            </ul>
+          </section>
         </div>
-      </nav>
-    </header>
-    <!-- Main Content, where the text is located and the items unique to this site are defined -->
-    <div class="text-page-content-container">
-      <section>
-        <ul id="homepage-content" class="no-style-list flex-row flex-parent-container flex-end">
-          <li>
-            <section id="welcome-text" class="flex-parent-container flex-column flex-start">
-              <h1 id="welcome-header" class="super-large-header">Welcome to Kipper!</h1>
-              <p class="flex-parent-container flex-row flex-start">
-                <a href="./playground.html" class="button">Try our Playground</a>
-                <a href="./docs/index.html" class="inverted-button">View the Kipper docs</a>
-              </p>
-            </section>
-          </li>
-          <li>
-            <a href="./playground.html">
-              <img id="welcome-image" src="./img/carbon-code-main.png" alt=""/>
-            </a>
-          </li>
-        </ul>
-      </section>
+        <!-- Footer bar - contains some links and general copyright notice -->
+        <footer
+          id="footer-bar"
+          class="flex-parent-container flex-column"
+        ></footer>
+        <script src="./js/gen-footer.ts"></script>
+      </div>
     </div>
-    <!-- Footer bar - contains some links and general copyright notice -->
-    <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
-    <script src="./js/gen-footer.ts"></script>
-  </div>
-</div>
 
-<!-- Overlay for Displaying the Search Results-->
-<div id="search-background-overlay"></div>
-<div id="search-result-overlay">
-  <div class="flex-column flex-parent-container" id="search-result"></div>
-</div>
-<script type="module" src="./js/search.ts"></script>
-<script type="module">
-  import * as searchIndex from "./js/search-index";
-  import { search } from "./js/search";
+    <!-- Overlay for Displaying the Search Results-->
+    <div id="search-background-overlay"></div>
+    <div id="search-result-overlay">
+      <div class="flex-column flex-parent-container" id="search-result"></div>
+    </div>
+    <script type="module" src="./js/search.ts"></script>
+    <script type="module">
+      import * as searchIndex from "./js/search-index";
+      import { search } from "./js/search";
 
-  // Verify that the index is complete
-  if (searchIndex.searchIndex === []) {
-    console.error("Critical Error: Index for the search failed to load! Searching is disabled.");
-    document.getElementById("search-bar").style.visibility = "hidden";
-  } else {
-    console.log("Index initialised!");
-  }
+      // Verify that the index is complete
+      if (searchIndex.searchIndex === []) {
+        console.error(
+          "Critical Error: Index for the search failed to load! Searching is disabled."
+        );
+        document.getElementById("search-bar").style.visibility = "hidden";
+      } else {
+        console.log("Index initialised!");
+      }
 
-  // Add event listener
-  document.getElementById("search-bar-input").addEventListener("keyup", search);
-  console.log("Search loaded!");
-</script>
-</body>
+      // Add event listener
+      document
+        .getElementById("search-bar-input")
+        .addEventListener("keyup", search);
+      document
+        .getElementById("search-bar-input")
+        .addEventListener("focus", search);
+      console.log("Search loaded!");
+    </script>
+  </body>
 </html>

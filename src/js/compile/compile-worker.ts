@@ -1,14 +1,16 @@
 // Import the kipper module
-importScripts('//cdn.jsdelivr.net/npm/@kipper/core@latest/kipper-standalone.min.js');
+importScripts(
+  "//cdn.jsdelivr.net/npm/@kipper/core@latest/kipper-standalone.min.js"
+);
 
 // Import the babel transpiler
-importScripts('//unpkg.com/@babel/standalone/babel.min.js');
+importScripts("//unpkg.com/@babel/standalone/babel.min.js");
 
 // The message handler for the compiler log messages - We don't handle those yet and just log them onto the console
 const msgHandler = (level, msg) => {
   // @ts-ignore
   postMessage(`[${Kipper.getLogLevelString(level)}]: ${msg}`);
-}
+};
 
 // The log handler that will be used inside the kipper program to handle print messages and allow them to be sent
 // to the main thread, so they can be handled and printed onto the console.
@@ -24,7 +26,7 @@ const logHandler = {
     "function _kipperGlobal_print(printText: string): void {",
     "postMessage(printText);", // Using 'postMessage' we can simulate a stream like stdout, where everything that is
     // sent is printed in the main thread onto the console.
-    "}"
+    "}",
   ],
   returnType: "void",
 };
@@ -38,13 +40,17 @@ const logger = new Kipper.KipperLogger(msgHandler);
 const compiler = new Kipper.KipperCompiler(logger);
 
 // Define the handler for worker messages
-onmessage = async function(event) {
-  console.log("Received compilation request from main thread. Preparing compilation in Worker.");
+onmessage = async function (event) {
+  console.log(
+    "Received compilation request from main thread. Preparing compilation in Worker."
+  );
 
   // Compile the code to TypeScript
   let result: string;
   try {
-    result = (await compiler.compile(event.data, {globals: [logHandler]})).write();
+    result = (
+      await compiler.compile(event.data, { globals: [logHandler] })
+    ).write();
   } catch (e) {
     postMessage(1);
     throw e;
@@ -54,11 +60,14 @@ onmessage = async function(event) {
 
   // Transpile the code from TypeScript to JavaScript
   // @ts-ignore
-  const compiledCode = Babel.transform(result, { filename: "kipper-web-script.ts", presets: ["env", "typescript"] });
+  const compiledCode = Babel.transform(result, {
+    filename: "kipper-web-script.ts",
+    presets: ["env", "typescript"],
+  });
 
   // Evaluate the code
   eval(compiledCode.code);
 
   // Return with exit code 0 (Success)
   postMessage(0);
-}
+};
