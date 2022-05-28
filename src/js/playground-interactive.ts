@@ -47,8 +47,8 @@ const compilerOutputButton: HTMLButtonElement = document.querySelector(
 );
 
 // Global web worker that will run the code
-// @ts-ignore
 let worker: Worker = new Worker(
+  // @ts-ignore
   new URL("./compile/compile-worker.ts", import.meta.url)
 );
 
@@ -162,8 +162,8 @@ function stopCode(): void {
     worker.terminate();
 
     // Recreate the worker now to save time for the next run call.
-    // @ts-ignore
     worker = new Worker(
+      // @ts-ignore
       new URL("./compile/compile-worker.ts", import.meta.url)
     );
   } else {
