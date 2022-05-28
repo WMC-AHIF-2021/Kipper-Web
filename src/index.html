@@ -176,28 +176,5 @@ See main.css for the --scheme-primary variable
       <div class="flex-column flex-parent-container" id="search-result"></div>
     </div>
     <script type="module" src="./js/search.ts"></script>
-    <script type="module">
-      import * as searchIndex from "./js/search-index";
-      import { search } from "./js/search";
-
-      // Verify that the index is complete
-      if (searchIndex.searchIndex === []) {
-        console.error(
-          "Critical Error: Index for the search failed to load! Searching is disabled."
-        );
-        document.getElementById("search-bar").style.visibility = "hidden";
-      } else {
-        console.log("Index initialised!");
-      }
-
-      // Add event listener
-      document
-        .getElementById("search-bar-input")
-        .addEventListener("keyup", search);
-      document
-        .getElementById("search-bar-input")
-        .addEventListener("focus", search);
-      console.log("Search loaded!");
-    </script>
   </body>
 </html>

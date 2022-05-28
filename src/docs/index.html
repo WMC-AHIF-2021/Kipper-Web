@@ -117,7 +117,6 @@
                     placeholder="Search..."
                     spellcheck="false"
                   />
-                  <script src="../js/search-bar.ts"></script>
                 </li>
               </ul>
             </div>
@@ -222,5 +221,12 @@
         <script src="../js/gen-footer.ts"></script>
       </div>
     </div>
+
+    <!-- Overlay for Displaying the Search Results-->
+    <div id="search-background-overlay"></div>
+    <div id="search-result-overlay">
+      <div class="flex-column flex-parent-container" id="search-result"></div>
+    </div>
+    <script type="module" src="../js/search.ts"></script>
   </body>
 </html>

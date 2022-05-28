@@ -72,12 +72,33 @@ export async function search(): Promise<void> {
   overlaySearch.style.width = `${searchBarRect.width}px`;
 }
 
+export async function loadSearch(): Promise<void> {
+  // Verify that the index is complete
+  if (searchIndex === []) {
+    console.error(
+      "Critical Error: Index for the search failed to load! Searching is disabled."
+    );
+    document.getElementById("search-bar").style.visibility = "hidden";
+  } else {
+    console.log("Index initialised!");
+  }
+
+  // Add event listener
+  document.getElementById("search-bar-input").addEventListener("keyup", search);
+  document.getElementById("search-bar-input").addEventListener("focus", search);
+  console.log("Search loaded!");
+}
+
+// Load search when the DOM finished loading
+window.addEventListener("DOMContentLoaded", loadSearch);
+
 // If the user clicks outside the search, remove search
 document.addEventListener("click", (e: MouseEvent) => {
   if (
     !document
       .getElementById("search-result-overlay")
-      .contains(<Element>e.target)
+      .contains(<Element>e.target) &&
+    !document.getElementById("search-bar").contains(<Element>e.target)
   ) {
     document.getElementById("search-result").style.visibility = "hidden";
     document.getElementById("search-result-overlay").style.visibility =
