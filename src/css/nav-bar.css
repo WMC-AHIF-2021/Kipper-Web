@@ -113,3 +113,33 @@
   width: var(--search-bar-size-expanded);
 }
 
+#search-result {
+  margin: 1rem;
+}
+
+#search-result-overlay, #search-background-overlay {
+  /* Sit on top of the page content */
+  position: fixed;
+  visibility: hidden;
+  cursor: pointer; /* Add a pointer on hover */
+  display: block;
+}
+
+#search-result-overlay {
+  background-color: rgba(255, 255, 255, 0.9); /* Black background with opacity */
+  z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+#search-background-overlay {
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
