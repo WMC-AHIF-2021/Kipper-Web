@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Search bar overlay and search implementation for searching in the Kipper docs.
+- Added index for all Kipper pages.
 
 ### Changed
 - Updated descriptions of all Kipper pages to be more accurate.
