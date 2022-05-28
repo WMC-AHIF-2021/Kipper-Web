@@ -5,8 +5,8 @@
  * @support Follow/tweet at https://twitter.com/MrAhmadAwais/
  */
 
-code.console-bash[class*='language-'],
-pre.console-bash[class*='language-'] {
+code.console-bash[class*="language-"],
+pre.console-bash[class*="language-"] {
   color: #9efeff;
   direction: ltr;
   text-align: left;
@@ -23,7 +23,8 @@ pre.console-bash[class*='language-'] {
   -ms-hyphens: none;
   hyphens: none;
 
-  font-family: 'Operator Mono', 'Fira code.console-bash', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: "Operator Mono", "Fira code.console-bash", Consolas, Monaco,
+    "Andale Mono", "Ubuntu Mono", monospace;
   font-weight: 400;
   font-size: 17px;
   line-height: 25px;
@@ -31,32 +32,32 @@ pre.console-bash[class*='language-'] {
   text-shadow: 0 1px #222245;
 }
 
-pre.console-bash[class*='language-']::-moz-selection,
-pre.console-bash[class*='language-'] ::-moz-selection,
-code.console-bash[class*='language-']::-moz-selection,
-code.console-bash[class*='language-'] ::-moz-selection,
-pre.console-bash[class*='language-']::selection,
-pre.console-bash[class*='language-'] ::selection,
-code.console-bash[class*='language-']::selection,
-code.console-bash[class*='language-'] ::selection {
+pre.console-bash[class*="language-"]::-moz-selection,
+pre.console-bash[class*="language-"] ::-moz-selection,
+code.console-bash[class*="language-"]::-moz-selection,
+code.console-bash[class*="language-"] ::-moz-selection,
+pre.console-bash[class*="language-"]::selection,
+pre.console-bash[class*="language-"] ::selection,
+code.console-bash[class*="language-"]::selection,
+code.console-bash[class*="language-"] ::selection {
   color: inherit;
   background: #a599e9;
 }
 
 /* code.console-bash blocks. */
-pre.console-bash[class*='language-'] {
+pre.console-bash[class*="language-"] {
   padding: 2em;
   margin: 0.5em 0;
   overflow: auto;
 }
 
-:not(pre.console-bash) > code.console-bash[class*='language-'],
-pre.console-bash[class*='language-'] {
+:not(pre.console-bash) > code.console-bash[class*="language-"],
+pre.console-bash[class*="language-"] {
   background: #1e1e3f;
 }
 
 /* Inline code.console-bash */
-:not(pre.console-bash) > code.console-bash[class*='language-'] {
+:not(pre.console-bash) > code.console-bash[class*="language-"] {
   padding: 0.1em;
   border-radius: 0.3em;
 }
@@ -158,7 +159,11 @@ pre.console-bash[class*='language-'] {
 }
 
 code.console-bash.language-css .console-bash .token.property,
-code.console-bash.language-css .console-bash .token.property + .console-bash .token.punctuation {
+code.console-bash.language-css
+  .console-bash
+  .token.property
+  + .console-bash
+  .token.punctuation {
   color: #a9b7c6;
 }
 
@@ -166,10 +171,26 @@ code.console-bash.language-css .console-bash .token.id {
   color: #ffc66d;
 }
 
-code.console-bash.language-css .console-bash .token.selector > .console-bash .token.class,
-code.console-bash.language-css .console-bash .token.selector > .console-bash .token.attribute,
-code.console-bash.language-css .console-bash .token.selector > .console-bash .token.pseudo-class,
-code.console-bash.language-css .console-bash .token.selector > .console-bash .token.pseudo-element {
+code.console-bash.language-css
+  .console-bash
+  .token.selector
+  > .console-bash
+  .token.class,
+code.console-bash.language-css
+  .console-bash
+  .token.selector
+  > .console-bash
+  .token.attribute,
+code.console-bash.language-css
+  .console-bash
+  .token.selector
+  > .console-bash
+  .token.pseudo-class,
+code.console-bash.language-css
+  .console-bash
+  .token.selector
+  > .console-bash
+  .token.pseudo-element {
   color: #ffc66d;
 }
 
@@ -192,5 +213,5 @@ code.console-bash.language-css .console-bash .token.selector > .console-bash .to
 
 .line-highlight.line-highlight:before,
 .line-highlight.line-highlight[data-end]:after {
-  content: '';
+  content: "";
 }

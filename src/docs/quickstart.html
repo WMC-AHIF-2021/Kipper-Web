@@ -1,158 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <title>Quickstart Guide</title>
-  <meta
-    name="description"
-    content="How to quickly start with Kipper"
-  />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <head>
+    <meta charset="utf-8" />
+    <title>Quickstart Guide</title>
+    <meta name="description" content="The quickstart guide for Kipper." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <script src="../js/main.ts"></script>
-  <link rel="manifest" href="../../site.webmanifest"/>
-  <link rel="apple-touch-icon" href="../img/icon.png"/>
-  <link rel="shortcut icon" type="image/ico" href="../../favicon.ico"/>
+    <script src="../js/main.ts"></script>
+    <link rel="manifest" href="../../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../img/icon.png" />
+    <link rel="shortcut icon" type="image/ico" href="../../favicon.ico" />
 
-  <link rel="stylesheet" href="../css/normalize.css"/>
-  <link rel="stylesheet" href="../css/main.css"/>
-  <link rel="stylesheet" href="../css/screen.css"/>
-  <link rel="stylesheet" href="../css/buttons.css"/>
-  <link rel="stylesheet" href="../css/nav-bar.css"/>
-  <link rel="stylesheet" href="../css/text.css"/>
-  <link rel="stylesheet" href="../css/lists.css"/>
-  <link rel="stylesheet" href="../css/footer.css"/>
-  <link rel="stylesheet" href="../css/docs.css"/>
-  <link rel="stylesheet" href="../css/table.css"/>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/screen.css" />
+    <link rel="stylesheet" href="../css/buttons.css" />
+    <link rel="stylesheet" href="../css/nav-bar.css" />
+    <link rel="stylesheet" href="../css/text.css" />
+    <link rel="stylesheet" href="../css/lists.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/docs.css" />
+    <link rel="stylesheet" href="../css/table.css" />
 
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/951ef1f046.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/951ef1f046.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Including stylesheet for the Inter-Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter"/>
+    <!-- Including stylesheet for the Inter-Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter"
+    />
 
-  <!-- Loading the prism highlighting style-sheet -->
-  <link rel="stylesheet" href="../prism/prism.css"/>
+    <!-- Loading the prism highlighting style-sheet -->
+    <link rel="stylesheet" href="../prism/prism.css" />
 
-  <!--
+    <!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
   -->
-  <meta name="theme-color" content="#e01a4f"/>
-</head>
-<body>
-<script src="../js/plugins.ts"></script>
-<script src="../prism/prism.js"></script>
+    <meta name="theme-color" content="#e01a4f" />
+  </head>
+  <body>
+    <script src="../js/plugins.ts"></script>
+    <script src="../prism/prism.js"></script>
 
-<div id="main-frame">
-  <div id="actual-content">
-    <!-- The top element: menu and search bar -->
-    <header class="page-header">
-      <nav id="header-nav-bar">
-        <ul>
-          <li>
-            <a href="../index.html"
-               class="no-style-list flex-row flex-parent-container flex-center kipper-logo-container">
-              <img id="kipper-logo" src="../img/base_head.png" alt="">
-              <a class="underline-button" href="../index.html">
-                <h1>Kipper</h1>
-              </a>
-            </a>
-          </li>
-          <li>
-            <a href="../download.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Downloads</h4></a>
-          </li>
-          <li>
-            <a href="./index.html" class="underline-button top-nav-menu-item top-nav-button selected-nav-page"><h4>
-              Docs</h4></a>
-          </li>
-          <li>
-            <a href="../playground.html" class="underline-button top-nav-menu-item top-nav-button"><h4>Playground</h4>
-            </a>
-          </li>
-          <li>
-            <a href="../changelog.html"
-               class="underline-button top-nav-menu-item top-nav-button"><h4>
-              Changelog</h4></a>
-          </li>
-        </ul>
-        <div id="search-bar-wrapper">
-          <ul>
-            <li>
-              <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
-            </li>
-            <li id="search-bar">
-              <label for="search-bar-input"></label>
-              <input id="search-bar-input" type="search" placeholder="Search..." spellcheck="false">
-              <script src="../js/search-bar.ts"></script>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div id="header-description-content" class="text-page-content-container"></div>
-      <script src="../js/gen-header.ts"></script>
-    </header>
-    <!-- Main Content, where the text is located and the items unique to this site are defined -->
-    <div class="flex-parent-container flex-fill-to-parent">
-      <ul class="no-style-list flex-parent-container flex-fill-to-parent flex-row">
-        <li id="docs-sidebar-nav-wrapper" class="flex-parent-container"></li>
-        <script src="../js/gen-sidebar-docs-nav.ts"></script>
-        <li class="docs-page-content-container">
-          <div id="docs-content" class="text-content shadowed-box">
-            <section>
-              <nav id="docs-page-nav"></nav>
-              <article>
-                <h2>Quickstart</h2>
-                <p>
-                  Welcome to the Quickstart Guide for the Kipper programming language! Here you will find a concise
-                  guide on how to install Kipper and start using it for your own projects.
-                </p>
-                <p class="red-highlight-text">
-                  Before using Kipper make sure your system or browser is supported! View support list
-                  <a href="./supported-platforms.html">here!</a>
-                </p>
-                <h3>How to use Kipper?</h3>
-                <article>
-                  <p>
-                    Since Kipper is based on TypeScript and therefore also JavaScript, there are several options to
-                    using Kipper:
-                  </p>
-                  <ol class="flex-column">
-                    <li>Running Kipper in the browser using native JavaScript.</li>
-                    <li>Running Kipper using Node.js in your terminal.</li>
-                    <li>Including Kipper as a library into your own Node.JS programs.</li>
-                  </ol>
-                </article>
-                <h3>Option 1. - Setting up Kipper for the browser</h3>
-                <article>
-                  <p>
-                    For running Kipper in the browser, you will have to include:
-                  </p>
-                  <ol class="flex-column">
-                    <li>
-                      The primary <code>kipper-standalone.min.js</code> file, which provides the kipper source code
-                      compatible for <em>modern</em> browsers.
-                    </li>
-                    <li>
-                      The babel typescript compiler, which allows native browser transpiling and code generation.
-                      This is required as Kipper is not a language that compiles directly to binary code, but uses
-                      another language as another level of abstraction.
-                    </li>
-                  </ol>
-                  <p>
-                    Simple snippet to include into your HTML file:
-                  </p>
-                  <pre><code class="language-html">&lt;!-- Babel dependency --&gt;
+    <div id="main-frame">
+      <div id="actual-content">
+        <!-- The top element: menu and search bar -->
+        <header class="page-header">
+          <nav id="header-nav-bar">
+            <ul>
+              <li>
+                <a
+                  href="../index.html"
+                  class="
+                    no-style-list
+                    flex-row flex-parent-container flex-center
+                    kipper-logo-container
+                  "
+                >
+                  <img id="kipper-logo" src="../img/base_head.png" alt="" />
+                  <a class="underline-button" href="../index.html">
+                    <h1>Kipper</h1>
+                  </a>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="../download.html"
+                  class="underline-button top-nav-menu-item top-nav-button"
+                  ><h4>Downloads</h4></a
+                >
+              </li>
+              <li>
+                <a
+                  href="./index.html"
+                  class="
+                    underline-button
+                    top-nav-menu-item top-nav-button
+                    selected-nav-page
+                  "
+                  ><h4>Docs</h4></a
+                >
+              </li>
+              <li>
+                <a
+                  href="../playground.html"
+                  class="underline-button top-nav-menu-item top-nav-button"
+                  ><h4>Playground</h4>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="../changelog.html"
+                  class="underline-button top-nav-menu-item top-nav-button"
+                  ><h4>Changelog</h4></a
+                >
+              </li>
+            </ul>
+            <div id="search-bar-wrapper">
+              <ul>
+                <li>
+                  <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+                </li>
+                <li id="search-bar">
+                  <label for="search-bar-input"></label>
+                  <input
+                    id="search-bar-input"
+                    type="search"
+                    placeholder="Search..."
+                    spellcheck="false"
+                  />
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div
+            id="header-description-content"
+            class="text-page-content-container"
+          ></div>
+          <script src="../js/gen-header.ts"></script>
+        </header>
+        <!-- Main Content, where the text is located and the items unique to this site are defined -->
+        <div class="flex-parent-container flex-fill-to-parent">
+          <ul
+            class="
+              no-style-list
+              flex-parent-container flex-fill-to-parent flex-row
+            "
+          >
+            <li
+              id="docs-sidebar-nav-wrapper"
+              class="flex-parent-container"
+            ></li>
+            <script src="../js/gen-sidebar-docs-nav.ts"></script>
+            <li class="docs-page-content-container">
+              <div id="docs-content" class="text-content shadowed-box">
+                <section>
+                  <nav id="docs-page-nav"></nav>
+                  <article>
+                    <h2>Quickstart</h2>
+                    <p>
+                      Welcome to the Quickstart Guide for the Kipper programming
+                      language! Here you will find a concise guide on how to
+                      install Kipper and start using it for your own projects.
+                    </p>
+                    <p class="red-highlight-text">
+                      Before using Kipper make sure your system or browser is
+                      supported! View support list
+                      <a href="./supported-platforms.html">here!</a>
+                    </p>
+                    <h3>How to use Kipper?</h3>
+                    <article>
+                      <p>
+                        Since Kipper is based on TypeScript and therefore also
+                        JavaScript, there are several options to using Kipper:
+                      </p>
+                      <ol class="flex-column">
+                        <li>
+                          Running Kipper in the browser using native JavaScript.
+                        </li>
+                        <li>Running Kipper using Node.js in your terminal.</li>
+                        <li>
+                          Including Kipper as a library into your own Node.JS
+                          programs.
+                        </li>
+                      </ol>
+                    </article>
+                    <h3>Option 1. - Setting up Kipper for the browser</h3>
+                    <article>
+                      <p>
+                        For running Kipper in the browser, you will have to
+                        include:
+                      </p>
+                      <ol class="flex-column">
+                        <li>
+                          The primary
+                          <code>kipper-standalone.min.js</code> file, which
+                          provides the kipper source code compatible for
+                          <em>modern</em> browsers.
+                        </li>
+                        <li>
+                          The babel typescript compiler, which allows native
+                          browser transpiling and code generation. This is
+                          required as Kipper is not a language that compiles
+                          directly to binary code, but uses another language as
+                          another level of abstraction.
+                        </li>
+                      </ol>
+                      <p>Simple snippet to include into your HTML file:</p>
+                      <pre><code class="language-html">&lt;!-- Babel dependency --&gt;
 &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- Kipper --&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/@kipper/base@latest/kipper-standalone.min.js"&gt;&lt;/script&gt;</code></pre>
-                  <p>
-                    After including Kipper into your HTML file, you can access the library using the identifier
-                    <code>Kipper</code>, which will be globally available in your file.
-                  </p>
-                  <h4>Example code</h4>
-                  <pre><code class="language-html">&lt;script type="module"&gt;
+                      <p>
+                        After including Kipper into your HTML file, you can
+                        access the library using the identifier
+                        <code>Kipper</code>, which will be globally available in
+                        your file.
+                      </p>
+                      <h4>Example code</h4>
+                      <pre><code class="language-html">&lt;script type="module"&gt;
   // Define your own logger and compiler, which will handle the compilation
   const logger = new Kipper.KipperLogger((level, msg) =&gt; {
     console.log(`[${Kipper.getLogLevelString(level)}] ${msg}`);
@@ -171,14 +223,19 @@
   // Finally, run your program
   eval(jsCode.code);
 &lt;/script&gt;</code></pre>
-                </article>
-                <h3>Option 2. - Setting up Kipper for the Terminal using Node.js</h3>
-                <article>
-                  <p>
-                  To use Kipper in a terminal, you will have to install the package <code>@kipper/cli</code>, which
-                  provides the CLI implementation that allows you to use Kipper over the terminal.
-                  </p>
-                  <pre><code class="language-json">"dependencies": {
+                    </article>
+                    <h3>
+                      Option 2. - Setting up Kipper for the Terminal using
+                      Node.js
+                    </h3>
+                    <article>
+                      <p>
+                        To use Kipper in a terminal, you will have to install
+                        the package <code>@kipper/cli</code>, which provides the
+                        CLI implementation that allows you to use Kipper over
+                        the terminal.
+                      </p>
+                      <pre><code class="language-json">"dependencies": {
   ...
   "@kipper/cli": "^0.2.1"
 }
@@ -187,17 +244,20 @@
   ...
   "@kipper/cli": "^0.2.1"
 }</code></pre>
-                  <p>
-                    Section in work... (CLI not fully up to date with the <code>@kipper/base</code> module!)
-                  </p>
-                </article>
-                <h3>Option 3. - Setting up Kipper as a library</h3>
-                <article>
-                  <p>
-                    To set up Kipper for your personal code, simply add <code>@kipper/base</code> to your dependencies
-                    or development dependencies in your <code>package.json</code> file.
-                  </p>
-                  <pre><code class="language-json">"dependencies": {
+                      <p>
+                        Section in work... (CLI not fully up to date with the
+                        <code>@kipper/base</code> module!)
+                      </p>
+                    </article>
+                    <h3>Option 3. - Setting up Kipper as a library</h3>
+                    <article>
+                      <p>
+                        To set up Kipper for your personal code, simply add
+                        <code>@kipper/base</code> to your dependencies or
+                        development dependencies in your
+                        <code>package.json</code> file.
+                      </p>
+                      <pre><code class="language-json">"dependencies": {
   ...
   "@kipper/base": "^0.2.1"
 }
@@ -206,29 +266,43 @@
   ...
   "@kipper/base": "^0.2.1"
 }</code></pre>
-                  <p>
-                    If you intend to only try out Kipper, you can also simply install Kipper globally for the time you
-                    are using it, like this:
-                  </p>
-                  <pre><code class="language-bash">npm install -g @kipper/base</code></pre>
-                  <article class="red-highlight-text">
-                    <h3>Important</h3>
-                    If possible avoid installing Kipper globally if you intend to use it inside your own projects, as it can
-                    cause issues with locally installed versions (node project dependencies). For a localised and
-                    project-dependent kipper installation add kipper to your dependencies.
+                      <p>
+                        If you intend to only try out Kipper, you can also
+                        simply install Kipper globally for the time you are
+                        using it, like this:
+                      </p>
+                      <pre><code class="language-bash">npm install -g @kipper/base</code></pre>
+                      <article class="red-highlight-text">
+                        <h3>Important</h3>
+                        If possible avoid installing Kipper globally if you
+                        intend to use it inside your own projects, as it can
+                        cause issues with locally installed versions (node
+                        project dependencies). For a localised and
+                        project-dependent kipper installation add kipper to your
+                        dependencies.
+                      </article>
+                    </article>
                   </article>
-                </article>
-              </article>
-              <script src="../js/gen-docs-nav-specifier.ts"></script>
-            </section>
-          </div>
-        </li>
-      </ul>
+                  <script src="../js/gen-docs-nav-specifier.ts"></script>
+                </section>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Footer bar - contains some links and general copyright notice -->
+        <footer
+          id="footer-bar"
+          class="flex-parent-container flex-column"
+        ></footer>
+        <script src="../js/gen-footer.ts"></script>
+      </div>
     </div>
-    <!-- Footer bar - contains some links and general copyright notice -->
-    <footer id="footer-bar" class="flex-parent-container flex-column"></footer>
-    <script src="../js/gen-footer.ts"></script>
-  </div>
-</div>
-</body>
+
+    <!-- Overlay for Displaying the Search Results-->
+    <div id="search-background-overlay"></div>
+    <div id="search-result-overlay">
+      <div class="flex-column flex-parent-container" id="search-result"></div>
+    </div>
+    <script type="module" src="../js/search.ts"></script>
+  </body>
 </html>

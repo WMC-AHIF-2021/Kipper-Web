@@ -1,6 +1,7 @@
 /*! Defaults design for the lists and special formatting */
 
-ul, ol {
+ul,
+ol {
   display: flex;
   list-style-type: disc;
   flex-direction: column;
