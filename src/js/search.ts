@@ -46,7 +46,7 @@ export async function search(): Promise<void> {
       let resultsHTML = "";
       for (const result of pageResults) {
         // @ts-ignore
-        const link = `.${window.location.pathname}.` + (isDocsFile ? `/..${result.uriPath}` : result.uriPath);
+        const link = isDocsFile ? `..${result.uriPath}` : `.${result.uriPath}`;
         const pageDescription = result.pageDescription;
         const pageTitle = capitalizeFirstLetter(result.pageTitle);
 
