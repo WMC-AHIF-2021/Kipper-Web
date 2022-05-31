@@ -145,6 +145,7 @@
   align-self: flex-start;
   overflow: auto;
   overflow-wrap: break-word;
+  word-wrap: break-word; /* For IE */
 
   /* Apply proper formatting */
   margin: 0;
