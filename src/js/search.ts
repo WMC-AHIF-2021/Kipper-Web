@@ -60,7 +60,7 @@ export async function search(): Promise<void> {
       searchResult.innerHTML = resultsHTML;
     } else {
       // Negative Result at Search
-      searchResult.innerHTML = "Sorry, we couldn't find anything for your search!";
+      searchResult.innerHTML = "Sorry, we couldn't find anything for your search!<small>But try <a href='often-searched.html'>this!</a></small>";
     }
   } else {
     searchResult.innerHTML = "Type to search...";
