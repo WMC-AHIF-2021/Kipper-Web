@@ -135,8 +135,8 @@ p {
   .super-large-header {
     font-style: normal !important;
     font-weight: bold !important;
-    font-size: 96px !important;
-    line-height: 116px !important;
+    font-size: 82px !important;
+    line-height: 98px !important;
     display: flex;
     align-items: center;
     text-align: center;
