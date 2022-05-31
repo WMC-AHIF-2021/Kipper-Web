@@ -132,8 +132,8 @@ ol {
 
 @media (max-width: 780px) {
   #header-nav-bar {
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 

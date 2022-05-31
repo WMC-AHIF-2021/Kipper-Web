@@ -7,8 +7,8 @@
 
 .docs-page-content-container {
   display: flex;
-  flex-grow: 1;
-  padding-left: 4vw;
+  width: 66.7%;
+  padding: 4vw;
 }
 
 #kipper-docs-img {
