@@ -5,20 +5,10 @@
 }
 
 /* Default sizing for buttons */
-@media (max-width: 1200px) {
-  .button,
-  .button-dark {
-    padding: 0.5em 2em !important;
-    margin: 0.5em 0.5em 0.5em 0 !important;
-  }
-}
-
-@media (min-width: 1200px) {
-  .button,
-  .button-dark {
-    padding: 1em 2em !important;
-    margin: 0.75em 0.75em 0.75em 0 !important;
-  }
+.button,
+.button-dark {
+  padding: 1em 1.6em !important;
+  margin: 0.75em 0.75em 0.75em 0 !important;
 }
 
 /* Base Button Properties */
@@ -79,6 +69,8 @@
   border: 2px solid var(--scheme-primary) !important;
   color: var(--scheme-primary) !important;
   background-color: transparent !important;
+  padding: calc(1em - 2px) calc(1.6em - 2px) !important;
+  margin: 0.75em 0.75em 0.75em 0 !important;
 }
 
 .inverted-button:active,
@@ -91,20 +83,6 @@
   box-shadow: 0 0 0.5em var(--scheme-gray) !important;
   color: white !important;
   border-color: var(--button-dark-primary) !important;
-}
-
-@media (max-width: 1200px) {
-  .inverted-button {
-    padding: calc(0.5em - 2px) calc(1em - 2px) !important;
-    margin: 0.5em 0.5em 0.5em 0 !important;
-  }
-}
-
-@media (min-width: 1200px) {
-  .inverted-button {
-    padding: calc(1em - 2px) calc(2em - 2px) !important;
-    margin: 0.75em 0.75em 0.75em 0 !important;
-  }
 }
 
 /* Underline buttons */

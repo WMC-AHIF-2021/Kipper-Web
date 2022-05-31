@@ -5,6 +5,11 @@
     --search-bar-size: 12.5vw;
     --search-bar-size-expanded: 20vw;
   }
+
+  #header-nav-bar {
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -12,16 +17,7 @@
     --search-bar-size: 15vw;
     --search-bar-size-expanded: 25vw;
   }
-}
 
-@media (max-width: 780px) {
-  #header-nav-bar {
-    padding-right: 2rem;
-    padding-left: 2rem;
-  }
-}
-
-@media (min-width: 780px) {
   #header-nav-bar {
     padding-right: 2rem;
     padding-left: 2rem;

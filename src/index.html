@@ -127,6 +127,14 @@ See main.css for the --scheme-primary variable
         <!-- Main Content, where the text is located and the items unique to this site are defined -->
         <div class="text-page-content-container">
           <section>
+            <!-- Alternative image if the window is too small to display the animation -->
+            <a href="./playground.html">
+              <img
+                id="alternative-welcome-image"
+                src="./img/carbon-code-main.png"
+                alt=""
+              />
+            </a>
             <ul
               id="homepage-content"
               class="no-style-list flex-row flex-parent-container flex-end"
@@ -136,9 +144,9 @@ See main.css for the --scheme-primary variable
                   id="welcome-text"
                   class="flex-parent-container flex-column flex-start"
                 >
-                  <h1 id="welcome-header" class="super-large-header">
-                    Welcome to Kipper!
-                  </h1>
+                  <h2 id="welcome-header" class="super-large-header">
+                    Welcome to <br>Kipper!
+                  </h2>
                   <p class="flex-parent-container flex-row flex-start">
                     <a href="./playground.html" class="button">
                       Try our Playground
@@ -150,9 +158,9 @@ See main.css for the --scheme-primary variable
                 </section>
               </li>
               <li>
-                <a href="./playground.html" class="large-window">
+                <a href="./playground.html">
                   <img
-                    class="welcome-image"
+                    id="welcome-image"
                     src="./img/carbon-code-main.png"
                     alt=""
                   />
