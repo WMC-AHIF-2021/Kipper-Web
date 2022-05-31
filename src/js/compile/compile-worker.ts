@@ -69,7 +69,9 @@ onmessage = async function (event) {
   try {
     eval(compiledCode.code);
   } catch (e) {
-    postMessage(`Encountered Runtime error:\n  ${(<Error>e).name}: ${(<Error>e).message}`);
+    postMessage(
+      `Encountered Runtime error:\n  ${(<Error>e).name}: ${(<Error>e).message}`
+    );
     postMessage(1);
     throw e;
   }

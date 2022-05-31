@@ -5,9 +5,14 @@ export function capitalizeFirstLetter(string: string): string {
 }
 
 export function setSearchVisibility(visible: boolean): void {
-  document.getElementById("search-result").style.visibility = visible ? "visible" : "hidden";
-  document.getElementById("search-result-overlay").style.visibility = visible ? "visible" : "hidden";
-  document.getElementById("search-background-overlay").style.visibility = visible ? "visible" : "hidden";
+  document.getElementById("search-result").style.visibility = visible
+    ? "visible"
+    : "hidden";
+  document.getElementById("search-result-overlay").style.visibility = visible
+    ? "visible"
+    : "hidden";
+  document.getElementById("search-background-overlay").style.visibility =
+    visible ? "visible" : "hidden";
 }
 
 export async function search(): Promise<void> {
@@ -52,15 +57,19 @@ export async function search(): Promise<void> {
 
         // Positive Result at Search
         console.log(
-          "The Search found: " + link + " for your request! (" + searchInput + ")"
+          "The Search found: " +
+            link +
+            " for your request! (" +
+            searchInput +
+            ")"
         );
-        resultsHTML +=
-          `<div><p><a href="${link}">${pageTitle}</a></p><small>${pageDescription}</small></div>`;
+        resultsHTML += `<div><p><a href="${link}">${pageTitle}</a></p><small>${pageDescription}</small></div>`;
       }
       searchResult.innerHTML = resultsHTML;
     } else {
       // Negative Result at Search
-      searchResult.innerHTML = "Sorry, we couldn't find anything for your search!";
+      searchResult.innerHTML =
+        "Sorry, we couldn't find anything for your search!";
     }
   } else {
     searchResult.innerHTML = "Type to search...";
