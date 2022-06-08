@@ -309,9 +309,7 @@ codeTextArea.addEventListener("keyup", (event) => {
 
   // If the input is not empty, signalise that code was restored
   if (codeTextArea.value.trim() !== "") {
-    textSavingState.innerHTML = `<p class="gray-text">Welcome back! We restored the code of your last session for you :)</p>`;
-  } else {
-    textSavingState.innerHTML = `<p class="gray-text">Start typing! We will save your changes while you are typing!</p>`;
+    textSavingState.innerHTML = `<p class="gray-text">Code restored :)</p>`;
   }
 })();
 

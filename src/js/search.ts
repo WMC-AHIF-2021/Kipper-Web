@@ -5,9 +5,14 @@ export function capitalizeFirstLetter(string: string): string {
 }
 
 export function setSearchVisibility(visible: boolean): void {
-  document.getElementById("search-result").style.visibility = visible ? "visible" : "hidden";
-  document.getElementById("search-result-overlay").style.visibility = visible ? "visible" : "hidden";
-  document.getElementById("search-background-overlay").style.visibility = visible ? "visible" : "hidden";
+  document.getElementById("search-result").style.visibility = visible
+    ? "visible"
+    : "hidden";
+  document.getElementById("search-result-overlay").style.visibility = visible
+    ? "visible"
+    : "hidden";
+  document.getElementById("search-background-overlay").style.visibility =
+    visible ? "visible" : "hidden";
 }
 
 export async function search(): Promise<void> {
