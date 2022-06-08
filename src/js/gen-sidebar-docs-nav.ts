@@ -2,71 +2,71 @@
  * Generator for the sidebar navigation for the documentation
  */
 
-const docsFiles = {
+const docsFiles: Record<string, { file: string; title: string }> = {
   index: {
     file: "index.html",
-    title: "Docs Overview"
+    title: "Docs Overview",
   },
   quickstart: {
     file: "quickstart.html",
-    title: "Quickstart"
+    title: "Quickstart",
   },
   ourGoals: {
     file: "our-goals.html",
-    title: "Goals & Timeline"
+    title: "Goals & Timeline",
   },
   compiler: {
     file: "compiler.html",
-    title: "Kipper Compiler"
+    title: "Kipper Compiler",
   },
   supportedPlatforms: {
     file: "supported-platforms.html",
-    title: "Supported platforms"
+    title: "Supported platforms",
   },
   usageExamples: {
     file: "usage-examples.html",
-    title: "Usage Examples"
+    title: "Usage Examples",
   },
   variables: {
     file: "variables.html",
-    title: "Variables"
+    title: "Variables",
   },
   datatypes: {
     file: "datatypes.html",
-    title: "Variable Datatypes"
+    title: "Variable Datatypes",
   },
   expression: {
     file: "expressions.html",
-    title: "Expressions"
+    title: "Expressions",
   },
   statements: {
     file: "statements.html",
-    title: "Statements"
+    title: "Statements",
   },
   decisionMaking: {
     file: "decision-making.html",
-    title: "If-Statement"
+    title: "If-Statement",
   },
   whileLoop: {
     file: "while-loop.html",
-    title: "While-Loop"
+    title: "While-Loop",
   },
   doWhileLoop: {
     file: "do-while-loop.html",
-    title: "Do-While-Loop"
+    title: "Do-While-Loop",
   },
   forLoop: {
     file: "for-loop.html",
-    title: "For-Loop"
+    title: "For-Loop",
   },
   functions: {
     file: "functions.html",
-    title: "Functions"
+    title: "Kipper Functions",
   },
   builtinFunctions: {
     file: "built-in-functions.html",
-    title: "Built-In Functions"
-  }
+    title: "Built-in Kipper Functions",
+  },
 };
 
 function GenDocsSidebarNavigation(): string {
@@ -76,7 +76,9 @@ function GenDocsSidebarNavigation(): string {
     const isCurrentFile = item.file == path.split("/").pop();
     headers = headers.concat(`
       <li>
-        <h5 class="sidebar-nav-header ${isCurrentFile ? "selected-page-sidebar-nav-header" : ""}">
+        <h5 class="sidebar-nav-header ${
+          isCurrentFile ? "selected-page-sidebar-nav-header" : ""
+        }">
           <a href=${pathToInsert}>
             ${item.title}
           </a>
@@ -96,4 +98,5 @@ function GenDocsSidebarNavigation(): string {
 }
 
 // writing the content to the innerHtml of the document docs page navigation list
-document.getElementById("docs-sidebar-nav-wrapper").innerHTML = GenDocsSidebarNavigation();
+document.getElementById("docs-sidebar-nav-wrapper").innerHTML =
+  GenDocsSidebarNavigation();

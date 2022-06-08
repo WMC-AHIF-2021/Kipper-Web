@@ -5,11 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.5.0] - 2022-05-28
+
+### Added
+- Search bar overlay and search implementation for searching in the Kipper docs.
+- Added index for all Kipper pages.
+
+### Changed
+- Updated descriptions of all Kipper pages to be more accurate.
+
 ## [v0.4.0] - 2022-05-17
 ### Added
 - Included Showdown library (Markdown Converter).
 - Renderer and Converter for the changelog.html page.
-- Implemented translation of the [Kipper CHANGELOG.md](https://github.com/Luna-Klatzer/Kipper/tree/main/CHANGELOG.md) to
+- Implemented translation of the [Kipper Changelog..md](https://github.com/Luna-Klatzer/Kipper/tree/main/CHANGELOG.md) to
   HTML on the changelog.html page.
 - Implemented error handling for Kipper compilation errors.
 
@@ -148,6 +157,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed unnecessary `start_local_Server.exe`
 
 [unreleased]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/HEAD...base-dev
+[v0.5.0]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/WMC-AHIF-2021/Kipper-Web/compare/v0.1.5...v0.2.0

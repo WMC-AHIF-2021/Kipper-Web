@@ -1,14 +1,16 @@
 // Import the kipper module
-importScripts('//cdn.jsdelivr.net/npm/@kipper/core@latest/kipper-standalone.min.js');
+importScripts(
+  "//cdn.jsdelivr.net/npm/@kipper/core@latest/kipper-standalone.min.js"
+);
 
 // Import the babel transpiler
-importScripts('//unpkg.com/@babel/standalone/babel.min.js');
+importScripts("//unpkg.com/@babel/standalone/babel.min.js");
 
 // The message handler for the compiler log messages - We don't handle those yet and just log them onto the console
 const msgHandler = (level, msg) => {
   // @ts-ignore
   postMessage(`[${Kipper.getLogLevelString(level)}]: ${msg}`);
-}
+};
 
 // Global logger for the compiler
 // @ts-ignore
@@ -37,8 +39,10 @@ async function evalKipperCode(code: string) {
 }
 
 // Define the handler for worker messages
-onmessage = async function(event) {
-  console.log("Received compilation request from main thread. Preparing compilation in Worker.");
+onmessage = async function (event) {
+  console.log(
+    "Received compilation request from main thread. Preparing compilation in Worker."
+  );
 
   // Compile the code to TypeScript
   let result: string;
@@ -53,11 +57,22 @@ onmessage = async function(event) {
 
   // Transpile the code from TypeScript to JavaScript
   // @ts-ignore
-  const compiledCode = Babel.transform(result, { filename: "kipper-web-script.ts", presets: ["env", "typescript"] });
+  const compiledCode = Babel.transform(result, {
+    filename: "kipper-web-script.ts",
+    presets: ["env", "typescript"],
+  });
 
   // Evaluate the code
-  await evalKipperCode(compiledCode.code);
+  try {
+    await evalKipperCode(compiledCode.code);
+  } catch (e) {
+    postMessage(
+      `Encountered Runtime error:\n  ${(<Error>e).name}: ${(<Error>e).message}`
+    );
+    postMessage(1);
+    throw e;
+  }
 
   // Return with exit code 0 (Success)
   postMessage(0);
-}
+};
