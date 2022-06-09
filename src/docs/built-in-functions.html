@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Built-in Kipper Functions</title>
+    <title>Built-in Functions</title>
     <meta
       name="description"
       content="Built-in Kipper Functions, which are available in every program per default."
@@ -145,18 +145,20 @@
                 <section>
                   <nav id="docs-page-nav"></nav>
                   <article>
-                    <h2>Built-in Kipper Functions</h2>
+                    <h2>Built-in Functions</h2>
                     <article>
                       <ul class="bullet-list">
                         <li>
                           <h3>
-                            <code>def print(msg: string) -> void</code>
+                            <code>def print(msg: str) -> void</code>
                           </h3>
                           <p>
-                            Prints the string <code>msg</code> onto
-                            stdout/console of the specific platform. This uses
-                            under the hood <code>console.log</code> in both
-                            Node.js and in Browsers.
+                            Prints the specified string <code>msg</code> onto
+                            stdout/the console of the specific platform.
+                          </p>
+                          <p>
+                            This function under the hood <code>console.log()</code> in both
+                            Node.js and Browser environments.
                           </p>
                           <h4>List of supported platforms:</h4>
                           <table>
@@ -181,9 +183,6 @@
                               </tr>
                             </tbody>
                           </table>
-                        </li>
-                        <li>
-                          <h3>In work...</h3>
                         </li>
                       </ul>
                     </article>
