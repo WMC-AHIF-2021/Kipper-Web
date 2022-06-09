@@ -196,7 +196,7 @@
 &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- Kipper --&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/@kipper/base@latest/kipper-standalone.min.js"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="https://cdn.jsdelivr.net/npm/@kipper/core@latest/kipper-standalone.min.js"&gt;&lt;/script&gt;</code></pre>
                       <p>
                         After including Kipper into your HTML file, you can
                         access the library using the identifier
@@ -237,41 +237,41 @@
                       </p>
                       <pre><code class="language-json">"dependencies": {
   ...
-  "@kipper/cli": "^0.2.1"
+  "@kipper/cli": "^0.8.0"
 }
 /* or */
 "devDependencies": {
   ...
-  "@kipper/cli": "^0.2.1"
+  "@kipper/cli": "^0.8.0"
 }</code></pre>
                       <p>
                         Section in work... (CLI not fully up to date with the
-                        <code>@kipper/base</code> module!)
+                        <code>@kipper/core</code> module!)
                       </p>
                     </article>
                     <h3>Option 3. - Setting up Kipper as a library</h3>
                     <article>
                       <p>
                         To set up Kipper for your personal code, simply add
-                        <code>@kipper/base</code> to your dependencies or
+                        <code>@kipper/core</code> to your dependencies or
                         development dependencies in your
                         <code>package.json</code> file.
                       </p>
                       <pre><code class="language-json">"dependencies": {
   ...
-  "@kipper/base": "^0.2.1"
+  "@kipper/core": "^0.8.0"
 }
 /* or */
 "devDependencies": {
   ...
-  "@kipper/base": "^0.2.1"
+  "@kipper/core": "^0.8.0"
 }</code></pre>
                       <p>
                         If you intend to only try out Kipper, you can also
                         simply install Kipper globally for the time you are
                         using it, like this:
                       </p>
-                      <pre><code class="language-bash">npm install -g @kipper/base</code></pre>
+                      <pre><code class="language-bash">npm install -g @kipper/core</code></pre>
                       <article class="red-highlight-text">
                         <h3>Important</h3>
                         If possible avoid installing Kipper globally if you
