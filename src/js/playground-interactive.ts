@@ -235,8 +235,7 @@ consoleOutputButton.addEventListener("click", switchToConsoleOutput);
 compilerOutputButton.addEventListener("click", switchToCompilerOutput);
 
 codeTextArea.addEventListener("input", (event) => {
-  const givenTextArea: HTMLTextAreaElement =
-    event.target as HTMLTextAreaElement;
+  const givenTextArea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
   writeEditorResultAndHighlight(givenTextArea.value);
 });
 
@@ -370,6 +369,8 @@ function checkForTab(event) {
     // Move cursor
     element.selectionStart = cursorPos;
     element.selectionEnd = cursorPos;
+
+    writeEditorResultAndHighlight(element.value);
   }
 }
 
