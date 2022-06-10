@@ -239,13 +239,8 @@ codeTextArea.addEventListener("input", (event) => {
   writeEditorResultAndHighlight(givenTextArea.value);
 });
 
-codeTextArea.addEventListener("scroll", () => {
-  syncTextAreaSizeAndScroll();
-});
-
-codeTextArea.addEventListener("keydown", (event) => {
-  checkForTab(event);
-});
+codeTextArea.addEventListener("scroll", syncTextAreaSizeAndScroll);
+codeTextArea.addEventListener("keydown", checkForTab);
 
 // Properly configure the sizes of the items in the browser window. This should set every item relative to the maximum
 // possible space available.
@@ -354,7 +349,7 @@ function writeEditorResultAndHighlight(value: string): void {
 function checkForTab(event) {
   const element = codeTextArea;
   const code = element.value;
-  if (event.key == "Tab") {
+  if (event.key === "Tab") {
     event.preventDefault();
 
     const beforeTab = code.slice(0, element.selectionStart);
