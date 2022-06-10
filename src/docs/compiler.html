@@ -147,7 +147,7 @@
                   <article>
                     <h2>Kipper Compiler</h2>
                     <p>
-                      The Kipper Compiler is a typescript-based compiler that
+                      The Kipper Compiler is a TypeScript-based compiler that
                       can translate Kipper code into the TypeScript language.
                       (In the future, maybe also native JavaScript or
                       AssemblyScript will be supported. See
@@ -157,12 +157,122 @@
                       for more information.)
                     </p>
                     <article>
-                      <h3>Configuring the Kipper Compiler</h3>
-                      <p class="red-highlight-text">In work...</p>
+                      <h3>Kipper API</h3>
+                      <p>
+                        Kipper provides a TypeScript API for interacting with its compiler, which can be used to
+                        configure and inspect the compilation of a program. This API is per default shipped with the
+                        <code>@kipper/core</code> package and the <code>kipper-standalone.js</code> file.
+                      </p>
                     </article>
                     <article>
-                      <h3>Kipper Compiler CLI in Node.js</h3>
-                      <p class="red-highlight-text">In work...</p>
+                      <h3>Configuring the Kipper Compiler</h3>
+                      <p>
+                        Configuring <code>KipperCompile.compile()</code> can be done using the
+                        <code>CompileConfig</code> interface, which defines all available parameters for a compilation.
+                      </p>
+                      <h4>Available options</h4>
+                      <table>
+                        <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Type<br></th>
+                          <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>fileName</td>
+                          <td>string</td>
+                          <td>The name of the file. Per default <code>anonymous-script</code>.</td>
+                        </tr>
+                        <tr>
+                          <td>target</td>
+                          <td>KipperTarget</td>
+                          <td>
+                            The Kipper target instance, which defines the translation behaviour of the Kipper AST
+                            nodes. Per default <code>TypeScriptTarget</code>.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>optimisationOptions</td>
+                          <td>OptimisationOptions<br></td>
+                          <td>
+                            The options for optimising the Kipper output.<br><br>
+                            Defaults to:
+                            <pre><code class="language-typescript">{
+  optimiseInternals: true, // Removes any unused internal function
+  optimiseBuiltIns: false // Removes any unused built-in function
+}</code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>extendBuiltIns</td>
+                          <td>Array&lt;BuiltInFunction&gt;</td>
+                          <td>Additional built-in functions that should be available in the Kipper program. This extends builtIns and is per default empty.<br></td>
+                        </tr>
+                        <tr>
+                          <td>builtIns<br></td>
+                          <td>Array&lt;BuiltInFunction&gt;</td>
+                          <td>Standard built-in functions that should be available in the Kipper program. <br><br>If this is defined with new built-in functions that Kipper does not implement per default, the Kipper target class will have to be updated as well to implement the generation of these built-ins. <br><br>Defaults to the function as listed in builtin-functions.html.<br></td>
+                        </tr>
+                        </tbody>
+                      </table>
+                      <h4>Example configuration</h4>
+                      <pre><code class="language-typescript">import { KipperCompiler } from "@kipper/core";
+import { TypeScriptTarget } from "@kipper/core/lib/targets/typescript";
+
+const compiler = new KipperCompiler();
+const result = compiler.compile(
+  kipperCode, // A string or a KipperParseStream containing the source code
+  {
+    fileName: "myProgram.kip",
+    target: new TypeScriptTarget(),
+    optimisationOptions: {
+      optimiseInternals: true, // Removes any unused internal function
+      optimiseBuiltIns: true // Removes any unused built-in function
+    }
+  }
+);
+
+</code></pre>
+                    </article>
+                    <article>
+                      <h3>Kipper CLI Parameters</h3>
+                      <p>
+                        Parameters for the Kipper Compiler.
+                      </p>
+                      <table>
+                        <thead>
+                        <tr>
+                          <th>Flags</th>
+                          <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>-b, --[no-]optimise-builtins<br></td>
+                          <td>If set to true, the built-in functions of the compiled code will be optimised using tree-shaking reducing the size of the output.</td>
+                        </tr>
+                        <tr>
+                          <td>-e, --encoding=encoding</td>
+                          <td>The encoding that should be used to read the file (ascii,utf8,utf16le). Defaults to <code>utf8</code>.</td>
+                        </tr>
+                        <tr>
+                          <td>-i, --[no-]optimise-internals</td>
+                          <td>If set to true, the internal functions of the compiled code will be optimised using tree-shaking reducing the size of the output.</td>
+                        </tr>
+                        <tr>
+                          <td>-o, --output-dir=output-dir</td>
+                          <td>The build directory where the compiled files should be placed. If the path does not exist, it will be created. Defaults to <code>build</code>.<br></td>
+                        </tr>
+                        <tr>
+                          <td>-s, --string-code=string-code<br></td>
+                          <td>The content of a Kipper file that can be passed as a replacement for the 'file' parameter.<br></td>
+                        </tr>
+                        </tbody>
+                      </table>
+                      <h4>Example CLI Command</h4>
+                      <pre><code class="language-typescript">kipper compile -s 'call print("Hello world!");' -e utf16le -i -b</code></pre>
                     </article>
                   </article>
                   <script src="../js/gen-docs-nav-specifier.ts"></script>
