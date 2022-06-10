@@ -53,22 +53,24 @@ onmessage = async function (event) {
     throw e;
   }
 
-  postMessage(0);
-
-  // Transpile the code from TypeScript to JavaScript
-  // @ts-ignore
-  const compiledCode = Babel.transform(result, {
-    filename: "kipper-web-script.ts",
-    presets: ["env", "typescript"],
-  });
-
   // Evaluate the code
   try {
+    // Transpile the code from TypeScript to JavaScript
+    // @ts-ignore
+    const compiledCode = Babel.transform(result, {
+      filename: "kipper-web-script.ts",
+      presets: ["env", "typescript"],
+    });
+
+    // Switch to console output
+    postMessage(0);
+
     await evalKipperCode(compiledCode.code);
   } catch (e) {
     postMessage(
-      `Encountered Runtime error:\n  ${(<Error>e).name}: ${(<Error>e).message}`
+      `\nEncountered Runtime error:\n  ${(<Error>e).name}: ${(<Error>e).message}`
     );
+    postMessage(`\nIf this is unexpected, please report this bug to the developer on GitHub with your code snippet.`);
     postMessage(1);
     throw e;
   }
