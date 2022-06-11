@@ -1,5 +1,5 @@
 /**
- * @summary Main file for playground-interactive.ts, which implements the compilation and online editor behaviour.
+ * @summary Main file for playground.ts, which implements the compilation and online editor behaviour.
  */
 
 const localStorageIdentifier = "kipper-code-editor-content";
