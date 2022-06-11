@@ -158,4 +158,7 @@
   /* Update font */
   font-size: 14px;
   line-height: 18px;
+
+  /* Tabs should be handled like spaces */
+  tab-size: 1;
 }
