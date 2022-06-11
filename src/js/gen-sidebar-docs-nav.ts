@@ -2,6 +2,8 @@
  * Generator for the sidebar navigation for the documentation
  */
 
+import { path } from "./main";
+
 const docsFiles: Record<string, { file: string; title: string }> = {
   index: {
     file: "index.html",

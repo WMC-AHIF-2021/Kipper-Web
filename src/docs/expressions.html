@@ -9,7 +9,11 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script src="../js/main.ts"></script>
+    <script type="module">
+      import { DefineOpenGraphMetaTags, openGraphMetaTags } from "../js/main";
+
+      DefineOpenGraphMetaTags(openGraphMetaTags);
+    </script>
     <link rel="manifest" href="../../site.webmanifest" />
     <link rel="apple-touch-icon" href="../img/icon.png" />
     <link rel="shortcut icon" type="image/ico" href="../../favicon.ico" />
@@ -123,7 +127,7 @@
             id="header-description-content"
             class="text-page-content-container"
           ></div>
-          <script src="../js/gen-header.ts"></script>
+          <script type="module" src="../js/gen-header.ts"></script>
         </header>
         <!-- Main Content, where the text is located and the items unique to this site are defined -->
         <div class="flex-parent-container flex-fill-to-parent">
@@ -137,7 +141,7 @@
               id="docs-sidebar-nav-wrapper"
               class="flex-parent-container"
             ></li>
-            <script src="../js/gen-sidebar-docs-nav.ts"></script>
+            <script type="module" src="../js/gen-sidebar-docs-nav.ts"></script>
             <li class="docs-page-content-container">
               <div id="docs-content" class="shadowed-box">
                 <section>
@@ -614,7 +618,7 @@ var example2 = call func2() + call func2(); // -> 50</code></pre>
                       </li>
                     </ul>
                   </article>
-                  <script src="../js/gen-docs-nav-specifier.ts"></script>
+                  <script type="module" src="../js/gen-docs-nav-specifier.ts"></script>
                 </section>
               </div>
             </li>

@@ -1,23 +1,28 @@
 // Import the kipper module
+// eslint-disable-next-line no-undef
 importScripts(
   "//cdn.jsdelivr.net/npm/@kipper/core@latest/kipper-standalone.min.js"
 );
 
 // Import the babel transpiler
+// eslint-disable-next-line no-undef
 importScripts("//unpkg.com/@babel/standalone/babel.min.js");
 
 // The message handler for the compiler log messages - We don't handle those yet and just log them onto the console
 const msgHandler = (level, msg) => {
   // @ts-ignore
+  // eslint-disable-next-line no-undef
   postMessage(`[${Kipper.getLogLevelString(level)}]: ${msg}`);
 };
 
 // Global logger for the compiler
 // @ts-ignore
+// eslint-disable-next-line no-undef
 const logger = new Kipper.KipperLogger(msgHandler);
 
 // Global compiler
 // @ts-ignore
+// eslint-disable-next-line no-undef
 const compiler = new Kipper.KipperCompiler(logger);
 
 /**
@@ -29,7 +34,7 @@ async function evalKipperCode(code: string) {
   const prevLog = console.log;
   console.log = (msg: string) => {
     postMessage(msg);
-  }
+  };
 
   // Eval the Kipper code
   eval(code);
@@ -57,6 +62,7 @@ onmessage = async function (event) {
   try {
     // Transpile the code from TypeScript to JavaScript
     // @ts-ignore
+    // eslint-disable-next-line no-undef
     const compiledCode = Babel.transform(result, {
       filename: "kipper-web-script.ts",
       presets: ["env", "typescript"],

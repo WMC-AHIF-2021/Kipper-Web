@@ -2,6 +2,8 @@
  * Generates the visual header and description on the site
  */
 
+import { documentTitle, isNestedDir, documentDescription } from "./main";
+
 function GenHeaderAndDescription(): string {
   return `<div class="header-text-content flex-parent-container flex-fill-to-parent flex-column flex-center">
     <div id="page-header" class="white-text">
@@ -15,5 +17,4 @@ function GenHeaderAndDescription(): string {
 }
 
 // writing the content to the innerHtml of the header
-document.getElementById("header-description-content").innerHTML =
-  GenHeaderAndDescription();
+document.getElementById("header-description-content").innerHTML = GenHeaderAndDescription();

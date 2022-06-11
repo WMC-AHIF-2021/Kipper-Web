@@ -2,7 +2,10 @@
  * Generates the visual specifier for the local docs file
  */
 
-function GenDocsNavSpecifier(): string {
+import { documentTitle } from "./main";
+
+function GenDocsNavSpecifier(): string
+{
   const path = window.location.pathname;
   const page = path.split("/").pop();
   return `<ul class="flex-row no-style-list">

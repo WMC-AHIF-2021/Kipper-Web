@@ -1,22 +1,26 @@
 /* Defines general variables/properties of the site */
 
 // The path to the current document
-const path = window.location.pathname;
+export const path = window.location.pathname;
+
 // Signalises whether the current document is a docs file
-const isDocsFile: boolean = ((array: string[]) => {
+export const isDocsFile: boolean = ((array: string[]) => {
   return array[array.length - 2] == "docs";
 })(path.split("/"));
+
 // Alias for 'isDocsFile' to signalise the local file is nested
-const isNestedDir: boolean = isDocsFile;
+export const isNestedDir: boolean = isDocsFile;
+
 // The document title
-const documentTitle = document.title;
+export const documentTitle = document.title;
+
 // The document description
-const documentDescription: string = document
+export const documentDescription: string = document
   .querySelector('meta[name="description"]')
   .getAttribute("content");
 
 // General interface for OpenGraph Meta-Tags
-interface OpenGraphMetaTags {
+export interface OpenGraphMetaTags {
   site_name: string;
   title: string;
   description: string;
@@ -26,7 +30,7 @@ interface OpenGraphMetaTags {
   locale: string;
 }
 
-const openGraphMetaTags: OpenGraphMetaTags = {
+export const openGraphMetaTags: OpenGraphMetaTags = {
   site_name: "Kipper",
   title: documentTitle,
   description: documentDescription,
@@ -39,7 +43,7 @@ const openGraphMetaTags: OpenGraphMetaTags = {
 /**
  * Defines the Open-Graph tags for the current document. The <meta> tags must be already set
  */
-function DefineOpenGraphMetaTags(tags: OpenGraphMetaTags): void {
+export function DefineOpenGraphMetaTags(tags: OpenGraphMetaTags): void {
   Object.keys(tags).forEach((key) => {
     const meta: HTMLMetaElement = document.createElement("meta");
     meta.setAttribute("property", `og:${key}`);
@@ -47,5 +51,3 @@ function DefineOpenGraphMetaTags(tags: OpenGraphMetaTags): void {
     document.head.appendChild(meta);
   });
 }
-
-DefineOpenGraphMetaTags(openGraphMetaTags);
