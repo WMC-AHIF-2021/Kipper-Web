@@ -2,6 +2,15 @@
  * @summary Main file for playground.ts, which implements the compilation and online editor behaviour.
  */
 
+import * as prism from "../prism/prism";
+
+// Initialise Prism
+(() => {
+  prism.languages["kipper"] = {
+    ...(prism.languages["typescript"])
+  };
+})();
+
 const localStorageIdentifier = "kipper-code-editor-content";
 
 // Editor elements
@@ -338,9 +347,8 @@ function writeEditorResultAndHighlight(value: string): void {
     .replace(new RegExp("&", "g"), "&")
     .replace(new RegExp("<", "g"), "<"); // Allow newlines
 
-  // @ts-ignore
-  // Prism should be imported
-  Prism.highlightElement(codeTextAreaResult);
+  // Highlight output field
+  prism.highlightElement(codeTextAreaResult);
 
   // Sync formatting
   syncTextAreaSizeAndScroll();
@@ -396,9 +404,8 @@ function writeConsoleResultAndHighlight(value: string): void {
     .replace(new RegExp("&", "g"), "&")
     .replace(new RegExp("<", "g"), "<"); // Allow newlines
 
-  // @ts-ignore
-  // Prism should be imported
-  Prism.highlightElement(shellOutputResult);
+  // Highlight output field
+  prism.highlightElement(shellOutputResult);
 }
 
 /**
