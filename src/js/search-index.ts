@@ -18,6 +18,7 @@ export const rawSearchIndex: Array<string> = [
   "Docs;/docs/index.html;Documentation;Kipper Documentation and API Reference.",
   "Changelog;/changelog.html;Changelog;Kipper Changelog.",
   "Downloads;/download.html;Downloads;Downloads for the Kipper Language.",
+  "Comments;/docs/comments.html;Comments;Comments in the Kipper language.",
 ];
 
 /**
