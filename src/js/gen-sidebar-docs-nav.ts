@@ -63,7 +63,11 @@ const docsFiles: Record<string, { file: string; title: string }> = {
   },
   functions: {
     file: "functions.html",
-    title: "Kipper Functions",
+    title: "Functions",
+  },
+  comments: {
+    file: "comments.html",
+    title: "Comments",
   },
   builtinFunctions: {
     file: "built-in-functions.html",
