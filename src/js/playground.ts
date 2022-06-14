@@ -319,9 +319,15 @@ codeTextArea.addEventListener("keyup", (event) => {
 // Initialise the default console output
 (() => {
   const welcomeMessage: Array<string> = [
-    "Welcome to the Kipper Playground!\n",
+    "--- Welcome to the Kipper Playground! ---\n",
     "Try out your first program by writing:\n",
-    '  call print("Hello world");',
+    '  call print("Hello world");\n',
+    "Create your first variable by writing:\n",
+    '  var myString: str = "Hello world!";',
+    '  call print(myString);\n',
+    "Perform your first calculations by writing:\n",
+    '  var result: num = 3.14 * 9;',
+    '  call print(result as str);\n',
   ];
 
   // Write to the console
