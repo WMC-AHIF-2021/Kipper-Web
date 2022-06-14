@@ -49,6 +49,11 @@ onmessage = async function (event) {
     "Received compilation request from main thread. Preparing compilation in Worker."
   );
 
+  // Print version of Kipper
+  // @ts-ignore
+  // eslint-disable-next-line no-undef
+  postMessage(`Kipper Compiler v${Kipper.version}\n`);
+
   // Compile the code to TypeScript
   let result: string;
   try {
