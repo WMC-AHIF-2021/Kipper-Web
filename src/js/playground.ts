@@ -373,7 +373,7 @@ function checkForTab(event) {
 
       // Remove tab char if it exists
       if (beforeTab[beforeTab.length - 1] === '\t' || beforeTab[beforeTab.length - 1] === ' ') {
-        const moveBack = beforeTab.slice(beforeTab.length - 2, beforeTab.length) === '  ' ? 2 : 1;
+        const moveBack = beforeTab.slice(-2, beforeTab.length) === '  ' ? 2 : 1;
 
         // where cursor moves after tab - moving forward by 1 char to after tab
         const cursorPos = element.selectionStart > 0 ? element.selectionStart - moveBack : 0;
