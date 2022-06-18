@@ -366,18 +366,38 @@ function checkForTab(event) {
   if (event.key === "Tab") {
     event.preventDefault();
 
-    const beforeTab = code.slice(0, element.selectionStart);
-    const afterTab = code.slice(element.selectionEnd, element.value.length);
+    // If the shift key is also pressed, push tabs back
+    if (event.shiftKey) {
+      const beforeTab = code.slice(0, element.selectionStart);
+      const afterTab = code.slice(element.selectionEnd, element.value.length);
 
-    // where cursor moves after tab - moving forward by 1 char to after tab
-    const cursorPos = element.selectionEnd + 1;
+      // Remove tab char if it exists
+      if (beforeTab[beforeTab.length - 1] === '\t' || beforeTab[beforeTab.length - 1] === ' ') {
+        const moveBack = beforeTab.slice(beforeTab.length - 2, beforeTab.length) === '  ' ? 2 : 1;
 
-    // Add tab char
-    element.value = beforeTab + "\t" + afterTab;
+        // where cursor moves after tab - moving forward by 1 char to after tab
+        const cursorPos = element.selectionStart > 0 ? element.selectionStart - moveBack : 0;
 
-    // Move cursor
-    element.selectionStart = cursorPos;
-    element.selectionEnd = cursorPos;
+        element.value = beforeTab.slice(0, beforeTab.length - moveBack) + afterTab;
+
+        // Move cursor
+        element.selectionStart = cursorPos;
+        element.selectionEnd = cursorPos;
+      }
+    } else {
+      const beforeTab = code.slice(0, element.selectionStart);
+      const afterTab = code.slice(element.selectionEnd, element.value.length);
+
+      // where cursor moves after tab - moving forward by 1 char to after tab
+      const cursorPos = element.selectionEnd + 1;
+
+      // Add tab char
+      element.value = beforeTab + "\t" + afterTab;
+
+      // Move cursor
+      element.selectionStart = cursorPos;
+      element.selectionEnd = cursorPos;
+    }
 
     writeEditorResultAndHighlight(element.value);
   }
