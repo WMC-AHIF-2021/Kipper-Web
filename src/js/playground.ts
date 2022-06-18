@@ -371,7 +371,7 @@ function checkForTab(event) {
       const beforeTab = code.slice(0, element.selectionStart);
       const afterTab = code.slice(element.selectionEnd, element.value.length);
 
-      // Remove tab char if it exists
+      // Remove tab char or whitespace if it exists
       if (beforeTab[beforeTab.length - 1] === '\t' || beforeTab[beforeTab.length - 1] === ' ') {
         const moveBack = beforeTab.slice(-2, beforeTab.length) === '  ' ? 2 : 1;
 
