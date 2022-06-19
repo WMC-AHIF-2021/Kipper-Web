@@ -15,6 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated docs design, layout and formatting.
+- Updated all docs pages and content to be up-to-date with the recent changes in Kipper.
+
+### Removed
+
+- Title header banners in the Kipper docs to simplify the design.
 
 ## [v0.6.0] - 2022-06-18
 
