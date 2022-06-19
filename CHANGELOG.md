@@ -10,7 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Release notices to docs pages containing functionality that is not implemented yet.
-- Added dynamic generation of header navigation bar in `gen-header.ts`.
+- Implemeted dynamic generation of header navigation bar in `gen-header.ts`.
+- Version tag in navigation bar logo.
 
 ### Changed
 
