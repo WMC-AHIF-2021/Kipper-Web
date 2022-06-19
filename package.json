@@ -14,8 +14,8 @@
   },
   "scripts": {
     "prebuild": "npm run tslint:fix",
-    "build": "parcel build src/index.html --no-content-hash --no-optimize --no-scope-hoist",
-    "gh-pages-build": "parcel build src/index.html --public-url https://wmc-ahif-2021.github.io/Kipper-Web/ --dist-dir . --no-content-hash --no-optimize --no-scope-hoist",
+    "build": "parcel build src/*.html --no-content-hash --no-optimize --no-scope-hoist",
+    "gh-pages-build": "parcel build src/*.html --public-url https://wmc-ahif-2021.github.io/Kipper-Web/ --dist-dir . --no-content-hash --no-optimize --no-scope-hoist",
     "watch": "parcel watch src/index.html",
     "start": "npm run build && npm run dev",
     "lint": "npm run tslint && npm run prettier",
@@ -24,7 +24,7 @@
     "tslint": "eslint ./src/ --ext .ts --config .eslintrc",
     "tslint:fix": "eslint ./src/ --ext .ts --config .eslintrc --fix",
     "posttest": "npm run lint & npm run prettier",
-    "dev": "parcel src/index.html --open --no-cache"
+    "dev": "parcel src/*.html --open --no-cache"
   },
   "devDependencies": {
     "@parcel/babel-ast-utils": "2.2.1",
