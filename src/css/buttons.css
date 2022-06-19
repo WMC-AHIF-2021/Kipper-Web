@@ -138,6 +138,6 @@
 
 @media (min-width: 1200px) {
   .top-nav-button {
-    margin: 1em 2em !important;
+    margin: 0.25em 1em !important;
   }
 }

@@ -200,6 +200,10 @@ ol {
   margin: 0 !important;
 }
 
+#kipper-logo {
+  margin: 0 0.5rem 0 0;
+}
+
 img {
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;

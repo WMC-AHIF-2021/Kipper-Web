@@ -3,7 +3,7 @@
 :root {
   --default-section-margin: 1.6rem;
   --default-article-margin: 0.8rem;
-  --default-parapgraph-margin: 0.4rem;
+  --default-parapgraph-margin: 1rem;
 }
 
 html {
@@ -19,7 +19,7 @@ article {
 }
 
 #docs-page-nav + article > :first-child {
-  margin-top: 0.4rem;
+  margin-top: 1rem;
 }
 
 .red-highlight-text h1,
@@ -33,7 +33,7 @@ article {
 }
 
 p + p {
-  margin-top: var(--default-parapgraph-margin);
+  margin: var(--default-parapgraph-margin) 0 0 0;
 }
 
 h1,
@@ -42,8 +42,12 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
+  margin-top: 1.2rem;
   margin-bottom: 0.4em;
+}
+
+.no-top-margin-header {
+  margin-top: 0 !important;
 }
 
 h1 {

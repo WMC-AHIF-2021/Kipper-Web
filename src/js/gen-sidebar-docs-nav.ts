@@ -15,11 +15,7 @@ const docsFiles: Record<string, { file: string; title: string }> = {
   },
   ourGoals: {
     file: "our-goals.html",
-    title: "Goals & Timeline",
-  },
-  compiler: {
-    file: "compiler.html",
-    title: "Kipper Compiler",
+    title: "Goals & Roadmap",
   },
   supportedPlatforms: {
     file: "supported-platforms.html",
@@ -28,6 +24,10 @@ const docsFiles: Record<string, { file: string; title: string }> = {
   usageExamples: {
     file: "usage-examples.html",
     title: "Usage Examples",
+  },
+  compiler: {
+    file: "compiler.html",
+    title: "Kipper Compiler",
   },
   variables: {
     file: "variables.html",
@@ -82,22 +82,22 @@ function GenDocsSidebarNavigation(): string {
     const isCurrentFile = item.file == path.split("/").pop();
     headers = headers.concat(`
       <li>
-        <h5 class="sidebar-nav-header ${
+        <p class="sidebar-nav-header ${
           isCurrentFile ? "selected-page-sidebar-nav-header" : ""
         }">
           <a href=${pathToInsert}>
             ${item.title}
           </a>
-        </h5>
+        </p>
       </li>
     `);
   }
 
   return `<nav id="docs-sidebar-nav">
           <h6 id="nav-kipper-header">
-            Kipper Docs
+            <a class="docs-page-nav-header" href="./index.html">Kipper Docs</a>
           </h6>
-          <ul class="bullet-list flex-column">
+          <ul class="no-style-list flex-column">
             ${headers}
           </ul>
         </nav>`;

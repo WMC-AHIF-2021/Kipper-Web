@@ -57,80 +57,13 @@
     <div id="main-frame">
       <div id="actual-content">
         <!-- The top element: menu and search bar -->
-        <header class="page-header">
-          <nav id="header-nav-bar">
-            <ul>
-              <li>
-                <a
-                  href="../index.html"
-                  class="
-                    no-style-list
-                    flex-row flex-parent-container flex-center
-                    kipper-logo-container
-                  "
-                >
-                  <img id="kipper-logo" src="../img/base_head.png" alt="" />
-                  <a class="underline-button" href="../index.html">
-                    <h1>Kipper</h1>
-                  </a>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="../download.html"
-                  class="underline-button top-nav-menu-item top-nav-button"
-                  ><h4>Downloads</h4></a
-                >
-              </li>
-              <li>
-                <a
-                  href="./index.html"
-                  class="
-                    underline-button
-                    top-nav-menu-item top-nav-button
-                    selected-nav-page
-                  "
-                  ><h4>Docs</h4></a
-                >
-              </li>
-              <li>
-                <a
-                  href="../playground.html"
-                  class="underline-button top-nav-menu-item top-nav-button"
-                  ><h4>Playground</h4>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="../changelog.html"
-                  class="underline-button top-nav-menu-item top-nav-button"
-                  ><h4>Changelog</h4></a
-                >
-              </li>
-            </ul>
-            <div id="search-bar-wrapper">
-              <ul>
-                <li>
-                  <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
-                </li>
-                <li id="search-bar">
-                  <label for="search-bar-input"></label>
-                  <input
-                    id="search-bar-input"
-                    type="search"
-                    placeholder="Search..."
-                    spellcheck="false"
-                  />
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <div
-            id="header-description-content"
-            class="text-page-content-container"
-          ></div>
-          <script type="module" src="../js/gen-header.ts"></script>
-        </header>
+        <header id="home-page-header" class="page-header"></header>
+        <script type="module">
+          import {GenHeaderNavbar} from "../js/gen-header";
+
+          document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+        </script>
+
         <!-- Main Content, where the text is located and the items unique to this site are defined -->
         <div class="flex-parent-container flex-fill-to-parent">
           <ul
@@ -149,11 +82,15 @@
                 <section>
                   <nav id="docs-page-nav"></nav>
                   <article>
-                    <h2>Usage Examples</h2>
-                    <p></p>
-                    <p class="red-highlight-text">
-                      Will be added once Kipper v0.10 has been released.
-                    </p>
+                    <div class="docs-page-description">
+                      <h1>Usage Examples</h1>
+                      <p></p>
+                    </div>
+                    <div class="docs-page-content">
+                      <p class="red-highlight-text">
+                        Will be added once Kipper v0.10 has been released.
+                      </p>
+                    </div>
                   </article>
                   <script type="module" src="../js/gen-docs-nav-specifier.ts"></script>
                 </section>
@@ -166,7 +103,7 @@
           id="footer-bar"
           class="flex-parent-container flex-column"
         ></footer>
-        <script src="../js/gen-footer.ts"></script>
+        <script type="module" src="../js/gen-footer.ts"></script>
       </div>
     </div>
 
