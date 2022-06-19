@@ -20,8 +20,8 @@
 #docs-sidebar-nav-wrapper {
   display: flex;
   flex-direction: column;
-  padding: 1.5em;
-  border-right: 1px solid var(--scheme-gray);
+  border-right: 1px solid rgba(25, 25, 28, 0.2);
+  padding: 2em 1.5em 1.5em;
 }
 
 #docs-sidebar-nav > ul {

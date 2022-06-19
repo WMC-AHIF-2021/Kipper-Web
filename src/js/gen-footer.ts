@@ -29,11 +29,6 @@ function GenFooter(): string {
       </li>
       <li>
         <small>
-          <a class="link-on-red-background underline-button" href=${websiteGitHubURL}>Website</a>
-        </small>
-      </li>
-      <li>
-        <small>
           <a class="link-on-red-background underline-button" href=${securityURL}>Security</a>
         </small>
       </li>
@@ -45,6 +40,11 @@ function GenFooter(): string {
       <li>
         <small>
           <a class="link-on-red-background underline-button" href=${licenseURL}>License</a>
+        </small>
+      </li>
+      <li>
+        <small>
+          <a class="link-on-red-background underline-button" href=${websiteGitHubURL}>Website Repo</a>
         </small>
       </li>
     </ul>
