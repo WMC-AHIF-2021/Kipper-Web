@@ -3,7 +3,7 @@
  */
 
 import {documentTitle, isNestedDir, documentDescription, path, isDocsFile} from "./main";
-import {currentVersion} from "./const.config";
+import {currentVersion, kipperGithubURL} from "./const.config";
 
 export const kipperPackageEndpoint: string = "https://registry.npmjs.org/kipper";
 
@@ -24,13 +24,16 @@ export function GenHeaderNavbar(): string {
           "
         >
           <img id="kipper-logo" src="${logo}" alt="" />
-          <a class="
-            underline-button
-          "
-          href="${isNestedDir ? '..' : '.'}/index.html"
-          >
-            <h1>Kipper</h1>
-          </a>
+        </a>
+        <a class="
+          underline-button kipper-logo-identifier
+        "
+        href="${isNestedDir ? '..' : '.'}/index.html"
+        >
+          <h1>Kipper</h1>
+        </a>
+        <a class="version-identifier" href="${kipperGithubURL}/releases/tag/v${currentVersion}">
+          <small>v${currentVersion}</small>
         </a>
       </li>
       <li>
