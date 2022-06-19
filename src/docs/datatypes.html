@@ -151,26 +151,23 @@
                   <article>
                     <h2>Kipper Datatypes</h2>
                     <p>
-                      As previously shown in the docs page
-                      <a href="./variables.html">Variables</a>, a variable
-                      always has a type that defines how you can interact with
-                      it. This also means that you often can not mix variables
-                      of different data types together, as they fundamentally
-                      represent different things.
+                      As previously shown in the docs page <a href="./variables.html">Variables</a>, every variable
+                      always has a type that defines what values it can store. This also means that you often can not
+                      mix variables of different data types together, as they fundamentally represent different things.
                     </p>
                     <h3>What is a datatype?</h3>
                     <p>
-                      A data type defines the type of value saved in a variable
-                      or constant. A variable with the datatype
-                      <code>num</code>, for example, can only contain numbers. A
-                      variable with an <code>str</code> datatype can contain
-                      text, symbols or numbers, but saves them as a text. This
-                      makes them for example impossible to use for calculations.
+                      A data type defines the type of value, which can be stored in a variable or constant.
+                    </p>
+                    <p>
+                      A variable with the datatype <code>num</code>, for example, can only contain numbers. A
+                      variable with an <code>str</code> datatype can only contain text, symbols or numbers, but saves
+                      them as text. This makes them for example impossible to use for calculations and as such using
+                      them in arithmetic expression is invalid.
                     </p>
                     <article class="red-highlight-text">
                       <h3>Remember!</h3>
-                      You may NEVER mix data types or do incompatible
-                      interactions with them!
+                      Data types can not be mixed together and must be converted before being used with another type.
                       <ul class="bullet-list flex-column">
                         <li>
                           <em class="green-checkmark">✓ VALID CODE</em>
@@ -182,11 +179,11 @@ var result: str = var1 + var2 + var3; // -> "This is a string"
 
 // ✓ Also Valid
 var var4: str = "42";
-var var5: num = var4 as num; // Converts the value to 'num' -> 42
+var var5: num = var4 as num + 5; // Converts the string to 'num' and evaluates to 47
 
 // ✓ Also Valid
 var var6: num = 32;
-var var7: num = var6 as num; // Converts the value to 'num' -> 32</code></pre>
+var var7: num = var6 as num * 2; // Converts the string to 'num' and evaluates to 64</code></pre>
                         </li>
                         <li>
                           <em class="red-checkmark">X INVALID CODE</em>
@@ -250,14 +247,13 @@ var var2: num = 51 % 10; // -> 1</code></pre>
                             priority than addictions and subtractions)
                           </p>
                           <pre><code class="language-typescript">// ✓ Standard math rules apply
-var result: num = 4 + 4 * 5; // -> 24</code></pre>
+var result: num = 4 + 4 * 5; // 4 + (4 * 5) -> 24</code></pre>
                         </article>
                         <p>
-                          Additionally, to the default Base-10 values, you may
-                          also use the following with <code>num</code>:
+                          Additionally, to the default Base-10 numbers, you may also use Hex, Octal and Binary numbers:
                         </p>
                         <!-- prettier-ignore -->
-                        <pre><code class="language-typescript">// ✓ Bytes Support
+                        <pre><code class="language-typescript">// ✓ Byte Number Support
 var bytes: num = 0b11111010; // -> 250
 
 // ✓ Hex-Decimal Number Support
