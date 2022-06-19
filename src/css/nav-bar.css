@@ -174,8 +174,10 @@
   font-family: "Noto Sans", serif;
   font-size: 14px !important;
   line-height: 18px !important;
-  padding-left: 0.6rem;
-  margin-bottom: 0.8rem;
+  padding-left: 0.4rem;
+  margin-top: -12px;
+  text-decoration: none;
+  letter-spacing: -.01em;
   color: rgba(255, 255, 255, 0.8);
   transition: ease-in-out 300ms;
 }
