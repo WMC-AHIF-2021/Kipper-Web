@@ -105,16 +105,18 @@ h6 {
   align-items: center;
 }
 
-a:not(.button, .button-dark, .docs-button, .inverted-button),
-a:link:not(.button, .button-dark, .docs-button, .inverted-button),
-a:active:not(.button, .button-dark, .docs-button, .inverted-button),
-a:visited:not(.button, .button-dark, .docs-button, .inverted-button) {
+/* Block the CSS from applying text link formatting on buttons and docs headers */
+:not(.sidebar-nav-header) > a:not(.button, .button-dark, .docs-button, .inverted-button),
+:not(.sidebar-nav-header) > a:link:not(.button, .button-dark, .docs-button, .inverted-button),
+:not(.sidebar-nav-header) > a:active:not(.button, .button-dark, .docs-button, .inverted-button),
+:not(.sidebar-nav-header) > a:visited:not(.button, .button-dark, .docs-button, .inverted-button) {
   color: #c71239;
   text-decoration: none;
   background-color: transparent;
 }
 
-a:hover:not(.button, .button-dark, .docs-button, .inverted-button) {
+/* Block the CSS from applying text link formatting on buttons and docs headers */
+:not(.sidebar-nav-header) > a:hover:not(.button, .button-dark, .docs-button, .inverted-button) {
   color: var(--scheme-primary);
   text-decoration: underline;
 }
