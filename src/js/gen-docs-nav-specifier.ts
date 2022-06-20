@@ -4,8 +4,7 @@
 
 import { documentTitle } from "./main";
 
-function GenDocsNavSpecifier(): string
-{
+function GenDocsNavSpecifier(): string {
   const path = window.location.pathname;
   const page = path.split("/").pop();
   return `<ul class="flex-row no-style-list">

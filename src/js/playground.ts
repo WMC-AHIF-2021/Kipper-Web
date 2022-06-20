@@ -7,7 +7,7 @@ import * as prism from "../prism/prism";
 // Initialise Prism
 (() => {
   prism.languages["kipper"] = {
-    ...(prism.languages["typescript"])
+    ...prism.languages["typescript"],
   };
 })();
 
@@ -244,7 +244,8 @@ consoleOutputButton.addEventListener("click", switchToConsoleOutput);
 compilerOutputButton.addEventListener("click", switchToCompilerOutput);
 
 codeTextArea.addEventListener("input", (event) => {
-  const givenTextArea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
+  const givenTextArea: HTMLTextAreaElement =
+    event.target as HTMLTextAreaElement;
   writeEditorResultAndHighlight(givenTextArea.value);
 });
 
@@ -324,10 +325,10 @@ codeTextArea.addEventListener("keyup", (event) => {
     '  call print("Hello world");\n',
     "Create your first variable by writing:\n",
     '  var myString: str = "Hello world!";',
-    '  call print(myString);\n',
+    "  call print(myString);\n",
     "Perform your first calculations by writing:\n",
-    '  var result: num = 3.14 * 9;',
-    '  call print(result as str);\n',
+    "  var result: num = 3.14 * 9;",
+    "  call print(result as str);\n",
   ];
 
   // Write to the console
@@ -372,13 +373,18 @@ function checkForTab(event) {
       const afterTab = code.slice(element.selectionEnd, element.value.length);
 
       // Remove tab char or whitespace if it exists
-      if (beforeTab[beforeTab.length - 1] === '\t' || beforeTab[beforeTab.length - 1] === ' ') {
-        const moveBack = beforeTab.slice(-2, beforeTab.length) === '  ' ? 2 : 1;
+      if (
+        beforeTab[beforeTab.length - 1] === "\t" ||
+        beforeTab[beforeTab.length - 1] === " "
+      ) {
+        const moveBack = beforeTab.slice(-2, beforeTab.length) === "  " ? 2 : 1;
 
         // where cursor moves after tab - moving forward by 1 char to after tab
-        const cursorPos = element.selectionStart > 0 ? element.selectionStart - moveBack : 0;
+        const cursorPos =
+          element.selectionStart > 0 ? element.selectionStart - moveBack : 0;
 
-        element.value = beforeTab.slice(0, beforeTab.length - moveBack) + afterTab;
+        element.value =
+          beforeTab.slice(0, beforeTab.length - moveBack) + afterTab;
 
         // Move cursor
         element.selectionStart = cursorPos;

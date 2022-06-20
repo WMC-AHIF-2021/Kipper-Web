@@ -79,9 +79,13 @@ onmessage = async function (event) {
     await evalKipperCode(compiledCode.code);
   } catch (e) {
     postMessage(
-      `\nEncountered Runtime error:\n  ${(<Error>e).name}: ${(<Error>e).message}`
+      `\nEncountered Runtime error:\n  ${(<Error>e).name}: ${
+        (<Error>e).message
+      }`
     );
-    postMessage(`\nIf this is unexpected, please report this bug to the developer on GitHub with your code snippet.`);
+    postMessage(
+      `\nIf this is unexpected, please report this bug to the developer on GitHub with your code snippet.`
+    );
     postMessage(1);
     throw e;
   }

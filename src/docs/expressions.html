@@ -1,300 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <title>Kipper Expressions</title>
-  <meta
-    name="description"
-    content="Kipper Kipper Expressions, which can perform various operations and evaluate to a new value."
-  />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <head>
+    <meta charset="utf-8" />
+    <title>Kipper Expressions</title>
+    <meta
+      name="description"
+      content="Kipper Kipper Expressions, which can perform various operations and evaluate to a new value."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <script type="module">
-    import {DefineOpenGraphMetaTags, openGraphMetaTags} from "../js/main";
+    <script type="module">
+      import { DefineOpenGraphMetaTags, openGraphMetaTags } from "../js/main";
 
-    DefineOpenGraphMetaTags(openGraphMetaTags);
-  </script>
-  <link rel="manifest" href="../../site.webmanifest"/>
-  <link rel="apple-touch-icon" href="../img/icon.png"/>
-  <link rel="shortcut icon" type="image/ico" href="../../favicon.ico"/>
+      DefineOpenGraphMetaTags(openGraphMetaTags);
+    </script>
+    <link rel="manifest" href="../../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../img/icon.png" />
+    <link rel="shortcut icon" type="image/ico" href="../../favicon.ico" />
 
-  <link rel="stylesheet" href="../css/normalize.css"/>
-  <link rel="stylesheet" href="../css/main.css"/>
-  <link rel="stylesheet" href="../css/screen.css"/>
-  <link rel="stylesheet" href="../css/buttons.css"/>
-  <link rel="stylesheet" href="../css/nav-bar.css"/>
-  <link rel="stylesheet" href="../css/text.css"/>
-  <link rel="stylesheet" href="../css/lists.css"/>
-  <link rel="stylesheet" href="../css/footer.css"/>
-  <link rel="stylesheet" href="../css/docs.css"/>
-  <link rel="stylesheet" href="../css/table.css"/>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/screen.css" />
+    <link rel="stylesheet" href="../css/buttons.css" />
+    <link rel="stylesheet" href="../css/nav-bar.css" />
+    <link rel="stylesheet" href="../css/text.css" />
+    <link rel="stylesheet" href="../css/lists.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/docs.css" />
+    <link rel="stylesheet" href="../css/table.css" />
 
-  <!-- Font Awesome Icons -->
-  <script
-    src="https://kit.fontawesome.com/951ef1f046.js"
-    crossorigin="anonymous"
-  ></script>
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/951ef1f046.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Including stylesheet for the Inter-Font -->
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Inter"
-  />
+    <!-- Including stylesheet for the Inter-Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter"
+    />
 
-  <link rel="stylesheet" href="../prism/prism.css"/>
-  <!--
+    <link rel="stylesheet" href="../prism/prism.css" />
+    <!--
 Specifying the preferred environment colour to be the primary scheme colour.
 See main.css for the --scheme-primary variable
 -->
-  <meta name="theme-color" content="#e01a4f"/>
-</head>
-<body>
-<script src="../js/plugins.ts"></script>
-<script src="../prism/prism.js"></script>
+    <meta name="theme-color" content="#e01a4f" />
+  </head>
+  <body>
+    <script src="../js/plugins.ts"></script>
+    <script src="../prism/prism.js"></script>
 
-<div id="main-frame">
-  <div id="actual-content">
-    <!-- The top element: menu and search bar -->
-    <header id="home-page-header" class="page-header"></header>
-    <script type="module">
-      import {GenHeaderNavbar} from "../js/gen-header";
+    <div id="main-frame">
+      <div id="actual-content">
+        <!-- The top element: menu and search bar -->
+        <header id="home-page-header" class="page-header"></header>
+        <script type="module">
+          import { GenHeaderNavbar } from "../js/gen-header";
 
-      document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
-    </script>
+          document.getElementById("home-page-header").innerHTML =
+            GenHeaderNavbar();
+        </script>
 
-    <!-- Main Content, where the text is located and the items unique to this site are defined -->
-    <div class="flex-parent-container flex-fill-to-parent">
-      <ul
-        class="
+        <!-- Main Content, where the text is located and the items unique to this site are defined -->
+        <div class="flex-parent-container flex-fill-to-parent">
+          <ul
+            class="
               no-style-list
               flex-parent-container flex-fill-to-parent flex-row
             "
-      >
-        <li
-          id="docs-sidebar-nav-wrapper"
-          class="flex-parent-container"
-        ></li>
-        <script type="module" src="../js/gen-sidebar-docs-nav.ts"></script>
-        <li class="docs-page-content-container">
-          <div id="docs-content" class="shadowed-box">
-            <section>
-              <nav id="docs-page-nav"></nav>
-              <article>
-                <div class="docs-page-description">
-                  <h1>Kipper Expressions</h1>
-                  <p>
-                    Expressions form the basis of Kipper, as every operation
-                    you do is made up of single expressions that perform
-                    certain actions, like reading a value, calculating
-                    something, calling a function, comparing values and a lot
-                    more...!
-                  </p>
-                  <p>
-                    A simple example for expressions can be a simple
-                    calculation, like this:
-                  </p>
-                  <!-- prettier-ignore -->
-                  <pre><code class="language-typescript">val1 + val2 * val3 // Mathematical/Arithmetic expression</code></pre>
-                  <p>
-                    Notice how in this case we are not assigning the result to
-                    anything? This is an important fact of expressions that
-                    they are usually independent and do a single task, meaning
-                    if we wanted to assign this result to a variable, we would
-                    have to use an assignment expression like this:
-                  </p>
-                  <!-- prettier-ignore -->
-                  <pre><code class="language-typescript">// Assign and arithmetic expression
-var result = val1 + val2 * val3;</code></pre>
-                  <p>
-                    Though, in this case, we also now created a statement
-                    (ends in <code>;</code>), though these will be explained
-                    further in the docs section
-                    <a href="./statements.html">Statements</a>.
-                  </p>
-                </div>
-                <div class="docs-page-content">
-                  <h2>Kipper Operators and Expressions Precedence</h2>
-                  <p>
-                    The following table shows all valid operators and
-                    expressions in the Kipper language, with their respective
-                    precedence. The higher the precedence the higher the
-                    importance of the item, and the order of evaluation.
-                  </p>
-                  <table>
-                    <colgroup>
-                      <col/>
-                      <col/>
-                      <col/>
-                      <col/>
-                    </colgroup>
-                    <thead>
-                    <tr>
-                      <th>Precedence</th>
-                      <th>Operator / Expression</th>
-                      <th>Description</th>
-                      <th>Associativity</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>1.</td>
-                      <td>
-                        ++ / --<br/>call ...( )<br/>[ ]<br/>( )<br/>.
-                      </td>
-                      <td>
-                        Suffix/Postfix increment and decrement<br/>Function
-                        Call<br/>List subscripting and list initializer
-                        list<br/>Tangled expression - Forced importance<br/>Object
-                        member accessing<br/>
-                      </td>
-                      <td>Left-To-Right</td>
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>++ / --<br/>+ / -<br/>!<br/>... as type</td>
-                      <td>
-                        Prefix increment and decrement<br/>Unary plus and
-                        minus<br/>Logical NOT<br/>Type conversion
-                      </td>
-                      <td>Right-To-Left</td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>* <br/>/ <br/>% <br/>**</td>
-                      <td>
-                        Multiplication<br/>Division<br/>Rest of Division /
-                        Remainder<br/>Power-To<br/>
-                      </td>
-                      <td rowspan="6">Left-To-Right</td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>+ / - <br/></td>
-                      <td>Addition and subtraction<br/></td>
-                    </tr>
-                    <tr>
-                      <td>5.</td>
-                      <td>&lt; / &lt;=<br/>&gt; / =&gt;<br/></td>
-                      <td>
-                        Relational operators (smaller-equal)<br/>Relational
-                        operators (bigger-equal)<br/>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>6.</td>
-                      <td>== / !=<br/></td>
-                      <td>Relational comparison<br/></td>
-                    </tr>
-                    <tr>
-                      <td>7.</td>
-                      <td>&amp;&amp; <br/></td>
-                      <td>Logical AND<br/></td>
-                    </tr>
-                    <tr>
-                      <td>8.</td>
-                      <td>||</td>
-                      <td>Logical OR<br/></td>
-                    </tr>
-                    <tr>
-                      <td>9.</td>
-                      <td>? :<br/></td>
-                      <td>Ternary conditional<br/></td>
-                      <td rowspan="2">Right-To-Left</td>
-                    </tr>
-                    <tr>
-                      <td>10.</td>
-                      <td>=<br/>+= / -=<br/>*= <br/>/=<br/>%=</td>
-                      <td>
-                        Simple assignment<br/>Increment or Decrement
-                        assignment<br/>Multiplicative assignment<br/>Divisional
-                        assignment<br/>Rest of Division / Remainder
-                        assignment<br/>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>11.</td>
-                      <td>,</td>
-                      <td>Comma</td>
-                      <td>Left-To-Right</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                  <h2>
-                    How does precedence of operators and expressions affect a
-                    program?
-                  </h2>
-                  <p>
-                    The order of precedence is a very vital concept in
-                    programming languages, as they define how expressions are
-                    going to be evaluated. This directly can affect how your
-                    code runs, as certain parts might be evaluated first
-                    before others and change the entire direction of your
-                    program.
-                  </p>
-                  <p>
-                    A simple example of this are arithmetic expressions
-                    <code>+ - * / %</code>, which have per mathematical
-                    conventions their own order of precedence. For example,
-                    multiplication and division signs <b>always</b> come first
-                    before plus and minus, unless you explicitly use brackets,
-                    like these <code>( )</code>. The same can be done here in
-                    Kipper as well, where you can forcefully increase the
-                    order of precedence using brackets:
-                  </p>
-                  <!-- prettier-ignore -->
-                  <pre><code class="language-typescript">15 + 4 * 6 // -> 15 + (4 * 6) -> 15 + 24 -> 39</code></pre>
-                  <p>Forced higher precedence using brackets:</p>
-                  <!-- prettier-ignore -->
-                  <pre><code class="language-typescript">(15 + 4) * 6 // -> (15 + 4) * 6 -> 19 * 6 -> 114</code></pre>
-                  <h2>What does associativity mean?</h2>
-                  <p>
-                    As you should have already seen in the table above, there
-                    is an extra column defining the so-called associativity.
-                    What does that mean? It's relatively simple and means
-                    whether the following (<code>( )</code> meaning the
-                    expression is read first):
-                  </p>
-                  <!-- prettier-ignore -->
-                  <pre><code class="language-typescript">a OPR b OPR c</code></pre>
-                  <p>
-                    is evaluated as (left-associative - Reads from left to
-                    right):
-                  </p>
-                  <!-- prettier-ignore -->
-                  <pre><code class="language-typescript">(a OPR b) OPR c</code></pre>
-                  <p>or as (right-associative - reads from right to left):</p>
-                  <!-- prettier-ignore -->
-                  <pre><code class="language-typescript">a OPR (b OPR c)</code></pre>
-                  <p>
-                    This is especially important as it can change how certain
-                    things are evaluated, and also cause unwanted errors! For
-                    example the following would be interpreted as
-                    (left-associative):
-                  </p>
-                  <!-- prettier-ignore -->
-                  <pre><code class="language-typescript">32 / 4 / 4 // -> (8 / 4) -> 2</code></pre>
-                  <h2>List of expressions in the Kipper language</h2>
-                  <p>
-                    This is a concise list of all expressions in the Kipper
-                    language that may be used:
-                  </p>
-                  <ul class="bullet-list flex-column">
-                    <li>
-                      <h2>Arithmetic Expression</h2>
+          >
+            <li
+              id="docs-sidebar-nav-wrapper"
+              class="flex-parent-container"
+            ></li>
+            <script type="module" src="../js/gen-sidebar-docs-nav.ts"></script>
+            <li class="docs-page-content-container">
+              <div id="docs-content" class="shadowed-box">
+                <section>
+                  <nav id="docs-page-nav"></nav>
+                  <article>
+                    <div class="docs-page-description">
+                      <h1>Kipper Expressions</h1>
                       <p>
-                        As already shown in previous examples, arithmetic
-                        expressions are simple mathematical calculations,
-                        where a numeric result is returned in the end. They
-                        may also be chained based on their order of
-                        precedence, where each item is one after one
-                        evaluated.
+                        Expressions form the basis of Kipper, as every operation
+                        you do is made up of single expressions that perform
+                        certain actions, like reading a value, calculating
+                        something, calling a function, comparing values and a
+                        lot more...!
                       </p>
-                      <h4>Syntax</h4>
+                      <p>
+                        A simple example for expressions can be a simple
+                        calculation, like this:
+                      </p>
                       <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">VALUE_1 ( + | - | * | / | ** | % ) VALUE_2</code></pre>
-                      <h4>Examples</h4>
+                      <pre><code class="language-typescript">val1 + val2 * val3 // Mathematical/Arithmetic expression</code></pre>
+                      <p>
+                        Notice how in this case we are not assigning the result
+                        to anything? This is an important fact of expressions
+                        that they are usually independent and do a single task,
+                        meaning if we wanted to assign this result to a
+                        variable, we would have to use an assignment expression
+                        like this:
+                      </p>
                       <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">// Plus
+                      <pre><code class="language-typescript">// Assign and arithmetic expression
+var result = val1 + val2 * val3;</code></pre>
+                      <p>
+                        Though, in this case, we also now created a statement
+                        (ends in <code>;</code>), though these will be explained
+                        further in the docs section
+                        <a href="./statements.html">Statements</a>.
+                      </p>
+                    </div>
+                    <div class="docs-page-content">
+                      <h2>Kipper Operators and Expressions Precedence</h2>
+                      <p>
+                        The following table shows all valid operators and
+                        expressions in the Kipper language, with their
+                        respective precedence. The higher the precedence the
+                        higher the importance of the item, and the order of
+                        evaluation.
+                      </p>
+                      <table>
+                        <colgroup>
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>Precedence</th>
+                            <th>Operator / Expression</th>
+                            <th>Description</th>
+                            <th>Associativity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1.</td>
+                            <td>
+                              ++ / --<br />call ...( )<br />[ ]<br />( )<br />.
+                            </td>
+                            <td>
+                              Suffix/Postfix increment and decrement<br />Function
+                              Call<br />List subscripting and list initializer
+                              list<br />Tangled expression - Forced
+                              importance<br />Object member accessing<br />
+                            </td>
+                            <td>Left-To-Right</td>
+                          </tr>
+                          <tr>
+                            <td>2.</td>
+                            <td>++ / --<br />+ / -<br />!<br />... as type</td>
+                            <td>
+                              Prefix increment and decrement<br />Unary plus and
+                              minus<br />Logical NOT<br />Type conversion
+                            </td>
+                            <td>Right-To-Left</td>
+                          </tr>
+                          <tr>
+                            <td>3.</td>
+                            <td>* <br />/ <br />% <br />**</td>
+                            <td>
+                              Multiplication<br />Division<br />Rest of Division
+                              / Remainder<br />Power-To<br />
+                            </td>
+                            <td rowspan="6">Left-To-Right</td>
+                          </tr>
+                          <tr>
+                            <td>4.</td>
+                            <td>+ / - <br /></td>
+                            <td>Addition and subtraction<br /></td>
+                          </tr>
+                          <tr>
+                            <td>5.</td>
+                            <td>&lt; / &lt;=<br />&gt; / =&gt;<br /></td>
+                            <td>
+                              Relational operators (smaller-equal)<br />Relational
+                              operators (bigger-equal)<br />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>6.</td>
+                            <td>== / !=<br /></td>
+                            <td>Relational comparison<br /></td>
+                          </tr>
+                          <tr>
+                            <td>7.</td>
+                            <td>&amp;&amp; <br /></td>
+                            <td>Logical AND<br /></td>
+                          </tr>
+                          <tr>
+                            <td>8.</td>
+                            <td>||</td>
+                            <td>Logical OR<br /></td>
+                          </tr>
+                          <tr>
+                            <td>9.</td>
+                            <td>? :<br /></td>
+                            <td>Ternary conditional<br /></td>
+                            <td rowspan="2">Right-To-Left</td>
+                          </tr>
+                          <tr>
+                            <td>10.</td>
+                            <td>=<br />+= / -=<br />*= <br />/=<br />%=</td>
+                            <td>
+                              Simple assignment<br />Increment or Decrement
+                              assignment<br />Multiplicative assignment<br />Divisional
+                              assignment<br />Rest of Division / Remainder
+                              assignment<br />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>11.</td>
+                            <td>,</td>
+                            <td>Comma</td>
+                            <td>Left-To-Right</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <h2>
+                        How does precedence of operators and expressions affect
+                        a program?
+                      </h2>
+                      <p>
+                        The order of precedence is a very vital concept in
+                        programming languages, as they define how expressions
+                        are going to be evaluated. This directly can affect how
+                        your code runs, as certain parts might be evaluated
+                        first before others and change the entire direction of
+                        your program.
+                      </p>
+                      <p>
+                        A simple example of this are arithmetic expressions
+                        <code>+ - * / %</code>, which have per mathematical
+                        conventions their own order of precedence. For example,
+                        multiplication and division signs <b>always</b> come
+                        first before plus and minus, unless you explicitly use
+                        brackets, like these <code>( )</code>. The same can be
+                        done here in Kipper as well, where you can forcefully
+                        increase the order of precedence using brackets:
+                      </p>
+                      <!-- prettier-ignore -->
+                      <pre><code class="language-typescript">15 + 4 * 6 // -> 15 + (4 * 6) -> 15 + 24 -> 39</code></pre>
+                      <p>Forced higher precedence using brackets:</p>
+                      <!-- prettier-ignore -->
+                      <pre><code class="language-typescript">(15 + 4) * 6 // -> (15 + 4) * 6 -> 19 * 6 -> 114</code></pre>
+                      <h2>What does associativity mean?</h2>
+                      <p>
+                        As you should have already seen in the table above,
+                        there is an extra column defining the so-called
+                        associativity. What does that mean? It's relatively
+                        simple and means whether the following (<code>( )</code>
+                        meaning the expression is read first):
+                      </p>
+                      <!-- prettier-ignore -->
+                      <pre><code class="language-typescript">a OPR b OPR c</code></pre>
+                      <p>
+                        is evaluated as (left-associative - Reads from left to
+                        right):
+                      </p>
+                      <!-- prettier-ignore -->
+                      <pre><code class="language-typescript">(a OPR b) OPR c</code></pre>
+                      <p>
+                        or as (right-associative - reads from right to left):
+                      </p>
+                      <!-- prettier-ignore -->
+                      <pre><code class="language-typescript">a OPR (b OPR c)</code></pre>
+                      <p>
+                        This is especially important as it can change how
+                        certain things are evaluated, and also cause unwanted
+                        errors! For example the following would be interpreted
+                        as (left-associative):
+                      </p>
+                      <!-- prettier-ignore -->
+                      <pre><code class="language-typescript">32 / 4 / 4 // -> (8 / 4) -> 2</code></pre>
+                      <h2>List of expressions in the Kipper language</h2>
+                      <p>
+                        This is a concise list of all expressions in the Kipper
+                        language that may be used:
+                      </p>
+                      <ul class="bullet-list flex-column">
+                        <li>
+                          <h2>Arithmetic Expression</h2>
+                          <p>
+                            As already shown in previous examples, arithmetic
+                            expressions are simple mathematical calculations,
+                            where a numeric result is returned in the end. They
+                            may also be chained based on their order of
+                            precedence, where each item is one after one
+                            evaluated.
+                          </p>
+                          <h4>Syntax</h4>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">VALUE_1 ( + | - | * | / | ** | % ) VALUE_2</code></pre>
+                          <h4>Examples</h4>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">// Plus
 400.3 + 26.3 // -> 426.6
 
 // Minus
@@ -311,26 +316,26 @@ var result = val1 + val2 * val3;</code></pre>
 
 // Rest of Divide
 51 % 10 // -> 1</code></pre>
-                    </li>
-                    <li>
-                      <h2>Relational Expressions (Comparisons)</h2>
-                      <p>
-                        Relational expressions are fundamental for checks and
-                        conditional statements, like
-                        <a href="./decision-making.html">if-statements</a>,
-                        <a href="./while-loop.html">while-loop</a>,
-                        <a href="./while-loop.html">do-while-loop</a> and
-                        <a href="./for-loop.html">for-loop</a>. They compare
-                        certain values against one another, and will evaluate
-                        to a <code>bool</code> value (Either
-                        <code>True</code> or <code>False</code>).
-                      </p>
-                      <h4>Syntax</h4>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">VALUE_1 ( == | != | > | >= | < | <= ) VALUE_2</code></pre>
-                      <h4>Examples</h4>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">// Is equal
+                        </li>
+                        <li>
+                          <h2>Relational Expressions (Comparisons)</h2>
+                          <p>
+                            Relational expressions are fundamental for checks
+                            and conditional statements, like
+                            <a href="./decision-making.html">if-statements</a>,
+                            <a href="./while-loop.html">while-loop</a>,
+                            <a href="./while-loop.html">do-while-loop</a> and
+                            <a href="./for-loop.html">for-loop</a>. They compare
+                            certain values against one another, and will
+                            evaluate to a <code>bool</code> value (Either
+                            <code>True</code> or <code>False</code>).
+                          </p>
+                          <h4>Syntax</h4>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">VALUE_1 ( == | != | > | >= | < | <= ) VALUE_2</code></pre>
+                          <h4>Examples</h4>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">// Is equal
 20 == 20 // -> True
 92 == 20 // -> False
 
@@ -355,27 +360,27 @@ var result = val1 + val2 * val3;</code></pre>
 12 <= 29 // -> True
 56 <= 56 // -> True
 21 <= 13 // -> False</code></pre>
-                    </li>
-                    <li>
-                      <h2>Logical Expressions</h2>
-                      <p>
-                        Logical expressions compare boolean values against
-                        each other and will evaluate to a
-                        <code>bool</code> value (Either <code>True</code> or
-                        <code>False</code>). They can be used to chain
-                        together requirements to do more complex
-                        <a href="decision-making.html">if-statements</a>.
-                      </p>
-                      <h4>Syntax</h4>
-                      For the logical <code>AND</code> and <code>OR</code>:
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">VALUE_1 ( && | || ) VALUE_2</code></pre>
-                      For the logical <code>NOT</code>:
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">!VALUE</code></pre>
-                      <h4>Examples</h4>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">// Logical AND - All must be true
+                        </li>
+                        <li>
+                          <h2>Logical Expressions</h2>
+                          <p>
+                            Logical expressions compare boolean values against
+                            each other and will evaluate to a
+                            <code>bool</code> value (Either <code>True</code> or
+                            <code>False</code>). They can be used to chain
+                            together requirements to do more complex
+                            <a href="decision-making.html">if-statements</a>.
+                          </p>
+                          <h4>Syntax</h4>
+                          For the logical <code>AND</code> and <code>OR</code>:
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">VALUE_1 ( && | || ) VALUE_2</code></pre>
+                          For the logical <code>NOT</code>:
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">!VALUE</code></pre>
+                          <h4>Examples</h4>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">// Logical AND - All must be true
 True && True   // -> True
 False && True  // -> False
 True && False  // -> False
@@ -390,12 +395,12 @@ False || False // -> False
 // Logical NOT - Negate
 !False         // -> True
 !True          // -> False</code></pre>
-                      <p>
-                        Logical Expressions may be also chained together as
-                        long as you want, like this:
-                      </p>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">// Chained Logical AND - All must be true
+                          <p>
+                            Logical Expressions may be also chained together as
+                            long as you want, like this:
+                          </p>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">// Chained Logical AND - All must be true
 True && True && True     // -> True
 True && False && True    // -> False
 
@@ -407,31 +412,31 @@ False || False || False  // -> False
 // Chained Logical NOT - Negate (Practically useless)
 !!True                    // -> True
 !!False                   // -> False</code></pre>
-                      <p>
-                        You can also combine relational expressions with
-                        logical expressions, like this for example:
-                      </p>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">// ✓ Combined relational and logical expressions
+                          <p>
+                            You can also combine relational expressions with
+                            logical expressions, like this for example:
+                          </p>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">// ✓ Combined relational and logical expressions
 3 == 4 && 3 != 4 || 2 != 22 && 3 == 3
 // Following the order of precedence -> (False && True || True && True) -> (False || True) -> True</code></pre>
-                    </li>
-                    <li>
-                      <h3>Conditional Expressions (Ternary conditional)</h3>
-                      <p>
-                        Conditional expressions are like
-                        <a href="decision-making.html">if-statements</a> with
-                        the major difference and advantage of being in-line
-                        and allowing evaluation of a certain expression if a
-                        certain condition is met or not met.
-                      </p>
-                      <h4>Syntax</h4>
-                      <!-- prettier-ignore -->
-                      <pre><code
+                        </li>
+                        <li>
+                          <h3>Conditional Expressions (Ternary conditional)</h3>
+                          <p>
+                            Conditional expressions are like
+                            <a href="decision-making.html">if-statements</a>
+                            with the major difference and advantage of being
+                            in-line and allowing evaluation of a certain
+                            expression if a certain condition is met or not met.
+                          </p>
+                          <h4>Syntax</h4>
+                          <!-- prettier-ignore -->
+                          <pre><code
                         class="language-typescript">CONDITION ? EVALUATE_IF_TRUE : EVALUATE_IF_FALSE</code></pre>
-                      <h4>Examples</h4>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">// Simple evaluation of a number
+                          <h4>Examples</h4>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">// Simple evaluation of a number
 True ? 3 : 2 // -> 3
 True ? 3 : 2 // -> 2
 
@@ -439,12 +444,12 @@ True ? 3 : 2 // -> 2
 var var1 = 2;
 var var2 = 9;
 var smallest_or_equal = var1 <= var2 ? var1 : var2; // -> 2</code></pre>
-                      <p>
-                        As the ternary operator evaluates to more expressions,
-                        you can also chain it like this:
-                      </p>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">// ✓ Valid - Chained if ... else-if ... else-if ... else ternary operator
+                          <p>
+                            As the ternary operator evaluates to more
+                            expressions, you can also chain it like this:
+                          </p>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">// ✓ Valid - Chained if ... else-if ... else-if ... else ternary operator
 val result = condition1 ? value1
          : condition2 ? value2
          : condition3 ? value3
@@ -455,93 +460,100 @@ if (condition1) { var result = value1; }
 else if (condition2) { var result = value2; }
 else if (condition3) { var result = value3; }
 else { var result = value4; }</code></pre>
-                    </li>
-                    <li>
-                      <h2>Conversion Expression</h2>
-                      <p>
-                        In Kipper, you can convert values from one to another,
-                        so that you for example can use a number inside a
-                        string for actual numeric calculations.
-                      </p>
-                      <h3>Syntax</h3>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">VALUE as TYPE</code></pre>
-                      <h3>Allowed conversions</h3>
-                      <ul class="bullet-list flex-column">
+                        </li>
                         <li>
-                          <h4>From <code>str</code> to <code>num</code></h4>
+                          <h2>Conversion Expression</h2>
                           <p>
-                            Converts a string (<code>"203"</code>) to a number
-                            (<code>203</code>), if it meets the following
-                            requirements:
+                            In Kipper, you can convert values from one to
+                            another, so that you for example can use a number
+                            inside a string for actual numeric calculations.
                           </p>
+                          <h3>Syntax</h3>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">VALUE as TYPE</code></pre>
+                          <h3>Allowed conversions</h3>
                           <ul class="bullet-list flex-column">
                             <li>
-                              Only contains numeric characters (<code
-                            >0 - 9</code
-                            >)
+                              <h4>From <code>str</code> to <code>num</code></h4>
+                              <p>
+                                Converts a string (<code>"203"</code>) to a
+                                number (<code>203</code>), if it meets the
+                                following requirements:
+                              </p>
+                              <ul class="bullet-list flex-column">
+                                <li>
+                                  Only contains numeric characters (<code
+                                    >0 - 9</code
+                                  >)
+                                </li>
+                                <li>Is not empty (length > 0)</li>
+                              </ul>
+                              <pre><code class="language-typescript">"203" as num // -> 203</code></pre>
                             </li>
-                            <li>Is not empty (length > 0)</li>
-                          </ul>
-                          <pre><code class="language-typescript">"203" as num // -> 203</code></pre>
-                        </li>
-                        <li>
-                          <h4>From <code>num</code> to <code>str</code></h4>
-                          <p>
-                            Converts a number (<code>255</code>) to an
-                            identical string representation
-                            (<code>"255"</code>). This works on all numbers
-                            that were defined!
-                          </p>
-                          <pre><code class="language-typescript">203 as str // -> "203"</code></pre>
-                        </li>
-                        <li>
-                          <h4>From <code>char</code> to <code>str</code></h4>
-                          <p>
-                            Converts a single character to a string. This
-                            works on all characters that were defined!
-                          </p>
-                          <pre><code class="language-typescript">'c' as str // -> "c"</code></pre>
-                        </li>
-                        <li>
-                          <h4>From <code>num</code> to <code>bool</code></h4>
-                          <p>
-                            Converts a number to a bool. This evaluates to
-                            <code>True</code> if it's a non-zero value. This
-                            works on all numbers that were defined!
-                          </p>
-                          <pre><code class="language-typescript">20 as bool // -> True
+                            <li>
+                              <h4>From <code>num</code> to <code>str</code></h4>
+                              <p>
+                                Converts a number (<code>255</code>) to an
+                                identical string representation
+                                (<code>"255"</code>). This works on all numbers
+                                that were defined!
+                              </p>
+                              <pre><code class="language-typescript">203 as str // -> "203"</code></pre>
+                            </li>
+                            <li>
+                              <h4>
+                                From <code>char</code> to <code>str</code>
+                              </h4>
+                              <p>
+                                Converts a single character to a string. This
+                                works on all characters that were defined!
+                              </p>
+                              <pre><code class="language-typescript">'c' as str // -> "c"</code></pre>
+                            </li>
+                            <li>
+                              <h4>
+                                From <code>num</code> to <code>bool</code>
+                              </h4>
+                              <p>
+                                Converts a number to a bool. This evaluates to
+                                <code>True</code> if it's a non-zero value. This
+                                works on all numbers that were defined!
+                              </p>
+                              <pre><code class="language-typescript">20 as bool // -> True
 0 as bool // -> False</code></pre>
+                            </li>
+                            <li>
+                              <h4>
+                                From <code>bool</code> to <code>num</code>
+                              </h4>
+                              <p>
+                                Converts a bool to a number. This evaluates to
+                                <code>1</code> if it's <code>True</code>,
+                                otherwise it's <code>0</code>. This works on all
+                                bools that were defined!
+                              </p>
+                              <pre><code class="language-typescript">True as num // -> 1
+False as num // -> 0</code></pre>
+                            </li>
+                          </ul>
                         </li>
                         <li>
-                          <h4>From <code>bool</code> to <code>num</code></h4>
+                          <h2>Function Call Expression</h2>
                           <p>
-                            Converts a bool to a number. This evaluates to
-                            <code>1</code> if it's <code>True</code>,
-                            otherwise it's <code>0</code>. This works on all
-                            bools that were defined!
+                            This is a simple expression, which calls/runs a
+                            <a href="./functions.html">function</a> and
+                            evaluates to the
+                            <a href="./functions.html">function</a>'s return. In
+                            case that the return is not assigned to any
+                            variable, then it will be simply dropped, as if it
+                            never existed.
                           </p>
-                          <pre><code class="language-typescript">True as num // -> 1
-False as num // -> 0</code></pre>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <h2>Function Call Expression</h2>
-                      <p>
-                        This is a simple expression, which calls/runs a
-                        <a href="./functions.html">function</a> and evaluates
-                        to the <a href="./functions.html">function</a>'s
-                        return. In case that the return is not assigned to any
-                        variable, then it will be simply dropped, as if it
-                        never existed.
-                      </p>
-                      <h3>Syntax</h3>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">call FUNC(ARGS...)</code></pre>
-                      <h4>Examples</h4>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">// ✓ Calls a defined function
+                          <h3>Syntax</h3>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">call FUNC(ARGS...)</code></pre>
+                          <h4>Examples</h4>
+                          <!-- prettier-ignore -->
+                          <pre><code class="language-typescript">// ✓ Calls a defined function
 def func1() -> num { return 5; }
 call func1(); // -> 5
 
@@ -552,30 +564,33 @@ var example1 = call func2(); // -> 10
 // ✓ Multiple function calls with the end-result being assigned to a variable
 def func3() -> num { return 25; }
 var example2 = call func2() + call func2(); // -> 50</code></pre>
-                    </li>
-                  </ul>
-                </div>
-              </article>
-              <script type="module" src="../js/gen-docs-nav-specifier.ts"></script>
-            </section>
-          </div>
-        </li>
-      </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </article>
+                  <script
+                    type="module"
+                    src="../js/gen-docs-nav-specifier.ts"
+                  ></script>
+                </section>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Footer bar - contains some links and general copyright notice -->
+        <footer
+          id="footer-bar"
+          class="flex-parent-container flex-column"
+        ></footer>
+        <script type="module" src="../js/gen-footer.ts"></script>
+      </div>
     </div>
-    <!-- Footer bar - contains some links and general copyright notice -->
-    <footer
-      id="footer-bar"
-      class="flex-parent-container flex-column"
-    ></footer>
-    <script type="module" src="../js/gen-footer.ts"></script>
-  </div>
-</div>
 
-<!-- Overlay for Displaying the Search Results-->
-<div id="search-background-overlay"></div>
-<div id="search-result-overlay">
-  <div class="flex-column flex-parent-container" id="search-result"></div>
-</div>
-<script type="module" src="../js/search.ts"></script>
-</body>
+    <!-- Overlay for Displaying the Search Results-->
+    <div id="search-background-overlay"></div>
+    <div id="search-result-overlay">
+      <div class="flex-column flex-parent-container" id="search-result"></div>
+    </div>
+    <script type="module" src="../js/search.ts"></script>
+  </body>
 </html>

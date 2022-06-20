@@ -7,7 +7,7 @@ import {
   copyright,
   issueTracker,
   securityURL,
-  releasesURL
+  releasesURL,
 } from "./const.config";
 
 function GenFooter(): string {

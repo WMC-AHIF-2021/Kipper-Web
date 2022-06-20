@@ -56,9 +56,10 @@
         <!-- The top element: menu and search bar -->
         <header id="home-page-header" class="page-header"></header>
         <script type="module">
-          import {GenHeaderNavbar} from "../js/gen-header";
+          import { GenHeaderNavbar } from "../js/gen-header";
 
-          document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+          document.getElementById("home-page-header").innerHTML =
+            GenHeaderNavbar();
         </script>
 
         <!-- Main Content, where the text is located and the items unique to this site are defined -->
@@ -81,45 +82,65 @@
                   <article>
                     <h1 id="our-goals">Goals for Kipper</h1>
                     <p>
-                      The goal of Kipper is to provide a simple and easy to learn language, which tries to be
-                      as straight-forward and secure as possible with features, such as:
+                      The goal of Kipper is to provide a simple and easy to
+                      learn language, which tries to be as straight-forward and
+                      secure as possible with features, such as:
                     </p>
                     <ul class="bullet-list flex-column">
-                      <li>Full type safety to ensure errors occur on compile time, not runtime.</li>
-                      <li>Runtime types and type checking, which allow variable types to be checked during runtime, if
-                      their type can not be evaluated during compile time. For example when using
-                        <code>JSON.parse()</code>.</li>
-                      <li>Runtime errors for invalid operations. No hidden errors like in JavaScript.</li>
-                      <li>Null safety, by enforcing non-null types unless explicitly allowed.</li>
-                      <li>Full translation and integration with JavaScript and TypeScript.</li>
+                      <li>
+                        Full type safety to ensure errors occur on compile time,
+                        not runtime.
+                      </li>
+                      <li>
+                        Runtime types and type checking, which allow variable
+                        types to be checked during runtime, if their type can
+                        not be evaluated during compile time. For example when
+                        using <code>JSON.parse()</code>.
+                      </li>
+                      <li>
+                        Runtime errors for invalid operations. No hidden errors
+                        like in JavaScript.
+                      </li>
+                      <li>
+                        Null safety, by enforcing non-null types unless
+                        explicitly allowed.
+                      </li>
+                      <li>
+                        Full translation and integration with JavaScript and
+                        TypeScript.
+                      </li>
                     </ul>
                     <h2 id="roadmap">Roadmap for Kipper</h2>
                     <p>
-                      All active changes, issues and development plans are tracked on the following sites on
-                      GitHub. If any changes occur they will be reported there first:
+                      All active changes, issues and development plans are
+                      tracked on the following sites on GitHub. If any changes
+                      occur they will be reported there first:
                     </p>
                     <div>
                       <a
                         href="https://github.com/Luna-Klatzer/Kipper/discussions/139"
-                        class="button"
+                        class="button docs-button"
                       >
                         Project Roadmap
                       </a>
                       <a
                         href="https://github.com/Luna-Klatzer/Kipper/issues/"
-                        class="button"
+                        class="button docs-button"
                       >
                         Issues Tracker
                       </a>
                       <a
                         href="https://github.com/users/Luna-Klatzer/projects/2"
-                        class="button"
+                        class="button docs-button"
                       >
                         GitHub Project Panel
                       </a>
                     </div>
                   </article>
-                  <script type="module" src="../js/gen-docs-nav-specifier.ts"></script>
+                  <script
+                    type="module"
+                    src="../js/gen-docs-nav-specifier.ts"
+                  ></script>
                 </section>
               </div>
             </li>

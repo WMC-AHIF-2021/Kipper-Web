@@ -59,9 +59,10 @@
         <!-- The top element: menu and search bar -->
         <header id="home-page-header" class="page-header"></header>
         <script type="module">
-          import {GenHeaderNavbar} from "../js/gen-header";
+          import { GenHeaderNavbar } from "../js/gen-header";
 
-          document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+          document.getElementById("home-page-header").innerHTML =
+            GenHeaderNavbar();
         </script>
 
         <!-- Main Content, where the text is located and the items unique to this site are defined -->
@@ -89,9 +90,10 @@
                     />
                     <h1>Welcome to the Kipper Docs!</h1>
                     <p>
-                      This is the in-depth documentation and API reference for the Kipper programming language and
-                      compiler, which aims to explain the implementation, functionality and details for
-                      Kipper.
+                      This is the in-depth documentation and API reference for
+                      the Kipper programming language and compiler, which aims
+                      to explain the implementation, functionality and details
+                      for Kipper.
                     </p>
                   </article>
                   <article>
@@ -140,12 +142,19 @@
                   </article>
                   <article>
                     <p class="red-highlight-text">
-                      Not all features shown in the docs are implemented yet. View the
-                      <a href="https://github.com/Luna-Klatzer/Kipper/discussions/139">Roadmap for Kipper</a> for info
-                      about the active development of Kipper.
+                      Not all features shown in the docs are implemented yet.
+                      View the
+                      <a
+                        href="https://github.com/Luna-Klatzer/Kipper/discussions/139"
+                        >Roadmap for Kipper</a
+                      >
+                      for info about the active development of Kipper.
                     </p>
                   </article>
-                  <script type="module" src="../js/gen-docs-nav-specifier.ts"></script>
+                  <script
+                    type="module"
+                    src="../js/gen-docs-nav-specifier.ts"
+                  ></script>
                 </section>
               </div>
             </li>

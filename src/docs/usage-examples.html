@@ -59,9 +59,10 @@
         <!-- The top element: menu and search bar -->
         <header id="home-page-header" class="page-header"></header>
         <script type="module">
-          import {GenHeaderNavbar} from "../js/gen-header";
+          import { GenHeaderNavbar } from "../js/gen-header";
 
-          document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+          document.getElementById("home-page-header").innerHTML =
+            GenHeaderNavbar();
         </script>
 
         <!-- Main Content, where the text is located and the items unique to this site are defined -->
@@ -92,7 +93,10 @@
                       </p>
                     </div>
                   </article>
-                  <script type="module" src="../js/gen-docs-nav-specifier.ts"></script>
+                  <script
+                    type="module"
+                    src="../js/gen-docs-nav-specifier.ts"
+                  ></script>
                 </section>
               </div>
             </li>

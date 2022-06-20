@@ -67,10 +67,15 @@
         <!-- The top element: menu and search bar -->
         <header id="home-page-header" class="page-header"></header>
         <script type="module">
-          import {GenHeaderAndDescription, GenHeaderNavbar} from "./js/gen-header";
+          import {
+            GenHeaderAndDescription,
+            GenHeaderNavbar,
+          } from "./js/gen-header";
 
-          document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
-          document.getElementById("header-description-content").innerHTML = GenHeaderAndDescription();
+          document.getElementById("home-page-header").innerHTML =
+            GenHeaderNavbar();
+          document.getElementById("header-description-content").innerHTML =
+            GenHeaderAndDescription();
         </script>
 
         <!-- Main Content, where the text is located and the items unique to this site are defined -->

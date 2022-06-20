@@ -2,14 +2,21 @@
  * Generates the visual header and description on the site
  */
 
-import {documentTitle, isNestedDir, documentDescription, path, isDocsFile} from "./main";
-import {currentVersion, kipperGithubURL} from "./const.config";
+import {
+  documentTitle,
+  isNestedDir,
+  documentDescription,
+  path,
+  isDocsFile,
+} from "./main";
+import { currentVersion, kipperGithubURL } from "./const.config";
 
-export const kipperPackageEndpoint: string = "https://registry.npmjs.org/kipper";
+export const kipperPackageEndpoint: string =
+  "https://registry.npmjs.org/kipper";
 
 export function GenHeaderNavbar(): string {
   // @ts-ignore
-  const logo = new URL('../img/base_head.png', import.meta.url);
+  const logo = new URL("../img/base_head.png", import.meta.url);
   return `<nav id="header-nav-bar">
     <ul>
       <li>
@@ -28,7 +35,7 @@ export function GenHeaderNavbar(): string {
         <a class="
           underline-button kipper-logo-identifier
         "
-        href="${isNestedDir ? '..' : '.'}/index.html"
+        href="${isNestedDir ? ".." : "."}/index.html"
         >
           <h1>Kipper</h1>
         </a>
@@ -38,7 +45,7 @@ export function GenHeaderNavbar(): string {
       </li>
       <li>
         <a
-          href="${isNestedDir ? '..' : '.'}/download.html"
+          href="${isNestedDir ? ".." : "."}/download.html"
           class="
             underline-button
             ${path.endsWith("download.html") ? "selected-nav-page" : ""}
@@ -50,7 +57,7 @@ export function GenHeaderNavbar(): string {
       </li>
       <li>
         <a
-          href="${isNestedDir ? '..' : '.'}/docs/index.html"
+          href="${isNestedDir ? ".." : "."}/docs/index.html"
           class="
             underline-button
             ${isDocsFile ? "selected-nav-page" : ""}
@@ -62,7 +69,7 @@ export function GenHeaderNavbar(): string {
       </li>
       <li>
         <a
-          href="${isNestedDir ? '..' : '.'}/playground.html"
+          href="${isNestedDir ? ".." : "."}/playground.html"
           class="
             underline-button
             ${path.endsWith("playground.html") ? "selected-nav-page" : ""}
@@ -74,7 +81,7 @@ export function GenHeaderNavbar(): string {
       </li>
       <li>
         <a
-          href="${isNestedDir ? '..' : '.'}/changelog.html"
+          href="${isNestedDir ? ".." : "."}/changelog.html"
           class="
             underline-button
             ${path.endsWith("changelog.html") ? "selected-nav-page" : ""}
@@ -111,7 +118,9 @@ export function GenHeaderNavbar(): string {
 export function GenHeaderAndDescription(): string {
   return `<div class="header-text-content flex-parent-container flex-fill-to-parent flex-column flex-center">
     <div id="page-header" class="white-text">
-      <h1>${documentTitle}${isNestedDir ? ` - Kipper v${currentVersion} Docs` : ""}</h1>
+      <h1>${documentTitle}${
+    isNestedDir ? ` - Kipper v${currentVersion} Docs` : ""
+  }</h1>
     </div>
     <div id="page-description" class="white-text">
       <p>${documentDescription}</p>

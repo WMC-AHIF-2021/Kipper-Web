@@ -1,157 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <title>Built-in Functions</title>
-  <meta
-    name="description"
-    content="Built-in Kipper Functions, which are available in every program per default."
-  />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <head>
+    <meta charset="utf-8" />
+    <title>Built-in Functions</title>
+    <meta
+      name="description"
+      content="Built-in Kipper Functions, which are available in every program per default."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <script type="module">
-    import {DefineOpenGraphMetaTags, openGraphMetaTags} from "../js/main";
+    <script type="module">
+      import { DefineOpenGraphMetaTags, openGraphMetaTags } from "../js/main";
 
-    DefineOpenGraphMetaTags(openGraphMetaTags);
-  </script>
-  <link rel="manifest" href="../../site.webmanifest"/>
-  <link rel="apple-touch-icon" href="../img/icon.png"/>
-  <link rel="shortcut icon" type="image/ico" href="../../favicon.ico"/>
+      DefineOpenGraphMetaTags(openGraphMetaTags);
+    </script>
+    <link rel="manifest" href="../../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../img/icon.png" />
+    <link rel="shortcut icon" type="image/ico" href="../../favicon.ico" />
 
-  <link rel="stylesheet" href="../css/normalize.css"/>
-  <link rel="stylesheet" href="../css/main.css"/>
-  <link rel="stylesheet" href="../css/screen.css"/>
-  <link rel="stylesheet" href="../css/buttons.css"/>
-  <link rel="stylesheet" href="../css/nav-bar.css"/>
-  <link rel="stylesheet" href="../css/text.css"/>
-  <link rel="stylesheet" href="../css/lists.css"/>
-  <link rel="stylesheet" href="../css/footer.css"/>
-  <link rel="stylesheet" href="../css/docs.css"/>
-  <link rel="stylesheet" href="../css/table.css"/>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/screen.css" />
+    <link rel="stylesheet" href="../css/buttons.css" />
+    <link rel="stylesheet" href="../css/nav-bar.css" />
+    <link rel="stylesheet" href="../css/text.css" />
+    <link rel="stylesheet" href="../css/lists.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/docs.css" />
+    <link rel="stylesheet" href="../css/table.css" />
 
-  <!-- Font Awesome Icons -->
-  <script
-    src="https://kit.fontawesome.com/951ef1f046.js"
-    crossorigin="anonymous"
-  ></script>
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/951ef1f046.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Including stylesheet for the Inter-Font -->
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Inter"
-  />
+    <!-- Including stylesheet for the Inter-Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter"
+    />
 
-  <!-- Loading the prism highlighting style-sheet -->
-  <link rel="stylesheet" href="../prism/prism.css"/>
+    <!-- Loading the prism highlighting style-sheet -->
+    <link rel="stylesheet" href="../prism/prism.css" />
 
-  <!--
+    <!--
 Specifying the preferred environment colour to be the primary scheme colour.
 See main.css for the --scheme-primary variable
 -->
-  <meta name="theme-color" content="#e01a4f"/>
-</head>
-<body>
-<script src="../js/plugins.ts"></script>
-<script src="../prism/prism.js"></script>
+    <meta name="theme-color" content="#e01a4f" />
+  </head>
+  <body>
+    <script src="../js/plugins.ts"></script>
+    <script src="../prism/prism.js"></script>
 
-<div id="main-frame">
-  <div id="actual-content">
-    <!-- The top element: menu and search bar -->
-    <header id="home-page-header" class="page-header"></header>
-    <script type="module">
-      import {GenHeaderNavbar} from "../js/gen-header";
+    <div id="main-frame">
+      <div id="actual-content">
+        <!-- The top element: menu and search bar -->
+        <header id="home-page-header" class="page-header"></header>
+        <script type="module">
+          import { GenHeaderNavbar } from "../js/gen-header";
 
-      document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
-    </script>
+          document.getElementById("home-page-header").innerHTML =
+            GenHeaderNavbar();
+        </script>
 
-    <!-- Main Content, where the text is located and the items unique to this site are defined -->
-    <div class="flex-parent-container flex-fill-to-parent">
-      <ul
-        class="
+        <!-- Main Content, where the text is located and the items unique to this site are defined -->
+        <div class="flex-parent-container flex-fill-to-parent">
+          <ul
+            class="
               no-style-list
               flex-parent-container flex-fill-to-parent flex-row
             "
-      >
-        <li
-          id="docs-sidebar-nav-wrapper"
-          class="flex-parent-container"
-        ></li>
-        <script type="module" src="../js/gen-sidebar-docs-nav.ts"></script>
-        <li class="docs-page-content-container">
-          <div id="docs-content" class="shadowed-box">
-            <section>
-              <nav id="docs-page-nav"></nav>
-              <article>
-                <div class="docs-page-description">
-                  <h1>Built-in Functions</h1>
-                  <p>
-                    Built-in functions, which can be called in every Kipper program without importing any other file.
-                    These are specifically implemented for their specific target, so the implementation results might
-                    differ depending on whether you are using Node.js or a browser environment.
-                  </p>
-                </div>
-                <div class="docs-page-content">
-                  <h2>List of all Built-in Functions</h2>
-                  <p>
-                    List of all buit-in functions, which are usable in the current release of Kipper.
-                  </p>
-                  <ul class="no-style-list">
-                    <li>
-                      <h3><code>print(msg: str) -> void</code></h3>
-                      <div class="api-docs-description">
-                        <p>
-                          Prints the specified string <code>msg</code> onto stdout/the console of the specific
-                          platform. This function under the hood <code>console.log()</code> in both Node.js and
-                          Browser environments.
-                        </p>
-                        <h4>List of supported platforms:</h4>
-                        <table>
-                          <thead>
-                          <tr>
-                            <th>Platform</th>
-                            <th>Status</th>
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-                            <td>Node.js</td>
-                            <td>
-                              Supported <em class="green-checkmark">✓</em>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Native JS (Browser)</td>
-                            <td>
-                              Supported <em class="green-checkmark">✓</em>
-                            </td>
-                          </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </article>
-              <script type="module" src="../js/gen-docs-nav-specifier.ts"></script>
-            </section>
-          </div>
-        </li>
-      </ul>
+          >
+            <li
+              id="docs-sidebar-nav-wrapper"
+              class="flex-parent-container"
+            ></li>
+            <script type="module" src="../js/gen-sidebar-docs-nav.ts"></script>
+            <li class="docs-page-content-container">
+              <div id="docs-content" class="shadowed-box">
+                <section>
+                  <nav id="docs-page-nav"></nav>
+                  <article>
+                    <div class="docs-page-description">
+                      <h1>Built-in Functions</h1>
+                      <p>
+                        Built-in functions, which can be called in every Kipper
+                        program without importing any other file. These are
+                        specifically implemented for their specific target, so
+                        the implementation results might differ depending on
+                        whether you are using Node.js or a browser environment.
+                      </p>
+                    </div>
+                    <div class="docs-page-content">
+                      <h2>List of all Built-in Functions</h2>
+                      <p>
+                        List of all buit-in functions, which are usable in the
+                        current release of Kipper.
+                      </p>
+                      <ul class="no-style-list">
+                        <li>
+                          <h3><code>print(msg: str) -> void</code></h3>
+                          <div class="api-docs-description">
+                            <p>
+                              Prints the specified string <code>msg</code> onto
+                              stdout/the console of the specific platform. This
+                              function under the hood
+                              <code>console.log()</code> in both Node.js and
+                              Browser environments.
+                            </p>
+                            <h4>List of supported platforms:</h4>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Platform</th>
+                                  <th>Status</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Node.js</td>
+                                  <td>
+                                    Supported <em class="green-checkmark">✓</em>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Native JS (Browser)</td>
+                                  <td>
+                                    Supported <em class="green-checkmark">✓</em>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </article>
+                  <script
+                    type="module"
+                    src="../js/gen-docs-nav-specifier.ts"
+                  ></script>
+                </section>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Footer bar - contains some links and general copyright notice -->
+        <footer
+          id="footer-bar"
+          class="flex-parent-container flex-column"
+        ></footer>
+        <script type="module" src="../js/gen-footer.ts"></script>
+      </div>
     </div>
-    <!-- Footer bar - contains some links and general copyright notice -->
-    <footer
-      id="footer-bar"
-      class="flex-parent-container flex-column"
-    ></footer>
-    <script type="module" src="../js/gen-footer.ts"></script>
-  </div>
-</div>
 
-<!-- Overlay for Displaying the Search Results-->
-<div id="search-background-overlay"></div>
-<div id="search-result-overlay">
-  <div class="flex-column flex-parent-container" id="search-result"></div>
-</div>
-<script type="module" src="../js/search.ts"></script>
-</body>
+    <!-- Overlay for Displaying the Search Results-->
+    <div id="search-background-overlay"></div>
+    <div id="search-result-overlay">
+      <div class="flex-column flex-parent-container" id="search-result"></div>
+    </div>
+    <script type="module" src="../js/search.ts"></script>
+  </body>
 </html>

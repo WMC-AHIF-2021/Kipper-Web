@@ -177,7 +177,7 @@
   padding-left: 0.4rem;
   margin-top: -12px;
   text-decoration: none;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   color: rgba(255, 255, 255, 0.8);
   transition: ease-in-out 300ms;
 }

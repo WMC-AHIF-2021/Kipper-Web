@@ -13,7 +13,7 @@ export const rawSearchIndex: Array<string> = [
   "For-Loop;/docs/for-loop.html;For-Loop;For-loop statements, which allow for the repeated execution of code.",
   "Functions;/docs/functions.html;Functions;Kipper Functions, which allow for the repeated execution of code using arguments.",
   "Built-in Functions;/docs/built-in-functions.html;Built-In;Built-in Kipper Functions, which are available in every" +
-  " program per default.",
+    " program per default.",
   "Playground;/playground.html;Playground;Online Playground for using Kipper in your browser.",
   "Docs;/docs/index.html;Documentation;Kipper Documentation and API Reference.",
   "Changelog;/changelog.html;Changelog;Kipper Changelog.",
