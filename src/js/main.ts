@@ -1,6 +1,6 @@
 /* Defines general variables/properties of the site */
 
-import {currentVersion} from "./const.config";
+import { currentVersion } from "./const.config";
 
 // The path to the current document
 export const path = window.location.pathname;
