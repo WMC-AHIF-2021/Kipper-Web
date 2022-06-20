@@ -1,9 +1,27 @@
 /*! Docs Formatting */
 
-.docs-page-content-container {
-  display: flex;
-  width: 55vw;
-  padding: 4vw 4vw 4vw 6vw;
+@media (max-width: 800px) {
+  .docs-page-content-container {
+    display: flex;
+    width: 60vw;
+    padding: 1rem;
+  }
+
+  #docs-sidebar-nav > ul {
+    padding-right: 4vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .docs-page-content-container {
+    display: flex;
+    width: 55vw;
+    padding: 4vw 4vw 4vw 6vw;
+  }
+
+  #docs-sidebar-nav > ul {
+    padding-right: 6rem;
+  }
 }
 
 #docs-content {
@@ -22,10 +40,6 @@
   flex-direction: column;
   border-right: 1px solid rgba(25, 25, 28, 0.2);
   padding: 2em 1.5em 1.5em;
-}
-
-#docs-sidebar-nav > ul {
-  padding-right: 6rem;
 }
 
 #nav-kipper-header {
