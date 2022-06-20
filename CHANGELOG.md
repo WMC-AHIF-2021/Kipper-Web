@@ -10,13 +10,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Release notices to docs pages containing functionality that is not implemented yet.
-- Implemeted dynamic generation of header navigation bar in `gen-header.ts`.
+- Implemented dynamic generation of header navigation bar in `gen-header.ts`.
 - Version tag in navigation bar logo.
+- New class docs-button for smaller buttons that can be used in documentation pages.
+- New section in compiler.html for configuring the Kipper Optimiser.
 
 ### Changed
 
 - Updated docs design, layout and formatting.
 - Updated all docs pages and content to be up-to-date with the recent changes in Kipper.
+- Updated button styling (reduced margin and increased border-radius).
+- Fixed table overflow in compiler.html.
 
 ### Removed
 
