@@ -1,5 +1,7 @@
 /* Defines general variables/properties of the site */
 
+import {currentVersion} from "./const.config";
+
 // The path to the current document
 export const path = window.location.pathname;
 
@@ -32,7 +34,7 @@ export interface OpenGraphMetaTags {
 
 export const openGraphMetaTags: OpenGraphMetaTags = {
   site_name: "Kipper",
-  title: documentTitle,
+  title: UpdateTitle(documentTitle),
   description: documentDescription,
   type: "website",
   url: window.location.href,
@@ -50,4 +52,11 @@ export function DefineOpenGraphMetaTags(tags: OpenGraphMetaTags): void {
     meta.setAttribute("content", tags[key]);
     document.head.appendChild(meta);
   });
+}
+
+export function UpdateTitle(title: string = documentTitle): string {
+  if (!title.trimEnd().endsWith("Kipper")) {
+    return `${title.trimEnd()} - Kipper v${currentVersion}`;
+  }
+  return title;
 }
