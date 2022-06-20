@@ -7,32 +7,35 @@
 /* Default sizing for buttons */
 .button,
 .button-dark {
-  padding: 1em 1.6em !important;
-  margin: 0.75em 0.75em 0.75em 0 !important;
+  padding: 1em 1.6em;
+  margin: 1.2rem 1.2rem 1.2rem 0;
 }
 
 /* Base Button Properties */
 .button,
 .inverted-button,
 .button-dark {
-  display: inline-block !important;
-  border-radius: var(--default-border-radius) !important;
-  font-size: 16px !important;
-  font-weight: bold !important;
-  text-align: center !important;
-  text-decoration: none !important;
-  box-sizing: border-box !important; /* Include border into the size-properties */
-  box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
-    rgba(9, 30, 66, 0.08) 0 0 0 1px !important;
+  display: inline-block;
+  border-radius: 26px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none !important; /* Overwrite default a text decorations */
+  box-sizing: border-box; /* Include border into the size-properties */
 }
 
 /* Default Button */
 .button {
-  border: none !important;
-  color: white !important;
-  background-color: var(--scheme-primary) !important;
-  box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
-    rgba(9, 30, 66, 0.08) 0 0 0 1px !important;
+  border: none;
+  color: white;
+  background-color: var(
+    --scheme-primary
+  ) !important; /* Overwrite default background color */
+}
+
+.docs-button {
+  padding: 10px 14px;
+  margin: 1.2rem 1.2rem 1.2rem 0;
 }
 
 .button:active,
@@ -70,7 +73,7 @@
   color: var(--scheme-primary) !important;
   background-color: transparent !important;
   padding: calc(1em - 2px) calc(1.6em - 2px) !important;
-  margin: 0.75em 0.75em 0.75em 0 !important;
+  margin: 1.2rem 1.2rem 1.2rem 0 !important;
 }
 
 .inverted-button:active,
