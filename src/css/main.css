@@ -23,6 +23,8 @@
   --scheme-dark-gray-rgb: 120, 120, 120;
   --scheme-white: #e9eaed;
   --scheme-white-rgb: 233, 234, 237;
+  --scheme-dark: #1A1F36;
+  --scheme-dark-rgb: 26, 31, 54;
   --scheme-console-blue: #1e1e3f;
   --scheme-console-blue-rgb: 30, 30, 63;
   --default-border-radius: 0.5em;
