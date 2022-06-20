@@ -171,7 +171,7 @@
 }
 
 .version-identifier > small {
-  font-family: "Noto Sans", serif;
+  font-family: "Noto Sans", "Inter", Georgia, Verdana, serif;
   font-size: 14px !important;
   line-height: 18px !important;
   padding-left: 0.4rem;
