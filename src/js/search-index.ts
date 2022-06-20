@@ -1,6 +1,6 @@
 export const rawSearchIndex: Array<string> = [
   "Quickstart;/docs/quickstart.html;Quickstart;The quickstart guide for Kipper.",
-  "Our Goals;/docs/our-goals.html;Our Goals;Goals & Roadmap for Kipper.",
+  "Goals & Roadmap;/docs/goals-and-roadmap.html;Goals & Roadmap;Goals & Roadmap for Kipper.",
   "Supported Platforms;/docs/supported-platforms.html;Supported Platforms;Supported platforms for Kipper.",
   "Usage Examples;/docs/usage-examples.html;Usage;Usage examples for the Kipper language.",
   "Variables;/docs/variables.html;Variables;Kipper variables for storing and reusing data.",
