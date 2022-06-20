@@ -10,7 +10,7 @@ const docsFiles: Record<string, { file: string; title: string }> = {
     title: "Quickstart",
   },
   ourGoals: {
-    file: "our-goals.html",
+    file: "goals-and-roadmap.html",
     title: "Goals & Roadmap",
   },
   supportedPlatforms: {

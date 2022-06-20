@@ -105,16 +105,16 @@ h6 {
   align-items: center;
 }
 
-a,
-a:link,
-a:active,
-a:visited {
+a:not(.button, .button-dark, .docs-button, .inverted-button),
+a:link:not(.button, .button-dark, .docs-button, .inverted-button),
+a:active:not(.button, .button-dark, .docs-button, .inverted-button),
+a:visited:not(.button, .button-dark, .docs-button, .inverted-button) {
   color: #c71239;
   text-decoration: none;
   background-color: transparent;
 }
 
-a:hover {
+a:hover:not(.button, .button-dark, .docs-button, .inverted-button) {
   color: var(--scheme-primary);
   text-decoration: underline;
 }
