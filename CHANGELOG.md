@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Title header banners in the Kipper docs to simplify the design.
+- Docs index page from docs sidebar navigation menu, as the "Kipper Docs" header already acts as a better replacement.
 
 ## [v0.6.0] - 2022-06-18
 
