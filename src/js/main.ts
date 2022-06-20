@@ -38,7 +38,7 @@ export const openGraphMetaTags: OpenGraphMetaTags = {
   description: documentDescription,
   type: "website",
   url: window.location.href,
-  image: `${isNestedDir ? ".." : "."}/img/icon.png`,
+  image: `https://raw.githubusercontent.com/WMC-AHIF-2021/Kipper-Web/main/src/img/head_icon.png`,
   locale: "en_GB",
 };
 
