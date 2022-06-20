@@ -5,8 +5,8 @@ export const rawSearchIndex: Array<string> = [
   "Usage Examples;/docs/usage-examples.html;Usage;Usage examples for the Kipper language.",
   "Variables;/docs/variables.html;Variables;Kipper variables for storing and reusing data.",
   "Variable Datatypes;/docs/datatypes.html;Variable Datatypes;Variable datatypes in the Kipper language.",
-  "Expressions;/docs/expressions.html;Kipper Expressions;Kipper Expressions, which can perform various operations and evaluate to a new value.",
-  "Statements;/docs/statements.html;Kipper Statements;Kipper Statements, which are standalone units of execution able to perform various tasks.",
+  "Expressions;/docs/expressions.html;Expressions;Expressions, which can perform various operations and evaluate to a new value.",
+  "Statements;/docs/statements.html;Statements;Kipper Statements, which are standalone units of execution able to perform various tasks.",
   "If-Statement;/docs/decision-making.html;If-Statement;Decision making using if, else-if and else statements.",
   "While-Loop;/docs/while-loop.html;While-Loop;While-loop statements, which allow for the repeated execution of code.",
   "Do-While-Loop;/docs/do-while-loop.html;Do-While-Loop;Do-While-loop statements, which allow for the repeated execution of code.",
@@ -16,8 +16,8 @@ export const rawSearchIndex: Array<string> = [
     " program per default.",
   "Playground;/playground.html;Playground;Online Playground for using Kipper in your browser.",
   "Docs;/docs/index.html;Documentation;Kipper Documentation and API Reference.",
-  "Changelog;/changelog.html;Changelog;Kipper Changelog.",
-  "Downloads;/download.html;Downloads;Downloads for the Kipper Language.",
+  "Changelog;/changelog.html;Changelog;Detailed Changelog documenting changes in Kipper.",
+  "Downloads;/download.html;Downloads;Downloads.",
   "Comments;/docs/comments.html;Comments;Comments in the Kipper language.",
 ];
 

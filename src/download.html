@@ -2,15 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Downloads for the Kipper Language</title>
+    <title>Downloads</title>
     <meta name="description" content="Downloads for the Kipper Language." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script type="module">
-      import { DefineOpenGraphMetaTags, openGraphMetaTags } from "./js/main";
-
-      DefineOpenGraphMetaTags(openGraphMetaTags);
-    </script>
+    <script type="module" src="./js/page-setup.ts"></script>
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="apple-touch-icon" href="./img/icon.png" />
     <link rel="shortcut icon" type="image/ico" href="../favicon.ico" />
@@ -80,7 +76,7 @@
                 <h2>Download Source Code</h2>
                 <p>
                   To download the latest stable source code of Kipper, download
-                  the package <code>zip</code> or <code>tar.gz</code> with the
+                  the compressed package as a <code>zip</code> or <code>tar.gz</code> with the
                   links below:
                 </p>
                 <ul class="flex-column">
@@ -99,7 +95,7 @@
                 </ul>
               </article>
               <article>
-                <h2>Include Kipper in a HTML file</h2>
+                <h2>Include Kipper in an HTML file</h2>
                 <p>
                   If you want to use Kipper inside your browser, then you can
                   include the browser-standalone version of Kipper:

@@ -5,10 +5,6 @@
 import { path } from "./main";
 
 const docsFiles: Record<string, { file: string; title: string }> = {
-  index: {
-    file: "index.html",
-    title: "Docs Overview",
-  },
   quickstart: {
     file: "quickstart.html",
     title: "Quickstart",
