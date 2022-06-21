@@ -90,7 +90,7 @@
 
 .selected-page-sidebar-nav-header a {
   color: rgb(17, 24, 39) !important;
-  background-color: rgba(255, 0, 79, 0.2) !important;
+  background-color: rgba(255, 0, 79, 0.3) !important;
 }
 
 .sidebar-nav-header {
@@ -114,7 +114,7 @@
 .sidebar-nav-header > a:hover {
   text-decoration: none;
   color: rgb(17, 24, 39);
-  background-color: rgb(var(--scheme-primary-rgb), 0.1);
+  background-color: rgb(var(--scheme-primary-rgb), 0.18);
 }
 
 .api-docs-description {
