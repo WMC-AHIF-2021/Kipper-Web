@@ -227,7 +227,7 @@ var result = val1 + val2 * val3;</code></pre>
                         programming languages, as they define how expressions
                         are going to be evaluated. This directly can affect how
                         your code runs, as certain parts might be evaluated
-                        first before others and change the entire direction of
+                        first before others and change the entire course of
                         your program.
                       </p>
                       <p>
@@ -536,24 +536,21 @@ False as num // -> 0</code></pre>
                         <li>
                           <h2>Function Call Expression</h2>
                           <p>
-                            This is a simple expression, which calls/runs a
-                            <a href="./functions.html">function</a> and
-                            evaluates to the
-                            <a href="./functions.html">function</a>'s return. In
-                            case that the return is not assigned to any
-                            variable, then it will be simply dropped, as if it
-                            never existed.
+                            This is a simple expression, which calls and runs a <a href="./functions.html">function</a>
+                            based on the specified identifier and evaluates to the return of the
+                            <a href="./functions.html">function</a>. In case that the return is not assigned to any
+                            variable or used in another expression, then it will be simply discarded.
                           </p>
                           <h3>Syntax</h3>
                           <!-- prettier-ignore -->
                           <pre><code class="language-typescript">call FUNC(ARGS...)</code></pre>
                           <h4>Examples</h4>
                           <!-- prettier-ignore -->
-                          <pre><code class="language-typescript">// ✓ Calls a defined function
+                          <pre><code class="language-typescript">// ✓ Calling a defined function
 def func1() -> num { return 5; }
 call func1(); // -> 5
 
-// ✓ Calls a defined function and assigning it to a variable
+// ✓ Calling a defined function and assigning it to a variable
 def func2() -> num { return 10; }
 var example1 = call func2(); // -> 10
 
