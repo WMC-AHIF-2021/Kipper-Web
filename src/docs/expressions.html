@@ -486,27 +486,26 @@ else { var result = value4; }</code></pre>
                             <li>
                               <h4>From <code>str</code> to <code>num</code></h4>
                               <p>
-                                Converts a string (<code>"203"</code>) to a
-                                number (<code>203</code>), if it meets the
+                                Converts a string to a number, if it meets the
                                 following requirements:
                               </p>
                               <ul class="bullet-list flex-column">
                                 <li>
-                                  Only contains numeric characters (<code
-                                    >0 - 9</code
-                                  >)
+                                  Only contains numeric characters (<code>0 - 9</code>)
                                 </li>
                                 <li>Is not empty (length > 0)</li>
                               </ul>
+                              <p>
+                                Otherwise if the string does not meet the above requirements, it will return
+                                <code>NaN</code> (Not a number). In future releases, this will be a
+                                <code>ConversionError</code>.
+                              </p>
                               <pre><code class="language-typescript">"203" as num // -> 203</code></pre>
                             </li>
                             <li>
                               <h4>From <code>num</code> to <code>str</code></h4>
                               <p>
-                                Converts a number (<code>255</code>) to an
-                                identical string representation
-                                (<code>"255"</code>). This works on all numbers
-                                that were defined!
+                                Converts a number to an identical string representation of the number.
                               </p>
                               <pre><code class="language-typescript">203 as str // -> "203"</code></pre>
                             </li>
@@ -515,8 +514,7 @@ else { var result = value4; }</code></pre>
                                 From <code>char</code> to <code>str</code>
                               </h4>
                               <p>
-                                Converts a single character to a string. This
-                                works on all characters that were defined!
+                                Converts a single character to a string.
                               </p>
                               <pre><code class="language-typescript">'c' as str // -> "c"</code></pre>
                             </li>
@@ -526,8 +524,7 @@ else { var result = value4; }</code></pre>
                               </h4>
                               <p>
                                 Converts a number to a bool. This evaluates to
-                                <code>true</code> if it's a non-zero value. This
-                                works on all numbers that were defined!
+                                <code>true</code> if it's a non-zero value.
                               </p>
                               <pre><code class="language-typescript">20 as bool // -> true
 0 as bool // -> false</code></pre>
@@ -539,11 +536,21 @@ else { var result = value4; }</code></pre>
                               <p>
                                 Converts a bool to a number. This evaluates to
                                 <code>1</code> if it's <code>true</code>,
-                                otherwise it's <code>0</code>. This works on all
-                                bools that were defined!
+                                otherwise it's <code>0</code>.
                               </p>
                               <pre><code class="language-typescript">true as num // -> 1
 false as num // -> 0</code></pre>
+                            </li>
+                            <li>
+                              <h4>
+                                From <code>bool</code> to <code>str</code>
+                              </h4>
+                              <p>
+                                Converts a string to a number. This evaluates to
+                                <code>"true"</code> if it's <code>true</code>, otherwise it's <code>"false"</code>.
+                              </p>
+                              <pre><code class="language-typescript">true as str // -> "true"
+false as str // -> "false"</code></pre>
                             </li>
                           </ul>
                         </li>
