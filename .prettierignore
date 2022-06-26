@@ -1,0 +1,15 @@
+lib
+dist
+node_modules
+bin
+.editorconfig
+.eslintrc
+.gitignore
+.npmrc
+.npmignore
+.prettierignore
+kipper-standalone.js
+*.min.js
+*.min.ts
+*.yaml
+*.json
