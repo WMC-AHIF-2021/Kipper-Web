@@ -13,8 +13,8 @@ Kipper Expressions;/docs/expressions.html
 Expressions;/docs/expressions.html
 Kipper Statements;/docs/statements.html
 Statements;/docs/statements.html
-If;/docs/decision-making.html
-If-Statement;/docs/decision-making.html
+If;/docs/if-statement.html
+If-Statement;/docs/if-statement.html
 While;/docs/while-loop.html
 While-Loop;/docs/while-loop.html
 Do-While;/docs/do-while-loop.html

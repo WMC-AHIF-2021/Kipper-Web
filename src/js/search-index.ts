@@ -7,7 +7,7 @@ export const rawSearchIndex: Array<string> = [
 	"Variable Datatypes;/docs/datatypes.html;Variable Datatypes;Variable datatypes in the Kipper language.",
 	"Expressions;/docs/expressions.html;Expressions;Expressions, which can perform various operations and evaluate to a new value.",
 	"Statements;/docs/statements.html;Statements;Kipper Statements, which are standalone units of execution able to perform various tasks.",
-	"If-Statement;/docs/decision-making.html;If-Statement;Decision making using if, else-if and else statements.",
+	"If-Statement;/docs/if-statement.html;If-Statement;Decision making using if, else-if and else statements.",
 	"While-Loop;/docs/while-loop.html;While-Loop;While-loop statements, which allow for the repeated execution of code.",
 	"Do-While-Loop;/docs/do-while-loop.html;Do-While-Loop;Do-While-loop statements, which allow for the repeated execution of code.",
 	"For-Loop;/docs/for-loop.html;For-Loop;For-loop statements, which allow for the repeated execution of code.",

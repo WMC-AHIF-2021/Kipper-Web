@@ -42,7 +42,7 @@ const docsFiles: Record<string, { file: string; title: string }> = {
 		title: "Statements",
 	},
 	decisionMaking: {
-		file: "decision-making.html",
+		file: "if-statement.html",
 		title: "If-Statement",
 	},
 	whileLoop: {
