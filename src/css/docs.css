@@ -81,7 +81,8 @@
 	color: var(--scheme-primary);
 }
 
-.docs-page-description {
+.docs-page-description:first-child h1 {
+  margin-top: 0.6rem;
 }
 
 #docs-page-nav ul li {
