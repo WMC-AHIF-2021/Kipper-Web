@@ -67,33 +67,33 @@
 
 /* Inverted Transparent-Background Button */
 .inverted-button {
-	border: 2px solid var(--scheme-primary) !important;
-	color: var(--scheme-primary) !important;
-	background-color: transparent !important;
-	padding: calc(1em - 2px) calc(1.6em - 2px) !important;
-	margin: 1.2rem 1.2rem 1.2rem 0 !important;
+	border: 2px solid var(--scheme-primary);
+	color: var(--scheme-primary);
+	background-color: transparent;
+	padding: calc(1em - 2px) calc(1.6em - 2px);
+	margin: 1.2rem 1.2rem 1.2rem 0;
 }
 
 .inverted-button:active,
 .inverted-button:visited {
-	color: var(--scheme-primary) !important;
+	color: var(--scheme-primary);
 }
 
 .inverted-button:hover {
 	background-color: var(--button-dark-primary) !important;
-	box-shadow: 0 0 0.5em var(--scheme-gray) !important;
+	box-shadow: 0 0 0.5em var(--scheme-gray);
 	color: white !important;
-	border-color: var(--button-dark-primary) !important;
+	border-color: var(--button-dark-primary);
 }
 
 /* Underline buttons */
 .underline-button {
 	position: relative;
-	border: none !important;
-	color: white !important;
-	text-align: center !important;
-	text-decoration: none !important;
-	display: inline-block !important;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
 	box-sizing: border-box;
 }
 
