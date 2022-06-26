@@ -19,32 +19,32 @@ function GenFooter(): string {
     <ul id="footer-bar-list" class="no-style-list flex-row flex-parent-container flex-center">
       <li>
         <small>
-          <a class="link-on-red-background underline-button" href=${releasesURL}>Releases</a>
+          <a class="underline-button" href=${releasesURL}>Releases</a>
         </small>
       </li>
       <li>
         <small>
-          <a class="link-on-red-background underline-button" href=${kipperGithubURL}>GitHub</a>
+          <a class="underline-button" href=${kipperGithubURL}>GitHub</a>
         </small>
       </li>
       <li>
         <small>
-          <a class="link-on-red-background underline-button" href=${securityURL}>Security</a>
+          <a class="underline-button" href=${securityURL}>Security</a>
         </small>
       </li>
       <li>
         <small>
-          <a class="link-on-red-background underline-button" href=${issueTracker}>Issue Tracker</a>
+          <a class="underline-button" href=${issueTracker}>Issue Tracker</a>
         </small>
       </li>
       <li>
         <small>
-          <a class="link-on-red-background underline-button" href=${licenseURL}>License</a>
+          <a class="underline-button" href=${licenseURL}>License</a>
         </small>
       </li>
       <li>
         <small>
-          <a class="link-on-red-background underline-button" href=${websiteGitHubURL}>Website Repo</a>
+          <a class="underline-button" href=${websiteGitHubURL}>Website Repo</a>
         </small>
       </li>
     </ul>
