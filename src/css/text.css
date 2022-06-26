@@ -42,11 +42,11 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: 0.6em;
-	margin-bottom: 0.4em;
   display: flex;
   align-items: center;
   font-weight: 700;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
 }
 
 .no-top-margin-header {
@@ -67,14 +67,14 @@ h2 {
 
 h3 {
 	font-style: normal;
-	font-size: 18px;
-	line-height: 22px;
+	font-size: 22px;
+	line-height: 26px;
 }
 
 h4 {
 	font-style: normal;
-	font-size: 18px;
-	line-height: 22px;
+	font-size: 20px;
+	line-height: 24px;
 }
 
 h5 {
