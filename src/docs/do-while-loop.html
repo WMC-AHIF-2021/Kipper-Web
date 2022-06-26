@@ -82,9 +82,9 @@ See main.css for the --scheme-primary variable
 												<li>Run <code>STATEMENT</code> (Only the first time).</li>
 												<li>
 													Check <code>CONDITION</code>, if it exists, before running the <code>STATEMENT</code> again.
-													If <code>CONDITION</code> is <code>False</code>, then the loop will be stopped!
+													If <code>CONDITION</code> is <code>false</code>, then the loop will be stopped!
 												</li>
-												<li>Run <code>STATEMENT</code> if <code>CONDITION</code> was true.</li>
+												<li>Run <code>STATEMENT</code> if <code>CONDITION</code> was <code>true</code>.</li>
 											</ul>
 											<h2>Examples</h2>
 											<!-- prettier-ignore -->
@@ -102,7 +102,7 @@ while (var2 > 0 && var2 <= 25)
 call print(f"'var1' is now '{var2}'"); // -> 'var1' is now '0'
 
 // X Infinite Loop - Avoid this, as it can result in your program freezing/running forever
-while (True) {
+while (true) {
   call print("An unnecessary print!");
 }</code></pre>
 										</div>

@@ -132,7 +132,7 @@ increase_this--; // Expression statement -> 4</code></pre>
 													<p>
 														They must have a single starting <code>if</code>, may have multiple extending
 														<code>else if</code> branches and can have a single ending <code>else</code> branch, which
-														is evaluated if the previous condition were all <code>False</code>.
+														is evaluated if the previous condition were all <code>false</code>.
 													</p>
 													<!-- prettier-ignore -->
 													<pre><code class="language-typescript">if (CONDITION) STATEMENT      // Required
@@ -178,9 +178,9 @@ if (var2 < 5) {
 														<li>Evaluate <code>INIT_EXPRESSION</code>, if it exists (Only the first time).</li>
 														<li>
 															Check <code>CONDITION</code>, if it exists, before running the <code>STATEMENT</code>. If
-															<code>CONDITION</code> is <code>False</code>, then the loop will be stopped!
+															<code>CONDITION</code> is <code>false</code>, then the loop will be stopped!
 														</li>
-														<li>Run <code>STATEMENT</code> if <code>CONDITION</code> was true.</li>
+														<li>Run <code>STATEMENT</code> if <code>CONDITION</code> was <code>true</code>.</li>
 														<li>
 															Evaluate <code>LOOP_EXPRESSION</code> after finishing the execution of
 															<code>STATEMENT</code>, and the loop was not stopped using <code>return;</code> or
@@ -207,9 +207,9 @@ if (var2 < 5) {
 													<ul class="bullet-list flex-column">
 														<li>
 															Check <code>CONDITION</code>, if it exists, before running the <code>STATEMENT</code>. If
-															<code>CONDITION</code> is <code>False</code>, then the loop will be stopped!
+															<code>CONDITION</code> is <code>false</code>, then the loop will be stopped!
 														</li>
-														<li>Run <code>STATEMENT</code> if <code>CONDITION</code> was true.</li>
+														<li>Run <code>STATEMENT</code> if <code>CONDITION</code> was <code>true</code>.</li>
 													</ul>
 												</li>
 												<li>
@@ -234,10 +234,10 @@ if (var2 < 5) {
 														<li>Run <code>STATEMENT</code> (Only the first time).</li>
 														<li>
 															Check <code>CONDITION</code>, if it exists, before running the
-															<code>STATEMENT</code> again. If <code>CONDITION</code> is <code>False</code>, then the
+															<code>STATEMENT</code> again. If <code>CONDITION</code> is <code>false</code>, then the
 															loop will be stopped!
 														</li>
-														<li>Run <code>STATEMENT</code> if <code>CONDITION</code> was true.</li>
+														<li>Run <code>STATEMENT</code> if <code>CONDITION</code> was <code>true</code>.</li>
 													</ul>
 												</li>
 												<li>
