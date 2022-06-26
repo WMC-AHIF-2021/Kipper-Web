@@ -227,7 +227,7 @@ code {
 }
 
 pre[class*="language-"] {
-	margin: 1em 0 !important;
+	margin: 1em 0;
 	padding: 1em;
 	overflow: auto;
 	border-radius: var(--default-border-radius);
