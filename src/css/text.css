@@ -42,8 +42,11 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: 1.2rem;
+	margin-top: 0.6em;
 	margin-bottom: 0.4em;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
 }
 
 .no-top-margin-header {
@@ -52,57 +55,38 @@ h6 {
 
 h1 {
 	font-style: normal;
-	font-weight: bold;
-	font-size: 30px;
-	line-height: 36px;
-	display: flex;
-	align-items: center;
-	text-align: center;
+	font-size: 32px;
+	line-height: 1.2;
 }
 
 h2 {
 	font-style: normal;
-	font-weight: bold;
-	font-size: 24px;
-	line-height: 29px;
-	display: flex;
-	align-items: center;
+  font-size: 24px;
+  line-height: 29px;
 }
 
 h3 {
 	font-style: normal;
-	font-weight: bold;
 	font-size: 18px;
 	line-height: 22px;
-	display: flex;
-	align-items: center;
 }
 
 h4 {
 	font-style: normal;
-	font-weight: 600; /* Semi-bold */
 	font-size: 18px;
 	line-height: 22px;
-	display: flex;
-	align-items: center;
 }
 
 h5 {
 	font-style: normal;
-	font-weight: normal;
 	font-size: 18px;
 	line-height: 22px;
-	display: flex;
-	align-items: center;
 }
 
 h6 {
 	font-style: normal;
-	font-weight: 300; /* Smaller */
 	font-size: 18px;
 	line-height: 22px;
-	display: flex;
-	align-items: center;
 }
 
 /* Block the CSS from applying text link formatting on buttons and docs headers */
@@ -243,7 +227,7 @@ code {
 }
 
 pre[class*="language-"] {
-	margin: 0.5em 0;
+	margin: 1em 0 !important;
 	padding: 1em;
 	overflow: auto;
 	border-radius: var(--default-border-radius);
