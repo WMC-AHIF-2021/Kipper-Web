@@ -1,177 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Docs Overview</title>
-    <meta
-      name="description"
-      content="Kipper Documentation and API Reference."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<head>
+		<meta charset="utf-8" />
+		<title>Docs Overview</title>
+		<meta name="description" content="Kipper Documentation and API Reference." />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script type="module" src="../js/page-setup.ts"></script>
-    <link rel="manifest" href="../../site.webmanifest" />
-    <link rel="apple-touch-icon" href="../img/icon.png" />
-    <link rel="shortcut icon" type="image/ico" href="../../favicon.ico" />
+		<script type="module" src="../js/page-setup.ts"></script>
+		<link rel="manifest" href="../../site.webmanifest" />
+		<link rel="apple-touch-icon" href="../img/icon.png" />
+		<link rel="shortcut icon" type="image/ico" href="../../favicon.ico" />
 
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/screen.css" />
-    <link rel="stylesheet" href="../css/buttons.css" />
-    <link rel="stylesheet" href="../css/nav-bar.css" />
-    <link rel="stylesheet" href="../css/text.css" />
-    <link rel="stylesheet" href="../css/lists.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="../css/docs.css" />
-    <link rel="stylesheet" href="../css/table.css" />
+		<link rel="stylesheet" href="../css/normalize.css" />
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../css/screen.css" />
+		<link rel="stylesheet" href="../css/buttons.css" />
+		<link rel="stylesheet" href="../css/nav-bar.css" />
+		<link rel="stylesheet" href="../css/text.css" />
+		<link rel="stylesheet" href="../css/lists.css" />
+		<link rel="stylesheet" href="../css/footer.css" />
+		<link rel="stylesheet" href="../css/docs.css" />
+		<link rel="stylesheet" href="../css/table.css" />
 
-    <!-- Font Awesome Icons -->
-    <script
-      src="https://kit.fontawesome.com/951ef1f046.js"
-      crossorigin="anonymous"
-    ></script>
+		<!-- Font Awesome Icons -->
+		<script src="https://kit.fontawesome.com/951ef1f046.js" crossorigin="anonymous"></script>
 
-    <!-- Including stylesheet for the Inter-Font -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Inter"
-    />
+		<!-- Including stylesheet for the Inter-Font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
 
-    <!-- Loading the prism highlighting style-sheet -->
-    <link rel="stylesheet" href="../prism/prism.css" />
+		<!-- Loading the prism highlighting style-sheet -->
+		<link rel="stylesheet" href="../prism/prism.css" />
 
-    <!--
+		<!--
   Specifying the preferred environment colour to be the primary scheme colour.
   See main.css for the --scheme-primary variable
   -->
-    <meta name="theme-color" content="#e01a4f" />
-  </head>
-  <body>
-    <script src="../js/plugins.ts"></script>
-    <script src="../prism/prism.js"></script>
+		<meta name="theme-color" content="#e01a4f" />
+	</head>
+	<body>
+		<script src="../js/plugins.ts"></script>
+		<script src="../prism/prism.js"></script>
 
-    <div id="main-frame">
-      <div id="actual-content">
-        <!-- The top element: menu and search bar -->
-        <header id="home-page-header" class="page-header"></header>
-        <script type="module">
-          import { GenHeaderNavbar } from "../js/gen-header";
+		<div id="main-frame">
+			<div id="actual-content">
+				<!-- The top element: menu and search bar -->
+				<header id="home-page-header" class="page-header"></header>
+				<script type="module">
+					import { GenHeaderNavbar } from "../js/gen-header";
 
-          document.getElementById("home-page-header").innerHTML =
-            GenHeaderNavbar();
-        </script>
+					document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+				</script>
 
-        <!-- Main Content, where the text is located and the items unique to this site are defined -->
-        <div class="flex-parent-container flex-fill-to-parent">
-          <ul
-            class="
-              no-style-list
-              flex-parent-container flex-row flex-fill-to-parent
-            "
-          >
-            <li
-              id="docs-sidebar-nav-wrapper"
-              class="flex-parent-container"
-            ></li>
-            <script type="module" src="../js/gen-sidebar-docs-nav.ts"></script>
-            <li class="docs-page-content-container">
-              <div id="docs-content" class="shadowed-box">
-                <section>
-                  <nav id="docs-page-nav"></nav>
-                  <article>
-                    <img
-                      id="kipper-docs-img"
-                      src="../img/Kipper-Docs.png"
-                      alt=""
-                    />
-                    <h1>Welcome to the Kipper Docs!</h1>
-                    <p>
-                      This is the in-depth documentation and API reference for
-                      the Kipper programming language and compiler, which aims
-                      to explain the implementation, functionality and details
-                      for Kipper.
-                    </p>
-                  </article>
-                  <article>
-                    <h2>Introduction To Kipper</h2>
-                    <ul class="bullet-list flex-column">
-                      <li>
-                        <a class="DocsLink" href="./quickstart.html"
-                          >Kipper Quickstart</a
-                        >
-                      </li>
-                      <li>
-                        <a href="goals-and-roadmap.html">Goals & Roadmap</a>
-                      </li>
-                      <li>
-                        <a href="./supported-platforms.html"
-                          >Supported platforms
-                        </a>
-                      </li>
-                      <li>
-                        <a href="./usage-examples.html">Usage Examples</a>
-                      </li>
-                      <li>
-                        <a href="./compiler.html">Kipper Compiler</a>
-                      </li>
-                    </ul>
-                  </article>
-                  <article>
-                    <h2>Kipper Language Reference</h2>
-                    <ul class="bullet-list flex-column">
-                      <li><a href="./variables.html">Variables</a></li>
-                      <li><a href="./datatypes.html">Variable Datatypes</a></li>
-                      <li>
-                        <a href="./expressions.html">Expressions</a>
-                      </li>
-                      <li><a href="./statements.html">Statements</a></li>
-                      <li><a href="./decision-making.html">If-Statement</a></li>
-                      <li><a href="./while-loop.html">While-Loop</a></li>
-                      <li><a href="./do-while-loop.html">Do-While-Loop</a></li>
-                      <li><a href="./for-loop.html">For-Loop</a></li>
-                      <li><a href="./functions.html">Functions</a></li>
-                      <li><a href="./comments.html">Comments</a></li>
-                      <li>
-                        <a href="./built-in-functions.html"
-                          >Built-in Functions</a
-                        >
-                      </li>
-                    </ul>
-                  </article>
-                  <article>
-                    <p class="red-highlight-text">
-                      Not all features shown in the docs are implemented yet.
-                      View the
-                      <a
-                        href="https://github.com/Luna-Klatzer/Kipper/discussions/139"
-                        >Roadmap for Kipper</a
-                      >
-                      for info about the active development of Kipper.
-                    </p>
-                  </article>
-                  <script
-                    type="module"
-                    src="../js/gen-docs-nav-specifier.ts"
-                  ></script>
-                </section>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- Footer bar - contains some links and general copyright notice -->
-        <footer
-          id="footer-bar"
-          class="flex-parent-container flex-column"
-        ></footer>
-        <script type="module" src="../js/gen-footer.ts"></script>
-      </div>
-    </div>
+				<!-- Main Content, where the text is located and the items unique to this site are defined -->
+				<div class="flex-parent-container flex-fill-to-parent">
+					<ul class="no-style-list flex-parent-container flex-row flex-fill-to-parent">
+						<li id="docs-sidebar-nav-wrapper" class="flex-parent-container"></li>
+						<script type="module" src="../js/gen-sidebar-docs-nav.ts"></script>
+						<li class="docs-page-content-container">
+							<div id="docs-content" class="shadowed-box">
+								<section>
+									<nav id="docs-page-nav"></nav>
+									<article>
+										<img id="kipper-docs-img" src="../img/Kipper-Docs.png" alt="" />
+										<h1>Welcome to the Kipper Docs!</h1>
+										<p>
+											This is the in-depth documentation and API reference for the Kipper programming language and
+											compiler, which aims to explain the implementation, functionality and details for Kipper.
+										</p>
+									</article>
+									<article>
+										<h2>Introduction To Kipper</h2>
+										<ul class="bullet-list flex-column">
+											<li>
+												<a class="DocsLink" href="./quickstart.html">Kipper Quickstart</a>
+											</li>
+											<li>
+												<a href="goals-and-roadmap.html">Goals & Roadmap</a>
+											</li>
+											<li>
+												<a href="./supported-platforms.html">Supported platforms </a>
+											</li>
+											<li>
+												<a href="./usage-examples.html">Usage Examples</a>
+											</li>
+											<li>
+												<a href="./compiler.html">Kipper Compiler</a>
+											</li>
+										</ul>
+									</article>
+									<article>
+										<h2>Kipper Language Reference</h2>
+										<ul class="bullet-list flex-column">
+											<li><a href="./variables.html">Variables</a></li>
+											<li><a href="./datatypes.html">Variable Datatypes</a></li>
+											<li>
+												<a href="./expressions.html">Expressions</a>
+											</li>
+											<li><a href="./statements.html">Statements</a></li>
+											<li><a href="./decision-making.html">If-Statement</a></li>
+											<li><a href="./while-loop.html">While-Loop</a></li>
+											<li><a href="./do-while-loop.html">Do-While-Loop</a></li>
+											<li><a href="./for-loop.html">For-Loop</a></li>
+											<li><a href="./functions.html">Functions</a></li>
+											<li><a href="./comments.html">Comments</a></li>
+											<li>
+												<a href="./built-in-functions.html">Built-in Functions</a>
+											</li>
+										</ul>
+									</article>
+									<article>
+										<p class="red-highlight-text">
+											Not all features shown in the docs are implemented yet. View the
+											<a href="https://github.com/Luna-Klatzer/Kipper/discussions/139">Roadmap for Kipper</a>
+											for info about the active development of Kipper.
+										</p>
+									</article>
+									<script type="module" src="../js/gen-docs-nav-specifier.ts"></script>
+								</section>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Footer bar - contains some links and general copyright notice -->
+				<footer id="footer-bar" class="flex-parent-container flex-column"></footer>
+				<script type="module" src="../js/gen-footer.ts"></script>
+			</div>
+		</div>
 
-    <!-- Overlay for Displaying the Search Results-->
-    <div id="search-background-overlay"></div>
-    <div id="search-result-overlay">
-      <div class="flex-column flex-parent-container" id="search-result"></div>
-    </div>
-    <script type="module" src="../js/search.ts"></script>
-  </body>
+		<!-- Overlay for Displaying the Search Results-->
+		<div id="search-background-overlay"></div>
+		<div id="search-result-overlay">
+			<div class="flex-column flex-parent-container" id="search-result"></div>
+		</div>
+		<script type="module" src="../js/search.ts"></script>
+	</body>
 </html>

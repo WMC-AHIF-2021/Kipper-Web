@@ -6,59 +6,38 @@ import * as prism from "../prism/prism";
 
 // Initialise Prism
 (() => {
-  prism.languages["kipper"] = {
-    ...prism.languages["typescript"],
-  };
+	prism.languages["kipper"] = {
+		...prism.languages["typescript"],
+	};
 })();
 
 const localStorageIdentifier = "kipper-code-editor-content";
 
 // Editor elements
 const codeEditor: HTMLDivElement = document.querySelector("#code-editor");
-const codeTextArea: HTMLTextAreaElement = document.querySelector(
-  "#code-editor-textarea"
-);
-const codeTextAreaResultWrapper: HTMLElement = document.querySelector(
-  "#highlighting-field"
-);
-const codeTextAreaResult: HTMLElement = document.querySelector(
-  "#highlighting-field-content"
-);
-const textSavingState: HTMLDivElement =
-  document.querySelector("#text-saving-state");
+const codeTextArea: HTMLTextAreaElement = document.querySelector("#code-editor-textarea");
+const codeTextAreaResultWrapper: HTMLElement = document.querySelector("#highlighting-field");
+const codeTextAreaResult: HTMLElement = document.querySelector("#highlighting-field-content");
+const textSavingState: HTMLDivElement = document.querySelector("#text-saving-state");
 
 // Menu buttons
-const runCodeListItem: HTMLLIElement = document.querySelector(
-  "#run-code-list-item"
-);
-let runCodeButton: HTMLButtonElement = document.querySelector(
-  "#run-code-list-item button"
-);
-const copyCodeButton: HTMLButtonElement = document.querySelector(
-  "#copy-code-list-item button"
-);
-const clearContentButton: HTMLButtonElement = document.querySelector(
-  "#clear-content-list-item button"
-);
+const runCodeListItem: HTMLLIElement = document.querySelector("#run-code-list-item");
+let runCodeButton: HTMLButtonElement = document.querySelector("#run-code-list-item button");
+const copyCodeButton: HTMLButtonElement = document.querySelector("#copy-code-list-item button");
+const clearContentButton: HTMLButtonElement = document.querySelector("#clear-content-list-item button");
 
 // Sidebar editor fields
 const shellOutput: HTMLDivElement = document.querySelector("#shell-output");
-const shellOutputResult: HTMLElement = document.querySelector(
-  "#shell-sidebar-highlight-field-content"
-);
+const shellOutputResult: HTMLElement = document.querySelector("#shell-sidebar-highlight-field-content");
 
 // Sidebar buttons
-const consoleOutputButton: HTMLButtonElement = document.querySelector(
-  "#console-output-button button"
-);
-const compilerOutputButton: HTMLButtonElement = document.querySelector(
-  "#compiler-output-button button"
-);
+const consoleOutputButton: HTMLButtonElement = document.querySelector("#console-output-button button");
+const compilerOutputButton: HTMLButtonElement = document.querySelector("#compiler-output-button button");
 
 // Global web worker that will run the code
 let worker: Worker = new Worker(
-  // @ts-ignore
-  new URL("./compile/compile-worker.ts", import.meta.url)
+	// @ts-ignore
+	new URL("./compile/compile-worker.ts", import.meta.url),
 );
 
 // Status code returns
@@ -72,122 +51,117 @@ let running = false;
  * @summary Runs the code using a web worker and writes the console output to the "virtual" terminal.
  */
 function runCode(): void {
-  runCodeListItem.innerHTML = `<button>Stop</button>`;
-  runCodeButton = document.querySelector("#run-code-list-item button");
-  runCodeButton.addEventListener("click", stopCode);
+	runCodeListItem.innerHTML = `<button>Stop</button>`;
+	runCodeButton = document.querySelector("#run-code-list-item button");
+	runCodeButton.addEventListener("click", stopCode);
 
-  if (window.Worker) {
-    // Clear the console
-    clearConsoleOutput();
-    clearCompilerOutput();
+	if (window.Worker) {
+		// Clear the console
+		clearConsoleOutput();
+		clearCompilerOutput();
 
-    // Enable compiler logs
-    switchToCompilerOutput();
+		// Enable compiler logs
+		switchToCompilerOutput();
 
-    // Start timer
-    const startTime: number = new Date().getTime();
+		// Start timer
+		const startTime: number = new Date().getTime();
 
-    // Signalise compilation is currently undergoing
-    compiling = true;
+		// Signalise compilation is currently undergoing
+		compiling = true;
 
-    // Event handler for the return. This imitates stdout.
-    worker.onmessage = function (event) {
-      const stringMsg: boolean =
-        typeof event.data === "string" || event.data instanceof String;
-      const numMsg: boolean =
-        typeof event.data === "number" || event.data instanceof Number;
+		// Event handler for the return. This imitates stdout.
+		worker.onmessage = function (event) {
+			const stringMsg: boolean = typeof event.data === "string" || event.data instanceof String;
+			const numMsg: boolean = typeof event.data === "number" || event.data instanceof Number;
 
-      // String values represent runtime or compilation log messages
-      if (stringMsg) {
-        if (!running) {
-          // Write compiler logs
-          writeLineToCompilerOutput(event.data as string);
-        } else {
-          // Write stdout output
-          writeLineToConsoleOutput(event.data as string);
-        }
-        // Numeric values signalise change of state or program handling
-      } else if (numMsg) {
-        const statusCode = event.data as number;
-        if (!running) {
-          // Only if the status code is 0 the compilation successfully finished.
-          if (statusCode === 0) {
-            // Compilation finished -> Say how long it took
-            const endTimeInSeconds: number =
-              (new Date().getTime() - startTime) / 1000;
-            writeLineToCompilerOutput(
-              `\nCompilation finished in ${endTimeInSeconds}s`
-            );
+			// String values represent runtime or compilation log messages
+			if (stringMsg) {
+				if (!running) {
+					// Write compiler logs
+					writeLineToCompilerOutput(event.data as string);
+				} else {
+					// Write stdout output
+					writeLineToConsoleOutput(event.data as string);
+				}
+				// Numeric values signalise change of state or program handling
+			} else if (numMsg) {
+				const statusCode = event.data as number;
+				if (!running) {
+					// Only if the status code is 0 the compilation successfully finished.
+					if (statusCode === 0) {
+						// Compilation finished -> Say how long it took
+						const endTimeInSeconds: number = (new Date().getTime() - startTime) / 1000;
+						writeLineToCompilerOutput(`\nCompilation finished in ${endTimeInSeconds}s`);
 
-            // Enable output to 'stdout'
-            switchToConsoleOutput();
-            running = true;
-          } else {
-            // Abort because of the error
-            stopCode();
-          }
-        } else {
-          // End of the program
-          printProgramExitCode(statusCode);
-          switchButtonToRun();
-        }
-        // Unknown
-      } else {
-        console.error(`Invalid message from WebWorker: ${event.data}`);
-      }
-    };
+						// Enable output to 'stdout'
+						switchToConsoleOutput();
+						running = true;
+					} else {
+						// Abort because of the error
+						stopCode();
+					}
+				} else {
+					// End of the program
+					printProgramExitCode(statusCode);
+					switchButtonToRun();
+				}
+				// Unknown
+			} else {
+				console.error(`Invalid message from WebWorker: ${event.data}`);
+			}
+		};
 
-    // Post the message to tell the worker to process the code
-    const currentCode = codeTextArea.value;
-    worker.postMessage(currentCode);
-  } else {
-    alert("Your browser does not support web-workers! Aborting operation.");
-  }
+		// Post the message to tell the worker to process the code
+		const currentCode = codeTextArea.value;
+		worker.postMessage(currentCode);
+	} else {
+		alert("Your browser does not support web-workers! Aborting operation.");
+	}
 }
 
 /**
  * Switches the interaction button to 'Run', so a new program can be started again.
  */
 function switchButtonToRun(): void {
-  runCodeListItem.innerHTML = `<button>Run</button>`;
-  runCodeButton = document.querySelector("#run-code-list-item button");
-  runCodeButton.addEventListener("click", runCode);
+	runCodeListItem.innerHTML = `<button>Run</button>`;
+	runCodeButton = document.querySelector("#run-code-list-item button");
+	runCodeButton.addEventListener("click", runCode);
 }
 
 /**
  * Stops the WebWorker from executing the current code.
  */
 function stopCode(): void {
-  switchButtonToRun();
-  if (window.Worker) {
-    // If there is no current execution, return.
-    if (worker === undefined) {
-      return;
-    }
+	switchButtonToRun();
+	if (window.Worker) {
+		// If there is no current execution, return.
+		if (worker === undefined) {
+			return;
+		}
 
-    // Terminate the worker
-    // Sadly only using a full termination of the worker we can stop the code from running
-    // This has the downside of recreating the worker and as such losing the warmup performance boost of the Parser.
-    worker.terminate();
+		// Terminate the worker
+		// Sadly only using a full termination of the worker we can stop the code from running
+		// This has the downside of recreating the worker and as such losing the warmup performance boost of the Parser.
+		worker.terminate();
 
-    // Recreate the worker now to save time for the next run call.
-    worker = new Worker(
-      // @ts-ignore
-      new URL("./compile/compile-worker.ts", import.meta.url)
-    );
-  } else {
-    alert("Your browser does not support web-workers! Aborting operation.");
-  }
+		// Recreate the worker now to save time for the next run call.
+		worker = new Worker(
+			// @ts-ignore
+			new URL("./compile/compile-worker.ts", import.meta.url),
+		);
+	} else {
+		alert("Your browser does not support web-workers! Aborting operation.");
+	}
 
-  if (compiling) {
-    switchToCompilerOutput();
-    writeLineToCompilerOutput("\nCompilation terminated.");
+	if (compiling) {
+		switchToCompilerOutput();
+		writeLineToCompilerOutput("\nCompilation terminated.");
 
-    compiling = false;
-  } else {
-    switchToConsoleOutput();
-    printProgramExitCode(statusFailure);
-  }
+		compiling = false;
+	} else {
+		switchToConsoleOutput();
+		printProgramExitCode(statusFailure);
+	}
 }
 
 /**
@@ -195,43 +169,43 @@ function stopCode(): void {
  * @param exitCode The exit code to print.
  */
 function printProgramExitCode(exitCode: number) {
-  writeLineToConsoleOutput(`\nFinished execution with exit code ${exitCode}.`);
-  running = false;
-  compiling = false;
+	writeLineToConsoleOutput(`\nFinished execution with exit code ${exitCode}.`);
+	running = false;
+	compiling = false;
 }
 
 function clearEditorContent(): void {
-  console.log("Code Cleared!");
-  codeTextArea.value = "";
-  codeTextAreaResult.innerHTML = "";
-  localStorage.setItem(localStorageIdentifier, "");
-  textSavingState.innerHTML = `<p class="gray-text">Code cleared!</p>`;
+	console.log("Code Cleared!");
+	codeTextArea.value = "";
+	codeTextAreaResult.innerHTML = "";
+	localStorage.setItem(localStorageIdentifier, "");
+	textSavingState.innerHTML = `<p class="gray-text">Code cleared!</p>`;
 }
 
 function copyEditorContent(): void {
-  console.log("Code Copied!");
-  navigator.clipboard.writeText(codeTextArea.value).then(() => {
-    textSavingState.innerHTML = `<p class="gray-text">Code copied!</p>`;
-  });
+	console.log("Code Copied!");
+	navigator.clipboard.writeText(codeTextArea.value).then(() => {
+		textSavingState.innerHTML = `<p class="gray-text">Code copied!</p>`;
+	});
 }
 
 let consoleOutput = "";
 let compilerOutput = "";
 
 function switchToConsoleOutput() {
-  // Change styling
-  compilerOutputButton.style.borderBottom = "2px solid var(--scheme-gray)";
-  consoleOutputButton.style.borderBottom = "3px solid var(--scheme-primary)";
+	// Change styling
+	compilerOutputButton.style.borderBottom = "2px solid var(--scheme-gray)";
+	consoleOutputButton.style.borderBottom = "3px solid var(--scheme-primary)";
 
-  writeConsoleResultAndHighlight(consoleOutput);
+	writeConsoleResultAndHighlight(consoleOutput);
 }
 
 function switchToCompilerOutput() {
-  // Change styling
-  consoleOutputButton.style.borderBottom = "2px solid var(--scheme-gray)";
-  compilerOutputButton.style.borderBottom = "3px solid var(--scheme-primary)";
+	// Change styling
+	consoleOutputButton.style.borderBottom = "2px solid var(--scheme-gray)";
+	compilerOutputButton.style.borderBottom = "3px solid var(--scheme-primary)";
 
-  writeConsoleResultAndHighlight(compilerOutput);
+	writeConsoleResultAndHighlight(compilerOutput);
 }
 
 // adding event listeners to the menu buttons
@@ -244,9 +218,8 @@ consoleOutputButton.addEventListener("click", switchToConsoleOutput);
 compilerOutputButton.addEventListener("click", switchToCompilerOutput);
 
 codeTextArea.addEventListener("input", (event) => {
-  const givenTextArea: HTMLTextAreaElement =
-    event.target as HTMLTextAreaElement;
-  writeEditorResultAndHighlight(givenTextArea.value);
+	const givenTextArea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
+	writeEditorResultAndHighlight(givenTextArea.value);
 });
 
 codeTextArea.addEventListener("scroll", syncTextAreaSizeAndScroll);
@@ -263,23 +236,22 @@ let spinning: boolean;
 
 // adding keyup listener
 codeTextArea.addEventListener("keyup", (event) => {
-  // if cancel exists / is active -> clear timeout
-  if (cancel) clearTimeout(cancel);
+	// if cancel exists / is active -> clear timeout
+	if (cancel) clearTimeout(cancel);
 
-  // creating the new timeout and assigning it, if the user types more
-  // the timeout will be cancelled and restarted, so that the caching is
-  // only done when the user finished typing!
-  cancel = setTimeout(() => {
-    const givenTextArea: HTMLTextAreaElement =
-      event.target as HTMLTextAreaElement;
-    localStorage.setItem(localStorageIdentifier, givenTextArea.value);
+	// creating the new timeout and assigning it, if the user types more
+	// the timeout will be cancelled and restarted, so that the caching is
+	// only done when the user finished typing!
+	cancel = setTimeout(() => {
+		const givenTextArea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
+		localStorage.setItem(localStorageIdentifier, givenTextArea.value);
 
-    spinning = false;
-    textSavingState.innerHTML = `<p class="gray-text">Code Saved!</p>`;
-  }, 1000);
+		spinning = false;
+		textSavingState.innerHTML = `<p class="gray-text">Code Saved!</p>`;
+	}, 1000);
 
-  if (!spinning) {
-    textSavingState.innerHTML = `<div id="text-save-spinner" class="spinner">
+	if (!spinning) {
+		textSavingState.innerHTML = `<div id="text-save-spinner" class="spinner">
         <!-- This may look stupid, but don't delete it -->
         <div></div>
         <div></div>
@@ -296,46 +268,46 @@ codeTextArea.addEventListener("keyup", (event) => {
       </div>
       <p class="gray-text">Saving...</p>
     `;
-    spinning = true;
-  }
+		spinning = true;
+	}
 });
 
 // Initialise the codeInput
 (() => {
-  // Restore the code if there has been a previous session
-  const localStorageCodeInput = localStorage.getItem(localStorageIdentifier);
-  if (localStorageCodeInput != undefined) {
-    codeTextArea.value = localStorageCodeInput;
-    writeEditorResultAndHighlight(localStorageCodeInput);
-  } else {
-    codeTextArea.value = "";
-  }
+	// Restore the code if there has been a previous session
+	const localStorageCodeInput = localStorage.getItem(localStorageIdentifier);
+	if (localStorageCodeInput != undefined) {
+		codeTextArea.value = localStorageCodeInput;
+		writeEditorResultAndHighlight(localStorageCodeInput);
+	} else {
+		codeTextArea.value = "";
+	}
 
-  // If the input is not empty, signalise that code was restored
-  if (codeTextArea.value.trim() !== "") {
-    textSavingState.innerHTML = `<p class="gray-text">Code restored :)</p>`;
-  }
+	// If the input is not empty, signalise that code was restored
+	if (codeTextArea.value.trim() !== "") {
+		textSavingState.innerHTML = `<p class="gray-text">Code restored :)</p>`;
+	}
 })();
 
 // Initialise the default console output
 (() => {
-  const welcomeMessage: Array<string> = [
-    "--- Welcome to the Kipper Playground! ---\n",
-    "Try out your first program by writing:\n",
-    '  call print("Hello world");\n',
-    "Create your first variable by writing:\n",
-    '  var myString: str = "Hello world!";',
-    "  call print(myString);\n",
-    "Perform your first calculations by writing:\n",
-    "  var result: num = 3.14 * 9;",
-    "  call print(result as str);\n",
-  ];
+	const welcomeMessage: Array<string> = [
+		"--- Welcome to the Kipper Playground! ---\n",
+		"Try out your first program by writing:\n",
+		'  call print("Hello world");\n',
+		"Create your first variable by writing:\n",
+		'  var myString: str = "Hello world!";',
+		"  call print(myString);\n",
+		"Perform your first calculations by writing:\n",
+		"  var result: num = 3.14 * 9;",
+		"  call print(result as str);\n",
+	];
 
-  // Write to the console
-  for (const msg of welcomeMessage) {
-    writeLineToConsoleOutput(msg);
-  }
-  switchToConsoleOutput();
+	// Write to the console
+	for (const msg of welcomeMessage) {
+		writeLineToConsoleOutput(msg);
+	}
+	switchToConsoleOutput();
 })();
 
 /**
@@ -343,81 +315,74 @@ codeTextArea.addEventListener("keyup", (event) => {
  * @param value The value the element was updated to
  */
 function writeEditorResultAndHighlight(value: string): void {
-  // If the last character is a newline character
-  // Add a placeholder space character to the final line
-  if (value[value.length - 1] == "\n") {
-    value += " ";
-  }
+	// If the last character is a newline character
+	// Add a placeholder space character to the final line
+	if (value[value.length - 1] == "\n") {
+		value += " ";
+	}
 
-  // Write results to the original 'codeInput' <textarea> and syntax-highlighted result
-  codeTextAreaResult.innerHTML = value
-    .replace(new RegExp("&", "g"), "&")
-    .replace(new RegExp("<", "g"), "<"); // Allow newlines
+	// Write results to the original 'codeInput' <textarea> and syntax-highlighted result
+	codeTextAreaResult.innerHTML = value.replace(new RegExp("&", "g"), "&").replace(new RegExp("<", "g"), "<"); // Allow newlines
 
-  // Highlight output field
-  prism.highlightElement(codeTextAreaResult);
+	// Highlight output field
+	prism.highlightElement(codeTextAreaResult);
 
-  // Sync formatting
-  syncTextAreaSizeAndScroll();
+	// Sync formatting
+	syncTextAreaSizeAndScroll();
 }
 
 function checkForTab(event) {
-  const element = codeTextArea;
-  const code = element.value;
-  if (event.key === "Tab") {
-    event.preventDefault();
+	const element = codeTextArea;
+	const code = element.value;
+	if (event.key === "Tab") {
+		event.preventDefault();
 
-    // If the shift key is also pressed, push tabs back
-    if (event.shiftKey) {
-      const beforeTab = code.slice(0, element.selectionStart);
-      const afterTab = code.slice(element.selectionEnd, element.value.length);
+		// If the shift key is also pressed, push tabs back
+		if (event.shiftKey) {
+			const beforeTab = code.slice(0, element.selectionStart);
+			const afterTab = code.slice(element.selectionEnd, element.value.length);
 
-      // Remove tab char or whitespace if it exists
-      if (
-        beforeTab[beforeTab.length - 1] === "\t" ||
-        beforeTab[beforeTab.length - 1] === " "
-      ) {
-        const moveBack = beforeTab.slice(-2, beforeTab.length) === "  " ? 2 : 1;
+			// Remove tab char or whitespace if it exists
+			if (beforeTab[beforeTab.length - 1] === "\t" || beforeTab[beforeTab.length - 1] === " ") {
+				const moveBack = beforeTab.slice(-2, beforeTab.length) === "  " ? 2 : 1;
 
-        // where cursor moves after tab - moving forward by 1 char to after tab
-        const cursorPos =
-          element.selectionStart > 0 ? element.selectionStart - moveBack : 0;
+				// where cursor moves after tab - moving forward by 1 char to after tab
+				const cursorPos = element.selectionStart > 0 ? element.selectionStart - moveBack : 0;
 
-        element.value =
-          beforeTab.slice(0, beforeTab.length - moveBack) + afterTab;
+				element.value = beforeTab.slice(0, beforeTab.length - moveBack) + afterTab;
 
-        // Move cursor
-        element.selectionStart = cursorPos;
-        element.selectionEnd = cursorPos;
-      }
-    } else {
-      const beforeTab = code.slice(0, element.selectionStart);
-      const afterTab = code.slice(element.selectionEnd, element.value.length);
+				// Move cursor
+				element.selectionStart = cursorPos;
+				element.selectionEnd = cursorPos;
+			}
+		} else {
+			const beforeTab = code.slice(0, element.selectionStart);
+			const afterTab = code.slice(element.selectionEnd, element.value.length);
 
-      // where cursor moves after tab - moving forward by 1 char to after tab
-      const cursorPos = element.selectionEnd + 1;
+			// where cursor moves after tab - moving forward by 1 char to after tab
+			const cursorPos = element.selectionEnd + 1;
 
-      // Add tab char
-      element.value = beforeTab + "\t" + afterTab;
+			// Add tab char
+			element.value = beforeTab + "\t" + afterTab;
 
-      // Move cursor
-      element.selectionStart = cursorPos;
-      element.selectionEnd = cursorPos;
-    }
+			// Move cursor
+			element.selectionStart = cursorPos;
+			element.selectionEnd = cursorPos;
+		}
 
-    writeEditorResultAndHighlight(element.value);
-  }
+		writeEditorResultAndHighlight(element.value);
+	}
 }
 
 /**
  * Syncs the scrolling for both <textarea> and codeInputResult.
  */
 function syncTextAreaSizeAndScroll(): void {
-  /* Scroll result to scroll coords of event - sync with textarea */
+	/* Scroll result to scroll coords of event - sync with textarea */
 
-  // Get and set x and y
-  codeTextAreaResultWrapper.scrollTop = codeTextArea.scrollTop;
-  codeTextAreaResultWrapper.scrollLeft = codeTextArea.scrollLeft;
+	// Get and set x and y
+	codeTextAreaResultWrapper.scrollTop = codeTextArea.scrollTop;
+	codeTextAreaResultWrapper.scrollLeft = codeTextArea.scrollLeft;
 }
 
 /**
@@ -425,19 +390,17 @@ function syncTextAreaSizeAndScroll(): void {
  * @param value The text to write.
  */
 function writeConsoleResultAndHighlight(value: string): void {
-  // If the last character is a newline character
-  // Add a placeholder space character to the final line
-  if (value[value.length - 1] == "\n") {
-    value += " ";
-  }
+	// If the last character is a newline character
+	// Add a placeholder space character to the final line
+	if (value[value.length - 1] == "\n") {
+		value += " ";
+	}
 
-  // Write content to the console
-  shellOutputResult.innerHTML = value
-    .replace(new RegExp("&", "g"), "&")
-    .replace(new RegExp("<", "g"), "<"); // Allow newlines
+	// Write content to the console
+	shellOutputResult.innerHTML = value.replace(new RegExp("&", "g"), "&").replace(new RegExp("<", "g"), "<"); // Allow newlines
 
-  // Highlight output field
-  prism.highlightElement(shellOutputResult);
+	// Highlight output field
+	prism.highlightElement(shellOutputResult);
 }
 
 /**
@@ -445,45 +408,41 @@ function writeConsoleResultAndHighlight(value: string): void {
  * @param value The line to add.
  */
 function writeLineToConsoleOutput(value: string): void {
-  consoleOutput += value + "\n";
-  writeConsoleResultAndHighlight(consoleOutput);
+	consoleOutput += value + "\n";
+	writeConsoleResultAndHighlight(consoleOutput);
 }
 
 function writeLineToCompilerOutput(value: string): void {
-  compilerOutput += value + "\n";
-  writeConsoleResultAndHighlight(compilerOutput);
+	compilerOutput += value + "\n";
+	writeConsoleResultAndHighlight(compilerOutput);
 }
 
 /**
  * Clears the content of the console.
  */
 function clearConsoleOutput(): void {
-  consoleOutput = "";
-  writeConsoleResultAndHighlight(compilerOutput);
+	consoleOutput = "";
+	writeConsoleResultAndHighlight(compilerOutput);
 }
 
 function clearCompilerOutput(): void {
-  compilerOutput = "";
-  writeConsoleResultAndHighlight("");
+	compilerOutput = "";
+	writeConsoleResultAndHighlight("");
 }
 
 /**
  * Fixes the sizes of the code editor
  */
 function setEditorAndConsoleSizes(): void {
-  const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+	const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
-  // Set editor size. Subtracts -2rem due to an inner padding of 1rem
-  codeTextAreaResultWrapper.style.height = `${
-    codeEditor.clientHeight - 2 * rem
-  }px`;
-  codeTextAreaResultWrapper.style.width = `${
-    codeEditor.clientWidth - 2 * rem
-  }px`;
-  codeTextArea.style.height = `${codeEditor.clientHeight - 2 * rem}px`;
-  codeTextArea.style.width = `${codeEditor.clientWidth - 2 * rem}px`;
+	// Set editor size. Subtracts -2rem due to an inner padding of 1rem
+	codeTextAreaResultWrapper.style.height = `${codeEditor.clientHeight - 2 * rem}px`;
+	codeTextAreaResultWrapper.style.width = `${codeEditor.clientWidth - 2 * rem}px`;
+	codeTextArea.style.height = `${codeEditor.clientHeight - 2 * rem}px`;
+	codeTextArea.style.width = `${codeEditor.clientWidth - 2 * rem}px`;
 
-  // Set console size. Subtracts -2rem due to an inner padding of 1rem
-  shellOutputResult.style.height = `${shellOutput.clientHeight - 2 * rem}px`;
-  shellOutputResult.style.width = `${shellOutput.clientWidth - 2 * rem}px`;
+	// Set console size. Subtracts -2rem due to an inner padding of 1rem
+	shellOutputResult.style.height = `${shellOutput.clientHeight - 2 * rem}px`;
+	shellOutputResult.style.width = `${shellOutput.clientWidth - 2 * rem}px`;
 }

@@ -1,37 +1,37 @@
 /*! Configuration for the Playground */
 
 #left-console-interface {
-  margin: 0;
-  display: flex;
-  flex-grow: 2;
+	margin: 0;
+	display: flex;
+	flex-grow: 2;
 }
 
 #left-console-interface #playground-option-menu {
-  border-bottom: 2px solid var(--scheme-gray);
+	border-bottom: 2px solid var(--scheme-gray);
 }
 
 #clear-content-list-item {
-  margin-right: 1rem;
+	margin-right: 1rem;
 }
 
 .playground-button button {
-  padding: 1rem 1rem;
-  background-color: white;
-  border: none;
-  cursor: pointer;
+	padding: 1rem 1rem;
+	background-color: white;
+	border: none;
+	cursor: pointer;
 }
 
 .playground-button button:hover {
-  color: var(--scheme-primary);
-  background-color: var(--scheme-gray);
+	color: var(--scheme-primary);
+	background-color: var(--scheme-gray);
 }
 
 /* The entire code entire window -> parent of the label and textarea */
 #code-editor {
-  display: flex;
-  flex-grow: 1;
-  min-width: 0;
-  min-height: 0;
+	display: flex;
+	flex-grow: 1;
+	min-width: 0;
+	min-height: 0;
 }
 
 /*
@@ -40,125 +40,122 @@
  */
 #code-editor-textarea,
 #highlighting-field {
-  /* Putting them on top of each other */
-  position: absolute;
-  flex-grow: 0;
+	/* Putting them on top of each other */
+	position: absolute;
+	flex-grow: 0;
 
-  /* Allow scrolling */
-  overflow: auto;
+	/* Allow scrolling */
+	overflow: auto;
 
-  /* Identical styling */
-  margin: 0;
-  padding: 1rem;
-  resize: none;
-  border: none;
-  outline: none;
-  max-height: 60vh;
-  max-width: 70vw;
+	/* Identical styling */
+	margin: 0;
+	padding: 1rem;
+	resize: none;
+	border: none;
+	outline: none;
+	max-height: 60vh;
+	max-width: 70vw;
 }
 
 #code-editor-textarea,
 #highlighting-field,
 #highlighting-field * {
-  /* Also add text styles to highlighting tokens */
-  font-size: 14px;
-  font-family: consolas, monospace;
-  line-height: 18px;
-  background-color: white;
-  tab-size: 2;
+	/* Also add text styles to highlighting tokens */
+	font-size: 14px;
+	font-family: consolas, monospace;
+	line-height: 18px;
+	background-color: white;
+	tab-size: 2;
 }
 
 #code-editor-textarea {
-  /* Move the textarea in front of the result */
-  z-index: 1;
-  color: transparent;
-  background: transparent;
-  caret-color: var(--scheme-primary);
+	/* Move the textarea in front of the result */
+	z-index: 1;
+	color: transparent;
+	background: transparent;
+	caret-color: var(--scheme-primary);
 }
 
 #code-editor-textarea::selection {
-  text-shadow: none;
-  background: rgba(70, 93, 160, 0.2);
+	text-shadow: none;
+	background: rgba(70, 93, 160, 0.2);
 }
 
 #highlighting-field-content {
-  margin: 0 !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
 }
 
 #highlighting-field {
-  z-index: 0;
+	z-index: 0;
 }
 
 /* Sidebar styling */
 #shell-sidebar {
-  margin: 0;
-  display: flex;
+	margin: 0;
+	display: flex;
 }
 
 #shell-sidebar #shell-sidebar-menu {
-  padding: 0;
+	padding: 0;
 }
 
 #shell-sidebar #shell-sidebar-menu .playground-button {
-  display: flex;
-  flex-grow: 1;
+	display: flex;
+	flex-grow: 1;
 }
 
 #shell-sidebar #shell-sidebar-menu button {
-  border-bottom: 2px solid var(--scheme-gray);
-  flex-grow: 1;
+	border-bottom: 2px solid var(--scheme-gray);
+	flex-grow: 1;
 }
 
 /* Removing any border radius inside the editor*/
 #shell-sidebar > #shell-output > .code-toolbar pre,
 #shell-sidebar > #shell-output > .code-toolbar code {
-  border-radius: 0;
+	border-radius: 0;
 }
 
 #shell-sidebar > #shell-output,
 #shell-sidebar > #shell-output > .code-toolbar,
 #shell-sidebar > #shell-output > .code-toolbar > pre {
-  display: flex;
-  flex-grow: 1;
+	display: flex;
+	flex-grow: 1;
 }
 
 #shell-sidebar-menu {
-  width: inherit;
+	width: inherit;
 }
 
 #shell-sidebar > #shell-output #shell-sidebar-highlight-field {
-  background-color: var(--scheme-console-blue);
-  display: flex;
-  flex-grow: 1;
-  margin: 0;
-  padding: 0;
-  width: inherit;
+	background-color: var(--scheme-console-blue);
+	display: flex;
+	flex-grow: 1;
+	margin: 0;
+	padding: 0;
+	width: inherit;
 }
 
-#shell-sidebar
-  > #shell-output
-  #shell-sidebar-highlight-field
-  > #shell-sidebar-highlight-field-content {
-  border-radius: 0;
-  align-self: flex-start;
-  overflow: auto;
-  overflow-wrap: break-word;
-  word-wrap: break-word; /* For IE */
+#shell-sidebar > #shell-output #shell-sidebar-highlight-field > #shell-sidebar-highlight-field-content {
+	border-radius: 0;
+	align-self: flex-start;
+	overflow: auto;
+	overflow-wrap: break-word;
+	word-wrap: break-word; /* For IE */
 
-  /* Apply proper formatting */
-  margin: 0;
-  padding: 1rem;
-  width: 30vw;
-  min-height: 0;
-  min-width: 0;
-  flex-grow: 1;
+	/* Apply proper formatting */
+	margin: 0;
+	padding: 1rem;
+	width: 30vw;
+	min-height: 0;
+	min-width: 0;
+	flex-grow: 1;
 
-  /* Update font */
-  font-size: 14px;
-  line-height: 18px;
+	/* Update font */
+	font-size: 14px;
+	line-height: 18px;
 
-  /* Tabs should be handled like spaces */
-  tab-size: 1;
+	/* Tabs should be handled like spaces */
+	tab-size: 1;
 }

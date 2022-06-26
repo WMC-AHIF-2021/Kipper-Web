@@ -2,22 +2,15 @@
  * Generates the visual header and description on the site
  */
 
-import {
-  documentTitle,
-  isNestedDir,
-  documentDescription,
-  path,
-  isDocsFile,
-} from "./main";
-import { currentVersion, kipperGithubURL } from "./const.config";
+import { documentTitle, isNestedDir, documentDescription, path, isDocsFile } from "./main";
+import { Version, kipperGithubURL } from "./const.config";
 
-export const kipperPackageEndpoint: string =
-  "https://registry.npmjs.org/kipper";
+export const kipperPackageEndpoint: string = "https://registry.npmjs.org/kipper";
 
 export function GenHeaderNavbar(): string {
-  // @ts-ignore
-  const logo = new URL("../img/base_head.png", import.meta.url);
-  return `<nav id="header-nav-bar">
+	// @ts-ignore
+	const logo = new URL("../img/base_head.png", import.meta.url);
+	return `<nav id="header-nav-bar">
     <ul>
       <li>
         <a
@@ -39,8 +32,8 @@ export function GenHeaderNavbar(): string {
         >
           <h1>Kipper</h1>
         </a>
-        <a class="version-identifier" href="${kipperGithubURL}/releases/tag/v${currentVersion}">
-          <small>v${currentVersion}</small>
+        <a class="version-identifier" href="${kipperGithubURL}/releases/tag/v${Version}">
+          <small>v${Version}</small>
         </a>
       </li>
       <li>
@@ -116,11 +109,9 @@ export function GenHeaderNavbar(): string {
 }
 
 export function GenHeaderAndDescription(): string {
-  return `<div class="header-text-content flex-parent-container flex-fill-to-parent flex-column flex-center">
+	return `<div class="header-text-content flex-parent-container flex-fill-to-parent flex-column flex-center">
     <div id="page-header" class="white-text">
-      <h1>${documentTitle}${
-    isNestedDir ? ` - Kipper v${currentVersion} Docs` : ""
-  }</h1>
+      <h1>${documentTitle}${isNestedDir ? ` - Kipper v${Version} Docs` : ""}</h1>
     </div>
     <div id="page-description" class="white-text">
       <p>${documentDescription}</p>

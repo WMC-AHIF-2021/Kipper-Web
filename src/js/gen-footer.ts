@@ -1,17 +1,17 @@
 /* Dynamically creates the footer */
 
 import {
-  licenseURL,
-  kipperGithubURL,
-  websiteGitHubURL,
-  copyright,
-  issueTracker,
-  securityURL,
-  releasesURL,
+	licenseURL,
+	kipperGithubURL,
+	websiteGitHubURL,
+	copyright,
+	issueTracker,
+	securityURL,
+	releasesURL,
 } from "./const.config";
 
 function GenFooter(): string {
-  return `<ul id="footer-content" class="no-style-list flex-column flex-parent-container flex-center">
+	return `<ul id="footer-content" class="no-style-list flex-column flex-parent-container flex-center">
   <li>
     <img id="htl-leonding-logo" src="https://edufs.edu.htl-leonding.ac.at/htl_leonding_logo_hell.png" alt="" height="48px">
   </li>

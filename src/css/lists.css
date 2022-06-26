@@ -2,20 +2,20 @@
 
 ul,
 ol {
-  display: flex;
-  list-style-type: disc;
-  flex-direction: column;
-  padding-left: 2rem;
+	display: flex;
+	list-style-type: disc;
+	flex-direction: column;
+	padding-left: 2rem;
 }
 
 /* A free list for working on a list with no design */
 .no-style-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 }
 
 .bullet-list {
-  list-style-type: disc;
-  list-style-position: outside;
+	list-style-type: disc;
+	list-style-position: outside;
 }

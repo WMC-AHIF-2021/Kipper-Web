@@ -1,122 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>While-Loop</title>
-    <meta
-      name="description"
-      content="While-loop statements, which allow for the repeated execution of code."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<head>
+		<meta charset="utf-8" />
+		<title>While-Loop</title>
+		<meta name="description" content="While-loop statements, which allow for the repeated execution of code." />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script type="module" src="../js/page-setup.ts"></script>
-    <link rel="manifest" href="../../site.webmanifest" />
-    <link rel="apple-touch-icon" href="../img/icon.png" />
-    <link rel="shortcut icon" type="image/ico" href="../../favicon.ico" />
+		<script type="module" src="../js/page-setup.ts"></script>
+		<link rel="manifest" href="../../site.webmanifest" />
+		<link rel="apple-touch-icon" href="../img/icon.png" />
+		<link rel="shortcut icon" type="image/ico" href="../../favicon.ico" />
 
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/screen.css" />
-    <link rel="stylesheet" href="../css/buttons.css" />
-    <link rel="stylesheet" href="../css/nav-bar.css" />
-    <link rel="stylesheet" href="../css/text.css" />
-    <link rel="stylesheet" href="../css/lists.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="../css/docs.css" />
-    <link rel="stylesheet" href="../css/table.css" />
+		<link rel="stylesheet" href="../css/normalize.css" />
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../css/screen.css" />
+		<link rel="stylesheet" href="../css/buttons.css" />
+		<link rel="stylesheet" href="../css/nav-bar.css" />
+		<link rel="stylesheet" href="../css/text.css" />
+		<link rel="stylesheet" href="../css/lists.css" />
+		<link rel="stylesheet" href="../css/footer.css" />
+		<link rel="stylesheet" href="../css/docs.css" />
+		<link rel="stylesheet" href="../css/table.css" />
 
-    <!-- Font Awesome Icons -->
-    <script
-      src="https://kit.fontawesome.com/951ef1f046.js"
-      crossorigin="anonymous"
-    ></script>
+		<!-- Font Awesome Icons -->
+		<script src="https://kit.fontawesome.com/951ef1f046.js" crossorigin="anonymous"></script>
 
-    <!-- Including stylesheet for the Inter-Font -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Inter"
-    />
+		<!-- Including stylesheet for the Inter-Font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
 
-    <!-- Loading the prism highlighting style-sheet -->
-    <link rel="stylesheet" href="../prism/prism.css" />
+		<!-- Loading the prism highlighting style-sheet -->
+		<link rel="stylesheet" href="../prism/prism.css" />
 
-    <!--
+		<!--
 Specifying the preferred environment colour to be the primary scheme colour.
 See main.css for the --scheme-primary variable
 -->
-    <meta name="theme-color" content="#e01a4f" />
-  </head>
-  <body>
-    <script src="../js/plugins.ts"></script>
-    <script src="../prism/prism.js"></script>
+		<meta name="theme-color" content="#e01a4f" />
+	</head>
+	<body>
+		<script src="../js/plugins.ts"></script>
+		<script src="../prism/prism.js"></script>
 
-    <div id="main-frame">
-      <div id="actual-content">
-        <!-- The top element: menu and search bar -->
-        <header id="home-page-header" class="page-header"></header>
-        <script type="module">
-          import { GenHeaderNavbar } from "../js/gen-header";
+		<div id="main-frame">
+			<div id="actual-content">
+				<!-- The top element: menu and search bar -->
+				<header id="home-page-header" class="page-header"></header>
+				<script type="module">
+					import { GenHeaderNavbar } from "../js/gen-header";
 
-          document.getElementById("home-page-header").innerHTML =
-            GenHeaderNavbar();
-        </script>
+					document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+				</script>
 
-        <!-- Main Content, where the text is located and the items unique to this site are defined -->
-        <div class="flex-parent-container flex-fill-to-parent">
-          <ul
-            class="
-              no-style-list
-              flex-parent-container flex-fill-to-parent flex-row
-            "
-          >
-            <li
-              id="docs-sidebar-nav-wrapper"
-              class="flex-parent-container"
-            ></li>
-            <script type="module" src="../js/gen-sidebar-docs-nav.ts"></script>
-            <li class="docs-page-content-container">
-              <div id="docs-content" class="shadowed-box">
-                <section>
-                  <nav id="docs-page-nav"></nav>
-                  <article>
-                    <div class="docs-page-description">
-                      <h1>While-loop</h1>
-                      <p>
-                        While-loops are code blocks that are executed multiple
-                        times as long as the specified
-                        <code>CONDITION</code> is met. The behaviour of
-                        while-loops is very similar to
-                        <a href="do-while-loop.html">do-while-loops</a>, and in
-                        some cases it even might be better to use do-while than
-                        while-loops, so watch out for opportunities to replace
-                        while-loops with do-while loops.
-                      </p>
-                      <article>
-                        <p class="red-highlight-text">
-                          Scheduled for release in Kipper v0.10.0
-                        </p>
-                      </article>
-                    </div>
-                    <div class="docs-page-content">
-                      <h3>Syntax</h3>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">while (CONDITION) STATEMENT;</code></pre>
-                      <h3>Execution Schema</h3>
-                      <ul class="bullet-list flex-column">
-                        <li>
-                          Check <code>CONDITION</code>, if it exists, before
-                          running the <code>STATEMENT</code>. If
-                          <code>CONDITION</code> is <code>False</code>, then the
-                          loop will be stopped!
-                        </li>
-                        <li>
-                          Run <code>STATEMENT</code> if
-                          <code>CONDITION</code> was true.
-                        </li>
-                      </ul>
-                      <h3>Examples</h3>
-                      <!-- prettier-ignore -->
-                      <pre><code class="language-typescript">var var1: num = 0;
+				<!-- Main Content, where the text is located and the items unique to this site are defined -->
+				<div class="flex-parent-container flex-fill-to-parent">
+					<ul class="no-style-list flex-parent-container flex-fill-to-parent flex-row">
+						<li id="docs-sidebar-nav-wrapper" class="flex-parent-container"></li>
+						<script type="module" src="../js/gen-sidebar-docs-nav.ts"></script>
+						<li class="docs-page-content-container">
+							<div id="docs-content" class="shadowed-box">
+								<section>
+									<nav id="docs-page-nav"></nav>
+									<article>
+										<div class="docs-page-description">
+											<h1>While-loop</h1>
+											<p>
+												While-loops are code blocks that are executed multiple times as long as the specified
+												<code>CONDITION</code> is met. The behaviour of while-loops is very similar to
+												<a href="do-while-loop.html">do-while-loops</a>, and in some cases it even might be better to
+												use do-while than while-loops, so watch out for opportunities to replace while-loops with
+												do-while loops.
+											</p>
+											<article>
+												<p class="red-highlight-text">Scheduled for release in Kipper v0.10.0</p>
+											</article>
+										</div>
+										<div class="docs-page-content">
+											<h3>Syntax</h3>
+											<!-- prettier-ignore -->
+											<pre><code class="language-typescript">while (CONDITION) STATEMENT;</code></pre>
+											<h3>Execution Schema</h3>
+											<ul class="bullet-list flex-column">
+												<li>
+													Check <code>CONDITION</code>, if it exists, before running the <code>STATEMENT</code>. If
+													<code>CONDITION</code> is <code>False</code>, then the loop will be stopped!
+												</li>
+												<li>Run <code>STATEMENT</code> if <code>CONDITION</code> was true.</li>
+											</ul>
+											<h3>Examples</h3>
+											<!-- prettier-ignore -->
+											<pre><code class="language-typescript">var var1: num = 0;
 // ✓ Simple loop
 while (var1 <= 5) {
   var1++;
@@ -133,31 +105,25 @@ call print(f"'var1' is now '{var2}'"); // -> 'var1' is now '0'
 while (True) {
   call print("An unnecessary print!");
 }</code></pre>
-                    </div>
-                  </article>
-                  <script
-                    type="module"
-                    src="../js/gen-docs-nav-specifier.ts"
-                  ></script>
-                </section>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- Footer bar - contains some links and general copyright notice -->
-        <footer
-          id="footer-bar"
-          class="flex-parent-container flex-column"
-        ></footer>
-        <script type="module" src="../js/gen-footer.ts"></script>
-      </div>
-    </div>
+										</div>
+									</article>
+									<script type="module" src="../js/gen-docs-nav-specifier.ts"></script>
+								</section>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Footer bar - contains some links and general copyright notice -->
+				<footer id="footer-bar" class="flex-parent-container flex-column"></footer>
+				<script type="module" src="../js/gen-footer.ts"></script>
+			</div>
+		</div>
 
-    <!-- Overlay for Displaying the Search Results-->
-    <div id="search-background-overlay"></div>
-    <div id="search-result-overlay">
-      <div class="flex-column flex-parent-container" id="search-result"></div>
-    </div>
-    <script type="module" src="../js/search.ts"></script>
-  </body>
+		<!-- Overlay for Displaying the Search Results-->
+		<div id="search-background-overlay"></div>
+		<div id="search-result-overlay">
+			<div class="flex-column flex-parent-container" id="search-result"></div>
+		</div>
+		<script type="module" src="../js/search.ts"></script>
+	</body>
 </html>

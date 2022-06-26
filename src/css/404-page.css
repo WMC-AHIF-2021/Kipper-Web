@@ -1,77 +1,77 @@
 * {
-  line-height: 1.2;
-  margin: 0;
+	line-height: 1.2;
+	margin: 0;
 }
 
 html {
-  color: #888;
-  display: table;
-  font-family: "Inter", Georgia, Verdana, monospace;
-  height: 100%;
-  text-align: center;
-  width: 100%;
+	color: #888;
+	display: table;
+	font-family: "Inter", Georgia, Verdana, monospace;
+	height: 100%;
+	text-align: center;
+	width: 100%;
 }
 
 body {
-  display: table-cell;
-  vertical-align: middle;
-  margin: 2em auto;
-  background-color: var(--scheme-primary);
+	display: table-cell;
+	vertical-align: middle;
+	margin: 2em auto;
+	background-color: var(--scheme-primary);
 }
 
 .white-box {
-  position: center;
-  text-align: center;
-  background-color: white;
-  opacity: 85;
-  width: 30%;
-  border-radius: 2em;
-  margin-left: 33%;
+	position: center;
+	text-align: center;
+	background-color: white;
+	opacity: 85;
+	width: 30%;
+	border-radius: 2em;
+	margin-left: 33%;
 }
 
 h1 {
-  color: #555;
-  font-size: 2em;
-  font-weight: 400;
+	color: #555;
+	font-size: 2em;
+	font-weight: 400;
 }
 
 p {
-  margin: 0 auto;
-  width: 280px;
+	margin: 0 auto;
+	width: 280px;
 }
 
 .button-dark {
-  display: inline-block !important;
-  border: none !important;
-  color: black !important;
-  background-color: var(--scheme-primary) !important;
-  border-radius: var(--default-border-radius) !important;
-  padding: 15px 32px !important;
-  margin: 0.75em 0.75em 0.75em 0 !important;
-  font-size: 16px !important;
-  font-weight: bold !important;
-  text-align: center !important;
-  text-decoration: none !important;
+	display: inline-block !important;
+	border: none !important;
+	color: black !important;
+	background-color: var(--scheme-primary) !important;
+	border-radius: var(--default-border-radius) !important;
+	padding: 15px 32px !important;
+	margin: 0.75em 0.75em 0.75em 0 !important;
+	font-size: 16px !important;
+	font-weight: bold !important;
+	text-align: center !important;
+	text-decoration: none !important;
 }
 
 .button-dark:active,
 .button-dark:visited {
-  color: var(--button-dark-primary) !important;
+	color: var(--button-dark-primary) !important;
 }
 
 .button-dark:hover {
-  background-color: var(--button-dark-primary) !important;
-  box-shadow: 0 0 0.5em var(--scheme-gray) !important;
+	background-color: var(--button-dark-primary) !important;
+	box-shadow: 0 0 0.5em var(--scheme-gray) !important;
 }
 
 @media only screen and (max-width: 280px) {
-  body,
-  p {
-    width: 95%;
-  }
+	body,
+	p {
+		width: 95%;
+	}
 
-  h1 {
-    font-size: 1.5em;
-    margin: 0 0 0.3em;
-  }
+	h1 {
+		font-size: 1.5em;
+		margin: 0 0 0.3em;
+	}
 }

@@ -1,25 +1,25 @@
 /*! Text and Header Formatting */
 
 :root {
-  --default-section-margin: 1.6rem;
-  --default-article-margin: 0.8rem;
-  --default-parapgraph-margin: 1rem;
+	--default-section-margin: 1.6rem;
+	--default-article-margin: 0.8rem;
+	--default-parapgraph-margin: 1rem;
 }
 
 html {
-  font-family: "Inter", Georgia, Verdana, monospace;
+	font-family: "Inter", Georgia, Verdana, monospace;
 }
 
 section {
-  margin: var(--default-section-margin);
+	margin: var(--default-section-margin);
 }
 
 article {
-  margin-bottom: var(--default-article-margin);
+	margin-bottom: var(--default-article-margin);
 }
 
 #docs-page-nav + article > :first-child {
-  margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 .red-highlight-text h1,
@@ -28,12 +28,12 @@ article {
 .red-highlight-text h4,
 .red-highlight-text h5,
 .red-highlight-text h6 {
-  margin-top: 0;
-  margin-bottom: 0.4em;
+	margin-top: 0;
+	margin-bottom: 0.4em;
 }
 
 p + p {
-  margin: var(--default-parapgraph-margin) 0 0 0;
+	margin: var(--default-parapgraph-margin) 0 0 0;
 }
 
 h1,
@@ -42,67 +42,67 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 1.2rem;
-  margin-bottom: 0.4em;
+	margin-top: 1.2rem;
+	margin-bottom: 0.4em;
 }
 
 .no-top-margin-header {
-  margin-top: 0 !important;
+	margin-top: 0 !important;
 }
 
 h1 {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 36px;
-  display: flex;
-  align-items: center;
-  text-align: center;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 36px;
+	display: flex;
+	align-items: center;
+	text-align: center;
 }
 
 h2 {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
-  display: flex;
-  align-items: center;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 29px;
+	display: flex;
+	align-items: center;
 }
 
 h3 {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
-  display: flex;
-  align-items: center;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	display: flex;
+	align-items: center;
 }
 
 h4 {
-  font-style: normal;
-  font-weight: 600; /* Semi-bold */
-  font-size: 18px;
-  line-height: 22px;
-  display: flex;
-  align-items: center;
+	font-style: normal;
+	font-weight: 600; /* Semi-bold */
+	font-size: 18px;
+	line-height: 22px;
+	display: flex;
+	align-items: center;
 }
 
 h5 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  display: flex;
-  align-items: center;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+	display: flex;
+	align-items: center;
 }
 
 h6 {
-  font-style: normal;
-  font-weight: 300; /* Smaller */
-  font-size: 18px;
-  line-height: 22px;
-  display: flex;
-  align-items: center;
+	font-style: normal;
+	font-weight: 300; /* Smaller */
+	font-size: 18px;
+	line-height: 22px;
+	display: flex;
+	align-items: center;
 }
 
 /* Block the CSS from applying text link formatting on buttons and docs headers */
@@ -110,151 +110,151 @@ h6 {
 :not(.sidebar-nav-header) > a:link:not(.button, .button-dark, .docs-button, .inverted-button),
 :not(.sidebar-nav-header) > a:active:not(.button, .button-dark, .docs-button, .inverted-button),
 :not(.sidebar-nav-header) > a:visited:not(.button, .button-dark, .docs-button, .inverted-button) {
-  color: #c71239;
-  text-decoration: none;
-  background-color: transparent;
+	color: #c71239;
+	text-decoration: none;
+	background-color: transparent;
 }
 
 /* Block the CSS from applying text link formatting on buttons and docs headers */
 :not(.sidebar-nav-header) > a:hover:not(.button, .button-dark, .docs-button, .inverted-button) {
-  color: var(--scheme-primary);
-  text-decoration: underline;
+	color: var(--scheme-primary);
+	text-decoration: underline;
 }
 
 p {
-  margin: 0;
+	margin: 0;
 }
 
 @media (max-width: 1200px) {
-  .super-large-header {
-    font-style: normal !important;
-    font-weight: bold !important;
-    font-size: 48px !important;
-    line-height: 58px !important;
-    display: flex;
-    align-items: center;
-    text-align: center;
-  }
+	.super-large-header {
+		font-style: normal !important;
+		font-weight: bold !important;
+		font-size: 48px !important;
+		line-height: 58px !important;
+		display: flex;
+		align-items: center;
+		text-align: center;
+	}
 }
 
 @media (min-width: 1200px) {
-  .super-large-header {
-    font-style: normal !important;
-    font-weight: bold !important;
-    font-size: 82px !important;
-    line-height: 98px !important;
-    display: flex;
-    align-items: center;
-    text-align: center;
-  }
+	.super-large-header {
+		font-style: normal !important;
+		font-weight: bold !important;
+		font-size: 82px !important;
+		line-height: 98px !important;
+		display: flex;
+		align-items: center;
+		text-align: center;
+	}
 }
 
 /* Dynamic screen size definitions */
 @media (max-width: 1200px) {
-  .text-content {
-    margin: 2rem;
-    max-width: 100vw;
-  }
+	.text-content {
+		margin: 2rem;
+		max-width: 100vw;
+	}
 }
 
 @media (min-width: 1200px) {
-  .text-content {
-    width: 66.6vw;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-  }
+	.text-content {
+		width: 66.6vw;
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+	}
 }
 
 .link-on-red-background,
 .link-on-red-background:visited,
 .link-on-red-background:active {
-  color: white !important;
-  text-decoration: none;
+	color: white !important;
+	text-decoration: none;
 }
 
 .link-on-red-background:hover {
-  color: white !important;
-  text-decoration: underline;
+	color: white !important;
+	text-decoration: underline;
 }
 
 /* Pure Text Content / Explanatory content */
 .header-text-content {
-  margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
 
 .shadowed-box {
-  border-radius: var(--default-border-radius);
-  box-shadow: 0 0 0.5em var(--scheme-shadow-gray);
+	border-radius: var(--default-border-radius);
+	box-shadow: 0 0 0.5em var(--scheme-shadow-gray);
 }
 
 .gray-text {
-  color: var(--scheme-dark-gray);
+	color: var(--scheme-dark-gray);
 }
 
 .red-text {
-  color: var(--scheme-primary);
+	color: var(--scheme-primary);
 }
 
 .yellow-text {
-  color: var(--scheme-secondary);
+	color: var(--scheme-secondary);
 }
 
 .white-text {
-  color: white;
+	color: white;
 }
 
 .black-text {
-  color: black;
+	color: black;
 }
 
 .centered-text {
-  text-align: center;
+	text-align: center;
 }
 
 .red-highlight-text {
-  border-radius: var(--default-border-radius);
-  margin-right: var(--default-text-margin);
-  border: 1px solid;
-  border-color: var(--scheme-primary);
-  color: var(--scheme-primary);
-  padding: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  width: calc(100% - 4rem);
+	border-radius: var(--default-border-radius);
+	margin-right: var(--default-text-margin);
+	border: 1px solid;
+	border-color: var(--scheme-primary);
+	color: var(--scheme-primary);
+	padding: 2rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	width: calc(100% - 4rem);
 }
 
 .red-highlight-text a,
 .red-highlight-text a:link,
 .red-highlight-text a:active,
 .red-highlight-text a:visited {
-  /* Add additional emphasis, as red on red text is not highlighted well! */
-  color: red;
+	/* Add additional emphasis, as red on red text is not highlighted well! */
+	color: red;
 }
 
 /* Code Block Formatting */
 code {
-  margin-left: 0.2rem;
-  margin-right: 0.2rem;
-  padding: 0.2em 0.4em;
-  font-size: 85%;
-  font-family: consolas, monospace;
-  border-radius: var(--default-border-radius);
-  background-color: var(--scheme-gray);
+	margin-left: 0.2rem;
+	margin-right: 0.2rem;
+	padding: 0.2em 0.4em;
+	font-size: 85%;
+	font-family: consolas, monospace;
+	border-radius: var(--default-border-radius);
+	background-color: var(--scheme-gray);
 }
 
 pre[class*="language-"] {
-  margin: 0.5em 0;
-  padding: 1em;
-  overflow: auto;
-  border-radius: var(--default-border-radius);
-  background-color: var(--scheme-gray);
+	margin: 0.5em 0;
+	padding: 1em;
+	overflow: auto;
+	border-radius: var(--default-border-radius);
+	background-color: var(--scheme-gray);
 }
 
 pre[class*="language-"] code {
-  margin: 0;
-  padding: 0;
-  border-radius: 0;
-  background: 0 0;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	background: 0 0;
 }
 
 /* Overwrite unfitting coloring */
@@ -263,16 +263,16 @@ pre[class*="language-"] code {
 .token.entity,
 .token.operator,
 .token.url {
-  color: #9a6e3a !important;
-  background: transparent !important;
+	color: #9a6e3a !important;
+	background: transparent !important;
 }
 
 .green-checkmark {
-  text-emphasis: none;
-  color: green;
+	text-emphasis: none;
+	color: green;
 }
 
 .red-checkmark {
-  text-emphasis: none;
-  color: var(--scheme-primary);
+	text-emphasis: none;
+	color: var(--scheme-primary);
 }
