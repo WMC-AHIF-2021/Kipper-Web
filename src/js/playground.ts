@@ -43,14 +43,55 @@ let worker: Worker = new Worker(
 // Status code returns
 const statusFailure = 1;
 
-// Compilation running
+// Program states
 let compiling = false;
 let running = false;
 
+// Store the warmup promise
+let warmUp: Promise<void> | undefined = undefined;
+
+async function wrapUpWarmUp(): Promise<void> {
+  warmUp = undefined;
+  worker.onmessage = undefined;
+  console.log("Finished warming up the compiler!");
+}
+
 /**
- * @summary Runs the code using a web worker and writes the console output to the "virtual" terminal.
+ * Warms up the compiler by running a simple default program.
+ *
+ * Running this function will allow the compiler and parser to use caching to speed up future compilations.
  */
-function runCode(): void {
+async function warmUpCompiler(): Promise<void> {
+  console.log("Warming up compiler...");
+  if (window.Worker) {
+    worker.onmessage = (event: MessageEvent) => {
+      const numMsg: boolean = typeof event.data === "number" || event.data instanceof Number;
+      if (numMsg) {
+        const statusCode = event.data as number;
+        if (!running) {
+          // Only if the status code is 0 the compilation successfully finished.
+          if (statusCode === 0) {
+            running = true;
+          } else {
+            wrapUpWarmUp();
+          }
+        } else {
+          // Finished warming up
+          running = false;
+          wrapUpWarmUp();
+        }
+      }
+    };
+
+    // Send basic program to warm up
+    worker.postMessage("var x: num = 5; def func() -> void {}");
+  }
+}
+
+/**
+ * Runs the code using a web worker and writes the console output to the "virtual" terminal.
+ */
+async function runCode(): Promise<void> {
 	runCodeListItem.innerHTML = `<button>Stop</button>`;
 	runCodeButton = document.querySelector("#run-code-list-item button");
 	runCodeButton.addEventListener("click", stopCode);
@@ -59,6 +100,17 @@ function runCode(): void {
 		// Clear the console
 		clearConsoleOutput();
 		clearCompilerOutput();
+
+    // If the compiler is warming up, wait for it to finish
+    if (warmUp) {
+      console.log("Received 'run' operation too soon. Waiting for warmup to finish...");
+      while (warmUp) {
+        // Wait for 100ms and then try again checking if the warmUp is done
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+    }
+
+    console.log("Reading editor content and preparing compilation");
 
 		// Enable compiler logs
 		switchToCompilerOutput();
@@ -70,7 +122,7 @@ function runCode(): void {
 		compiling = true;
 
 		// Event handler for the return. This imitates stdout.
-		worker.onmessage = function (event) {
+		worker.onmessage = async (event: MessageEvent) => {
 			const stringMsg: boolean = typeof event.data === "string" || event.data instanceof String;
 			const numMsg: boolean = typeof event.data === "number" || event.data instanceof Number;
 
@@ -98,15 +150,15 @@ function runCode(): void {
 						running = true;
 					} else {
 						// Abort because of the error
-						stopCode();
+						await stopCode();
 					}
 				} else {
 					// End of the program
 					printProgramExitCode(statusCode);
 					switchButtonToRun();
 				}
-				// Unknown
 			} else {
+        // Unknown message type
 				console.error(`Invalid message from WebWorker: ${event.data}`);
 			}
 		};
@@ -131,7 +183,7 @@ function switchButtonToRun(): void {
 /**
  * Stops the WebWorker from executing the current code.
  */
-function stopCode(): void {
+async function stopCode(): Promise<void> {
 	switchButtonToRun();
 	if (window.Worker) {
 		// If there is no current execution, return.
@@ -139,7 +191,6 @@ function stopCode(): void {
 			return;
 		}
 
-		// Terminate the worker
 		// Sadly only using a full termination of the worker we can stop the code from running
 		// This has the downside of recreating the worker and as such losing the warmup performance boost of the Parser.
 		worker.terminate();
@@ -208,20 +259,30 @@ function switchToCompilerOutput() {
 	writeConsoleResultAndHighlight(compilerOutput);
 }
 
-// adding event listeners to the menu buttons
+// Playground menu buttons handling
 runCodeButton.addEventListener("click", runCode);
 copyCodeButton.addEventListener("click", copyEditorContent);
 clearContentButton.addEventListener("click", clearEditorContent);
 
-// adding event listeners to the sidebar buttons
+// Sidebar button handling
 consoleOutputButton.addEventListener("click", switchToConsoleOutput);
 compilerOutputButton.addEventListener("click", switchToCompilerOutput);
 
+// Highlight new input
 codeTextArea.addEventListener("input", (event) => {
 	const givenTextArea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
 	writeEditorResultAndHighlight(givenTextArea.value);
 });
 
+// Print default message to the console output
+window.addEventListener("DOMContentLoaded", writeConsoleOutputDefaultMessage);
+
+// Warmup the compiler to speed up future compilations
+window.addEventListener("DOMContentLoaded", () => {
+  warmUp = warmUpCompiler();
+});
+
+// Ensure the code text area stays properly formatted
 codeTextArea.addEventListener("scroll", syncTextAreaSizeAndScroll);
 codeTextArea.addEventListener("keydown", checkForTab);
 
@@ -289,26 +350,30 @@ codeTextArea.addEventListener("keyup", (event) => {
 	}
 })();
 
-// Initialise the default console output
-(() => {
-	const welcomeMessage: Array<string> = [
-		"--- Welcome to the Kipper Playground! ---\n",
-		"Try out your first program by writing:\n",
-		'  call print("Hello world");\n',
-		"Create your first variable by writing:\n",
-		'  var myString: str = "Hello world!";',
-		"  call print(myString);\n",
-		"Perform your first calculations by writing:\n",
-		"  var result: num = 3.14 * 9;",
-		"  call print(result as str);\n",
-	];
+/**
+ * Write to the console the default welcome message
+ */
+function writeConsoleOutputDefaultMessage(): void {
+  // Clear output
+  clearConsoleOutput();
 
-	// Write to the console
-	for (const msg of welcomeMessage) {
-		writeLineToConsoleOutput(msg);
-	}
-	switchToConsoleOutput();
-})();
+  const welcomeMessage: Array<string> = [
+    "--- Welcome to the Kipper Playground! ---\n",
+    "Try out your first program by writing:\n",
+    '  call print("Hello world");\n',
+    "Create your first variable by writing:\n",
+    '  var myString: str = "Hello world!";',
+    "  call print(myString);\n",
+    "Perform your first calculations by writing:\n",
+    "  var result: num = 3.14 * 9;",
+    "  call print(result as str);\n",
+  ];
+
+  // Write to the console
+  for (const msg of welcomeMessage) {
+    writeLineToConsoleOutput(msg);
+  }
+}
 
 /**
  * Editor-Update, which allows for syntax highlighting
