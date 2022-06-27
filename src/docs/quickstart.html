@@ -102,29 +102,36 @@ See main.css for the --scheme-primary variable
                             to make sure your browser is supported.
 													</li>
 													<li>
-														The babel typescript compiler, which allows native browser transpiling and code generation.
-														This is required as Kipper is not a language that compiles directly to JavaScript code, but
-                            uses TypeScript as another level of abstraction. (This may change in the future. View
-                            <a href="https://github.com/Luna-Klatzer/Kipper/issues/208">#208</a> for more info.)
+														The Babel typescript transpiler, which allows native browser transpiling and code
+                            generation. This is required as Kipper is not a language that compiles directly to
+                            JavaScript code, but uses TypeScript as another level of abstraction. (This may change in
+                            the future. View <a href="https://github.com/Luna-Klatzer/Kipper/issues/208">#208</a> for
+                            more info.)
 													</li>
 												</ol>
-												<h3>Include Snippet</h3>
+												<h3>Including the Kipper Script</h3>
+                        <p>
+                          The snippet shown below includes both the Kipper compiler and the Babel typescript transpiler,
+                          which allows you to compile Kipper code and directly transpile it to JavaScript.
+                        </p>
 												<pre><code class="language-html">&lt;!-- Babel --&gt;
 &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- Kipper --&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/@kipper/core@latest/kipper-standalone.min.js"&gt;&lt;/script&gt;</code></pre>
 												<p>
-													After including Kipper into your HTML file, you can access the library using the identifier
-													<code>Kipper</code>, which will be globally available in your file once the Kipper file has
-                          been loaded.
+                          Once the Kipper file has been loaded, you can access the library using the identifier
+													<code>Kipper</code>, which will be globally available in your HTML file.
 												</p>
-												<h3>Example code</h3>
+												<h3>Running the Compiler in an HTML file</h3>
                         <p>
                           This is a simple example of how to use Kipper in a HTML file. This will compile the
                           string <code>call print("Hello world");</code> down to JavaScript, and evaluate it. If
                           everything worked, you should see the logger output and <code>Hello world!</code> printed
                           to the browser console.
+                        </p>
+                        <p>
+                          Example code:
                         </p>
 												<pre><code class="language-html">&lt;script type="module"&gt;
   // Define your own logger and compiler, which will handle the compilation
@@ -150,7 +157,9 @@ See main.css for the --scheme-primary variable
 											<article>
 												<p>
 													To use Kipper in a terminal, you will have to install the package <code>@kipper/cli</code>,
-													which provides the CLI for the Kipper Compiler.
+													which provides the CLI for the Kipper Compiler. This will make the identifier
+                          <code>kipper</code> globally available in your project work-directory and will allow you to
+                          run the Kipper Compiler from the terminal.
 												</p>
                         <p>
                           Example <code>package.json</code>:
@@ -167,9 +176,18 @@ See main.css for the --scheme-primary variable
   "dependencies": {
     "@kipper/cli": "latest"
 }</code></pre>
+                        <h3>Post Installation</h3>
 												<p>
-
+                          After finishing the installation, try to run the following command:
 												</p>
+                        <pre><code class="language-bash">kipper --version</code></pre>
+                        <p>
+                          If the identifier <code>kipper</code> is not found, try to run Kipper using your project's
+                          package manager. For example, if you are using <code>npm</code>, you can run the following
+                          code:
+                        </p>
+                        <pre><code class="language-bash">npx kipper</code></pre>
+                        <h3>Global Installation</h3>
                         <p>
                           If you intend to only try out Kipper, you can also simply install Kipper globally:
                         </p>
@@ -178,7 +196,8 @@ See main.css for the --scheme-primary variable
                           <h2>Important</h2>
                           If possible avoid installing Kipper globally if you intend to use it inside your own projects,
                           as it can cause issues with locally installed versions (node project dependencies). For a
-                          localised and project-dependent kipper installation add kipper to your dependencies.
+                          localised and project-dependent kipper installation add kipper to your dependencies as shown
+                          previously.
                         </article>
 											</article>
 											<h2>Importing Kipper as a module</h2>
@@ -188,9 +207,9 @@ See main.css for the --scheme-primary variable
                           <code>kipper</code> (also includes the Kipper CLI) to your project dependencies or
                           development dependencies in your <code>package.json</code> file.
 												</p>
-                        <h3>
+                        <p>
                           Example package.json
-                        </h3>
+                        </p>
                         <pre><code class="language-json">{
   "name": "example",
   "version": "0.1.0",
@@ -204,11 +223,15 @@ See main.css for the --scheme-primary variable
     "@kipper/core": "latest"
   }
 }</code></pre>
-                        <h3>Importing Kipper</h3>
+                        <h3>Importing the Kipper package</h3>
                         <p>
                           Afterwards you can include the <code>@kipper/core</code> package in your JavaScript or
                           TypeScript file. This package contains the full Kipper Compiler and API, which can be
                           customised according to your needs.
+                        </p>
+                        <p>
+                          Kipper is shipped as a commonjs module and can therefore be imported using
+                          <code>require()</code> in Javascript or<code>import</code> in TypeScript.
                         </p>
                         <h3>Example</h3>
                         <ul>
