@@ -3,9 +3,11 @@
   "compilerOptions": {
     "removeComments": true,
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": ".",
     "baseUrl": ".",
     "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
     "lib": [
       "DOM",
       "WebWorker"
