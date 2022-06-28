@@ -29,6 +29,16 @@
 	border: none;
 	color: white;
 	background-color: var(--scheme-primary) !important; /* Overwrite default background color */
+
+	&:active,
+	&:visited {
+		color: white !important;
+	}
+
+	&:hover {
+		background-color: var(--button-dark-primary) !important;
+		box-shadow: 0 0 0.5em var(--scheme-gray) !important;
+	}
 }
 
 .docs-button {
@@ -36,33 +46,23 @@
 	margin: 1.2rem 0.6rem 1.2rem 0;
 }
 
-.button:active,
-.button:visited {
-	color: white !important;
-}
-
-.button:hover {
-	background-color: var(--button-dark-primary) !important;
-	box-shadow: 0 0 0.5em var(--scheme-gray) !important;
-}
-
 /* Darker Button */
 .button-dark {
 	border: none !important;
 	color: white !important;
 	background-color: var(--button-dark-primary) !important;
-}
 
-.button-dark:active,
-.button-dark:visited {
-	background-color: var(--button-dark-primary) !important;
-	color: white;
-}
+	&:active,
+	&:visited {
+		background-color: var(--button-dark-primary) !important;
+		color: white;
+	}
 
-.button-dark:hover {
-	background-color: var(--button-dark-primary) !important;
-	box-shadow: 0 0 0.5em var(--scheme-gray) !important;
-	color: white;
+	&:hover {
+		background-color: var(--button-dark-primary) !important;
+		box-shadow: 0 0 0.5em var(--scheme-gray) !important;
+		color: white;
+	}
 }
 
 /* Inverted Transparent-Background Button */
@@ -72,18 +72,18 @@
 	background-color: transparent;
 	padding: calc(1em - 2px) calc(1.6em - 2px);
 	margin: 1.2rem 1.2rem 1.2rem 0;
-}
 
-.inverted-button:active,
-.inverted-button:visited {
-	color: var(--scheme-primary);
-}
+	&:active,
+	&:visited {
+		color: var(--scheme-primary);
+	}
 
-.inverted-button:hover {
-	background-color: var(--button-dark-primary) !important;
-	box-shadow: 0 0 0.5em var(--scheme-gray);
-	color: white !important;
-	border-color: var(--button-dark-primary);
+	&:hover {
+		background-color: var(--button-dark-primary) !important;
+		box-shadow: 0 0 0.5em var(--scheme-gray);
+		color: white !important;
+		border-color: var(--button-dark-primary);
+	}
 }
 
 /* Underline buttons */
@@ -95,39 +95,39 @@
 	text-decoration: none;
 	display: inline-block;
 	box-sizing: border-box;
-}
 
-.underline-button h1,
-.underline-button h2,
-.underline-button h3,
-.underline-button h4,
-.underline-button h5,
-.underline-button h6,
-.underline-button a,
-.underline-button p {
-	margin: 0.25rem 0;
-}
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6,
+	& a,
+	& p {
+		margin: 0.25rem 0;
+	}
 
-.underline-button::before {
-	content: "";
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 2px;
-	bottom: 0;
-	left: 0;
-	background-color: white;
-	transform: scaleX(0);
-	transform-origin: top left;
-	transition: transform 0.4s ease;
-}
+	&::before {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: white;
+		transform: scaleX(0);
+		transform-origin: top left;
+		transition: transform 0.4s ease;
+	}
 
-.underline-button:hover::before {
-	transform: scaleX(1);
-}
+	&:hover::before {
+		transform: scaleX(1);
+	}
 
-.underline-button:hover {
-	color: white !important;
+	&:hover {
+		color: white !important;
+	}
 }
 
 /* Navigation Menu Button */

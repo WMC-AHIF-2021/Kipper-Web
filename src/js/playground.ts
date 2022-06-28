@@ -51,9 +51,9 @@ let running = false;
 let warmUp: Promise<void> | undefined = undefined;
 
 async function wrapUpWarmUp(): Promise<void> {
-  warmUp = undefined;
-  worker.onmessage = undefined;
-  console.log("Finished warming up the compiler!");
+	warmUp = undefined;
+	worker.onmessage = undefined;
+	console.log("Finished warming up the compiler!");
 }
 
 /**
@@ -62,30 +62,30 @@ async function wrapUpWarmUp(): Promise<void> {
  * Running this function will allow the compiler and parser to use caching to speed up future compilations.
  */
 async function warmUpCompiler(): Promise<void> {
-  console.log("Warming up compiler...");
-  if (window.Worker) {
-    worker.onmessage = (event: MessageEvent) => {
-      const numMsg: boolean = typeof event.data === "number" || event.data instanceof Number;
-      if (numMsg) {
-        const statusCode = event.data as number;
-        if (!running) {
-          // Only if the status code is 0 the compilation successfully finished.
-          if (statusCode === 0) {
-            running = true;
-          } else {
-            wrapUpWarmUp();
-          }
-        } else {
-          // Finished warming up
-          running = false;
-          wrapUpWarmUp();
-        }
-      }
-    };
+	console.log("Warming up compiler...");
+	if (window.Worker) {
+		worker.onmessage = (event: MessageEvent) => {
+			const numMsg: boolean = typeof event.data === "number" || event.data instanceof Number;
+			if (numMsg) {
+				const statusCode = event.data as number;
+				if (!running) {
+					// Only if the status code is 0 the compilation successfully finished.
+					if (statusCode === 0) {
+						running = true;
+					} else {
+						wrapUpWarmUp();
+					}
+				} else {
+					// Finished warming up
+					running = false;
+					wrapUpWarmUp();
+				}
+			}
+		};
 
-    // Send basic program to warm up
-    worker.postMessage("var x: num = 5; def func() -> void {}");
-  }
+		// Send basic program to warm up
+		worker.postMessage("var x: num = 5; def func() -> void {}");
+	}
 }
 
 /**
@@ -101,16 +101,16 @@ async function runCode(): Promise<void> {
 		clearConsoleOutput();
 		clearCompilerOutput();
 
-    // If the compiler is warming up, wait for it to finish
-    if (warmUp) {
-      console.log("Received 'run' operation too soon. Waiting for warmup to finish...");
-      while (warmUp) {
-        // Wait for 100ms and then try again checking if the warmUp is done
-        await new Promise(resolve => setTimeout(resolve, 100));
-      }
-    }
+		// If the compiler is warming up, wait for it to finish
+		if (warmUp) {
+			console.log("Received 'run' operation too soon. Waiting for warmup to finish...");
+			while (warmUp) {
+				// Wait for 100ms and then try again checking if the warmUp is done
+				await new Promise((resolve) => setTimeout(resolve, 100));
+			}
+		}
 
-    console.log("Reading editor content and preparing compilation");
+		console.log("Reading editor content and preparing compilation");
 
 		// Enable compiler logs
 		switchToCompilerOutput();
@@ -158,7 +158,7 @@ async function runCode(): Promise<void> {
 					switchButtonToRun();
 				}
 			} else {
-        // Unknown message type
+				// Unknown message type
 				console.error(`Invalid message from WebWorker: ${event.data}`);
 			}
 		};
@@ -279,7 +279,7 @@ window.addEventListener("DOMContentLoaded", writeConsoleOutputDefaultMessage);
 
 // Warmup the compiler to speed up future compilations
 window.addEventListener("DOMContentLoaded", () => {
-  warmUp = warmUpCompiler();
+	warmUp = warmUpCompiler();
 });
 
 // Ensure the code text area stays properly formatted
@@ -354,25 +354,25 @@ codeTextArea.addEventListener("keyup", (event) => {
  * Write to the console the default welcome message
  */
 function writeConsoleOutputDefaultMessage(): void {
-  // Clear output
-  clearConsoleOutput();
+	// Clear output
+	clearConsoleOutput();
 
-  const welcomeMessage: Array<string> = [
-    "--- Welcome to the Kipper Playground! ---\n",
-    "Try out your first program by writing:\n",
-    '  call print("Hello world");\n',
-    "Create your first variable by writing:\n",
-    '  var myString: str = "Hello world!";',
-    "  call print(myString);\n",
-    "Perform your first calculations by writing:\n",
-    "  var result: num = 3.14 * 9;",
-    "  call print(result as str);\n",
-  ];
+	const welcomeMessage: Array<string> = [
+		"--- Welcome to the Kipper Playground! ---\n",
+		"Try out your first program by writing:\n",
+		'  call print("Hello world");\n',
+		"Create your first variable by writing:\n",
+		'  var myString: str = "Hello world!";',
+		"  call print(myString);\n",
+		"Perform your first calculations by writing:\n",
+		"  var result: num = 3.14 * 9;",
+		"  call print(result as str);\n",
+	];
 
-  // Write to the console
-  for (const msg of welcomeMessage) {
-    writeLineToConsoleOutput(msg);
-  }
+	// Write to the console
+	for (const msg of welcomeMessage) {
+		writeLineToConsoleOutput(msg);
+	}
 }
 
 /**

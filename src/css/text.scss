@@ -22,14 +22,16 @@ article {
 	margin-top: 1rem;
 }
 
-.red-highlight-text h1,
-.red-highlight-text h2,
-.red-highlight-text h3,
-.red-highlight-text h4,
-.red-highlight-text h5,
-.red-highlight-text h6 {
-	margin-top: 0;
-	margin-bottom: 0.4em;
+.red-highlight-text {
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
+		margin-top: 0;
+		margin-bottom: 0.4em;
+	}
 }
 
 p + p {
@@ -42,15 +44,11 @@ h3,
 h4,
 h5,
 h6 {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-  margin-top: 1em;
-  margin-bottom: 0.4em;
-}
-
-.no-top-margin-header {
-	margin-top: 0 !important;
+	display: flex;
+	align-items: center;
+	font-weight: 700;
+	margin-top: 1em;
+	margin-bottom: 0.4em;
 }
 
 h1 {
@@ -61,8 +59,8 @@ h1 {
 
 h2 {
 	font-style: normal;
-  font-size: 24px;
-  line-height: 29px;
+	font-size: 24px;
+	line-height: 29px;
 }
 
 h3 {
@@ -90,19 +88,22 @@ h6 {
 }
 
 /* Block the CSS from applying text link formatting on buttons and docs headers */
-:not(.sidebar-nav-header) > a:not(.button, .button-dark, .docs-button, .inverted-button, .underline-button),
-:not(.sidebar-nav-header) > a:link:not(.button, .button-dark, .docs-button, .inverted-button, .underline-button),
-:not(.sidebar-nav-header) > a:active:not(.button, .button-dark, .docs-button, .inverted-button, .underline-button),
-:not(.sidebar-nav-header) > a:visited:not(.button, .button-dark, .docs-button, .inverted-button, .underline-button) {
-	color: #c71239;
-	text-decoration: none;
-	background-color: transparent;
-}
+:not(.sidebar-nav-header) {
+	& > a {
+		&:not(.button, .button-dark, .docs-button, .inverted-button, .underline-button),
+		&:link:not(.button, .button-dark, .docs-button, .inverted-button, .underline-button),
+		&:active:not(.button, .button-dark, .docs-button, .inverted-button, .underline-button),
+		&:visited:not(.button, .button-dark, .docs-button, .inverted-button, .underline-button) {
+			color: #c71239;
+			text-decoration: none;
+			background-color: transparent;
+		}
 
-/* Block the CSS from applying text link formatting on buttons and docs headers */
-:not(.sidebar-nav-header) > a:hover:not(.button, .button-dark, .docs-button, .inverted-button, .underline-button) {
-	color: var(--scheme-primary);
-	text-decoration: underline;
+		&:hover:not(.button, .button-dark, .docs-button, .inverted-button, .underline-button) {
+			color: var(--scheme-primary);
+			text-decoration: underline;
+		}
+	}
 }
 
 p {
@@ -149,16 +150,18 @@ p {
 	}
 }
 
-.link-on-red-background,
-.link-on-red-background:visited,
-.link-on-red-background:active {
-	color: white !important;
-	text-decoration: none;
-}
+.link-on-red-background {
+	&,
+	&:visited,
+	&:active {
+		color: white !important;
+		text-decoration: none;
+	}
 
-.link-on-red-background:hover {
-	color: white !important;
-	text-decoration: underline;
+	&:hover {
+		color: white !important;
+		text-decoration: underline;
+	}
 }
 
 /* Pure Text Content / Explanatory content */
@@ -205,14 +208,15 @@ p {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	width: calc(100% - 4rem);
-}
 
-.red-highlight-text a,
-.red-highlight-text a:link,
-.red-highlight-text a:active,
-.red-highlight-text a:visited {
-	/* Add additional emphasis, as red on red text is not highlighted well! */
-	color: red;
+	& a {
+		&:link,
+		&:active,
+		&:visited {
+			/* Add additional emphasis, as red on red text is not highlighted well! */
+			color: red;
+		}
+	}
 }
 
 /* Code Block Formatting */
@@ -232,13 +236,13 @@ pre[class*="language-"] {
 	overflow: auto;
 	border-radius: var(--default-border-radius);
 	background-color: var(--scheme-gray);
-}
 
-pre[class*="language-"] code {
-	margin: 0;
-	padding: 0;
-	border-radius: 0;
-	background: 0 0;
+	& code {
+		margin: 0;
+		padding: 0;
+		border-radius: 0;
+		background: 0 0;
+	}
 }
 
 /* Overwrite unfitting coloring */
