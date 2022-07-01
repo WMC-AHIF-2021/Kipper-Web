@@ -17,21 +17,23 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - name: Installs dependencies
-        run: |
-          npm install
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.0.0
+          run_install: |
+            - recursive: true
+      - run: pnpm install --frozen-lockfile
       - name: Download Update Script
         run: curl ${{ env.UPDATE_SCRIPT }} > ${{ env.SCRIPT_FILE_NAME }}
       - name: Insert Disclaimer Header
         run: python insert-html-banner.py
       - name: Build Files using Parcel
-        run: npm run gh-pages-build
+        run: pnpm run gh-pages-build
       - name: Add Local Identification Config
         run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"

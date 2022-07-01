@@ -3,9 +3,10 @@
   "version": "0.3.0",
   "description": "The website for the Kipper programming lang",
   "keywords": [
-    "Website",
-    "Programming-Language",
-    "Documentation"
+    "website",
+    "language",
+    "documentation",
+    "kipper"
   ],
   "license": "GPL-3.0",
   "author": "Luna Klatzer & Maxmilian Seebacher",
@@ -13,7 +14,7 @@
     "node": ">= 16.0.0"
   },
   "scripts": {
-    "prebuild": "npm run tslint:fix && ts-node ./tools/build/build-ejs.ts",
+    "prebuild": "ts-node ./tools/build/build-ejs.ts && npm run tslint:fix",
     "build": "parcel build build/*.html --no-content-hash --no-optimize --no-scope-hoist",
     "gh-pages-build": "parcel build build/*.html --public-url https://wmc-ahif-2021.github.io/Kipper-Web/ --dist-dir . --no-content-hash --no-optimize --no-scope-hoist",
     "watch": "parcel watch src/index.html",
