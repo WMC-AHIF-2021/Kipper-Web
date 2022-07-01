@@ -1,0 +1,37 @@
+<meta charset="utf-8" />
+<title><%= typeof title != 'undefined' ? title : 'Kipper' %></title>
+<meta
+    name="description"
+    content="<%= typeof description != 'undefined' ? description : 'The simple, easy-to-use and fast open-source language designed for Browsers, Node.js and Deno.' %>"
+/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="module" src="./js/page-setup.ts"></script>
+<link rel="manifest" href="../site.webmanifest" />
+<link rel="apple-touch-icon" href="./img/icon.png" />
+<link rel="shortcut icon" type="image/ico" href="../favicon.ico" />
+
+<link rel="stylesheet" href="css/normalize.scss" />
+<link rel="stylesheet" href="css/main.scss" />
+<link rel="stylesheet" href="css/screen.scss" />
+<link rel="stylesheet" href="css/buttons.scss" />
+<link rel="stylesheet" href="css/nav-bar.scss" />
+<link rel="stylesheet" href="css/text.scss" />
+<link rel="stylesheet" href="css/lists.scss" />
+<link rel="stylesheet" href="css/footer.scss" />
+<link rel="stylesheet" href="css/table.scss" />
+
+<!-- Loading the prism highlighting style-sheet -->
+<link rel="stylesheet" href="./prism/prism.css" />
+
+<!-- Font Awesome Icons -->
+<script src="https://kit.fontawesome.com/951ef1f046.js" crossorigin="anonymous"></script>
+
+<!-- Including stylesheet for the Inter-Font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
+
+<!--
+Specifying the preferred environment colour to be the primary scheme colour.
+See main.scss for the --scheme-primary variable
+-->
+<meta name="theme-color" content="#e01a4f" />

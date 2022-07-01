@@ -44,11 +44,11 @@
 		<div id="main-frame">
 			<div id="actual-content">
 				<!-- The top element: menu and search bar -->
-				<header id="home-page-header" class="page-header"></header>
+				<header id="nav-header" class="page-header"></header>
 				<script type="module">
 					import { GenHeaderNavbar } from "../js/gen-header";
 
-					document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+					document.getElementById("nav-header").innerHTML = GenHeaderNavbar();
 				</script>
 
 				<!-- Main Content, where the text is located and the items unique to this site are defined -->
@@ -73,12 +73,12 @@
 											<article>
 												<h2>Syntax</h2>
 												<!-- prettier-ignore -->
-												<pre><code class="language-typescript">/* CONTENT */</code></pre>
+												<pre><code class="language-ts">/* CONTENT */</code></pre>
 											</article>
 											<article>
 												<h2>Examples</h2>
 												<!-- prettier-ignore -->
-												<pre><code class="language-typescript">// ✓ Simple comment
+												<pre><code class="language-ts">// ✓ Simple comment
 /* Greet the user */
 call print("Hello user!");
 
@@ -110,7 +110,7 @@ def sum(val: &lt;num&gt;) -> num {
 			</div>
 		</div>
 
-		<!-- Overlay for Displaying the Search Results-->
+		<!-- Overlay for displaying search results -->
 		<div id="search-background-overlay"></div>
 		<div id="search-result-overlay">
 			<div class="flex-column flex-parent-container" id="search-result"></div>

@@ -3773,7 +3773,7 @@
 		});
 
 		function headerId(m) {
-			var title, prefix;
+			let title, prefix;
 
 			// It is separate from other options to allow combining prefix and customized
 			if (options.customizedHeaderId) {

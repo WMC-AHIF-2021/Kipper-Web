@@ -44,11 +44,11 @@ See main.scss for the --scheme-primary variable
 		<div id="main-frame">
 			<div id="actual-content">
 				<!-- The top element: menu and search bar -->
-				<header id="home-page-header" class="page-header"></header>
+				<header id="nav-header" class="page-header"></header>
 				<script type="module">
 					import { GenHeaderNavbar } from "../js/gen-header";
 
-					document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+					document.getElementById("nav-header").innerHTML = GenHeaderNavbar();
 				</script>
 
 				<!-- Main Content, where the text is located and the items unique to this site are defined -->
@@ -183,7 +183,7 @@ See main.scss for the --scheme-primary variable
 													</tbody>
 												</table>
 												<h3>Example configuration</h3>
-												<pre><code class="language-typescript">import { KipperCompiler } from "@kipper/core";
+												<pre><code class="language-ts">import { KipperCompiler } from "@kipper/core";
 import { TypeScriptTarget } from "@kipper/core/lib/targets/typescript";
 
 const compiler = new KipperCompiler();
@@ -250,7 +250,7 @@ const result = compiler.compile(
 													</tbody>
 												</table>
 												<h3>Example CLI Command</h3>
-												<pre><code class="language-typescript">kipper compile -s 'call print("Hello world!");' -e utf16le -i -b</code></pre>
+												<pre><code class="language-ts">kipper compile -s 'call print("Hello world!");' -e utf16le -i -b</code></pre>
 											</article>
 										</div>
 									</article>
@@ -266,7 +266,7 @@ const result = compiler.compile(
 			</div>
 		</div>
 
-		<!-- Overlay for Displaying the Search Results-->
+		<!-- Overlay for displaying search results -->
 		<div id="search-background-overlay"></div>
 		<div id="search-result-overlay">
 			<div class="flex-column flex-parent-container" id="search-result"></div>

@@ -44,11 +44,11 @@
 		<div id="main-frame">
 			<div id="actual-content">
 				<!-- The top element: menu and search bar -->
-				<header id="home-page-header" class="page-header"></header>
+				<header id="nav-header" class="page-header"></header>
 				<script type="module">
 					import { GenHeaderNavbar } from "../js/gen-header";
 
-					document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+					document.getElementById("nav-header").innerHTML = GenHeaderNavbar();
 				</script>
 
 				<!-- Main Content, where the text is located and the items unique to this site are defined -->
@@ -86,7 +86,7 @@
 											<h2>How to declare variables in Kipper</h2>
 											<p>To declare a variable you simply specify its name and its type, but don't set a value yet:</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">var NAME: TYPE;</code></pre>
+											<pre><code class="language-ts">var NAME: TYPE;</code></pre>
 											<p>
 												In this case, we have now also defined the scope and visibility of the variable, which will be
 												explained later in
@@ -101,13 +101,13 @@
 												<ul class="bullet-list flex-column">
 													<li>
 														<em class="green-checkmark">✓ VALID CODE</em>
-														<pre><code class="language-typescript">// ✓ Valid
+														<pre><code class="language-ts">// ✓ Valid
 var var1: str;
 var var1: str;</code></pre>
 													</li>
 													<li>
 														<em class="red-checkmark">X INVALID CODE</em>
-														<pre><code class="language-typescript">// X Invalid - May not re-declare with new type signature
+														<pre><code class="language-ts">// X Invalid - May not re-declare with new type signature
 var var2: str;
 var var2: num;
 
@@ -126,13 +126,13 @@ var var3: str;
 												<code>=</code>, which sets the variable to the <code>VALUE</code>:
 											</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">var NAME: TYPE = VALUE;</code></pre>
+											<pre><code class="language-ts">var NAME: TYPE = VALUE;</code></pre>
 											<p>
 												Though, in case you want to make clear that you have already declared the variable and don't
 												want to specify the type again, the following is also valid code:
 											</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">NAME = VALUE;</code></pre>
+											<pre><code class="language-ts">NAME = VALUE;</code></pre>
 											<article class="red-highlight-text">
 												<h2>Remember!</h2>
 												When you already have defined or declared a variable, you may not change its type anymore, but
@@ -140,7 +140,7 @@ var var3: str;
 												<ul class="bullet-list flex-column">
 													<li>
 														<em class="green-checkmark">✓ VALID CODE</em>
-														<pre><code class="language-typescript">// ✓ Valid
+														<pre><code class="language-ts">// ✓ Valid
 var var1: str = "3"; // Declaring and defining a variable in a one-line statement
 var1 = "Another string"; // Assigning a new value
 
@@ -150,7 +150,7 @@ var var2: str = "3"; // Declaring again and defining a variable in a one-line st
 													</li>
 													<li>
 														<em class="red-checkmark">X INVALID CODE</em>
-														<pre><code class="language-typescript">// X Invalid - May not re-define with new type signature
+														<pre><code class="language-ts">// X Invalid - May not re-define with new type signature
 var var1: str = "3";
 var var1: num = 3;
 
@@ -167,7 +167,7 @@ var2 = 3; // typeof(3) -> num</code></pre>
 												interfere with other variables.
 											</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">// This is a simple scope or also called "block of code"
+											<pre><code class="language-ts">// This is a simple scope or also called "block of code"
 {
   // Variable that is bound to this scope
   var var1: num = 0;
@@ -185,7 +185,7 @@ var2 = 3; // typeof(3) -> num</code></pre>
 												this:
 											</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">// Global variable
+											<pre><code class="language-ts">// Global variable
 var var3: num = 0;
 
 // This is another simple scope
@@ -203,7 +203,7 @@ var var3: num = 0;
 												parent scope!
 											</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">// Global variable
+											<pre><code class="language-ts">// Global variable
 var var3: num = 0;
 
 // This is another simple scope
@@ -231,11 +231,11 @@ var var3: num = 0;
 												will always have to specify its value right when creating the variable!):
 											</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">// Constant variable
+											<pre><code class="language-ts">// Constant variable
 const var6: num = 1;</code></pre>
 											<p>You may read from the constant value like with a standard variable:</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">// Constant variable
+											<pre><code class="language-ts">// Constant variable
 const var7: num = 1;
 const var8: num = 3;
 
@@ -247,7 +247,7 @@ const var10: num = var9 + var8; // 4 + 3 -> 4</code></pre>
 												<ul class="bullet-list flex-column">
 													<li>
 														<em class="green-checkmark">✓ VALID CODE</em>
-														<pre><code class="language-typescript">// ✓ Valid
+														<pre><code class="language-ts">// ✓ Valid
 const var1: num = 4;
 
 // ✓ Also Valid
@@ -255,7 +255,7 @@ const var2: num = var1;</code></pre>
 													</li>
 													<li>
 														<em class="red-checkmark">X INVALID CODE</em>
-														<pre><code class="language-typescript">// X Also Invalid - A value must be present for a constant definition!
+														<pre><code class="language-ts">// X Also Invalid - A value must be present for a constant definition!
 const var1;
 
 // X Invalid - May not overwrite read-only constant
@@ -281,7 +281,7 @@ const var2: num = "4"; // typeof("4") -> string</code></pre>
 			</div>
 		</div>
 
-		<!-- Overlay for Displaying the Search Results-->
+		<!-- Overlay for displaying search results -->
 		<div id="search-background-overlay"></div>
 		<div id="search-result-overlay">
 			<div class="flex-column flex-parent-container" id="search-result"></div>

@@ -44,11 +44,11 @@
 		<div id="main-frame">
 			<div id="actual-content">
 				<!-- The top element: menu and search bar -->
-				<header id="home-page-header" class="page-header"></header>
+				<header id="nav-header" class="page-header"></header>
 				<script type="module">
 					import { GenHeaderNavbar } from "../js/gen-header";
 
-					document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+					document.getElementById("nav-header").innerHTML = GenHeaderNavbar();
 				</script>
 
 				<!-- Main Content, where the text is located and the items unique to this site are defined -->
@@ -85,7 +85,7 @@
 												<ul class="bullet-list flex-column">
 													<li>
 														<em class="green-checkmark">✓ VALID CODE</em>
-														<pre><code class="language-typescript">// ✓ Valid
+														<pre><code class="language-ts">// ✓ Valid
 var var1: str = "This ";
 var var2: str = "is ";
 var var3: str = "a string";
@@ -101,7 +101,7 @@ var var7: num = var6 as num * 2; // Converts the string to 'num' and evaluates t
 													</li>
 													<li>
 														<em class="red-checkmark">X INVALID CODE</em>
-														<pre><code class="language-typescript">// X Invalid - May not re-define with new type signature
+														<pre><code class="language-ts">// X Invalid - May not re-define with new type signature
 var var1: str = "3";
 var var1: num = 3;
 
@@ -126,7 +126,7 @@ var var3: num = var2 as num; // Impossible to convert, as it is an empty value!<
 													</p>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// ✓ Simple integer number
+													<pre><code class="language-ts">// ✓ Simple integer number
 var var1: num = 400;
 
 // ✓ Simple floating point number
@@ -159,7 +159,7 @@ var var2: num = 51 % 10; // -> 1</code></pre>
 															math conventions. (Multiplications, divisions and power-to operations have a higher
 															priority than addictions and subtractions)
 														</p>
-														<pre><code class="language-typescript">// ✓ Standard math rules apply
+														<pre><code class="language-ts">// ✓ Standard math rules apply
 var result: num = 4 + 4 * 5; // 4 + (4 * 5) -> 24</code></pre>
 													</article>
 													<p>
@@ -167,7 +167,7 @@ var result: num = 4 + 4 * 5; // 4 + (4 * 5) -> 24</code></pre>
 														numbers:
 													</p>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// ✓ Byte Number Support
+													<pre><code class="language-ts">// ✓ Byte Number Support
 var bytes: num = 0b11111010; // -> 250
 
 // ✓ Hex-Decimal Number Support
@@ -185,7 +185,7 @@ var octal: num = 0o347; // -> 231</code></pre>
 													</p>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// ✓ Standard addition and concatenations are allowed
+													<pre><code class="language-ts">// ✓ Standard addition and concatenations are allowed
 var var4: str = "This is a";
 var var5: str = " string";
 var result_str: str = var5 + var6; // -> "This is a string"
@@ -212,7 +212,7 @@ var kipper: str = "Kipper is 🦊💘";</code></pre>
 													</p>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// ✓ Simple UTF-16 Character
+													<pre><code class="language-ts">// ✓ Simple UTF-16 Character
 var var6: char = '4';
 
 // ✓ Single character UTF-16 character
@@ -248,7 +248,7 @@ var var14: str = "💘";</code></pre>
 													</p>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// ✓ Simple bool value using 'True' and 'False'
+													<pre><code class="language-ts">// ✓ Simple bool value using 'True' and 'False'
 var var15: bool = False;
 var var16: bool = True;
 
@@ -271,7 +271,7 @@ var var20: num = var18 as num + 2; // -> 3</code></pre>
 													</p>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// ✓ Creating a void variable - This may only be 'void'
+													<pre><code class="language-ts">// ✓ Creating a void variable - This may only be 'void'
 var var21: void = void;
 
 // X May not set a 'void' variable to anything except 'void'
@@ -302,10 +302,10 @@ var var23: void = func2();</code></pre>
 														syntax:
 													</p>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">VAR[INDEX]</code></pre>
+													<pre><code class="language-ts">VAR[INDEX]</code></pre>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// ✓ Creating a simple list
+													<pre><code class="language-ts">// ✓ Creating a simple list
 var var24: list&lt;num&gt; = [ 2, 3, 4 ];
 
 // ✓ Accessing item of value per index (0 = first item)
@@ -346,7 +346,7 @@ var var29: list&lt;num&gt; = var27 as list&lt;num&gt;; // -> Invalid conversion<
 			</div>
 		</div>
 
-		<!-- Overlay for Displaying the Search Results-->
+		<!-- Overlay for displaying search results -->
 		<div id="search-background-overlay"></div>
 		<div id="search-result-overlay">
 			<div class="flex-column flex-parent-container" id="search-result"></div>

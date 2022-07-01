@@ -44,11 +44,11 @@
 		<div id="main-frame">
 			<div id="actual-content">
 				<!-- The top element: menu and search bar -->
-				<header id="home-page-header" class="page-header"></header>
+				<header id="nav-header" class="page-header"></header>
 				<script type="module">
 					import { GenHeaderNavbar } from "../js/gen-header";
 
-					document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+					document.getElementById("nav-header").innerHTML = GenHeaderNavbar();
 				</script>
 
 				<!-- Main Content, where the text is located and the items unique to this site are defined -->
@@ -70,14 +70,14 @@
 											</p>
 											<p>A simple example for expressions can be a simple calculation, like this:</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">val1 + val2 * val3 // Mathematical/Arithmetic expression</code></pre>
+											<pre><code class="language-ts">val1 + val2 * val3 // Mathematical/Arithmetic expression</code></pre>
 											<p>
 												Notice how in this case we are not assigning the result to anything? This is an important fact
 												of expressions that they are usually independent and do a single task, meaning if we wanted to
 												assign this result to a variable, we would have to use an assignment expression like this:
 											</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">// Assign and arithmetic expression
+											<pre><code class="language-ts">// Assign and arithmetic expression
 var result: num = val1 + val2 * val3;</code></pre>
 											<p>
 												Though, in this case, we also now created a statement (ends in <code>;</code>), though these
@@ -193,10 +193,10 @@ var result: num = val1 + val2 * val3;</code></pre>
 												Kipper as well, where you can forcefully increase the order of precedence using brackets:
 											</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">15 + 4 * 6 // -> 15 + (4 * 6) -> 15 + 24 -> 39</code></pre>
+											<pre><code class="language-ts">15 + 4 * 6 // -> 15 + (4 * 6) -> 15 + 24 -> 39</code></pre>
 											<p>Forced higher precedence using brackets:</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">(15 + 4) * 6 // -> (15 + 4) * 6 -> 19 * 6 -> 114</code></pre>
+											<pre><code class="language-ts">(15 + 4) * 6 // -> (15 + 4) * 6 -> 19 * 6 -> 114</code></pre>
 											<h2>What does associativity mean?</h2>
 											<p>
 												As you should have already seen in the table above, there is an extra column defining the
@@ -205,19 +205,19 @@ var result: num = val1 + val2 * val3;</code></pre>
 												meaning the expression is read first):
 											</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">a OPR b OPR c</code></pre>
+											<pre><code class="language-ts">a OPR b OPR c</code></pre>
 											<p>is evaluated as (left-associative - Reads from left to right):</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">(a OPR b) OPR c</code></pre>
+											<pre><code class="language-ts">(a OPR b) OPR c</code></pre>
 											<p>or as (right-associative - reads from right to left):</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">a OPR (b OPR c)</code></pre>
+											<pre><code class="language-ts">a OPR (b OPR c)</code></pre>
 											<p>
 												This is especially important as it can change how certain things are evaluated, and also cause
 												unwanted errors! For example the following would be interpreted as (left-associative):
 											</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">32 / 4 / 4 // -> (8 / 4) -> 2</code></pre>
+											<pre><code class="language-ts">32 / 4 / 4 // -> (8 / 4) -> 2</code></pre>
 											<h2>List of expressions in the Kipper language</h2>
 											<p>This is a concise list of all expressions in the Kipper language that may be used:</p>
 											<ul class="bullet-list flex-column">
@@ -230,10 +230,10 @@ var result: num = val1 + val2 * val3;</code></pre>
 													</p>
 													<h4>Syntax</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">VALUE_1 ( + | - | * | / | ** | % ) VALUE_2</code></pre>
+													<pre><code class="language-ts">VALUE_1 ( + | - | * | / | ** | % ) VALUE_2</code></pre>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// Plus
+													<pre><code class="language-ts">// Plus
 400.3 + 26.3 // -> 426.6
 
 // Minus
@@ -272,10 +272,10 @@ var result: num = val1 + val2 * val3;</code></pre>
 													</ul>
 													<h4>Syntax</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">VALUE_1 ( == | != | > | >= | < | <= ) VALUE_2</code></pre>
+													<pre><code class="language-ts">VALUE_1 ( == | != | > | >= | < | <= ) VALUE_2</code></pre>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// Equal to
+													<pre><code class="language-ts">// Equal to
 20 == 20 // -> true
 92 == 20 // -> false
 
@@ -316,13 +316,13 @@ var result: num = val1 + val2 * val3;</code></pre>
 													<h4>Syntax</h4>
 													For the logical <code>AND</code> and <code>OR</code>:
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">VALUE_1 ( && | || ) VALUE_2</code></pre>
+													<pre><code class="language-ts">VALUE_1 ( && | || ) VALUE_2</code></pre>
 													For the logical <code>NOT</code>:
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">!VALUE</code></pre>
+													<pre><code class="language-ts">!VALUE</code></pre>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// Logical AND - All must be true
+													<pre><code class="language-ts">// Logical AND - All must be true
 true && true   // -> true
 false && true  // -> false
 true && false  // -> false
@@ -339,7 +339,7 @@ false || false // -> false
 !true          // -> false</code></pre>
 													<p>Logical Expressions may be also chained together as long as you want. For example:</p>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// Chained Logical AND - All must be true
+													<pre><code class="language-ts">// Chained Logical AND - All must be true
 true && true && true     // -> true
 true && false && true    // -> false
 
@@ -351,7 +351,7 @@ false || false || false  // -> false</code></pre>
 														You can also combine relational expressions with logical expressions, like this for example:
 													</p>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// ✓ Combined relational and logical expressions
+													<pre><code class="language-ts">// ✓ Combined relational and logical expressions
 3 == 4 && 3 != 4 || 2 != 22 && 3 == 3
 
 // Following the order of precedence:
@@ -375,10 +375,10 @@ false || false || false  // -> false</code></pre>
 													<h4>Syntax</h4>
 													<!-- prettier-ignore -->
 													<pre><code
-                        class="language-typescript">CONDITION ? EVALUATE_IF_TRUE : EVALUATE_IF_FALSE</code></pre>
+                        class="language-ts">CONDITION ? EVALUATE_IF_TRUE : EVALUATE_IF_FALSE</code></pre>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// ✓ Simple evaluation of a number
+													<pre><code class="language-ts">// ✓ Simple evaluation of a number
 true ? 3 : 2 // -> 3
 false ? 3 : 2 // -> 2
 
@@ -388,7 +388,7 @@ var var2: num = 9;
 var smallestOrEqual: num = var1 < var2 ? var1 : var2; // -> 2</code></pre>
 													<p>As the ternary operator evaluates to more expressions, you can also chain it like this:</p>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// ✓ Valid - Chained if ... else-if ... else-if ... else ternary operator
+													<pre><code class="language-ts">// ✓ Valid - Chained if ... else-if ... else-if ... else ternary operator
 val result: num = condition1 ? value1
          : condition2 ? value2
          : condition3 ? value3
@@ -414,7 +414,7 @@ else { var result = value4; }</code></pre>
 													</p>
 													<h3>Syntax</h3>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">VALUE as TYPE</code></pre>
+													<pre><code class="language-ts">VALUE as TYPE</code></pre>
 													<h3>Allowed conversions</h3>
 													<ul class="bullet-list flex-column">
 														<li>
@@ -429,17 +429,17 @@ else { var result = value4; }</code></pre>
 																<code>NaN</code> (Not a number). In future releases, this will be a
 																<code>ConversionError</code>.
 															</p>
-															<pre><code class="language-typescript">"203" as num // -> 203</code></pre>
+															<pre><code class="language-ts">"203" as num // -> 203</code></pre>
 														</li>
 														<li>
 															<h4>From <code>num</code> to <code>str</code></h4>
 															<p>Converts a number to an identical string representation of the number.</p>
-															<pre><code class="language-typescript">203 as str // -> "203"</code></pre>
+															<pre><code class="language-ts">203 as str // -> "203"</code></pre>
 														</li>
 														<li>
 															<h4>From <code>char</code> to <code>str</code></h4>
 															<p>Converts a single character to a string.</p>
-															<pre><code class="language-typescript">'c' as str // -> "c"</code></pre>
+															<pre><code class="language-ts">'c' as str // -> "c"</code></pre>
 														</li>
 														<li>
 															<h4>From <code>num</code> to <code>bool</code></h4>
@@ -447,7 +447,7 @@ else { var result = value4; }</code></pre>
 																Converts a number to a bool. This evaluates to
 																<code>true</code> if it's a non-zero value.
 															</p>
-															<pre><code class="language-typescript">20 as bool // -> true
+															<pre><code class="language-ts">20 as bool // -> true
 0 as bool // -> false</code></pre>
 														</li>
 														<li>
@@ -456,7 +456,7 @@ else { var result = value4; }</code></pre>
 																Converts a bool to a number. This evaluates to
 																<code>1</code> if it's <code>true</code>, otherwise it's <code>0</code>.
 															</p>
-															<pre><code class="language-typescript">true as num // -> 1
+															<pre><code class="language-ts">true as num // -> 1
 false as num // -> 0</code></pre>
 														</li>
 														<li>
@@ -465,7 +465,7 @@ false as num // -> 0</code></pre>
 																Converts a string to a number. This evaluates to
 																<code>"true"</code> if it's <code>true</code>, otherwise it's <code>"false"</code>.
 															</p>
-															<pre><code class="language-typescript">true as str // -> "true"
+															<pre><code class="language-ts">true as str // -> "true"
 false as str // -> "false"</code></pre>
 														</li>
 													</ul>
@@ -484,10 +484,10 @@ false as str // -> "false"</code></pre>
 													</p>
 													<h3>Syntax</h3>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">call FUNC(ARGS...)</code></pre>
+													<pre><code class="language-ts">call FUNC(ARGS...)</code></pre>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// ✓ Calling a defined function
+													<pre><code class="language-ts">// ✓ Calling a defined function
 def func1() -> num { return 5; }
 call func1(); // -> 5
 
@@ -522,7 +522,7 @@ def func4() -> void {}
 			</div>
 		</div>
 
-		<!-- Overlay for Displaying the Search Results-->
+		<!-- Overlay for displaying search results -->
 		<div id="search-background-overlay"></div>
 		<div id="search-result-overlay">
 			<div class="flex-column flex-parent-container" id="search-result"></div>

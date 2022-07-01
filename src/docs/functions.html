@@ -46,11 +46,11 @@
 		<div id="main-frame">
 			<div id="actual-content">
 				<!-- The top element: menu and search bar -->
-				<header id="home-page-header" class="page-header"></header>
+				<header id="nav-header" class="page-header"></header>
 				<script type="module">
 					import { GenHeaderNavbar } from "../js/gen-header";
 
-					document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+					document.getElementById("nav-header").innerHTML = GenHeaderNavbar();
 				</script>
 
 				<!-- Main Content, where the text is located and the items unique to this site are defined -->
@@ -83,7 +83,7 @@
 											<h2>Syntax</h2>
 											<p>Defining a Kipper function:</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">def NAME(ARG_NAME: TYPE (OPTIONAL), ...) -> RETURN_TYPE {
+											<pre><code class="language-ts">def NAME(ARG_NAME: TYPE (OPTIONAL), ...) -> RETURN_TYPE {
   STATEMENTS... (OPTIONAL) // Function content
 
   return; // Optional if RETURN_TYPE is void, invalid if RETURN_TYPE is not void
@@ -92,7 +92,7 @@
                 </code></pre>
 											<p>Calling a defined function (<a href="./expressions.html">Function call expression</a>):</p>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">call NAME(REQ_ARGS...);</code></pre>
+											<pre><code class="language-ts">call NAME(REQ_ARGS...);</code></pre>
 											<h2>Behaviour</h2>
 											<p>
 												When calling a function all arguments have to be passed with the argument types matching. When
@@ -108,7 +108,7 @@
 											</p>
 											<h2>Examples</h2>
 											<!-- prettier-ignore -->
-											<pre><code class="language-typescript">// ✓ Simple void function with no arguments and return
+											<pre><code class="language-ts">// ✓ Simple void function with no arguments and return
 def print_banner() -> void {
   call print("Welcome to Kipper!");
   return; // Optional
@@ -153,7 +153,7 @@ var any_var: str = call add_prefix;</code></pre>
 			</div>
 		</div>
 
-		<!-- Overlay for Displaying the Search Results-->
+		<!-- Overlay for displaying search results -->
 		<div id="search-background-overlay"></div>
 		<div id="search-result-overlay">
 			<div class="flex-column flex-parent-container" id="search-result"></div>

@@ -46,11 +46,11 @@
 		<div id="main-frame">
 			<div id="actual-content">
 				<!-- The top element: menu and search bar -->
-				<header id="home-page-header" class="page-header"></header>
+				<header id="nav-header" class="page-header"></header>
 				<script type="module">
 					import { GenHeaderNavbar } from "../js/gen-header";
 
-					document.getElementById("home-page-header").innerHTML = GenHeaderNavbar();
+					document.getElementById("nav-header").innerHTML = GenHeaderNavbar();
 				</script>
 
 				<!-- Main Content, where the text is located and the items unique to this site are defined -->
@@ -84,7 +84,7 @@
 													</p>
 													<h4>Syntax</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">EXPRESSION;</code></pre>
+													<pre><code class="language-ts">EXPRESSION;</code></pre>
 													<h4>Examples</h4>
 													<p>
 														Common examples of expression statements are with increment or decrement expressions (
@@ -93,7 +93,7 @@
 														statement, like this:
 													</p>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// Defining a variable
+													<pre><code class="language-ts">// Defining a variable
 var increase_this: num = 4;
 increase_this++; // Expression statement -> 5
 increase_this--; // Expression statement -> 4</code></pre>
@@ -109,7 +109,7 @@ increase_this--; // Expression statement -> 4</code></pre>
 													</p>
 													<h4>Syntax</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">{
+													<pre><code class="language-ts">{
   STATEMENTS (OPTIONAL)...
 }</code></pre>
 												</li>
@@ -134,12 +134,12 @@ increase_this--; // Expression statement -> 4</code></pre>
 														is evaluated if the previous condition were all <code>false</code>.
 													</p>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">if (CONDITION) STATEMENT      // Required
+													<pre><code class="language-ts">if (CONDITION) STATEMENT      // Required
 else if (CONDITION) STATEMENT // Optional - No limit for the amount of 'else if' branches
 else STATEMENT                // Optional</code></pre>
 													<h4>Examples</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// Simple comparison of a value
+													<pre><code class="language-ts">// Simple comparison of a value
 var var1: num = 4;
 if (var1 == 4) {
   call print("It's 4");
@@ -171,7 +171,7 @@ if (var2 < 5) {
 													</p>
 													<h4>Syntax</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">for (INIT_EXPRESSION (OPTIONAL); CONDITION (OPTIONAL); LOOP_EXPRESSION (OPTIONAL)) STATEMENT;</code></pre>
+													<pre><code class="language-ts">for (INIT_EXPRESSION (OPTIONAL); CONDITION (OPTIONAL); LOOP_EXPRESSION (OPTIONAL)) STATEMENT;</code></pre>
 													<p>The execution of a for-loop follows this schema:</p>
 													<ul class="bullet-list flex-column">
 														<li>Evaluate <code>INIT_EXPRESSION</code>, if it exists (Only the first time).</li>
@@ -201,7 +201,7 @@ if (var2 < 5) {
 													</p>
 													<h4>Syntax</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">while (CONDITION) STATEMENT;</code></pre>
+													<pre><code class="language-ts">while (CONDITION) STATEMENT;</code></pre>
 													<p>The execution of a while-loop follows this schema:</p>
 													<ul class="bullet-list flex-column">
 														<li>
@@ -227,7 +227,7 @@ if (var2 < 5) {
 													</p>
 													<h4>Syntax</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">do STATEMENT while (CONDITION);</code></pre>
+													<pre><code class="language-ts">do STATEMENT while (CONDITION);</code></pre>
 													<p>The execution of a do-while-loop follows this schema:</p>
 													<ul class="bullet-list flex-column">
 														<li>Run <code>STATEMENT</code> (Only the first time).</li>
@@ -266,7 +266,7 @@ if (var2 < 5) {
 													</ul>
 													<h4>Syntax</h4>
 													<!-- prettier-ignore -->
-													<pre><code class="language-typescript">// Only valid in functions
+													<pre><code class="language-ts">// Only valid in functions
 return VALUE (OPTIONAL);
 
 // Only valid in loops
@@ -290,7 +290,7 @@ continue;</code></pre>
 			</div>
 		</div>
 
-		<!-- Overlay for Displaying the Search Results-->
+		<!-- Overlay for displaying search results -->
 		<div id="search-background-overlay"></div>
 		<div id="search-result-overlay">
 			<div class="flex-column flex-parent-container" id="search-result"></div>
