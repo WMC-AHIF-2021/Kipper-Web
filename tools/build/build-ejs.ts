@@ -4,28 +4,37 @@
 import * as ejs from "ejs";
 import * as lru from "lru-cache";
 import * as path from "path";
-import { spawnSync } from "node:child_process";
-import { promises as fs, existsSync } from "fs";
-import fetch from 'node-fetch';
+import * as showdown from "showdown";
+import { existsSync, promises as fs } from "fs";
+import fetch from "node-fetch";
 
+// @ts-ignore
 // eslint-disable-next-line no-import-assign
 ejs.cache = new lru({
   max: 500
 });
+
+async function validatePathArguments(src: string, dest: string): Promise<void> {
+  if (!existsSync(dest)) {
+    await fs.mkdir(dest);
+  } else if (!(await fs.stat(dest)).isDirectory()) {
+    throw new Error("Destination must be a directory");
+  } else if (!(await fs.stat(src)).isDirectory()) {
+    throw new Error("Source must be a directory");
+  }
+}
 
 /**
  * Copies all non-ejs files to the destination folder.
  */
 async function copyFiles(src: string, dest: string): Promise<void> {
   // Generate the dest folder if it does not exist
-  if (!existsSync(dest)) {
-    await fs.mkdir(dest);
-  }
+  await validatePathArguments(src, dest);
 
   const result = await fs.readdir(src);
   for (let file of result) {
     // If the file is an ejs file or a partials' folder skip it, as it will be compiled into HTML
-    if (file.endsWith('.ejs') || file === 'partials') {
+    if (file.endsWith('.ejs') || file === 'partials' || file === 'docs') {
       continue;
     }
 
@@ -61,22 +70,22 @@ async function getBuildData(dataFile: string): Promise<Record  <string, any>> {
 }
 
 /**
- * Builds all ejs files.
+ * Builds all ejs files and copies all dependencies to the {@link dest} folder.
  */
 async function buildEjsFiles(src: string, dest: string, data: Record  <string, any>): Promise<void> {
   // Generate the dest folder if it does not exist
-  if (!existsSync(dest)) {
-    await fs.mkdir(dest);
-  }
+  await validatePathArguments(src, dest);
 
   const result = await fs.readdir(src);
   for (let file of result) {
     // If the file is an ejs file compile it to HTML
     if (file.endsWith('.ejs')) {
+      const htmlFile = file.replace('.ejs', '.html');
       const itemSrc = `${src}/${file}`;
-      const itemDest = `${dest}/${file.replace('.ejs', '.html')}`;
+      const itemDest = `${dest}/${htmlFile}`;
       const itemData = {
-        filename: file,
+        filename: htmlFile, // This should only contain the filename without any directory etc.
+        filePath: htmlFile, // The path to the file relative to the base URL. For root files only the filename
         isDocsFile: false,
         isNestedDir: false,
         ...data
@@ -89,8 +98,98 @@ async function buildEjsFiles(src: string, dest: string, data: Record  <string, a
   }
 }
 
-async function buildDocs(src: string, dest: string): Promise<void> {
+interface DocumentMetaData {
+  title: string,
+  description: string
+}
 
+async function determineFileMetadata(markdownHtml: string): Promise<DocumentMetaData> {
+  const htmlContent = markdownHtml.replace(/\r\n/g, '\n').split('\n');
+
+  let metaData: DocumentMetaData = { title: '', description: '' };
+  let isTitle = false;
+  let isDescription = false;
+  for (let line of htmlContent) {
+    line = line.trim();
+
+    // If there is a h1 tag and no title has been found yet, make this the new title
+    if ((line.startsWith(`<h1`) && !metaData.title) || isTitle) {
+      isTitle = true;
+      metaData.title += line.replace(/<\/?[0-9A-Za-z-_=/"' ]+>/g, '').trim() + ' ';
+
+      if (line.endsWith('</h1>')) {
+        isTitle = false;
+      }
+    // If there is a p tag, no description has been found yet and a title has been already created, make this the
+    // new description
+    } else if ((line.startsWith(`<p`) && !metaData.description && metaData.title) || isDescription) {
+      isDescription = true;
+      metaData.description += line.replace(/<\/?[0-9A-Za-z-_=/"' ]+>/g, '').trim() + ' ';
+
+      if (line.endsWith('</p>')) {
+        isDescription = false;
+      }
+    }
+  }
+
+  // Ensure any left-over whitespaces are removed
+  metaData.title = metaData.title.trim();
+  metaData.description = metaData.description.trim();
+
+  return metaData;
+}
+
+/**
+ * Builds the documentation files for the specified src folder and places them in 'dest'.
+ * @param src The source folder containing the markdown files.
+ * @param dest The dest folder which should contain the HTML files.
+ * @param data The data for the EJS template.
+ */
+async function buildDocs(src: string, dest: string, data: Record<string, any>): Promise<void> {
+  // Generate the dest folder if it does not exist
+  await validatePathArguments(src, dest);
+
+  // Set Markdown style to 'GitHub'
+  showdown.setFlavor("github");
+
+  // Create new converted
+  const converter = new showdown.Converter();
+
+  // Get base Docs template
+  const baseTemplate = path.resolve(`${src}/../partials/docs.ejs`);
+  if (!baseTemplate) {
+    throw new Error(`Docs EJS template not found. Expected '${baseTemplate}' to exist.s`);
+  }
+
+  const result = await fs.readdir(src);
+  for (let file of result) {
+    // If the file is an ejs file compile it to HTML
+    if (file.endsWith('.md')) {
+      const htmlFile = file.replace('.md', '.html');
+      const itemSrc = `${src}/${file}`;
+      const itemDest = `${dest}/${htmlFile}`;
+      const itemData = {
+        filename: htmlFile, // This should only contain the filename without any directory etc.
+        filePath: `docs/${htmlFile}`,
+        isDocsFile: true,
+        isNestedDir: true,
+        ...data
+      };
+
+      // Convert markdown to HTML
+      const md = (await fs.readFile(itemSrc)).toString();
+      itemData['markdownContent'] = converter.makeHtml(md);
+
+      // Evaluate title and description
+      const metadata = await determineFileMetadata(itemData['markdownContent']);
+      itemData['title'] = metadata.title;
+      itemData['description'] = metadata.description;
+
+      // Build ejs file
+      const result: string = await ejs.renderFile(baseTemplate, itemData);
+      await fs.writeFile(itemDest, result);
+    }
+  }
 }
 
 (async () => {
@@ -107,7 +206,7 @@ async function buildDocs(src: string, dest: string): Promise<void> {
   // Build all docs files
   const srcDocs = `${src}/docs`;
   const destDocs = `${dest}/docs`;
-  await buildDocs(srcDocs, destDocs);
+  await buildDocs(srcDocs, destDocs, data);
 
   // Copy all remaining files
   await copyFiles(src, dest);

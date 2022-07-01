@@ -59,6 +59,7 @@
     "@parcel/reporter-cli": "2.2.1",
     "@parcel/reporter-dev-server": "2.2.1",
     "@parcel/resolver-default": "2.2.1",
+    "@parcel/resolver-glob": "2.6.2",
     "@parcel/runtime-browser-hmr": "2.2.1",
     "@parcel/runtime-js": "2.2.1",
     "@parcel/runtime-react-refresh": "2.2.1",
@@ -103,8 +104,11 @@
     "uuid": "^8.3.2",
     "sass": "^1.53.0",
     "ejs": "^3.1.8",
+    "@types/ejs": "^3.1.1",
     "lru-cache": "^7.12.0",
-    "node-fetch": "^2.6.7"
+    "node-fetch": "^2.6.7",
+    "showdown": "^2.0.0",
+    "@types/showdown": "^2.0.0"
   },
   "dependencies": {
     "@kipper/core": "latest"

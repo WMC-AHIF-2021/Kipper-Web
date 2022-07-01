@@ -38,12 +38,16 @@
 #docs-content {
 	flex-grow: 1;
 	width: inherit;
-}
 
-#kipper-docs-img {
-	width: 100%;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	& > section > article :first-child h1 {
+		margin-top: 0.6rem;
+	}
+
+	& img {
+		width: 100%;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
 }
 
 #nav-kipper-header {
@@ -79,10 +83,6 @@
 
 .docs-page-nav-header:hover {
 	color: var(--scheme-primary);
-}
-
-.docs-page-description:first-child h1 {
-	margin-top: 0.6rem;
 }
 
 #docs-page-nav ul li {
