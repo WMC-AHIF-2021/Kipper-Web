@@ -84,7 +84,7 @@ async function buildEjsFiles(src: string, dest: string, data: Record  <string, a
       const itemSrc = `${src}/${file}`;
       const itemDest = `${dest}/${htmlFile}`;
       const itemData = {
-        filename: htmlFile, // This should only contain the filename without any directory etc.
+        filename: htmlFile, // This should only contain the filename without any directory
         filePath: htmlFile, // The path to the file relative to the base URL. For root files only the filename
         isDocsFile: false,
         isNestedDir: false,
@@ -170,7 +170,7 @@ async function buildDocs(src: string, dest: string, data: Record<string, any>): 
       const itemSrc = `${src}/${file}`;
       const itemDest = `${dest}/${htmlFile}`;
       const itemData = {
-        filename: htmlFile, // This should only contain the filename without any directory etc.
+        filename: htmlFile, // This should only contain the filename without any directory
         filePath: `docs/${htmlFile}`,
         isDocsFile: true,
         isNestedDir: true,
