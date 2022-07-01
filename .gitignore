@@ -3,6 +3,8 @@
 # Useful .gitignore templates: https://github.com/github/gitignore
 node_modules
 dist
+build
+lib
 .cache
 .parcel-cache
 .idea
