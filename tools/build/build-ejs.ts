@@ -149,8 +149,9 @@ async function buildDocs(src: string, dest: string, data: Record<string, any>): 
   // Generate the dest folder if it does not exist
   await validatePathArguments(src, dest);
 
-  // Set Markdown style to 'GitHub'
+  // Configure showdown
   showdown.setFlavor("github");
+  showdown.setOption('omitExtraWLInCodeBlocks', true);
 
   // Create new converted
   const converter = new showdown.Converter();
@@ -178,7 +179,13 @@ async function buildDocs(src: string, dest: string, data: Record<string, any>): 
 
       // Convert markdown to HTML
       const md = (await fs.readFile(itemSrc)).toString();
-      itemData['markdownContent'] = converter.makeHtml(md);
+      let html = converter.makeHtml(md);
+
+      // Remove any additional newlines, as the CSS rules should handle the formatting
+      html = html.replace(/<br \/>/g, '');
+
+      // Set markdown content to the generated HTML
+      itemData['markdownContent'] = html;
 
       // Evaluate title and description
       const metadata = await determineFileMetadata(itemData['markdownContent']);

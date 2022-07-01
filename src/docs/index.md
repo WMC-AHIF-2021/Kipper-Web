@@ -1,9 +1,8 @@
 ![](../img/Kipper-Docs.png)
 
-# Welcome to the Kipper Docs!
+# Kipper Docs
 
-This is the in-depth documentation and API reference for the Kipper programming language and
-compiler, which aims to explain the implementation, functionality and details for Kipper.
+Welcome to the Kipper Docs! This is the in-depth documentation and API reference for the Kipper programming language and compiler, which aims to explain the implementation, functionality and details for Kipper.
 
 ## Introduction to Kipper
 
