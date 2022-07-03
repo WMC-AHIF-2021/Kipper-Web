@@ -1,7 +1,8 @@
 <% let relativePath = isNestedDir ? ".." : "."; %>
+<% let titleSuffix = `Kipper ${isDocsFile ? "Docs " : ""}` + `v${version}` %>
 
 <meta charset="utf-8" />
-<title><%= (typeof title != "undefined" ? title + " - " : "") + `Kipper v${version}` ;%></title>
+<title><%= (typeof title != "undefined" ? title + " - " : "") + titleSuffix ;%></title>
 <meta
         name="description"
         content="<%= typeof description != "undefined" ? description : "The simple, easy-to-use and fast open-source language designed for Browsers, Node.js and Deno." ;%>"

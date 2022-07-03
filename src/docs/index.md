@@ -1,8 +1,13 @@
+---
+title: Overview
+---
+
 ![](../img/Kipper-Docs.png)
 
-# Kipper Docs
+# Welcome to the Kipper Docs
 
-Welcome to the Kipper Docs! This is the in-depth documentation and API reference for the Kipper programming language and compiler, which aims to explain the implementation, functionality and details for Kipper.
+This is the in-depth documentation and API reference for the Kipper programming language and compiler, which aims to
+explain the implementation, functionality and details for Kipper.
 
 ## Introduction to Kipper
 
@@ -18,7 +23,7 @@ Welcome to the Kipper Docs! This is the in-depth documentation and API reference
 - [Variable Datatypes](./datatypes.html)
 - [Expressions](./expressions.html)
 - [Statements](./statements.html)
-- [If-Statement](if-statement.html)
+- [If-Statement](./if-statement.html)
 - [While-Loop](./while-loop.html)
 - [Do-While-Loop](./do-while-loop.html)
 - [For-Loop](./for-loop.html)

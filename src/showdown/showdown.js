@@ -1,5 +1,5 @@
 /*! showdown v 2.1.0 - 21-04-2022 */
-(function() {
+(function () {
 	/**
 	 * Created by Tivie on 13-07-2015.
 	 */
@@ -279,7 +279,7 @@
 	 * @param {*} value
 	 * @returns {showdown}
 	 */
-	showdown.setOption = function(key, value) {
+	showdown.setOption = function (key, value) {
 		"use strict";
 		globalOptions[key] = value;
 		return this;
@@ -291,7 +291,7 @@
 	 * @param {string} key
 	 * @returns {*}
 	 */
-	showdown.getOption = function(key) {
+	showdown.getOption = function (key) {
 		"use strict";
 		return globalOptions[key];
 	};
@@ -301,7 +301,7 @@
 	 * @static
 	 * @returns {{}}
 	 */
-	showdown.getOptions = function() {
+	showdown.getOptions = function () {
 		"use strict";
 		return globalOptions;
 	};
@@ -310,7 +310,7 @@
 	 * Reset global options to the default values
 	 * @static
 	 */
-	showdown.resetOptions = function() {
+	showdown.resetOptions = function () {
 		"use strict";
 		globalOptions = getDefaultOpts(true);
 	};
@@ -319,7 +319,7 @@
 	 * Set the flavor showdown should use as default
 	 * @param {string} name
 	 */
-	showdown.setFlavor = function(name) {
+	showdown.setFlavor = function (name) {
 		"use strict";
 		if (!flavor.hasOwnProperty(name)) {
 			throw Error(name + " flavor was not found");
@@ -338,7 +338,7 @@
 	 * Get the currently set flavor
 	 * @returns {string}
 	 */
-	showdown.getFlavor = function() {
+	showdown.getFlavor = function () {
 		"use strict";
 		return setFlavor;
 	};
@@ -348,7 +348,7 @@
 	 * @param {string} name Name of the flavor
 	 * @returns {{}|undefined}
 	 */
-	showdown.getFlavorOptions = function(name) {
+	showdown.getFlavorOptions = function (name) {
 		"use strict";
 		if (flavor.hasOwnProperty(name)) {
 			return flavor[name];
@@ -361,7 +361,7 @@
 	 * @param {boolean} [simple=true]
 	 * @returns {{}}
 	 */
-	showdown.getDefaultOptions = function(simple) {
+	showdown.getDefaultOptions = function (simple) {
 		"use strict";
 		return getDefaultOpts(simple);
 	};
@@ -376,7 +376,7 @@
 	 * @param {function} [func]
 	 * @returns {*}
 	 */
-	showdown.subParser = function(name, func) {
+	showdown.subParser = function (name, func) {
 		"use strict";
 		if (showdown.helper.isString(name)) {
 			if (typeof func !== "undefined") {
@@ -398,7 +398,7 @@
 	 * @param {object|object[]|function=} ext
 	 * @returns {*}
 	 */
-	showdown.extension = function(name, ext) {
+	showdown.extension = function (name, ext) {
 		"use strict";
 
 		if (!showdown.helper.isString(name)) {
@@ -440,7 +440,7 @@
 	 * Gets all extensions registered
 	 * @returns {{}}
 	 */
-	showdown.getAllExtensions = function() {
+	showdown.getAllExtensions = function () {
 		"use strict";
 		return extensions;
 	};
@@ -449,7 +449,7 @@
 	 * Remove an extension
 	 * @param {string} name
 	 */
-	showdown.removeExtension = function(name) {
+	showdown.removeExtension = function (name) {
 		"use strict";
 		delete extensions[name];
 	};
@@ -457,7 +457,7 @@
 	/**
 	 * Removes all extensions
 	 */
-	showdown.resetExtensions = function() {
+	showdown.resetExtensions = function () {
 		"use strict";
 		extensions = {};
 	};
@@ -582,7 +582,7 @@
 	 * @param {object} ext
 	 * @returns {boolean}
 	 */
-	showdown.validateExtension = function(ext) {
+	showdown.validateExtension = function (ext) {
 		"use strict";
 
 		var validateExtension = validate(ext, null);
@@ -607,7 +607,7 @@
 	 * @param {string} a
 	 * @returns {boolean}
 	 */
-	showdown.helper.isString = function(a) {
+	showdown.helper.isString = function (a) {
 		"use strict";
 		return typeof a === "string" || a instanceof String;
 	};
@@ -618,7 +618,7 @@
 	 * @param {*} a
 	 * @returns {boolean}
 	 */
-	showdown.helper.isFunction = function(a) {
+	showdown.helper.isFunction = function (a) {
 		"use strict";
 		var getType = {};
 		return a && getType.toString.call(a) === "[object Function]";
@@ -630,7 +630,7 @@
 	 * @param {*} a
 	 * @returns {boolean}
 	 */
-	showdown.helper.isArray = function(a) {
+	showdown.helper.isArray = function (a) {
 		"use strict";
 		return Array.isArray(a);
 	};
@@ -641,7 +641,7 @@
 	 * @param {*} value The value to check.
 	 * @returns {boolean} Returns `true` if `value` is `undefined`, else `false`.
 	 */
-	showdown.helper.isUndefined = function(value) {
+	showdown.helper.isUndefined = function (value) {
 		"use strict";
 		return typeof value === "undefined";
 	};
@@ -653,7 +653,7 @@
 	 * @param {*} obj
 	 * @param {function} callback Accepts 3 params: 1. value, 2. key, 3. the original array/object
 	 */
-	showdown.helper.forEach = function(obj, callback) {
+	showdown.helper.forEach = function (obj, callback) {
 		"use strict";
 		// check if obj is defined
 		if (showdown.helper.isUndefined(obj)) {
@@ -691,7 +691,7 @@
 	 * @param {string} s extension name
 	 * @returns {string}
 	 */
-	showdown.helper.stdExtName = function(s) {
+	showdown.helper.stdExtName = function (s) {
 		"use strict";
 		return s
 			.replace(/[_?*+\/\\.^-]/g, "")
@@ -722,7 +722,7 @@
 	 * @param {boolean} afterBackslash
 	 * @returns {XML|string|void|*}
 	 */
-	showdown.helper.escapeCharacters = function(text, charsToEscape, afterBackslash) {
+	showdown.helper.escapeCharacters = function (text, charsToEscape, afterBackslash) {
 		"use strict";
 		// First we have to escape the escape characters so that
 		// we can build a character class out of them
@@ -743,7 +743,7 @@
 	 * @param txt
 	 * @returns {string}
 	 */
-	showdown.helper.unescapeHTMLEntities = function(txt) {
+	showdown.helper.unescapeHTMLEntities = function (txt) {
 		"use strict";
 
 		return txt
@@ -753,7 +753,7 @@
 			.replace(/&amp;/g, "&");
 	};
 
-	var rgxFindMatchPos = function(str, left, right, flags) {
+	var rgxFindMatchPos = function (str, left, right, flags) {
 		"use strict";
 		var f = flags || "",
 			g = f.indexOf("g") > -1,
@@ -824,7 +824,7 @@
 	 * matchRecursiveRegExp("<div id=\"x\">test</div>", "<div\\b[^>]*>", "</div>", "gi")
 	 * returns: ["test"]
 	 */
-	showdown.helper.matchRecursiveRegExp = function(str, left, right, flags) {
+	showdown.helper.matchRecursiveRegExp = function (str, left, right, flags) {
 		"use strict";
 
 		var matchPos = rgxFindMatchPos(str, left, right, flags),
@@ -850,12 +850,12 @@
 	 * @param {string} flags
 	 * @returns {string}
 	 */
-	showdown.helper.replaceRecursiveRegExp = function(str, replacement, left, right, flags) {
+	showdown.helper.replaceRecursiveRegExp = function (str, replacement, left, right, flags) {
 		"use strict";
 
 		if (!showdown.helper.isFunction(replacement)) {
 			var repStr = replacement;
-			replacement = function() {
+			replacement = function () {
 				return repStr;
 			};
 		}
@@ -900,7 +900,7 @@
 	 * @returns {Number}
 	 * @throws InvalidArgumentError
 	 */
-	showdown.helper.regexIndexOf = function(str, regex, fromIndex) {
+	showdown.helper.regexIndexOf = function (str, regex, fromIndex) {
 		"use strict";
 		if (!showdown.helper.isString(str)) {
 			throw "InvalidArgumentError: first parameter of showdown.helper.regexIndexOf function must be a string";
@@ -919,7 +919,7 @@
 	 * @returns {[string,string]}
 	 * @throws InvalidArgumentError
 	 */
-	showdown.helper.splitAtIndex = function(str, index) {
+	showdown.helper.splitAtIndex = function (str, index) {
 		"use strict";
 		if (!showdown.helper.isString(str)) {
 			throw "InvalidArgumentError: first parameter of showdown.helper.regexIndexOf function must be a string";
@@ -936,21 +936,21 @@
 	 * @param {string} mail
 	 * @returns {string}
 	 */
-	showdown.helper.encodeEmailAddress = function(mail) {
+	showdown.helper.encodeEmailAddress = function (mail) {
 		"use strict";
 		var encode = [
-			function(ch) {
+			function (ch) {
 				return "&#" + ch.charCodeAt(0) + ";";
 			},
-			function(ch) {
+			function (ch) {
 				return "&#x" + ch.charCodeAt(0).toString(16) + ";";
 			},
-			function(ch) {
+			function (ch) {
 				return ch;
 			},
 		];
 
-		mail = mail.replace(/./g, function(ch) {
+		mail = mail.replace(/./g, function (ch) {
 			if (ch === "@") {
 				// this *must* be encoded. I insist.
 				ch = encode[Math.floor(Math.random() * 2)](ch);
@@ -996,15 +996,15 @@
 	// use this instead of builtin is undefined for IE8 compatibility
 	if (typeof console === "undefined") {
 		console = {
-			warn: function(msg) {
+			warn: function (msg) {
 				"use strict";
 				alert(msg);
 			},
-			log: function(msg) {
+			log: function (msg) {
 				"use strict";
 				alert(msg);
 			},
-			error: function(msg) {
+			error: function (msg) {
 				"use strict";
 				throw msg;
 			},
@@ -2214,7 +2214,7 @@
 	 * @param {object} [converterOptions]
 	 * @returns {Converter}
 	 */
-	showdown.Converter = function(converterOptions) {
+	showdown.Converter = function (converterOptions) {
 		"use strict";
 
 		var /**
@@ -2448,7 +2448,7 @@
 		 * @param {function} callback
 		 * @returns {showdown.Converter}
 		 */
-		this.listen = function(name, callback) {
+		this.listen = function (name, callback) {
 			listen(name, callback);
 			return this;
 		};
@@ -2458,7 +2458,7 @@
 		 * @param {string} text
 		 * @returns {*}
 		 */
-		this.makeHtml = function(text) {
+		this.makeHtml = function (text) {
 			//check if text is not falsy
 			if (!text) {
 				return text;
@@ -2520,7 +2520,7 @@
 			text = text.replace(/^[ \t]+$/gm, "");
 
 			//run languageExtensions
-			showdown.helper.forEach(langExtensions, function(ext) {
+			showdown.helper.forEach(langExtensions, function (ext) {
 				text = showdown.subParser("runExtension")(ext, text, options, globals);
 			});
 
@@ -2545,7 +2545,7 @@
 			text = showdown.subParser("completeHTMLDocument")(text, options, globals);
 
 			// Run output modifiers
-			showdown.helper.forEach(outputModifiers, function(ext) {
+			showdown.helper.forEach(outputModifiers, function (ext) {
 				text = showdown.subParser("runExtension")(ext, text, options, globals);
 			});
 
@@ -2560,7 +2560,7 @@
 		 * @param [HTMLParser] A WHATWG DOM and HTML parser, such as JSDOM. If none is supplied, window.document will be used.
 		 * @returns {string}
 		 */
-		this.makeMarkdown = this.makeMd = function(src, HTMLParser) {
+		this.makeMarkdown = this.makeMd = function (src, HTMLParser) {
 			// replace \r\n with \n
 			src = src.replace(/\r\n/g, "\n");
 			src = src.replace(/\r/g, "\n"); // old macs
@@ -2664,7 +2664,7 @@
 		 * @param {string} key
 		 * @param {*} value
 		 */
-		this.setOption = function(key, value) {
+		this.setOption = function (key, value) {
 			options[key] = value;
 		};
 
@@ -2673,7 +2673,7 @@
 		 * @param {string} key
 		 * @returns {*}
 		 */
-		this.getOption = function(key) {
+		this.getOption = function (key) {
 			return options[key];
 		};
 
@@ -2681,7 +2681,7 @@
 		 * Get the options of this Converter instance
 		 * @returns {{}}
 		 */
-		this.getOptions = function() {
+		this.getOptions = function () {
 			return options;
 		};
 
@@ -2690,7 +2690,7 @@
 		 * @param {{}} extension
 		 * @param {string} [name=null]
 		 */
-		this.addExtension = function(extension, name) {
+		this.addExtension = function (extension, name) {
 			name = name || null;
 			_parseExtension(extension, name);
 		};
@@ -2699,7 +2699,7 @@
 		 * Use a global registered extension with THIS converter
 		 * @param {string} extensionName Name of the previously registered extension
 		 */
-		this.useExtension = function(extensionName) {
+		this.useExtension = function (extensionName) {
 			_parseExtension(extensionName);
 		};
 
@@ -2707,7 +2707,7 @@
 		 * Set the flavor THIS converter should use
 		 * @param {string} name
 		 */
-		this.setFlavor = function(name) {
+		this.setFlavor = function (name) {
 			if (!flavor.hasOwnProperty(name)) {
 				throw Error(name + " flavor was not found");
 			}
@@ -2724,7 +2724,7 @@
 		 * Get the currently set flavor of this converter
 		 * @returns {string}
 		 */
-		this.getFlavor = function() {
+		this.getFlavor = function () {
 			return setConvFlavor;
 		};
 
@@ -2734,7 +2734,7 @@
 		 * and specify the extensions you wish to use
 		 * @param {Array} extension
 		 */
-		this.removeExtension = function(extension) {
+		this.removeExtension = function (extension) {
 			if (!showdown.helper.isArray(extension)) {
 				extension = [extension];
 			}
@@ -2757,7 +2757,7 @@
 		 * Get all extension of THIS converter
 		 * @returns {{language: Array, output: Array}}
 		 */
-		this.getAllExtensions = function() {
+		this.getAllExtensions = function () {
 			return {
 				language: langExtensions,
 				output: outputModifiers,
@@ -2769,7 +2769,7 @@
 		 * @param raw
 		 * @returns {string|{}}
 		 */
-		this.getMetadata = function(raw) {
+		this.getMetadata = function (raw) {
 			if (raw) {
 				return metadata.raw;
 			} else {
@@ -2781,7 +2781,7 @@
 		 * Get the metadata format of the previously parsed document
 		 * @returns {string}
 		 */
-		this.getMetadataFormat = function() {
+		this.getMetadataFormat = function () {
 			return metadata.format;
 		};
 
@@ -2790,7 +2790,7 @@
 		 * @param {string} key
 		 * @param {string} value
 		 */
-		this._setMetadataPair = function(key, value) {
+		this._setMetadataPair = function (key, value) {
 			metadata.parsed[key] = value;
 		};
 
@@ -2798,7 +2798,7 @@
 		 * Private: set metadata format
 		 * @param {string} format
 		 */
-		this._setMetadataFormat = function(format) {
+		this._setMetadataFormat = function (format) {
 			metadata.format = format;
 		};
 
@@ -2806,7 +2806,7 @@
 		 * Private: set metadata raw text
 		 * @param {string} raw
 		 */
-		this._setMetadataRaw = function(raw) {
+		this._setMetadataRaw = function (raw) {
 			metadata.raw = raw;
 		};
 	};
@@ -2814,12 +2814,12 @@
 	/**
 	 * Turn Markdown link shortcuts into XHTML <a> tags.
 	 */
-	showdown.subParser("anchors", function(text, options, globals) {
+	showdown.subParser("anchors", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("anchors.before", text, options, globals);
 
-		var writeAnchorTag = function(wholeMatch, linkText, linkId, url, m5, m6, title) {
+		var writeAnchorTag = function (wholeMatch, linkText, linkId, url, m5, m6, title) {
 			if (showdown.helper.isUndefined(title)) {
 				title = "";
 			}
@@ -2892,28 +2892,25 @@
 
 		// Lastly handle GithubMentions if option is enabled
 		if (options.ghMentions) {
-			text = text.replace(/(^|\s)(\\)?(@([a-z\d]+(?:[a-z\d.-]+?[a-z\d]+)*))/gim, function(
-				wm,
-				st,
-				escape,
-				mentions,
-				username,
-			) {
-				if (escape === "\\") {
-					return st + mentions;
-				}
+			text = text.replace(
+				/(^|\s)(\\)?(@([a-z\d]+(?:[a-z\d.-]+?[a-z\d]+)*))/gim,
+				function (wm, st, escape, mentions, username) {
+					if (escape === "\\") {
+						return st + mentions;
+					}
 
-				//check if options.ghMentionsLink is a string
-				if (!showdown.helper.isString(options.ghMentionsLink)) {
-					throw new Error("ghMentionsLink option must be a string");
-				}
-				var lnk = options.ghMentionsLink.replace(/\{u}/g, username),
-					target = "";
-				if (options.openLinksInNewWindow) {
-					target = ' rel="noopener noreferrer" target="¨E95Eblank"';
-				}
-				return st + '<a href="' + lnk + '"' + target + ">" + mentions + "</a>";
-			});
+					//check if options.ghMentionsLink is a string
+					if (!showdown.helper.isString(options.ghMentionsLink)) {
+						throw new Error("ghMentionsLink option must be a string");
+					}
+					var lnk = options.ghMentionsLink.replace(/\{u}/g, username),
+						target = "";
+					if (options.openLinksInNewWindow) {
+						target = ' rel="noopener noreferrer" target="¨E95Eblank"';
+					}
+					return st + '<a href="' + lnk + '"' + target + ">" + mentions + "</a>";
+				},
+			);
 		}
 
 		text = globals.converter._dispatch("anchors.after", text, options, globals);
@@ -2923,13 +2920,15 @@
 	// url allowed chars [a-z\d_.~:/?#[]@!$&'()*+,;=-]
 
 	var simpleURLRegex = /([*~_]+|\b)(((https?|ftp|dict):\/\/|www\.)[^'">\s]+?\.[^'">\s]+?)()(\1)?(?=\s|$)(?!["<>])/gi,
-		simpleURLRegex2 = /([*~_]+|\b)(((https?|ftp|dict):\/\/|www\.)[^'">\s]+\.[^'">\s]+?)([.!?,()\[\]])?(\1)?(?=\s|$)(?!["<>])/gi,
+		simpleURLRegex2 =
+			/([*~_]+|\b)(((https?|ftp|dict):\/\/|www\.)[^'">\s]+\.[^'">\s]+?)([.!?,()\[\]])?(\1)?(?=\s|$)(?!["<>])/gi,
 		delimUrlRegex = /()<(((https?|ftp|dict):\/\/|www\.)[^'">\s]+)()>()/gi,
-		simpleMailRegex = /(^|\s)(?:mailto:)?([A-Za-z0-9!#$%&'*+-/=?^_`{|}~.]+@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)(?=$|\s)/gim,
+		simpleMailRegex =
+			/(^|\s)(?:mailto:)?([A-Za-z0-9!#$%&'*+-/=?^_`{|}~.]+@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)(?=$|\s)/gim,
 		delimMailRegex = /<()(?:mailto:)?([-.\w]+@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)>/gi,
-		replaceLink = function(options) {
+		replaceLink = function (options) {
 			"use strict";
-			return function(wm, leadingMagicChars, link, m2, m3, trailingPunctuation, trailingMagicChars) {
+			return function (wm, leadingMagicChars, link, m2, m3, trailingPunctuation, trailingMagicChars) {
 				link = link.replace(showdown.helper.regexes.asteriskDashAndColon, showdown.helper.escapeCharactersCallback);
 				var lnkTxt = link,
 					append = "",
@@ -2948,9 +2947,9 @@
 				return lmc + '<a href="' + link + '"' + target + ">" + lnkTxt + "</a>" + append + tmc;
 			};
 		},
-		replaceMail = function(options, globals) {
+		replaceMail = function (options, globals) {
 			"use strict";
-			return function(wholeMatch, b, mail) {
+			return function (wholeMatch, b, mail) {
 				var href = "mailto:";
 				b = b || "";
 				mail = showdown.subParser("unescapeSpecialChars")(mail, options, globals);
@@ -2964,7 +2963,7 @@
 			};
 		};
 
-	showdown.subParser("autoLinks", function(text, options, globals) {
+	showdown.subParser("autoLinks", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("autoLinks.before", text, options, globals);
@@ -2977,7 +2976,7 @@
 		return text;
 	});
 
-	showdown.subParser("simplifiedAutoLinks", function(text, options, globals) {
+	showdown.subParser("simplifiedAutoLinks", function (text, options, globals) {
 		"use strict";
 
 		if (!options.simplifiedAutoLink) {
@@ -3002,7 +3001,7 @@
 	 * These are all the transformations that form block-level
 	 * tags like paragraphs, headers, and list items.
 	 */
-	showdown.subParser("blockGamut", function(text, options, globals) {
+	showdown.subParser("blockGamut", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("blockGamut.before", text, options, globals);
@@ -3031,7 +3030,7 @@
 		return text;
 	});
 
-	showdown.subParser("blockQuotes", function(text, options, globals) {
+	showdown.subParser("blockQuotes", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("blockQuotes.before", text, options, globals);
@@ -3045,7 +3044,7 @@
 			rgx = /^ {0,3}>[\s\S]*?(?:\n\n)/gm;
 		}
 
-		text = text.replace(rgx, function(bq) {
+		text = text.replace(rgx, function (bq) {
 			// attacklab: hack around Konqueror 3.5.4 bug:
 			// "----------bug".replace(/^-/g,"") == "bug"
 			bq = bq.replace(/^[ \t]*>[ \t]?/gm, ""); // trim one level of quoting
@@ -3059,7 +3058,7 @@
 
 			bq = bq.replace(/(^|\n)/g, "$1  ");
 			// These leading spaces screw with <pre> content, so we need to fix that:
-			bq = bq.replace(/(\s*<pre>[^\r]+?<\/pre>)/gm, function(wholeMatch, m1) {
+			bq = bq.replace(/(\s*<pre>[^\r]+?<\/pre>)/gm, function (wholeMatch, m1) {
 				var pre = m1;
 				// attacklab: hack around Konqueror 3.5.4 bug:
 				pre = pre.replace(/^  /gm, "¨0");
@@ -3077,7 +3076,7 @@
 	/**
 	 * Process Markdown `<pre><code>` blocks.
 	 */
-	showdown.subParser("codeBlocks", function(text, options, globals) {
+	showdown.subParser("codeBlocks", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("codeBlocks.before", text, options, globals);
@@ -3086,7 +3085,7 @@
 		text += "¨0";
 
 		var pattern = /(?:\n\n|^)((?:(?:[ ]{4}|\t).*\n+)+)(\n*[ ]{0,3}[^ \t\n]|(?=¨0))/g;
-		text = text.replace(pattern, function(wholeMatch, m1, m2) {
+		text = text.replace(pattern, function (wholeMatch, m1, m2) {
 			var codeblock = m1,
 				nextChar = m2,
 				end = "\n";
@@ -3138,7 +3137,7 @@
 	 *
 	 *         ... type <code>`bar`</code> ...
 	 */
-	showdown.subParser("codeSpans", function(text, options, globals) {
+	showdown.subParser("codeSpans", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("codeSpans.before", text, options, globals);
@@ -3146,7 +3145,7 @@
 		if (typeof text === "undefined") {
 			text = "";
 		}
-		text = text.replace(/(^|[^\\])(`+)([^\r]*?[^`])\2(?!`)/gm, function(wholeMatch, m1, m2, m3) {
+		text = text.replace(/(^|[^\\])(`+)([^\r]*?[^`])\2(?!`)/gm, function (wholeMatch, m1, m2, m3) {
 			var c = m3;
 			c = c.replace(/^([ \t]*)/g, ""); // leading whitespace
 			c = c.replace(/[ \t]*$/g, ""); // trailing whitespace
@@ -3163,7 +3162,7 @@
 	/**
 	 * Create a full HTML document from the processed markdown
 	 */
-	showdown.subParser("completeHTMLDocument", function(text, options, globals) {
+	showdown.subParser("completeHTMLDocument", function (text, options, globals) {
 		"use strict";
 
 		if (!options.completeHTMLDocument) {
@@ -3236,7 +3235,7 @@
 	/**
 	 * Convert all tabs to spaces
 	 */
-	showdown.subParser("detab", function(text, options, globals) {
+	showdown.subParser("detab", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("detab.before", text, options, globals);
 
@@ -3247,7 +3246,7 @@
 		text = text.replace(/\t/g, "¨A¨B");
 
 		// use the sentinel to anchor our regex so it doesn't explode
-		text = text.replace(/¨B(.+?)¨A/g, function(wholeMatch, m1) {
+		text = text.replace(/¨B(.+?)¨A/g, function (wholeMatch, m1) {
 			var leadingText = m1,
 				numSpaces = 4 - (leadingText.length % 4); // g_tab_width
 
@@ -3267,7 +3266,7 @@
 		return text;
 	});
 
-	showdown.subParser("ellipsis", function(text, options, globals) {
+	showdown.subParser("ellipsis", function (text, options, globals) {
 		"use strict";
 
 		if (!options.ellipsis) {
@@ -3288,7 +3287,7 @@
 	 *
 	 * List of supported emojis: https://github.com/showdownjs/showdown/wiki/Emojis
 	 */
-	showdown.subParser("emoji", function(text, options, globals) {
+	showdown.subParser("emoji", function (text, options, globals) {
 		"use strict";
 
 		if (!options.emoji) {
@@ -3299,7 +3298,7 @@
 
 		var emojiRgx = /:([\S]+?):/g;
 
-		text = text.replace(emojiRgx, function(wm, emojiCode) {
+		text = text.replace(emojiRgx, function (wm, emojiCode) {
 			if (showdown.helper.emojis.hasOwnProperty(emojiCode)) {
 				return showdown.helper.emojis[emojiCode];
 			}
@@ -3314,7 +3313,7 @@
 	/**
 	 * Smart processing for ampersands and angle brackets that need to be encoded.
 	 */
-	showdown.subParser("encodeAmpsAndAngles", function(text, options, globals) {
+	showdown.subParser("encodeAmpsAndAngles", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("encodeAmpsAndAngles.before", text, options, globals);
 
@@ -3346,7 +3345,7 @@
 	 * ...but we're sidestepping its use of the (slow) RegExp constructor
 	 * as an optimization for Firefox.  This function gets called a LOT.
 	 */
-	showdown.subParser("encodeBackslashEscapes", function(text, options, globals) {
+	showdown.subParser("encodeBackslashEscapes", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("encodeBackslashEscapes.before", text, options, globals);
 
@@ -3362,7 +3361,7 @@
 	 * The point is that in code, these characters are literals,
 	 * and lose their special Markdown meanings.
 	 */
-	showdown.subParser("encodeCode", function(text, options, globals) {
+	showdown.subParser("encodeCode", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("encodeCode.before", text, options, globals);
@@ -3385,7 +3384,7 @@
 	 * Within tags -- meaning between < and > -- encode [\ ` * _ ~ =] so they
 	 * don't conflict with their use in Markdown for code, italics and strong.
 	 */
-	showdown.subParser("escapeSpecialCharsWithinTagAttributes", function(text, options, globals) {
+	showdown.subParser("escapeSpecialCharsWithinTagAttributes", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("escapeSpecialCharsWithinTagAttributes.before", text, options, globals);
 
@@ -3393,13 +3392,13 @@
 		var tags = /<\/?[a-z\d_:-]+(?:[\s]+[\s\S]+?)?>/gi,
 			comments = /<!(--(?:(?:[^>-]|-[^>])(?:[^-]|-[^-])*)--)>/gi;
 
-		text = text.replace(tags, function(wholeMatch) {
+		text = text.replace(tags, function (wholeMatch) {
 			return wholeMatch
 				.replace(/(.)<\/?code>(?=.)/g, "$1`")
 				.replace(/([\\`*_~=|])/g, showdown.helper.escapeCharactersCallback);
 		});
 
-		text = text.replace(comments, function(wholeMatch) {
+		text = text.replace(comments, function (wholeMatch) {
 			return wholeMatch.replace(/([\\`*_~=|])/g, showdown.helper.escapeCharactersCallback);
 		});
 
@@ -3417,7 +3416,7 @@
 	 *     end
 	 * ```
 	 */
-	showdown.subParser("githubCodeBlocks", function(text, options, globals) {
+	showdown.subParser("githubCodeBlocks", function (text, options, globals) {
 		"use strict";
 
 		// early exit if option is not enabled
@@ -3429,43 +3428,41 @@
 
 		text += "¨0";
 
-		text = text.replace(/(?:^|\n)(?: {0,3})(```+|~~~+)(?: *)([^\s`~]*)\n([\s\S]*?)\n(?: {0,3})\1/g, function(
-			wholeMatch,
-			delim,
-			language,
-			codeblock,
-		) {
-			var end = options.omitExtraWLInCodeBlocks ? "" : "\n";
+		text = text.replace(
+			/(?:^|\n)(?: {0,3})(```+|~~~+)(?: *)([^\s`~]*)\n([\s\S]*?)\n(?: {0,3})\1/g,
+			function (wholeMatch, delim, language, codeblock) {
+				var end = options.omitExtraWLInCodeBlocks ? "" : "\n";
 
-			// First parse the github code block
-			codeblock = showdown.subParser("encodeCode")(codeblock, options, globals);
-			codeblock = showdown.subParser("detab")(codeblock, options, globals);
-			codeblock = codeblock.replace(/^\n+/g, ""); // trim leading newlines
-			codeblock = codeblock.replace(/\n+$/g, ""); // trim trailing whitespace
+				// First parse the github code block
+				codeblock = showdown.subParser("encodeCode")(codeblock, options, globals);
+				codeblock = showdown.subParser("detab")(codeblock, options, globals);
+				codeblock = codeblock.replace(/^\n+/g, ""); // trim leading newlines
+				codeblock = codeblock.replace(/\n+$/g, ""); // trim trailing whitespace
 
-			codeblock =
-				"<pre><code" +
-				(language ? ' class="' + language + " language-" + language + '"' : "") +
-				">" +
-				codeblock +
-				end +
-				"</code></pre>";
+				codeblock =
+					"<pre><code" +
+					(language ? ' class="' + language + " language-" + language + '"' : "") +
+					">" +
+					codeblock +
+					end +
+					"</code></pre>";
 
-			codeblock = showdown.subParser("hashBlock")(codeblock, options, globals);
+				codeblock = showdown.subParser("hashBlock")(codeblock, options, globals);
 
-			// Since GHCodeblocks can be false positives, we need to
-			// store the primitive text and the parsed text in a global var,
-			// and then return a token
-			return (
-				"\n\n¨G" +
-				(globals.ghCodeBlocks.push({
-					text: wholeMatch,
-					codeblock: codeblock,
-				}) -
-					1) +
-				"G\n\n"
-			);
-		});
+				// Since GHCodeblocks can be false positives, we need to
+				// store the primitive text and the parsed text in a global var,
+				// and then return a token
+				return (
+					"\n\n¨G" +
+					(globals.ghCodeBlocks.push({
+						text: wholeMatch,
+						codeblock: codeblock,
+					}) -
+						1) +
+					"G\n\n"
+				);
+			},
+		);
 
 		// attacklab: strip sentinel
 		text = text.replace(/¨0/, "");
@@ -3473,7 +3470,7 @@
 		return globals.converter._dispatch("githubCodeBlocks.after", text, options, globals);
 	});
 
-	showdown.subParser("hashBlock", function(text, options, globals) {
+	showdown.subParser("hashBlock", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("hashBlock.before", text, options, globals);
 		text = text.replace(/(^\n+|\n+$)/g, "");
@@ -3485,11 +3482,11 @@
 	/**
 	 * Hash and escape <code> elements that should not be parsed as markdown
 	 */
-	showdown.subParser("hashCodeTags", function(text, options, globals) {
+	showdown.subParser("hashCodeTags", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("hashCodeTags.before", text, options, globals);
 
-		var repFunc = function(wholeMatch, match, left, right) {
+		var repFunc = function (wholeMatch, match, left, right) {
 			var codeblock = left + showdown.subParser("encodeCode")(match, options, globals) + right;
 			return "¨C" + (globals.gHtmlSpans.push(codeblock) - 1) + "C";
 		};
@@ -3501,10 +3498,10 @@
 		return text;
 	});
 
-	showdown.subParser("hashElement", function(text, options, globals) {
+	showdown.subParser("hashElement", function (text, options, globals) {
 		"use strict";
 
-		return function(wholeMatch, m1) {
+		return function (wholeMatch, m1) {
 			var blockText = m1;
 
 			// Undo double lines
@@ -3521,7 +3518,7 @@
 		};
 	});
 
-	showdown.subParser("hashHTMLBlocks", function(text, options, globals) {
+	showdown.subParser("hashHTMLBlocks", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("hashHTMLBlocks.before", text, options, globals);
 
@@ -3561,7 +3558,7 @@
 				"video",
 				"p",
 			],
-			repFunc = function(wholeMatch, match, left, right) {
+			repFunc = function (wholeMatch, match, left, right) {
 				var txt = wholeMatch;
 				// check if this html element is marked as markdown
 				// if so, it's contents should be parsed as markdown
@@ -3573,7 +3570,7 @@
 
 		if (options.backslashEscapesHTMLTags) {
 			// encode backslash escaped HTML tags
-			text = text.replace(/\\<(\/?[^>]+?)>/g, function(wm, inside) {
+			text = text.replace(/\\<(\/?[^>]+?)>/g, function (wm, inside) {
 				return "&lt;" + inside + "&gt;";
 			});
 		}
@@ -3609,7 +3606,7 @@
 		// Special case for standalone HTML comments
 		text = showdown.helper.replaceRecursiveRegExp(
 			text,
-			function(txt) {
+			function (txt) {
 				return "\n\n¨K" + (globals.gHtmlBlocks.push(txt) - 1) + "K\n\n";
 			},
 			"^ {0,3}<!--",
@@ -3630,7 +3627,7 @@
 	/**
 	 * Hash span elements that should not be parsed as markdown
 	 */
-	showdown.subParser("hashHTMLSpans", function(text, options, globals) {
+	showdown.subParser("hashHTMLSpans", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("hashHTMLSpans.before", text, options, globals);
 
@@ -3639,22 +3636,22 @@
 		}
 
 		// Hash Self Closing tags
-		text = text.replace(/<[^>]+?\/>/gi, function(wm) {
+		text = text.replace(/<[^>]+?\/>/gi, function (wm) {
 			return hashHTMLSpan(wm);
 		});
 
 		// Hash tags without properties
-		text = text.replace(/<([^>]+?)>[\s\S]*?<\/\1>/g, function(wm) {
+		text = text.replace(/<([^>]+?)>[\s\S]*?<\/\1>/g, function (wm) {
 			return hashHTMLSpan(wm);
 		});
 
 		// Hash tags with properties
-		text = text.replace(/<([^>]+?)\s[^>]+?>[\s\S]*?<\/\1>/g, function(wm) {
+		text = text.replace(/<([^>]+?)\s[^>]+?>[\s\S]*?<\/\1>/g, function (wm) {
 			return hashHTMLSpan(wm);
 		});
 
 		// Hash self closing tags without />
-		text = text.replace(/<[^>]+?>/gi, function(wm) {
+		text = text.replace(/<[^>]+?>/gi, function (wm) {
 			return hashHTMLSpan(wm);
 		});
 
@@ -3667,7 +3664,7 @@
 	/**
 	 * Unhash HTML spans
 	 */
-	showdown.subParser("unhashHTMLSpans", function(text, options, globals) {
+	showdown.subParser("unhashHTMLSpans", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("unhashHTMLSpans.before", text, options, globals);
 
@@ -3695,11 +3692,11 @@
 	/**
 	 * Hash and escape <pre><code> elements that should not be parsed as markdown
 	 */
-	showdown.subParser("hashPreCodeTags", function(text, options, globals) {
+	showdown.subParser("hashPreCodeTags", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("hashPreCodeTags.before", text, options, globals);
 
-		var repFunc = function(wholeMatch, match, left, right) {
+		var repFunc = function (wholeMatch, match, left, right) {
 			// encode html entities
 			var codeblock = left + showdown.subParser("encodeCode")(match, options, globals) + right;
 			return "\n\n¨G" + (globals.ghCodeBlocks.push({ text: wholeMatch, codeblock: codeblock }) - 1) + "G\n\n";
@@ -3718,7 +3715,7 @@
 		return text;
 	});
 
-	showdown.subParser("headers", function(text, options, globals) {
+	showdown.subParser("headers", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("headers.before", text, options, globals);
@@ -3734,7 +3731,7 @@
 			setextRegexH1 = options.smoothLivePreview ? /^(.+)[ \t]*\n={2,}[ \t]*\n+/gm : /^(.+)[ \t]*\n=+[ \t]*\n+/gm,
 			setextRegexH2 = options.smoothLivePreview ? /^(.+)[ \t]*\n-{2,}[ \t]*\n+/gm : /^(.+)[ \t]*\n-+[ \t]*\n+/gm;
 
-		text = text.replace(setextRegexH1, function(wholeMatch, m1) {
+		text = text.replace(setextRegexH1, function (wholeMatch, m1) {
 			var spanGamut = showdown.subParser("spanGamut")(m1, options, globals),
 				hID = options.noHeaderId ? "" : ' id="' + headerId(m1) + '"',
 				hLevel = headerLevelStart,
@@ -3742,7 +3739,7 @@
 			return showdown.subParser("hashBlock")(hashBlock, options, globals);
 		});
 
-		text = text.replace(setextRegexH2, function(matchFound, m1) {
+		text = text.replace(setextRegexH2, function (matchFound, m1) {
 			var spanGamut = showdown.subParser("spanGamut")(m1, options, globals),
 				hID = options.noHeaderId ? "" : ' id="' + headerId(m1) + '"',
 				hLevel = headerLevelStart + 1,
@@ -3761,7 +3758,7 @@
 			? /^(#{1,6})[ \t]+(.+?)[ \t]*#*\n+/gm
 			: /^(#{1,6})[ \t]*(.+?)[ \t]*#*\n+/gm;
 
-		text = text.replace(atxStyle, function(wholeMatch, m1, m2) {
+		text = text.replace(atxStyle, function (wholeMatch, m1, m2) {
 			var hText = m2;
 			if (options.customizedHeaderId) {
 				hText = m2.replace(/\s?\{([^{]+?)}\s*$/, "");
@@ -3845,7 +3842,7 @@
 	/**
 	 * Turn Markdown link shortcuts into XHTML <a> tags.
 	 */
-	showdown.subParser("horizontalRule", function(text, options, globals) {
+	showdown.subParser("horizontalRule", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("horizontalRule.before", text, options, globals);
 
@@ -3861,14 +3858,17 @@
 	/**
 	 * Turn Markdown image shortcuts into <img> tags.
 	 */
-	showdown.subParser("images", function(text, options, globals) {
+	showdown.subParser("images", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("images.before", text, options, globals);
 
-		var inlineRegExp = /!\[([^\]]*?)][ \t]*()\([ \t]?<?([\S]+?(?:\([\S]*?\)[\S]*?)?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(["'])([^"]*?)\6)?[ \t]?\)/g,
-			crazyRegExp = /!\[([^\]]*?)][ \t]*()\([ \t]?<([^>]*)>(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(?:(["'])([^"]*?)\6))?[ \t]?\)/g,
-			base64RegExp = /!\[([^\]]*?)][ \t]*()\([ \t]?<?(data:.+?\/.+?;base64,[A-Za-z0-9+/=\n]+?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(["'])([^"]*?)\6)?[ \t]?\)/g,
+		var inlineRegExp =
+				/!\[([^\]]*?)][ \t]*()\([ \t]?<?([\S]+?(?:\([\S]*?\)[\S]*?)?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(["'])([^"]*?)\6)?[ \t]?\)/g,
+			crazyRegExp =
+				/!\[([^\]]*?)][ \t]*()\([ \t]?<([^>]*)>(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(?:(["'])([^"]*?)\6))?[ \t]?\)/g,
+			base64RegExp =
+				/!\[([^\]]*?)][ \t]*()\([ \t]?<?(data:.+?\/.+?;base64,[A-Za-z0-9+/=\n]+?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(["'])([^"]*?)\6)?[ \t]?\)/g,
 			referenceRegExp = /!\[([^\]]*?)] ?(?:\n *)?\[([\s\S]*?)]()()()()()/g,
 			refShortcutRegExp = /!\[([^\[\]]+)]()()()()()/g;
 
@@ -3961,7 +3961,7 @@
 		return text;
 	});
 
-	showdown.subParser("italicsAndBold", function(text, options, globals) {
+	showdown.subParser("italicsAndBold", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("italicsAndBold.before", text, options, globals);
@@ -3981,23 +3981,23 @@
 
 		// Parse underscores
 		if (options.literalMidWordUnderscores) {
-			text = text.replace(/\b___(\S[\s\S]*?)___\b/g, function(wm, txt) {
+			text = text.replace(/\b___(\S[\s\S]*?)___\b/g, function (wm, txt) {
 				return parseInside(txt, "<strong><em>", "</em></strong>");
 			});
-			text = text.replace(/\b__(\S[\s\S]*?)__\b/g, function(wm, txt) {
+			text = text.replace(/\b__(\S[\s\S]*?)__\b/g, function (wm, txt) {
 				return parseInside(txt, "<strong>", "</strong>");
 			});
-			text = text.replace(/\b_(\S[\s\S]*?)_\b/g, function(wm, txt) {
+			text = text.replace(/\b_(\S[\s\S]*?)_\b/g, function (wm, txt) {
 				return parseInside(txt, "<em>", "</em>");
 			});
 		} else {
-			text = text.replace(/___(\S[\s\S]*?)___/g, function(wm, m) {
+			text = text.replace(/___(\S[\s\S]*?)___/g, function (wm, m) {
 				return /\S$/.test(m) ? parseInside(m, "<strong><em>", "</em></strong>") : wm;
 			});
-			text = text.replace(/__(\S[\s\S]*?)__/g, function(wm, m) {
+			text = text.replace(/__(\S[\s\S]*?)__/g, function (wm, m) {
 				return /\S$/.test(m) ? parseInside(m, "<strong>", "</strong>") : wm;
 			});
-			text = text.replace(/_([^\s_][\s\S]*?)_/g, function(wm, m) {
+			text = text.replace(/_([^\s_][\s\S]*?)_/g, function (wm, m) {
 				// !/^_[^_]/.test(m) - test if it doesn't start with __ (since it seems redundant, we removed it)
 				return /\S$/.test(m) ? parseInside(m, "<em>", "</em>") : wm;
 			});
@@ -4005,23 +4005,23 @@
 
 		// Now parse asterisks
 		if (options.literalMidWordAsterisks) {
-			text = text.replace(/([^*]|^)\B\*\*\*(\S[\s\S]*?)\*\*\*\B(?!\*)/g, function(wm, lead, txt) {
+			text = text.replace(/([^*]|^)\B\*\*\*(\S[\s\S]*?)\*\*\*\B(?!\*)/g, function (wm, lead, txt) {
 				return parseInside(txt, lead + "<strong><em>", "</em></strong>");
 			});
-			text = text.replace(/([^*]|^)\B\*\*(\S[\s\S]*?)\*\*\B(?!\*)/g, function(wm, lead, txt) {
+			text = text.replace(/([^*]|^)\B\*\*(\S[\s\S]*?)\*\*\B(?!\*)/g, function (wm, lead, txt) {
 				return parseInside(txt, lead + "<strong>", "</strong>");
 			});
-			text = text.replace(/([^*]|^)\B\*(\S[\s\S]*?)\*\B(?!\*)/g, function(wm, lead, txt) {
+			text = text.replace(/([^*]|^)\B\*(\S[\s\S]*?)\*\B(?!\*)/g, function (wm, lead, txt) {
 				return parseInside(txt, lead + "<em>", "</em>");
 			});
 		} else {
-			text = text.replace(/\*\*\*(\S[\s\S]*?)\*\*\*/g, function(wm, m) {
+			text = text.replace(/\*\*\*(\S[\s\S]*?)\*\*\*/g, function (wm, m) {
 				return /\S$/.test(m) ? parseInside(m, "<strong><em>", "</em></strong>") : wm;
 			});
-			text = text.replace(/\*\*(\S[\s\S]*?)\*\*/g, function(wm, m) {
+			text = text.replace(/\*\*(\S[\s\S]*?)\*\*/g, function (wm, m) {
 				return /\S$/.test(m) ? parseInside(m, "<strong>", "</strong>") : wm;
 			});
-			text = text.replace(/\*([^\s*][\s\S]*?)\*/g, function(wm, m) {
+			text = text.replace(/\*([^\s*][\s\S]*?)\*/g, function (wm, m) {
 				// !/^\*[^*]/.test(m) - test if it doesn't start with ** (since it seems redundant, we removed it)
 				return /\S$/.test(m) ? parseInside(m, "<em>", "</em>") : wm;
 			});
@@ -4034,7 +4034,7 @@
 	/**
 	 * Form HTML ordered (numbered) and unordered (bulleted) lists.
 	 */
-	showdown.subParser("lists", function(text, options, globals) {
+	showdown.subParser("lists", function (text, options, globals) {
 		"use strict";
 
 		/**
@@ -4073,17 +4073,19 @@
 			// attacklab: add sentinel to emulate \z
 			listStr += "¨0";
 
-			var rgx = /(\n)?(^ {0,3})([*+-]|\d+[.])[ \t]+((\[(x|X| )?])?[ \t]*[^\r]+?(\n{1,2}))(?=\n*(¨0| {0,3}([*+-]|\d+[.])[ \t]+))/gm,
+			var rgx =
+					/(\n)?(^ {0,3})([*+-]|\d+[.])[ \t]+((\[(x|X| )?])?[ \t]*[^\r]+?(\n{1,2}))(?=\n*(¨0| {0,3}([*+-]|\d+[.])[ \t]+))/gm,
 				isParagraphed = /\n[ \t]*\n(?!¨0)/.test(listStr);
 
 			// Since version 1.5, nesting sublists requires 4 spaces (or 1 tab) indentation,
 			// which is a syntax breaking change
 			// activating this option reverts to old behavior
 			if (options.disableForced4SpacesIndentedSublists) {
-				rgx = /(\n)?(^ {0,3})([*+-]|\d+[.])[ \t]+((\[(x|X| )?])?[ \t]*[^\r]+?(\n{1,2}))(?=\n*(¨0|\2([*+-]|\d+[.])[ \t]+))/gm;
+				rgx =
+					/(\n)?(^ {0,3})([*+-]|\d+[.])[ \t]+((\[(x|X| )?])?[ \t]*[^\r]+?(\n{1,2}))(?=\n*(¨0|\2([*+-]|\d+[.])[ \t]+))/gm;
 			}
 
-			listStr = listStr.replace(rgx, function(wholeMatch, m1, m2, m3, m4, taskbtn, checked) {
+			listStr = listStr.replace(rgx, function (wholeMatch, m1, m2, m3, m4, taskbtn, checked) {
 				checked = checked && checked.trim() !== "";
 
 				var item = showdown.subParser("outdent")(m4, options, globals),
@@ -4092,7 +4094,7 @@
 				// Support for github tasklists
 				if (taskbtn && options.tasklists) {
 					bulletStyle = ' class="task-list-item" style="list-style-type: none;"';
-					item = item.replace(/^[ \t]*\[(x|X| )?]/m, function() {
+					item = item.replace(/^[ \t]*\[(x|X| )?]/m, function () {
 						var otp =
 							'<input type="checkbox" disabled style="margin: 0px 0.35em 0.25em -1.6em; vertical-align: middle;"';
 						if (checked) {
@@ -4111,7 +4113,7 @@
 				// <ul><li>- - a</li></ul>
 				// So, to prevent it, we will put a marker (¨A)in the beginning of the line
 				// Kind of hackish/monkey patching, but seems more effective than overcomplicating the list parser
-				item = item.replace(/^([-*+]|\d\.)[ \t]+[\S\n ]*/g, function(wm2) {
+				item = item.replace(/^([-*+]|\d\.)[ \t]+[\S\n ]*/g, function (wm2) {
 					return "¨A" + wm2;
 				});
 
@@ -4226,7 +4228,7 @@
 		if (globals.gListLevel) {
 			text = text.replace(
 				/^(( {0,3}([*+-]|\d+[.])[ \t]+)[^\r]+?(¨0|\n{2,}(?=\S)(?![ \t]*(?:[*+-]|\d+[.])[ \t]+)))/gm,
-				function(wholeMatch, list, m2) {
+				function (wholeMatch, list, m2) {
 					var listType = m2.search(/[*+-]/g) > -1 ? "ul" : "ol";
 					return parseConsecutiveLists(list, listType, true);
 				},
@@ -4234,7 +4236,7 @@
 		} else {
 			text = text.replace(
 				/(\n\n|^\n?)(( {0,3}([*+-]|\d+[.])[ \t]+)[^\r]+?(¨0|\n{2,}(?=\S)(?![ \t]*(?:[*+-]|\d+[.])[ \t]+)))/gm,
-				function(wholeMatch, m1, list, m3) {
+				function (wholeMatch, m1, list, m3) {
 					var listType = m3.search(/[*+-]/g) > -1 ? "ul" : "ol";
 					return parseConsecutiveLists(list, listType, false);
 				},
@@ -4250,7 +4252,7 @@
 	/**
 	 * Parse metadata at the top of the document
 	 */
-	showdown.subParser("metadata", function(text, options, globals) {
+	showdown.subParser("metadata", function (text, options, globals) {
 		"use strict";
 
 		if (!options.metadata) {
@@ -4272,18 +4274,18 @@
 				.replace(/"/g, "&quot;");
 
 			content = content.replace(/\n {4}/g, " ");
-			content.replace(/^([\S ]+): +([\s\S]+?)$/gm, function(wm, key, value) {
+			content.replace(/^([\S ]+): +([\s\S]+?)$/gm, function (wm, key, value) {
 				globals.metadata.parsed[key] = value;
 				return "";
 			});
 		}
 
-		text = text.replace(/^\s*«««+(\S*?)\n([\s\S]+?)\n»»»+\n/, function(wholematch, format, content) {
+		text = text.replace(/^\s*«««+(\S*?)\n([\s\S]+?)\n»»»+\n/, function (wholematch, format, content) {
 			parseMetadataContents(content);
 			return "¨M";
 		});
 
-		text = text.replace(/^\s*---+(\S*?)\n([\s\S]+?)\n---+\n/, function(wholematch, format, content) {
+		text = text.replace(/^\s*---+(\S*?)\n([\s\S]+?)\n---+\n/, function (wholematch, format, content) {
 			if (format) {
 				globals.metadata.format = format;
 			}
@@ -4300,7 +4302,7 @@
 	/**
 	 * Remove one level of line-leading tabs or spaces
 	 */
-	showdown.subParser("outdent", function(text, options, globals) {
+	showdown.subParser("outdent", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("outdent.before", text, options, globals);
 
@@ -4318,7 +4320,7 @@
 	/**
 	 *
 	 */
-	showdown.subParser("paragraphs", function(text, options, globals) {
+	showdown.subParser("paragraphs", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("paragraphs.before", text, options, globals);
@@ -4389,7 +4391,7 @@
 	/**
 	 * Run extension
 	 */
-	showdown.subParser("runExtension", function(ext, text, options, globals) {
+	showdown.subParser("runExtension", function (ext, text, options, globals) {
 		"use strict";
 
 		if (ext.filter) {
@@ -4410,7 +4412,7 @@
 	 * These are all the transformations that occur *within* block-level
 	 * tags like paragraphs, headers, and list items.
 	 */
-	showdown.subParser("spanGamut", function(text, options, globals) {
+	showdown.subParser("spanGamut", function (text, options, globals) {
 		"use strict";
 
 		text = globals.converter._dispatch("spanGamut.before", text, options, globals);
@@ -4456,7 +4458,7 @@
 		return text;
 	});
 
-	showdown.subParser("strikethrough", function(text, options, globals) {
+	showdown.subParser("strikethrough", function (text, options, globals) {
 		"use strict";
 
 		function parseInside(txt) {
@@ -4468,7 +4470,7 @@
 
 		if (options.strikethrough) {
 			text = globals.converter._dispatch("strikethrough.before", text, options, globals);
-			text = text.replace(/(?:~){2}([\s\S]+?)(?:~){2}/g, function(wm, txt) {
+			text = text.replace(/(?:~){2}([\s\S]+?)(?:~){2}/g, function (wm, txt) {
 				return parseInside(txt);
 			});
 			text = globals.converter._dispatch("strikethrough.after", text, options, globals);
@@ -4482,16 +4484,18 @@
 	 * hash references.
 	 * Link defs are in the form: ^[id]: url "optional title"
 	 */
-	showdown.subParser("stripLinkDefinitions", function(text, options, globals) {
+	showdown.subParser("stripLinkDefinitions", function (text, options, globals) {
 		"use strict";
 
-		var regex = /^ {0,3}\[([^\]]+)]:[ \t]*\n?[ \t]*<?([^>\s]+)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*\n?[ \t]*(?:(\n*)["|'(](.+?)["|')][ \t]*)?(?:\n+|(?=¨0))/gm,
-			base64Regex = /^ {0,3}\[([^\]]+)]:[ \t]*\n?[ \t]*<?(data:.+?\/.+?;base64,[A-Za-z0-9+/=\n]+?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*\n?[ \t]*(?:(\n*)["|'(](.+?)["|')][ \t]*)?(?:\n\n|(?=¨0)|(?=\n\[))/gm;
+		var regex =
+				/^ {0,3}\[([^\]]+)]:[ \t]*\n?[ \t]*<?([^>\s]+)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*\n?[ \t]*(?:(\n*)["|'(](.+?)["|')][ \t]*)?(?:\n+|(?=¨0))/gm,
+			base64Regex =
+				/^ {0,3}\[([^\]]+)]:[ \t]*\n?[ \t]*<?(data:.+?\/.+?;base64,[A-Za-z0-9+/=\n]+?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*\n?[ \t]*(?:(\n*)["|'(](.+?)["|')][ \t]*)?(?:\n\n|(?=¨0)|(?=\n\[))/gm;
 
 		// attacklab: sentinel workarounds for lack of \A and \Z, safari\khtml bug
 		text += "¨0";
 
-		var replaceFunc = function(wholeMatch, linkId, url, width, height, blankLines, title) {
+		var replaceFunc = function (wholeMatch, linkId, url, width, height, blankLines, title) {
 			// if there aren't two instances of linkId it must not be a reference link so back out
 			linkId = linkId.toLowerCase();
 			if (text.toLowerCase().split(linkId).length - 1 < 2) {
@@ -4534,16 +4538,18 @@
 		return text;
 	});
 
-	showdown.subParser("tables", function(text, options, globals) {
+	showdown.subParser("tables", function (text, options, globals) {
 		"use strict";
 
 		if (!options.tables) {
 			return text;
 		}
 
-		var tableRgx = /^ {0,3}\|?.+\|.+\n {0,3}\|?[ \t]*:?[ \t]*(?:[-=]){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:[-=]){2,}[\s\S]+?(?:\n\n|¨0)/gm,
+		var tableRgx =
+				/^ {0,3}\|?.+\|.+\n {0,3}\|?[ \t]*:?[ \t]*(?:[-=]){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:[-=]){2,}[\s\S]+?(?:\n\n|¨0)/gm,
 			//singeColTblRgx = /^ {0,3}\|.+\|\n {0,3}\|[ \t]*:?[ \t]*(?:[-=]){2,}[ \t]*:?[ \t]*\|[ \t]*\n(?: {0,3}\|.+\|\n)+(?:\n\n|¨0)/gm;
-			singeColTblRgx = /^ {0,3}\|.+\|[ \t]*\n {0,3}\|[ \t]*:?[ \t]*(?:[-=]){2,}[ \t]*:?[ \t]*\|[ \t]*\n( {0,3}\|.+\|[ \t]*\n)*(?:\n|¨0)/gm;
+			singeColTblRgx =
+				/^ {0,3}\|.+\|[ \t]*\n {0,3}\|[ \t]*:?[ \t]*(?:[-=]){2,}[ \t]*:?[ \t]*\|[ \t]*\n( {0,3}\|.+\|[ \t]*\n)*(?:\n|¨0)/gm;
 
 		function parseStyles(sLine) {
 			if (/^:[ \t]*--*$/.test(sLine)) {
@@ -4610,10 +4616,10 @@
 				tableLines[i] = showdown.subParser("codeSpans")(tableLines[i], options, globals);
 			}
 
-			var rawHeaders = tableLines[0].split("|").map(function(s) {
+			var rawHeaders = tableLines[0].split("|").map(function (s) {
 					return s.trim();
 				}),
-				rawStyles = tableLines[1].split("|").map(function(s) {
+				rawStyles = tableLines[1].split("|").map(function (s) {
 					return s.trim();
 				}),
 				rawCells = [],
@@ -4629,7 +4635,7 @@
 					continue;
 				}
 				rawCells.push(
-					tableLines[i].split("|").map(function(s) {
+					tableLines[i].split("|").map(function (s) {
 						return s.trim();
 					}),
 				);
@@ -4679,7 +4685,7 @@
 		return text;
 	});
 
-	showdown.subParser("underline", function(text, options, globals) {
+	showdown.subParser("underline", function (text, options, globals) {
 		"use strict";
 
 		if (!options.underline) {
@@ -4689,17 +4695,17 @@
 		text = globals.converter._dispatch("underline.before", text, options, globals);
 
 		if (options.literalMidWordUnderscores) {
-			text = text.replace(/\b___(\S[\s\S]*?)___\b/g, function(wm, txt) {
+			text = text.replace(/\b___(\S[\s\S]*?)___\b/g, function (wm, txt) {
 				return "<u>" + txt + "</u>";
 			});
-			text = text.replace(/\b__(\S[\s\S]*?)__\b/g, function(wm, txt) {
+			text = text.replace(/\b__(\S[\s\S]*?)__\b/g, function (wm, txt) {
 				return "<u>" + txt + "</u>";
 			});
 		} else {
-			text = text.replace(/___(\S[\s\S]*?)___/g, function(wm, m) {
+			text = text.replace(/___(\S[\s\S]*?)___/g, function (wm, m) {
 				return /\S$/.test(m) ? "<u>" + m + "</u>" : wm;
 			});
-			text = text.replace(/__(\S[\s\S]*?)__/g, function(wm, m) {
+			text = text.replace(/__(\S[\s\S]*?)__/g, function (wm, m) {
 				return /\S$/.test(m) ? "<u>" + m + "</u>" : wm;
 			});
 		}
@@ -4715,11 +4721,11 @@
 	/**
 	 * Swap back in all the special characters we've hidden.
 	 */
-	showdown.subParser("unescapeSpecialChars", function(text, options, globals) {
+	showdown.subParser("unescapeSpecialChars", function (text, options, globals) {
 		"use strict";
 		text = globals.converter._dispatch("unescapeSpecialChars.before", text, options, globals);
 
-		text = text.replace(/¨E(\d+)E/g, function(wholeMatch, m1) {
+		text = text.replace(/¨E(\d+)E/g, function (wholeMatch, m1) {
 			var charCodeToReplace = parseInt(m1);
 			return String.fromCharCode(charCodeToReplace);
 		});
@@ -4728,7 +4734,7 @@
 		return text;
 	});
 
-	showdown.subParser("makeMarkdown.blockquote", function(node, globals) {
+	showdown.subParser("makeMarkdown.blockquote", function (node, globals) {
 		"use strict";
 
 		var txt = "";
@@ -4751,7 +4757,7 @@
 		return txt;
 	});
 
-	showdown.subParser("makeMarkdown.codeBlock", function(node, globals) {
+	showdown.subParser("makeMarkdown.codeBlock", function (node, globals) {
 		"use strict";
 
 		var lang = node.getAttribute("language"),
@@ -4759,13 +4765,13 @@
 		return "```" + lang + "\n" + globals.preList[num] + "\n```";
 	});
 
-	showdown.subParser("makeMarkdown.codeSpan", function(node) {
+	showdown.subParser("makeMarkdown.codeSpan", function (node) {
 		"use strict";
 
 		return "`" + node.innerHTML + "`";
 	});
 
-	showdown.subParser("makeMarkdown.emphasis", function(node, globals) {
+	showdown.subParser("makeMarkdown.emphasis", function (node, globals) {
 		"use strict";
 
 		var txt = "";
@@ -4781,7 +4787,7 @@
 		return txt;
 	});
 
-	showdown.subParser("makeMarkdown.header", function(node, globals, headerLevel) {
+	showdown.subParser("makeMarkdown.header", function (node, globals, headerLevel) {
 		"use strict";
 
 		var headerMark = new Array(headerLevel + 1).join("#"),
@@ -4799,13 +4805,13 @@
 		return txt;
 	});
 
-	showdown.subParser("makeMarkdown.hr", function() {
+	showdown.subParser("makeMarkdown.hr", function () {
 		"use strict";
 
 		return "---";
 	});
 
-	showdown.subParser("makeMarkdown.image", function(node) {
+	showdown.subParser("makeMarkdown.image", function (node) {
 		"use strict";
 
 		var txt = "";
@@ -4824,7 +4830,7 @@
 		return txt;
 	});
 
-	showdown.subParser("makeMarkdown.links", function(node, globals) {
+	showdown.subParser("makeMarkdown.links", function (node, globals) {
 		"use strict";
 
 		var txt = "";
@@ -4845,7 +4851,7 @@
 		return txt;
 	});
 
-	showdown.subParser("makeMarkdown.list", function(node, globals, type) {
+	showdown.subParser("makeMarkdown.list", function (node, globals, type) {
 		"use strict";
 
 		var txt = "";
@@ -4879,7 +4885,7 @@
 		return txt.trim();
 	});
 
-	showdown.subParser("makeMarkdown.listItem", function(node, globals) {
+	showdown.subParser("makeMarkdown.listItem", function (node, globals) {
 		"use strict";
 
 		var listItemTxt = "";
@@ -4905,7 +4911,7 @@
 		return listItemTxt;
 	});
 
-	showdown.subParser("makeMarkdown.node", function(node, globals, spansOnly) {
+	showdown.subParser("makeMarkdown.node", function (node, globals, spansOnly) {
 		"use strict";
 
 		spansOnly = spansOnly || false;
@@ -5051,7 +5057,7 @@
 		return txt;
 	});
 
-	showdown.subParser("makeMarkdown.paragraph", function(node, globals) {
+	showdown.subParser("makeMarkdown.paragraph", function (node, globals) {
 		"use strict";
 
 		var txt = "";
@@ -5069,14 +5075,14 @@
 		return txt;
 	});
 
-	showdown.subParser("makeMarkdown.pre", function(node, globals) {
+	showdown.subParser("makeMarkdown.pre", function (node, globals) {
 		"use strict";
 
 		var num = node.getAttribute("prenum");
 		return "<pre>" + globals.preList[num] + "</pre>";
 	});
 
-	showdown.subParser("makeMarkdown.strikethrough", function(node, globals) {
+	showdown.subParser("makeMarkdown.strikethrough", function (node, globals) {
 		"use strict";
 
 		var txt = "";
@@ -5092,7 +5098,7 @@
 		return txt;
 	});
 
-	showdown.subParser("makeMarkdown.strong", function(node, globals) {
+	showdown.subParser("makeMarkdown.strong", function (node, globals) {
 		"use strict";
 
 		var txt = "";
@@ -5108,7 +5114,7 @@
 		return txt;
 	});
 
-	showdown.subParser("makeMarkdown.table", function(node, globals) {
+	showdown.subParser("makeMarkdown.table", function (node, globals) {
 		"use strict";
 
 		var txt = "",
@@ -5122,10 +5128,7 @@
 				allign = "---";
 
 			if (headings[i].hasAttribute("style")) {
-				var style = headings[i]
-					.getAttribute("style")
-					.toLowerCase()
-					.replace(/\s/g, "");
+				var style = headings[i].getAttribute("style").toLowerCase().replace(/\s/g, "");
 				switch (style) {
 					case "text-align:left;":
 						allign = ":---";
@@ -5183,7 +5186,7 @@
 		return txt.trim();
 	});
 
-	showdown.subParser("makeMarkdown.tableCell", function(node, globals) {
+	showdown.subParser("makeMarkdown.tableCell", function (node, globals) {
 		"use strict";
 
 		var txt = "";
@@ -5199,7 +5202,7 @@
 		return txt.trim();
 	});
 
-	showdown.subParser("makeMarkdown.txt", function(node) {
+	showdown.subParser("makeMarkdown.txt", function (node) {
 		"use strict";
 
 		var txt = node.nodeValue;
@@ -5247,7 +5250,7 @@
 
 	// AMD Loader
 	if (typeof define === "function" && define.amd) {
-		define(function() {
+		define(function () {
 			"use strict";
 			return showdown;
 		});

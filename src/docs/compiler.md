@@ -116,15 +116,15 @@ import { TypeScriptTarget } from "@kipper/core/lib/targets/typescript";
 
 const compiler = new KipperCompiler();
 const result = compiler.compile(
-  kipperCode, // A string or a KipperParseStream containing the source code
-  {
-    fileName: "myProgram.kip",
-    target: new TypeScriptTarget(),
-    optimisationOptions: {
-      optimiseInternals: true, // Removes any unused internal function
-      optimiseBuiltIns: true // Removes any unused built-in function
-    }
-  }
+	kipperCode, // A string or a KipperParseStream containing the source code
+	{
+		fileName: "myProgram.kip",
+		target: new TypeScriptTarget(),
+		optimisationOptions: {
+			optimiseInternals: true, // Removes any unused internal function
+			optimiseBuiltIns: true, // Removes any unused built-in function
+		},
+	},
 );
 ```
 
