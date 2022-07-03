@@ -8,9 +8,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      UPDATE_SCRIPT: https://gist.githubusercontent.com/Luna-Klatzer/a6f57a7ad7d79dc0a90115846cc98945/raw/756317baa73c904e3c2afef8cd10f3509dfc8dea/insert-html-banner.py
-      SCRIPT_FILE_NAME: insert-html-banner.py
     strategy:
       matrix:
         node-version: [16.x]
@@ -27,11 +24,8 @@ jobs:
           version: 7.0.0
           run_install: |
             - recursive: true
-      - run: pnpm install --frozen-lockfile
-      - name: Download Update Script
-        run: curl ${{ env.UPDATE_SCRIPT }} > ${{ env.SCRIPT_FILE_NAME }}
-      - name: Insert Disclaimer Header
-        run: python insert-html-banner.py
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Build Files using Parcel
         run: pnpm run gh-pages-build
       - name: Add Local Identification Config
