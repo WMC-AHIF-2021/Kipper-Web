@@ -1,0 +1,1 @@
+{"mappings":"AAAA;AACA;EAEC","sources":["build/css/changelog.scss"],"sourcesContent":["/*! Changelog */\n#markdown-content > h2 > a[href^=\"https://github.com/Luna-Klatzer/Kipper/\"]\n{\n\tpadding-right: 8px;\n}\n"],"names":[],"version":3,"file":"changelog.887f50f7.css.map","sourceRoot":"/"}
