@@ -6,6 +6,8 @@ Project marked as completed on the 20th June 2022.
 
 Website Development will still continue though alongside Kipper and serve as its documentation page.
 
+Note though that the website source code was moved to this [repo](https://github.com/Luna-Klatzer/Kipper).
+
 ---
 
 ## Goals
