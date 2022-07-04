@@ -49,7 +49,7 @@ not, it will result in a compiler error!
   // X Invalid - May not re-declare in a different scope
   var var3: str;
   {
-    var var3: str;
+  	var var3: str;
   }
   ```
 
@@ -106,11 +106,11 @@ variable defines simply where your code can access a variable, and not interfere
 ```ts
 // This is a simple scope or also called "block of code"
 {
-  // Variable that is bound to this scope
-  var var1: num = 0;
+	// Variable that is bound to this scope
+	var var1: num = 0;
 
-  // ✓ 'var2' is able to see 'var1' as it's in the same scope, and as such the value may be copied!
-  var var2: num = var1;
+	// ✓ 'var2' is able to see 'var1' as it's in the same scope, and as such the value may be copied!
+	var var2: num = var1;
 }
 ```
 
@@ -126,11 +126,11 @@ var var3: num = 0;
 
 // This is another simple scope
 {
-  // ✓ 'var4' is able to see 'var3' as it's in the parent scope, and as such the value may be copied!
-  var var4: num = var3;
+	// ✓ 'var4' is able to see 'var3' as it's in the parent scope, and as such the value may be copied!
+	var var4: num = var3;
 
-  // ✓ 'var5' is able to see 'var4' as it's in the same scope, and as such the value may be copied!
-  var var5: num = var4;
+	// ✓ 'var5' is able to see 'var4' as it's in the same scope, and as such the value may be copied!
+	var var5: num = var4;
 }
 ```
 
@@ -144,14 +144,14 @@ var var3: num = 0;
 
 // This is another simple scope
 {
-  // ✓ 'var4' is able to see 'var3' as it's in the parent scope, and as such the value may be copied!
-  var var4: num = var3;
+	// ✓ 'var4' is able to see 'var3' as it's in the parent scope, and as such the value may be copied!
+	var var4: num = var3;
 }
 
 // This is another simple scope
 {
-  // X 'var5' is NOT able to see 'var4' as it's in this or any parent's scope, and as such the value may NOT be copied!
-  var var5: num = var4;
+	// X 'var5' is NOT able to see 'var4' as it's in this or any parent's scope, and as such the value may NOT be copied!
+	var var5: num = var4;
 }
 ```
 

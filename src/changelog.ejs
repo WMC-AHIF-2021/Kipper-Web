@@ -12,6 +12,8 @@
 <script src="./js/plugins.ts"></script>
 <script src="./prism/prism.js"></script>
 
+<%- include('./partials/deprecation') %>
+
 <!-- Show Error if JS is disabled or blocked -->
 <noscript>Oops that shouldn't have happened! Please enable Java-Script to use our Site!</noscript>
 
@@ -19,7 +21,6 @@
     <div id="actual-content">
         <!-- The top element: menu and search bar -->
         <%- include('./partials/nav-bar', { header: true, title: title, description: description }) %>
-
 
         <!-- Main Content, where the text is located and the items unique to this site are defined -->
         <div class="text-page-content-container">
